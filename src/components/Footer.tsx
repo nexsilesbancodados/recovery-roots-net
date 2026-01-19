@@ -91,37 +91,36 @@ export const Footer = () => {
       {/* Scroll to top button */}
       <button
         onClick={scrollToTop}
-        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-secondary text-secondary-foreground flex items-center justify-center hover:bg-secondary/90 transition-colors shadow-lg"
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 bg-secondary text-secondary-foreground flex items-center justify-center hover:bg-secondary/90 transition-colors shadow-lg"
         aria-label="Voltar ao topo"
       >
-        <ArrowUp className="w-5 h-5" />
+        <ArrowUp className="w-4 h-4" />
       </button>
 
       {/* Main Footer */}
-      <div className="container mx-auto px-4 py-20 relative">
-        <div ref={contentRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+      <div className="container mx-auto px-4 py-8 md:py-12 relative">
+        <div ref={contentRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
           {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="mb-8">
+          <div className="col-span-2 lg:col-span-1">
+            <div className="mb-4">
               <img 
                 src={logo} 
                 alt="Hospital Rumo Certo" 
-                className="h-16 w-auto brightness-0 invert"
+                className="h-10 md:h-12 w-auto brightness-0 invert"
               />
             </div>
-            <p className="text-primary-foreground/60 mb-8 leading-relaxed text-sm">
-              Há mais de 18 anos transformando vidas com excelência, 
-              discrição e cuidado humanizado em saúde mental e dependência química.
+            <p className="text-primary-foreground/60 mb-4 leading-relaxed text-xs md:text-sm max-w-xs">
+              Há mais de 18 anos transformando vidas com excelência e cuidado humanizado.
             </p>
-            <div className="flex gap-2">
+            <div className="flex gap-1.5">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 border border-primary-foreground/20 flex items-center justify-center hover:bg-secondary hover:border-secondary hover:text-secondary-foreground transition-all duration-300"
+                  className="w-8 h-8 border border-primary-foreground/20 flex items-center justify-center hover:bg-secondary hover:border-secondary hover:text-secondary-foreground transition-all duration-300"
                 >
-                  <social.icon className="w-4 h-4" />
+                  <social.icon className="w-3.5 h-3.5" />
                 </a>
               ))}
             </div>
@@ -129,15 +128,15 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-lg mb-6 font-medium tracking-wide">
+            <h4 className="font-serif text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide">
               Navegação
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5 md:space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/60 hover:text-secondary transition-colors duration-300 text-sm tracking-wide"
+                    className="text-primary-foreground/60 hover:text-secondary transition-colors duration-300 text-xs md:text-sm tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -148,15 +147,15 @@ export const Footer = () => {
 
           {/* Treatments */}
           <div>
-            <h4 className="font-serif text-lg mb-6 font-medium tracking-wide">
+            <h4 className="font-serif text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide">
               Tratamentos
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1.5 md:space-y-2">
               {treatments.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-primary-foreground/60 hover:text-secondary transition-colors duration-300 text-sm tracking-wide"
+                    className="text-primary-foreground/60 hover:text-secondary transition-colors duration-300 text-xs md:text-sm tracking-wide"
                   >
                     {link.label}
                   </a>
@@ -166,32 +165,32 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-serif text-lg mb-6 font-medium tracking-wide">
+          <div className="col-span-2 lg:col-span-1">
+            <h4 className="font-serif text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide">
               Contato
             </h4>
-            <ul className="space-y-4 text-primary-foreground/60 text-sm">
-              <li className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
+            <ul className="space-y-2 text-primary-foreground/60 text-xs md:text-sm">
+              <li className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
                 <a href="tel:5511955931301" className="hover:text-secondary transition-colors tracking-wide">
                   (11) 95593-1301
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-secondary flex-shrink-0" />
-                <span className="tracking-wide">contato@hospitalrumocerto.com.br</span>
+              <li className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
+                <span className="tracking-wide text-xs">contato@hospitalrumocerto.com.br</span>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-secondary flex-shrink-0 mt-0.5" />
                 <span className="tracking-wide">Cabreúva e Salto, SP</span>
               </li>
             </ul>
 
-            <div className="mt-8 p-5 border border-primary-foreground/10 bg-primary-foreground/5">
-              <p className="text-secondary text-sm font-medium uppercase tracking-[0.15em] mb-1">
+            <div className="mt-4 p-3 border border-primary-foreground/10 bg-primary-foreground/5">
+              <p className="text-secondary text-xs font-medium uppercase tracking-[0.1em] mb-0.5">
                 Atendimento 24h
               </p>
-              <p className="text-primary-foreground/50 text-xs tracking-wide">
+              <p className="text-primary-foreground/50 text-[10px] md:text-xs tracking-wide">
                 Plantão para admissões e emergências
               </p>
             </div>
@@ -201,14 +200,14 @@ export const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/10">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-primary-foreground/40 flex items-center gap-1 tracking-wide">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
+            <p className="text-xs text-primary-foreground/40 flex items-center gap-1 tracking-wide">
               © {currentYear} Hospital Rumo Certo. Feito com{" "}
-              <Heart className="w-3 h-3 text-secondary fill-secondary" />{" "}
+              <Heart className="w-2.5 h-2.5 text-secondary fill-secondary" />{" "}
               para transformar vidas.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm text-primary-foreground/40">
+            <div className="flex flex-wrap justify-center gap-4 text-xs text-primary-foreground/40">
               <a href="#" className="hover:text-secondary transition-colors tracking-wide">
                 Política de Privacidade
               </a>
