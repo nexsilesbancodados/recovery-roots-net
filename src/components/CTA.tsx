@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Shield, Award, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -32,22 +32,49 @@ const contactInfo = [
   },
 ];
 
+const credentials = [
+  { icon: Shield, label: "Ambiente Seguro" },
+  { icon: Award, label: "Equipe Especializada" },
+  { icon: Users, label: "Programa 12 Passos" },
+];
+
 export const CTA = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="contato" className="py-24 bg-background">
+    <section id="contato" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4" ref={ref}>
+        {/* Credibility Badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {credentials.map((cred, index) => (
+            <div
+              key={index}
+              className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-border/50 shadow-soft"
+            >
+              <cred.icon className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-foreground">{cred.label}</span>
+            </div>
+          ))}
+        </motion.div>
+
         {/* Main CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="relative rounded-3xl overflow-hidden mb-16"
+          className="relative rounded-2xl overflow-hidden mb-16"
         >
           <div className="absolute inset-0 gradient-hero" />
           <div className="relative px-8 py-16 md:py-20 text-center">
+            <p className="text-primary-foreground/80 text-sm font-medium uppercase tracking-wider mb-4">
+              Estamos Prontos Para Ajudar
+            </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 max-w-3xl mx-auto">
               O primeiro passo para a mudança começa agora
             </h2>
@@ -56,7 +83,7 @@ export const CTA = () => {
               ou seu familiar e iniciar o caminho da recuperação.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" asChild>
+              <Button size="lg" variant="secondary" asChild className="shadow-lg">
                 <a href="tel:5511955931301">
                   <Phone className="mr-2 w-5 h-5" />
                   Ligar Agora
@@ -86,9 +113,9 @@ export const CTA = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
-              <Card className="text-center border-border/50 hover:shadow-card transition-all duration-300">
+              <Card className="text-center bg-white border-border/50 hover:border-primary/30 hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
                     <info.icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-medium text-foreground mb-1">{info.title}</h3>

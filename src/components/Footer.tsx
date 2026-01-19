@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Phone, MapPin, Mail, Clock } from "lucide-react";
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
@@ -14,15 +14,25 @@ const quickLinks = [
   { label: "Contato", href: "#contato" },
 ];
 
+const treatments = [
+  { label: "Saúde Mental", href: "#tratamentos" },
+  { label: "Dependência Química", href: "#tratamentos" },
+  { label: "Alcoolismo", href: "#tratamentos" },
+  { label: "Programa 12 Passos", href: "#tratamentos" },
+];
+
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
+      {/* Main Footer */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+              <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-primary-foreground font-serif text-xl font-bold">RC</span>
               </div>
               <div>
@@ -30,19 +40,19 @@ export const Footer = () => {
                 <p className="text-sm text-secondary-foreground/70">Hospital Psiquiátrico</p>
               </div>
             </div>
-            <p className="text-secondary-foreground/80 mb-6 max-w-md leading-relaxed">
-              Dedicamo-nos a proporcionar tratamentos excepcionais e especializados para saúde mental, 
-              alcoolismo e dependência química em Cabreúva, São Paulo.
+            <p className="text-secondary-foreground/80 mb-6 leading-relaxed text-sm">
+              Tratamentos especializados em saúde mental, 
+              alcoolismo e dependência química em Cabreúva, SP.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-full bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                  className="w-9 h-9 rounded-lg bg-secondary-foreground/10 flex items-center justify-center hover:bg-primary transition-colors duration-300"
                 >
-                  <social.icon className="w-5 h-5" />
+                  <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
@@ -50,13 +60,30 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Links Rápidos</h4>
+            <h4 className="font-semibold text-base mb-5">Links Rápidos</h4>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-secondary-foreground/80 hover:text-primary transition-colors duration-300"
+                    className="text-secondary-foreground/80 hover:text-white transition-colors duration-300 text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Treatments */}
+          <div>
+            <h4 className="font-semibold text-base mb-5">Tratamentos</h4>
+            <ul className="space-y-3">
+              {treatments.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-secondary-foreground/80 hover:text-white transition-colors duration-300 text-sm"
                   >
                     {link.label}
                   </a>
@@ -67,28 +94,50 @@ export const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-lg mb-6">Contato</h4>
-            <ul className="space-y-3 text-secondary-foreground/80">
-              <li>(11) 95593-1301</li>
-              <li>WhatsApp: (11) 95593-1301</li>
-              <li>contato@hospitalrumocerto.com.br</li>
-              <li>Cabreúva, SP</li>
+            <h4 className="font-semibold text-base mb-5">Contato</h4>
+            <ul className="space-y-4 text-secondary-foreground/80 text-sm">
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-white">(11) 95593-1301</p>
+                  <p className="text-xs text-secondary-foreground/60">WhatsApp</p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>contato@hospitalrumocerto.com.br</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span>Cabreúva, São Paulo</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Clock className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-medium text-white">Atendimento 24 horas</p>
+                  <p className="text-xs text-secondary-foreground/60">Todos os dias</p>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
+      </div>
 
-        {/* Bottom */}
-        <div className="border-t border-secondary-foreground/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-secondary-foreground/60">
-            © 2024 Hospital Rumo Certo. Todos os direitos reservados.
-          </p>
-          <div className="flex gap-6 text-sm text-secondary-foreground/60">
-            <a href="#" className="hover:text-secondary-foreground transition-colors">
-              Política de Privacidade
-            </a>
-            <a href="#" className="hover:text-secondary-foreground transition-colors">
-              Termos de Uso
-            </a>
+      {/* Bottom Bar */}
+      <div className="border-t border-secondary-foreground/10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-secondary-foreground/60">
+              © {currentYear} Hospital Rumo Certo. Todos os direitos reservados.
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 text-sm text-secondary-foreground/60">
+              <a href="#" className="hover:text-white transition-colors">
+                Política de Privacidade
+              </a>
+              <a href="#" className="hover:text-white transition-colors">
+                Termos de Uso
+              </a>
+            </div>
           </div>
         </div>
       </div>
