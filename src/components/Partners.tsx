@@ -64,15 +64,15 @@ export const Partners = () => {
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-5 flex items-center justify-center"
+              className="flex-shrink-0 mx-8 flex items-center justify-center"
             >
-              <div className="bg-white border border-border/40 rounded-xl px-8 py-5 min-w-[220px] flex flex-col items-center justify-center gap-4 hover:border-primary/30 hover:shadow-md transition-all duration-300">
+              <div className="flex flex-col items-center justify-center gap-3 px-4 py-2">
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="h-20 w-auto max-w-[180px] object-contain"
+                  className="h-24 w-auto max-w-[200px] object-contain"
                 />
-                <span className="text-sm font-medium text-foreground/80 text-center">
+                <span className="text-sm font-medium text-foreground/70 text-center">
                   {partner.name}
                 </span>
               </div>
