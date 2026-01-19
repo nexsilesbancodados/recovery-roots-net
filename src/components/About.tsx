@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle2, MapPin } from "lucide-react";
-
+import aboutImage from "@/assets/about-hospital.jpg";
 const values = [
   "Programa de 12 Passos reconhecido internacionalmente",
   "Equipe multidisciplinar altamente qualificada",
@@ -37,8 +37,8 @@ export const About = () => {
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elevated">
               <motion.img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
-                alt="Equipe médica do Hospital Rumo Certo"
+                src={aboutImage}
+                alt="Profissional do Hospital Rumo Certo"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}
