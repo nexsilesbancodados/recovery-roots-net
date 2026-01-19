@@ -68,11 +68,11 @@ export const Treatments = () => {
           >
             Nossos Tratamentos
           </motion.span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+          <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Tratamentos especializados para{" "}
             <span className="text-primary">cada necessidade</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+          <p className="text-white/80 text-lg md:text-xl leading-relaxed">
             Oferecemos uma abordagem completa e personalizada, combinando as melhores 
             práticas médicas com cuidado humanizado para sua recuperação.
           </p>
@@ -135,7 +135,7 @@ export const Treatments = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-muted-foreground mb-4">
+          <p className="text-white/80 mb-4">
             Não sabe qual tratamento é ideal para você ou seu familiar?
           </p>
           <a 

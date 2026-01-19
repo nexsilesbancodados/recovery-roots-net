@@ -49,10 +49,10 @@ export const Partners = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Planos de Saúde
           </span>
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-white">
             Convênios Aceitos
           </h2>
-          <p className="text-muted-foreground mt-3 max-w-md mx-auto">
+          <p className="text-white/80 mt-3 max-w-md mx-auto">
             Trabalhamos com os principais planos de saúde do Brasil
           </p>
         </motion.div>

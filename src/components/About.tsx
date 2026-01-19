@@ -70,15 +70,15 @@ export const About = () => {
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
               Sobre o Hospital
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">
               Hospital Rumo Certo
             </h2>
-            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+            <p className="text-white/80 text-lg mb-6 leading-relaxed">
               Há mais de 18 anos dedicamo-nos a proporcionar tratamentos excepcionais e especializados 
               para saúde mental, alcoolismo e dependência química. Com 4 unidades estrategicamente 
               localizadas, oferecemos atendimento especializado para diferentes perfis de pacientes.
             </p>
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-white/70 mb-8 leading-relaxed">
               Com uma equipe multidisciplinar altamente qualificada e um compromisso inabalável com 
               a excelência em cuidados de saúde, oferecemos uma gama completa de serviços de tratamento 
               personalizados, incluindo o reconhecido Programa de 12 Passos.
@@ -95,7 +95,7 @@ export const About = () => {
                   className="flex items-center gap-3"
                 >
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground">{value}</span>
+                  <span className="text-white/90">{value}</span>
                 </motion.li>
               ))}
             </ul>
@@ -110,7 +110,7 @@ export const About = () => {
           transition={{ duration: 0.8 }}
           className="mt-20"
         >
-          <h3 className="font-serif text-2xl font-bold text-foreground text-center mb-10">
+          <h3 className="font-serif text-2xl font-bold text-white text-center mb-10">
             Nossas Unidades
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
