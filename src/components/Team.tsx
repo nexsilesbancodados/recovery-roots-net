@@ -9,37 +9,37 @@ const team = [
     name: "Dr. Rafael Mendes",
     role: "Diretor Clínico",
     specialty: "Psiquiatria",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Dra. Carolina Alves",
     role: "Coordenadora Médica",
     specialty: "Dependência Química",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Dr. Marcos Silva",
     role: "Psiquiatra Sênior",
     specialty: "Transtornos de Humor",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Dra. Beatriz Costa",
     role: "Psicóloga Clínica",
     specialty: "TCC & Mindfulness",
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Dr. Fernando Rocha",
     role: "Neurologista",
     specialty: "Neurociências",
-    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Dra. Juliana Lima",
-    role: "Terapeuta Ocupacional",
+    role: "Terapeuta",
     specialty: "Reabilitação",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=400&q=80",
   },
 ];
 
@@ -54,22 +54,16 @@ export const Team = () => {
       const cards = gridRef.current.querySelectorAll('.team-card');
       
       gsap.fromTo(cards,
-        { 
-          opacity: 0, 
-          y: 80,
-        },
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
+          duration: 0.6,
           ease: "power3.out",
-          stagger: {
-            amount: 0.6,
-            from: "start",
-          },
+          stagger: { amount: 0.4, from: "start" },
           scrollTrigger: {
             trigger: gridRef.current,
-            start: "top 80%",
+            start: "top 85%",
             toggleActions: "play none none reverse",
           },
         }
@@ -83,28 +77,27 @@ export const Team = () => {
     <section 
       ref={sectionRef}
       id="equipe" 
-      className="py-32 bg-background"
+      className="py-12 md:py-16 lg:py-20 bg-background"
     >
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="max-w-2xl mx-auto text-center mb-20">
-          <span className="text-secondary text-sm uppercase tracking-[0.3em] mb-6 block font-medium">
+        <div className="max-w-xl mx-auto text-center mb-10 md:mb-12">
+          <span className="text-secondary text-xs uppercase tracking-[0.2em] mb-3 block font-medium">
             Curadoria Médica
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground font-medium leading-tight mb-6">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-foreground font-medium leading-tight mb-4">
             Mentes brilhantes dedicadas{" "}
             <span className="text-secondary">a proteger a sua.</span>
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Nossa equipe reúne os melhores especialistas em saúde mental e dependência química, 
-            com formação internacional e experiência comprovada.
+          <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+            Nossa equipe reúne os melhores especialistas em saúde mental e dependência química.
           </p>
         </div>
 
         {/* Team Grid */}
         <div 
           ref={gridRef}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12"
+          className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6"
         >
           {team.map((member, index) => (
             <div 
@@ -112,7 +105,7 @@ export const Team = () => {
               className="team-card group"
             >
               {/* Image */}
-              <div className="aspect-[3/4] mb-6 overflow-hidden bg-muted">
+              <div className="aspect-[3/4] mb-3 md:mb-4 overflow-hidden bg-muted rounded-lg">
                 <img 
                   src={member.image}
                   alt={member.name}
@@ -121,14 +114,14 @@ export const Team = () => {
               </div>
               
               {/* Info */}
-              <div className="space-y-1">
-                <p className="text-secondary text-sm uppercase tracking-wider">
+              <div className="space-y-0.5">
+                <p className="text-secondary text-[10px] md:text-xs uppercase tracking-wider">
                   {member.specialty}
                 </p>
-                <h3 className="font-serif text-xl text-foreground font-medium">
+                <h3 className="font-serif text-sm md:text-base text-foreground font-medium">
                   {member.name}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-xs">
                   {member.role}
                 </p>
               </div>

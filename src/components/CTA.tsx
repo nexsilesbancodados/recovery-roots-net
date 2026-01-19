@@ -190,7 +190,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
     <section 
       ref={sectionRef}
       id="contato" 
-      className="py-24 lg:py-32 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden"
+      className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">

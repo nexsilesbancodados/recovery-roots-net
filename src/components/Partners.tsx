@@ -95,20 +95,14 @@ export const Partners = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden relative"
+      className="py-12 md:py-16 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden relative"
     >
-      {/* Decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      </div>
-
-      <div className="container mx-auto px-4 mb-16" ref={titleRef}>
-        <div className="text-center max-w-2xl mx-auto">
-          <p className="text-secondary font-medium tracking-[0.2em] uppercase text-sm mb-4">
+      <div className="container mx-auto px-4 mb-8" ref={titleRef}>
+        <div className="text-center max-w-xl mx-auto">
+          <p className="text-secondary font-medium tracking-[0.15em] uppercase text-xs mb-2">
             Conveniência Absoluta
           </p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6">
+          <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground mb-3">
             Convênios Aceitos
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
