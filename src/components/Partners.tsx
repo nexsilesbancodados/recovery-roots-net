@@ -68,23 +68,23 @@ export const Partners = () => {
           {duplicatedPartners.map((partner, index) => (
             <motion.div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-6 flex items-center justify-center group"
+              className="flex-shrink-0 mx-4 flex items-center justify-center group"
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <GlowCard 
                 glowColor="emerald" 
                 customSize 
-                className="!w-auto !h-auto flex flex-col items-center justify-center gap-4 px-8 py-6"
+                className="w-[220px] h-[200px] flex flex-col items-center justify-center gap-3 p-6"
               >
-                <div className="p-4 rounded-xl bg-white/80 shadow-sm">
+                <div className="w-full h-[120px] flex items-center justify-center p-3 rounded-xl bg-white shadow-sm">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="h-24 w-auto max-w-[180px] object-contain drop-shadow-sm"
+                    className="max-h-[100px] max-w-[160px] w-auto h-auto object-contain"
                   />
                 </div>
-                <span className="text-sm font-semibold text-foreground/80 text-center group-hover:text-primary transition-colors">
+                <span className="text-sm font-semibold text-foreground/80 text-center group-hover:text-primary transition-colors line-clamp-2">
                   {partner.name}
                 </span>
               </GlowCard>
