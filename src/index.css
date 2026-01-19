@@ -10,63 +10,63 @@
 
 @layer base {
   :root {
-    /* Base - Gradiente Azul Royal com Branco */
-    --background: 220 60% 98%;
-    --foreground: 220 50% 15%;
+    /* Base - Palha/Trigo como cor principal */
+    --background: 35 45% 92%;
+    --foreground: 30 40% 18%;
 
-    /* Card e superfícies - Tons Palha */
-    --card: 40 30% 96%;
-    --card-foreground: 220 50% 15%;
+    /* Card e superfícies - Tons Palha mais claros */
+    --card: 38 50% 95%;
+    --card-foreground: 30 40% 18%;
 
-    --popover: 40 30% 98%;
-    --popover-foreground: 220 50% 15%;
+    --popover: 38 50% 96%;
+    --popover-foreground: 30 40% 18%;
 
-    /* Primary - Azul Royal */
-    --primary: 225 70% 45%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Palha dourado intenso */
+    --primary: 35 55% 55%;
+    --primary-foreground: 35 60% 98%;
 
-    /* Secondary - Azul Royal mais escuro */
-    --secondary: 225 60% 35%;
-    --secondary-foreground: 0 0% 100%;
+    /* Secondary - Palha mais escuro */
+    --secondary: 32 50% 45%;
+    --secondary-foreground: 35 60% 98%;
 
     /* Muted - Palha suave */
-    --muted: 40 25% 92%;
-    --muted-foreground: 40 20% 40%;
+    --muted: 36 40% 88%;
+    --muted-foreground: 32 35% 35%;
 
-    /* Accent - Palha dourado */
-    --accent: 40 35% 88%;
-    --accent-foreground: 40 40% 25%;
+    /* Accent - Palha dourado vibrante */
+    --accent: 38 55% 75%;
+    --accent-foreground: 30 45% 20%;
 
     /* Destructive */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders e inputs - Palha */
-    --border: 40 20% 85%;
-    --input: 40 20% 88%;
-    --ring: 225 70% 45%;
+    --border: 35 35% 78%;
+    --input: 36 40% 85%;
+    --ring: 35 55% 50%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(225 70% 45% / 0.95), hsl(225 60% 35% / 0.9));
-    --gradient-soft: linear-gradient(180deg, hsl(220 60% 98%), hsl(40 30% 96%));
-    --gradient-card: linear-gradient(145deg, hsl(40 30% 98%), hsl(40 25% 94%));
-    --gradient-background: linear-gradient(180deg, hsl(225 70% 50% / 0.08), hsl(0 0% 100% / 0.95), hsl(40 30% 96% / 0.5));
+    /* Custom tokens - Palha */
+    --gradient-hero: linear-gradient(135deg, hsl(35 55% 60% / 0.95), hsl(32 50% 45% / 0.9));
+    --gradient-soft: linear-gradient(180deg, hsl(38 50% 95%), hsl(35 45% 88%));
+    --gradient-card: linear-gradient(145deg, hsl(38 55% 96%), hsl(35 45% 90%));
+    --gradient-background: linear-gradient(180deg, hsl(38 55% 94%), hsl(35 45% 88%), hsl(32 40% 82%));
     
-    --shadow-soft: 0 4px 20px -4px hsl(225 50% 25% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(225 50% 25% / 0.12);
-    --shadow-elevated: 0 20px 50px -15px hsl(225 50% 25% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(32 40% 30% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(32 40% 30% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(32 40% 30% / 0.2);
 
     /* Sidebar */
-    --sidebar-background: 40 25% 97%;
-    --sidebar-foreground: 220 50% 20%;
-    --sidebar-primary: 225 70% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 25% 92%;
-    --sidebar-accent-foreground: 220 50% 20%;
-    --sidebar-border: 40 20% 90%;
-    --sidebar-ring: 225 70% 45%;
+    --sidebar-background: 36 45% 93%;
+    --sidebar-foreground: 30 40% 20%;
+    --sidebar-primary: 35 55% 55%;
+    --sidebar-primary-foreground: 35 60% 98%;
+    --sidebar-accent: 38 50% 88%;
+    --sidebar-accent-foreground: 30 40% 20%;
+    --sidebar-border: 35 35% 82%;
+    --sidebar-ring: 35 55% 50%;
   }
 
   .dark {
@@ -118,10 +118,9 @@
     @apply text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     background: linear-gradient(180deg, 
-      hsl(225 70% 50% / 0.06) 0%, 
-      hsl(0 0% 100%) 15%, 
-      hsl(40 30% 98%) 50%,
-      hsl(40 25% 96%) 100%
+      hsl(38 55% 94%) 0%, 
+      hsl(35 48% 90%) 40%, 
+      hsl(32 42% 85%) 100%
     );
     min-height: 100vh;
   }
@@ -149,15 +148,15 @@
   }
 
   .bg-palha {
-    background-color: hsl(40 30% 96%);
+    background-color: hsl(35 48% 88%);
   }
 
   .bg-palha-dark {
-    background-color: hsl(40 25% 92%);
+    background-color: hsl(32 45% 80%);
   }
 
   .text-palha {
-    color: hsl(40 35% 35%);
+    color: hsl(32 40% 30%);
   }
 
   .shadow-soft {
