@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Phone, MessageCircle, MapPin, Clock, Shield, Award, Users, Send } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Shield, Award, Users, Send, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -96,7 +96,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
   };
 
   return (
-    <section id="contato" className="py-24">
+    <section id="contato" className="py-24 lg:py-32 bg-gradient-to-b from-background to-muted/50">
       <div className="container mx-auto px-4" ref={ref}>
         {/* Credibility Badges */}
         <motion.div
@@ -108,16 +108,16 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
           {credentials.map((cred, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border border-border/50 shadow-soft"
+              className="flex items-center gap-2 px-5 py-2.5 bg-white rounded-full border border-border/50 shadow-soft"
             >
-              <cred.icon className="w-4 h-4 text-primary" />
+              <cred.icon className="w-4 h-4 text-secondary" />
               <span className="text-sm font-medium text-foreground">{cred.label}</span>
             </div>
           ))}
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
           {/* Left - CTA Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -125,37 +125,55 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             transition={{ duration: 0.8 }}
             className="flex flex-col justify-center"
           >
-            <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
-              Atendimento Humanizado 24 Horas
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Dê o Primeiro Passo Rumo à <span className="text-primary">Recuperação</span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm uppercase tracking-wider mb-6 w-fit">
+              <span className="w-2 h-2 rounded-full bg-secondary" />
+              Atendimento 24 Horas
+            </span>
+            
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              Dê o Primeiro Passo Rumo à{" "}
+              <span className="text-primary">Recuperação</span>
             </h2>
-            <p className="text-white/80 text-lg mb-8">
+            
+            <p className="text-muted-foreground text-lg mb-8">
               Entendemos que buscar ajuda é difícil. Por isso, nossa equipe está preparada para 
               acolher você ou seu familiar com todo o respeito e sigilo que este momento exige.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" className="rounded-full px-8" asChild>
                 <a href="tel:5511955931301">
                   <Phone className="mr-2 w-5 h-5" />
                   Ligar Agora
                 </a>
               </Button>
+              <Button size="lg" variant="outline" className="rounded-full px-8" asChild>
+                <a 
+                  href="https://wa.me/5511955931301?text=Olá! Gostaria de mais informações sobre o tratamento."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  WhatsApp
+                </a>
+              </Button>
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-10 pt-8 border-t border-white/10">
-              <p className="text-sm text-white/70 mb-4">Atendimento confidencial e humanizado</p>
-              <div className="flex items-center gap-6 text-sm text-white/80">
+            <div className="mt-12 pt-8 border-t border-border">
+              <p className="text-sm text-muted-foreground mb-4">Atendimento confidencial e humanizado</p>
+              <div className="flex items-center gap-6 text-sm text-foreground/70">
                 <div className="flex items-center gap-2">
-                  <Shield className="w-4 h-4 text-primary" />
+                  <Shield className="w-4 h-4 text-secondary" />
                   <span>Sigilo total</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-primary" />
+                  <Clock className="w-4 h-4 text-secondary" />
                   <span>24 horas</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-secondary" />
+                  <span>+18 anos</span>
                 </div>
               </div>
             </div>
@@ -167,13 +185,16 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Card className="bg-card/90 backdrop-blur-sm border-border/50 shadow-card">
+            <Card className="bg-white border-border/50 shadow-card">
               <CardContent className="p-8">
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">
+                <h3 className="font-serif text-2xl font-semibold text-foreground mb-2">
                   Solicite Contato
                 </h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Preencha o formulário e responderemos em minutos
+                </p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Name */}
                   <div className="space-y-2">
                     <Label htmlFor="name">Nome completo *</Label>
@@ -183,6 +204,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                       value={formData.name}
                       onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                       required
+                      className="rounded-xl"
                     />
                   </div>
 
@@ -196,6 +218,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                       value={formData.phone}
                       onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                       required
+                      className="rounded-xl"
                     />
                   </div>
 
@@ -255,11 +278,12 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                       value={formData.message}
                       onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                       rows={3}
+                      className="rounded-xl"
                     />
                   </div>
 
                   {/* Submit */}
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full rounded-xl">
                     <Send className="mr-2 w-5 h-5" />
                     Enviar via WhatsApp
                   </Button>
@@ -282,13 +306,13 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
-              <Card className="text-center bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-card transition-all duration-300">
+              <Card className="text-center bg-white border-border/50 hover:border-secondary/30 hover:shadow-card transition-all duration-300 group">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
-                    <info.icon className="w-5 h-5 text-primary" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mx-auto mb-4 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
+                    <info.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-medium text-foreground mb-1">{info.title}</h3>
-                  <p className="text-lg font-semibold text-primary mb-1">{info.value}</p>
+                  <p className="text-lg font-bold text-secondary mb-1">{info.value}</p>
                   <p className="text-sm text-muted-foreground">{info.description}</p>
                 </CardContent>
               </Card>

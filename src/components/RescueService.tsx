@@ -31,10 +31,17 @@ export const RescueService = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-secondary via-secondary to-amber-500">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+          backgroundSize: '32px 32px'
+        }} />
+      </div>
       
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -42,7 +49,7 @@ export const RescueService = () => {
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
                 <Truck className="w-7 h-7 text-white" />
               </div>
               <span className="text-white/90 font-semibold text-sm uppercase tracking-wider">
@@ -51,24 +58,24 @@ export const RescueService = () => {
             </div>
             
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Resgate e Remoção <br />
-              <span className="text-primary">24 Horas em Todo o Brasil</span>
+              Resgate e Remoção{" "}
+              <span className="text-primary-foreground/90">24 Horas em Todo o Brasil</span>
             </h2>
             
             <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8">
               Oferecemos serviço de busca e remoção de pacientes em <strong>qualquer cidade do Brasil</strong>, 
               com total discrição e segurança. Nossa equipe é treinada para conduzir o processo com 
-              humanização, respeitando a dignidade do paciente e acolhendo a família neste momento delicado.
+              humanização, respeitando a dignidade do paciente.
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {benefits.map((benefit, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  className="flex items-start gap-3 bg-white/10 rounded-xl p-4 backdrop-blur-sm"
+                  className="flex items-start gap-3 bg-white/10 rounded-xl p-4 backdrop-blur-sm border border-white/10"
                 >
                   <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center flex-shrink-0">
                     <benefit.icon className="w-5 h-5 text-white" />
@@ -88,7 +95,7 @@ export const RescueService = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.7 }}
-              className="inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold hover:shadow-xl hover:scale-105 transition-all duration-300"
             >
               <Phone className="w-5 h-5" />
               Solicitar Resgate Agora
@@ -122,8 +129,8 @@ export const RescueService = () => {
                 className="absolute top-4 right-8 bg-white rounded-xl px-4 py-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span className="font-semibold text-primary text-sm">Todo Brasil</span>
+                  <MapPin className="w-5 h-5 text-secondary" />
+                  <span className="font-semibold text-secondary-foreground text-sm">Todo Brasil</span>
                 </div>
               </motion.div>
               
@@ -134,7 +141,7 @@ export const RescueService = () => {
               >
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-primary" />
-                  <span className="font-semibold text-primary text-sm">Sigilo Garantido</span>
+                  <span className="font-semibold text-foreground text-sm">Sigilo Garantido</span>
                 </div>
               </motion.div>
               
@@ -144,8 +151,8 @@ export const RescueService = () => {
                 className="absolute top-1/2 -left-4 bg-white rounded-xl px-4 py-3 shadow-lg"
               >
                 <div className="flex items-center gap-2">
-                  <HeartHandshake className="w-5 h-5 text-primary" />
-                  <span className="font-semibold text-primary text-sm">Humanizado</span>
+                  <HeartHandshake className="w-5 h-5 text-secondary" />
+                  <span className="font-semibold text-foreground text-sm">Humanizado</span>
                 </div>
               </motion.div>
             </div>

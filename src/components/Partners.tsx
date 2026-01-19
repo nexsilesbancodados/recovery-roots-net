@@ -37,7 +37,7 @@ export const Partners = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="py-20 overflow-hidden">
+    <section className="py-20 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-4 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,20 +46,20 @@ export const Partners = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
+            <span className="w-2 h-2 rounded-full bg-secondary" />
             Planos de Saúde
           </span>
-          <h2 className="text-2xl md:text-3xl font-display font-semibold text-white">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
             Convênios Aceitos
           </h2>
-          <p className="text-white/80 mt-3 max-w-md mx-auto">
+          <p className="text-muted-foreground max-w-md mx-auto">
             Trabalhamos com os principais planos de saúde do Brasil
           </p>
         </motion.div>
       </div>
 
       <div className="relative">
-
         <div className="flex animate-scroll-left">
           {duplicatedPartners.map((partner, index) => (
             <motion.div
@@ -68,22 +68,18 @@ export const Partners = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <GlowCard 
-                glowColor="emerald" 
-                customSize 
-                className="w-[220px] h-[200px] flex flex-col items-center justify-center gap-3 p-6"
-              >
-                <div className="w-full h-[120px] flex items-center justify-center p-3 rounded-xl bg-white shadow-sm">
+              <div className="w-[200px] h-[160px] bg-white rounded-2xl shadow-soft border border-border/50 flex flex-col items-center justify-center gap-3 p-5 hover:shadow-card hover:border-secondary/30 transition-all duration-300">
+                <div className="w-full h-[100px] flex items-center justify-center p-3">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="max-h-[100px] max-w-[160px] w-auto h-auto object-contain"
+                    className="max-h-[80px] max-w-[140px] w-auto h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
                   />
                 </div>
-                <span className="text-sm font-semibold text-foreground/80 text-center group-hover:text-primary transition-colors line-clamp-2">
+                <span className="text-xs font-medium text-muted-foreground text-center group-hover:text-foreground transition-colors line-clamp-1">
                   {partner.name}
                 </span>
-              </GlowCard>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -97,7 +93,7 @@ export const Partners = () => {
         className="text-center mt-10"
       >
         <p className="text-sm text-muted-foreground">
-          E muitos outros convênios • <span className="text-primary font-medium">Consulte disponibilidade</span>
+          E muitos outros convênios • <span className="text-secondary font-semibold">Consulte disponibilidade</span>
         </p>
       </motion.div>
     </section>
