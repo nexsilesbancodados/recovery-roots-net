@@ -55,18 +55,8 @@ export const ParallaxBackground = ({ children, className = "" }: ParallaxBackgro
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1]);
 
   return (
-    <div ref={ref} className={`relative overflow-hidden ${className}`}>
-      <motion.div
-        style={{ y, scale }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-      >
-        {/* Decorative parallax elements - sempre atrás do conteúdo */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/8 rounded-full blur-3xl -z-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/3 rounded-full blur-3xl -z-10" />
-      </motion.div>
-      <div className="relative z-10">
+    <div ref={ref} className={`relative ${className}`}>
+      <div className="relative">
         {children}
       </div>
     </div>
