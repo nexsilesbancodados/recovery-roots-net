@@ -179,25 +179,24 @@ export const ChatWidget = () => {
 
   return (
     <>
-      {/* Chat Button */}
+      {/* Chat Button with Gold Glow */}
       <AnimatePresence>
         {!isOpen && (
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0, opacity: 0 }}
-            transition={{ delay: 1, duration: 0.3, type: "spring", stiffness: 200 }}
+            transition={{ delay: 2, duration: 0.4, type: "spring", stiffness: 200 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleOpen}
-            className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-primary text-primary-foreground px-5 py-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="fixed bottom-8 right-8 z-50 flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 shadow-elevated hover:shadow-glow-gold transition-all duration-500 animate-pulse-glow"
             aria-label="Abrir chat"
           >
             <Bot className="w-6 h-6" />
-            <span className="font-medium text-sm hidden sm:inline-block">
+            <span className="font-medium text-sm hidden sm:inline-block tracking-wide">
               Tire suas dúvidas
             </span>
-            <span className="absolute -inset-1 rounded-full bg-primary/30 animate-ping opacity-75 pointer-events-none" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -209,23 +208,23 @@ export const ChatWidget = () => {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-elevated overflow-hidden border border-border/50"
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-8 right-8 z-50 w-[400px] max-w-[calc(100vw-2rem)] bg-white shadow-elevated overflow-hidden border border-border/50"
           >
             {/* Header */}
-            <div className="bg-primary text-primary-foreground px-4 py-4 flex items-center justify-between">
+            <div className="bg-primary text-primary-foreground px-5 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                  <Bot className="w-5 h-5" />
+                <div className="w-11 h-11 bg-white/10 flex items-center justify-center">
+                  <Bot className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm">Assistente Virtual</h3>
-                  <p className="text-xs text-primary-foreground/80">Hospital Rumo Certo</p>
+                  <h3 className="font-medium text-sm tracking-wide">Assistente Virtual</h3>
+                  <p className="text-xs text-primary-foreground/70">Hospital Rumo Certo</p>
                 </div>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 hover:bg-white/10 rounded-full transition-colors"
+                className="p-2 hover:bg-white/10 transition-colors"
                 aria-label="Fechar chat"
               >
                 <X className="w-5 h-5" />
@@ -233,7 +232,7 @@ export const ChatWidget = () => {
             </div>
 
             {/* Messages */}
-            <div className="h-[350px] overflow-y-auto p-4 space-y-4 bg-muted/30">
+            <div className="h-[380px] overflow-y-auto p-5 space-y-4 bg-muted/20">
               {messages.map((message) => (
                 <div key={message.id}>
                   <motion.div
@@ -242,21 +241,21 @@ export const ChatWidget = () => {
                     className={`flex items-start gap-2 ${message.isBot ? "" : "flex-row-reverse"}`}
                   >
                     <div
-                      className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        message.isBot ? "bg-primary text-primary-foreground" : "bg-accent text-accent-foreground"
+                      className={`w-8 h-8 flex items-center justify-center flex-shrink-0 ${
+                        message.isBot ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
                       }`}
                     >
                       {message.isBot ? <Bot className="w-4 h-4" /> : <User className="w-4 h-4" />}
                     </div>
                     <div
-                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm ${
+                      className={`max-w-[80%] px-4 py-3 text-sm ${
                         message.isBot
                           ? "bg-white border border-border/50 text-foreground"
                           : "bg-primary text-primary-foreground"
                       }`}
                     >
                       <div 
-                        className="whitespace-pre-line [&_strong]:font-semibold"
+                        className="whitespace-pre-line [&_strong]:font-semibold leading-relaxed"
                         dangerouslySetInnerHTML={{ 
                           __html: message.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') 
                         }}
@@ -276,7 +275,7 @@ export const ChatWidget = () => {
                         <button
                           key={idx}
                           onClick={() => handleQuickOption(option)}
-                          className="text-xs px-3 py-1.5 rounded-full border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                          className="text-xs px-3 py-1.5 border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                         >
                           {option.label}
                         </button>
@@ -292,10 +291,10 @@ export const ChatWidget = () => {
                   animate={{ opacity: 1 }}
                   className="flex items-center gap-2"
                 >
-                  <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center">
                     <Bot className="w-4 h-4" />
                   </div>
-                  <div className="bg-white border border-border/50 rounded-2xl px-4 py-3">
+                  <div className="bg-white border border-border/50 px-4 py-3">
                     <div className="flex gap-1">
                       <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
                       <span className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
@@ -321,19 +320,19 @@ export const ChatWidget = () => {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Digite sua mensagem..."
-                  className="flex-1 border-border/50 focus-visible:ring-primary"
+                  className="flex-1 border-border/50 focus-visible:ring-primary rounded-none"
                 />
-                <Button type="submit" size="icon" className="flex-shrink-0">
+                <Button type="submit" size="icon" className="flex-shrink-0 rounded-none">
                   <Send className="w-4 h-4" />
                 </Button>
               </form>
-              <p className="text-xs text-muted-foreground text-center mt-2">
+              <p className="text-xs text-muted-foreground text-center mt-3">
                 Ou fale direto via{" "}
                 <a
                   href="https://api.whatsapp.com/send?phone=5511955931301"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:underline inline-flex items-center gap-1"
+                  className="text-primary hover:text-secondary inline-flex items-center gap-1 font-medium transition-colors"
                 >
                   WhatsApp <ArrowRight className="w-3 h-3" />
                 </a>

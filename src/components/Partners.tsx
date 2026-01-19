@@ -1,7 +1,8 @@
-import { motion } from "framer-motion";
-import { GlowCard } from "@/components/ui/glow-card";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Logos importadas - apenas convênios com logo real
+// Logos importadas
 import bradescoSaude from "@/assets/convenios/bradesco-saude.png";
 import cabesp from "@/assets/convenios/cabesp.png";
 import cassi from "@/assets/convenios/cassi.png";
@@ -13,12 +14,13 @@ import phsSamaritano from "@/assets/convenios/phs-samaritano.png";
 import donaSaude from "@/assets/convenios/dona-saude.png";
 import ipref from "@/assets/convenios/ipref.png";
 
+gsap.registerPlugin(ScrollTrigger);
+
 interface Partner {
   name: string;
   logo: string;
 }
 
-// Apenas convênios com logo real para visual mais profissional
 const partners: Partner[] = [
   { name: "Bradesco Saúde", logo: bradescoSaude },
   { name: "Cabesp", logo: cabesp },
@@ -33,69 +35,144 @@ const partners: Partner[] = [
 ];
 
 export const Partners = () => {
-  // Duplicar para efeito infinito
-  const duplicatedPartners = [...partners, ...partners];
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const track1Ref = useRef<HTMLDivElement>(null);
+  const track2Ref = useRef<HTMLDivElement>(null);
+
+  const duplicatedPartners = [...partners, ...partners, ...partners];
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Title animation
+      if (titleRef.current) {
+        gsap.fromTo(
+          titleRef.current.children,
+          { y: 60, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            stagger: 0.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: titleRef.current,
+              start: "top 85%",
+            },
+          }
+        );
+      }
+
+      // Parallax effect on tracks
+      if (track1Ref.current && track2Ref.current) {
+        gsap.to(track1Ref.current, {
+          x: -100,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+
+        gsap.to(track2Ref.current, {
+          x: 50,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="py-20 bg-muted/30 overflow-hidden">
-      <div className="container mx-auto px-4 mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
-            <span className="w-2 h-2 rounded-full bg-secondary" />
-            Planos de Saúde
-          </span>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
-            Convênios Aceitos
-          </h2>
-          <p className="text-muted-foreground max-w-md mx-auto">
-            Trabalhamos com os principais planos de saúde do Brasil
-          </p>
-        </motion.div>
+    <section 
+      ref={sectionRef}
+      className="py-24 lg:py-32 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden relative"
+    >
+      {/* Decorative elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
-      <div className="relative">
-        <div className="flex animate-scroll-left">
+      <div className="container mx-auto px-4 mb-16" ref={titleRef}>
+        <div className="text-center max-w-2xl mx-auto">
+          <p className="text-secondary font-medium tracking-[0.2em] uppercase text-sm mb-4">
+            Conveniência Absoluta
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6">
+            Convênios Aceitos
+          </h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Cuidamos de toda a burocracia para que sua única preocupação seja o seu bem-estar.
+          </p>
+        </div>
+      </div>
+
+      {/* Track 1 - Moving Left */}
+      <div className="relative mb-6">
+        <div 
+          ref={track1Ref}
+          className="flex animate-scroll-left"
+        >
           {duplicatedPartners.map((partner, index) => (
-            <motion.div
-              key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-4 flex items-center justify-center group"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
+            <div
+              key={`track1-${partner.name}-${index}`}
+              className="flex-shrink-0 mx-4"
             >
-              <div className="w-[200px] h-[160px] bg-white rounded-2xl shadow-soft border border-border/50 flex flex-col items-center justify-center gap-3 p-5 hover:shadow-card hover:border-secondary/30 transition-all duration-300">
-                <div className="w-full h-[100px] flex items-center justify-center p-3">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="max-h-[80px] max-w-[140px] w-auto h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
-                </div>
-                <span className="text-xs font-medium text-muted-foreground text-center group-hover:text-foreground transition-colors line-clamp-1">
-                  {partner.name}
-                </span>
+              <div className="w-[180px] h-[120px] bg-white/80 backdrop-blur-sm border border-border/50 flex items-center justify-center p-6 group hover:border-secondary/30 hover:shadow-soft transition-all duration-500">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="max-h-[60px] max-w-[120px] w-auto h-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
 
-      {/* Indicador de mais convênios */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="text-center mt-10"
-      >
+      {/* Track 2 - Moving Right (slower) */}
+      <div className="relative">
+        <div 
+          ref={track2Ref}
+          className="flex animate-scroll-left"
+          style={{ animationDirection: 'reverse', animationDuration: '70s' }}
+        >
+          {[...duplicatedPartners].reverse().map((partner, index) => (
+            <div
+              key={`track2-${partner.name}-${index}`}
+              className="flex-shrink-0 mx-4"
+            >
+              <div className="w-[180px] h-[120px] bg-white/80 backdrop-blur-sm border border-border/50 flex items-center justify-center p-6 group hover:border-secondary/30 hover:shadow-soft transition-all duration-500">
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name}
+                  className="max-h-[60px] max-w-[120px] w-auto h-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Bottom text */}
+      <div className="text-center mt-12">
         <p className="text-sm text-muted-foreground">
-          E muitos outros convênios • <span className="text-secondary font-semibold">Consulte disponibilidade</span>
+          E muitos outros convênios • 
+          <a href="#contato" className="text-secondary hover:text-secondary/80 font-medium ml-1 transition-colors">
+            Consulte disponibilidade
+          </a>
         </p>
-      </motion.div>
+      </div>
     </section>
   );
 };

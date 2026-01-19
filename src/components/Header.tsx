@@ -1,49 +1,67 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { gsap } from "gsap";
 import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-hospital.png";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
-  { label: "Sobre Nós", href: "#sobre" },
+  { label: "Sobre", href: "#sobre" },
   { label: "Tratamentos", href: "#tratamentos" },
   { label: "Estrutura", href: "#estrutura" },
+  { label: "Equipe", href: "#equipe" },
   { label: "Contato", href: "#contato" },
 ];
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+  const topBarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 80);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Animate header on load
+    gsap.fromTo(
+      headerRef.current,
+      { y: -100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2 }
+    );
   }, []);
 
   return (
     <>
-      {/* Top Bar */}
-      <div className={`hidden md:block transition-all duration-500 ${isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-10 opacity-100'}`}>
-        <div className="bg-primary text-primary-foreground/90 text-sm h-10">
+      {/* Top Bar - Info */}
+      <div 
+        ref={topBarRef}
+        className={`hidden md:block fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
+          isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-11 opacity-100'
+        }`}
+      >
+        <div className="glass-emerald text-primary-foreground/90 text-sm h-11">
           <div className="container mx-auto px-4 h-full">
             <div className="flex items-center justify-between h-full">
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-8">
                 <div className="flex items-center gap-2">
                   <Clock className="w-3.5 h-3.5 text-secondary" />
-                  <span>Atendimento 24 horas</span>
+                  <span className="font-light tracking-wide">Atendimento 24 horas</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-secondary" />
-                  <span>Cabreúva e Salto, SP</span>
+                  <span className="font-light tracking-wide">Cabreúva e Salto, SP</span>
                 </div>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-3.5 h-3.5 text-secondary" />
-                <a href="tel:5511955931301" className="hover:text-secondary transition-colors font-medium">
+                <a href="tel:5511955931301" className="hover:text-secondary transition-colors font-medium tracking-wide">
                   (11) 95593-1301
                 </a>
               </div>
@@ -54,10 +72,11 @@ export const Header = () => {
 
       {/* Main Header */}
       <header 
-        className={`sticky top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        ref={headerRef}
+        className={`fixed left-0 right-0 z-50 transition-all duration-700 ${
           isScrolled 
-            ? 'bg-white/95 backdrop-blur-xl shadow-lg py-2' 
-            : 'bg-transparent py-4'
+            ? 'top-0 bg-white/95 backdrop-blur-xl shadow-soft py-3' 
+            : 'top-11 md:top-11 bg-transparent py-6'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -67,54 +86,61 @@ export const Header = () => {
               <img 
                 src={logo} 
                 alt="Hospital Rumo Certo" 
-                className={`transition-all duration-500 ${isScrolled ? 'h-14' : 'h-16'} w-auto`}
+                className={`transition-all duration-500 ${
+                  isScrolled 
+                    ? 'h-12' 
+                    : 'h-14 md:h-16 brightness-0 invert'
+                } w-auto`}
               />
             </a>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 relative group ${
+                  className={`px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 relative group ${
                     isScrolled 
-                      ? 'text-foreground hover:text-primary hover:bg-primary/5' 
-                      : 'text-white/90 hover:text-white hover:bg-white/10'
+                      ? 'text-foreground hover:text-primary' 
+                      : 'text-white/80 hover:text-white'
                   }`}
+                  style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   {item.label}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-1/2 rounded-full" />
+                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-300 group-hover:w-1/2 w-0 ${
+                    isScrolled ? 'bg-secondary' : 'bg-secondary'
+                  }`} />
                 </a>
               ))}
             </nav>
 
             {/* CTA Buttons */}
-            <div className="hidden md:flex items-center gap-3">
-              <div className={`hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium ${
+            <div className="hidden md:flex items-center gap-4">
+              <div className={`hidden lg:flex items-center gap-2 px-4 py-2 text-xs font-medium tracking-wider uppercase ${
                 isScrolled 
-                  ? 'bg-green-100 text-green-700' 
-                  : 'bg-white/10 text-white/90 backdrop-blur-sm'
+                  ? 'text-primary' 
+                  : 'text-white/70'
               }`}>
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Online agora
+                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span>Online</span>
               </div>
               <Button 
                 asChild 
-                className={`rounded-full px-6 transition-all duration-300 ${
+                className={`rounded-none px-8 transition-all duration-500 tracking-wide font-medium ${
                   isScrolled 
-                    ? 'bg-primary hover:bg-primary/90' 
+                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
                     : 'bg-secondary text-secondary-foreground hover:bg-secondary/90'
                 }`}
               >
-                <a href="#contato">Fale Conosco</a>
+                <a href="#contato">Agendar Consulta</a>
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 rounded-lg transition-colors ${
+              className={`lg:hidden p-3 transition-colors ${
                 isScrolled ? 'text-foreground hover:bg-muted' : 'text-white hover:bg-white/10'
               }`}
               aria-label="Menu"
@@ -131,25 +157,25 @@ export const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-border shadow-xl"
+              className="lg:hidden bg-white border-t border-border shadow-elevated absolute top-full left-0 right-0"
             >
-              <nav className="container mx-auto px-4 py-6 flex flex-col gap-1">
+              <nav className="container mx-auto px-4 py-8 flex flex-col gap-1">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors py-3 px-4 rounded-xl"
+                    className="text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors py-4 px-4 border-b border-border/50 last:border-0"
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="flex items-center gap-2 text-sm text-muted-foreground py-3 px-4 mt-2 border-t border-border">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground py-4 px-4 mt-4 bg-muted/30">
                   <Phone className="w-4 h-4 text-secondary" />
                   <span className="font-medium">(11) 95593-1301</span>
                 </div>
-                <Button asChild className="mt-4 rounded-full">
-                  <a href="#contato">Fale Conosco</a>
+                <Button asChild className="mt-4 rounded-none">
+                  <a href="#contato">Agendar Consulta</a>
                 </Button>
               </nav>
             </motion.div>
