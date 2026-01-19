@@ -49,10 +49,10 @@ const itemVariants = {
 
 export const Testimonials = () => {
   return (
-    <section className="py-20 lg:py-28 gradient-soft relative overflow-hidden">
+    <section className="py-20 lg:py-28 relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -89,7 +89,7 @@ export const Testimonials = () => {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="bg-card rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-500 border border-border/50 h-full flex flex-col">
+              <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-8 shadow-card hover:shadow-elevated transition-all duration-500 border border-border/50 h-full flex flex-col">
                 {/* Quote Icon */}
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
                   <Quote className="w-6 h-6 text-primary" />

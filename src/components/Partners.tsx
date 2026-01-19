@@ -37,7 +37,7 @@ export const Partners = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden">
+    <section className="py-20 overflow-hidden">
       <div className="container mx-auto px-4 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
