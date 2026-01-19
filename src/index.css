@@ -123,6 +123,8 @@
       hsl(225 55% 22%) 70%, 
       hsl(225 65% 18%) 100%
     );
+    background-attachment: fixed;
+    background-size: cover;
     min-height: 100vh;
   }
 

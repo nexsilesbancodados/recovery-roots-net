@@ -24,7 +24,7 @@ export const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="py-24 bg-background">
+    <section id="sobre" className="py-24">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center" ref={ref}>
           {/* Image */}
@@ -121,7 +121,7 @@ export const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-card transition-all duration-300"
+                className="bg-card/80 backdrop-blur-sm rounded-xl p-6 border border-border/50 hover:border-primary/30 hover:shadow-card transition-all duration-300"
               >
                 <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center mb-4">
                   <MapPin className="w-5 h-5 text-primary" />

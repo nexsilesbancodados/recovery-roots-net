@@ -96,7 +96,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
   };
 
   return (
-    <section id="contato" className="py-24 bg-background">
+    <section id="contato" className="py-24">
       <div className="container mx-auto px-4" ref={ref}>
         {/* Credibility Badges */}
         <motion.div
@@ -108,7 +108,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
           {credentials.map((cred, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-border/50 shadow-soft"
+              className="flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border border-border/50 shadow-soft"
             >
               <cred.icon className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-foreground">{cred.label}</span>
@@ -167,7 +167,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Card className="bg-white border-border/50 shadow-card">
+            <Card className="bg-card/90 backdrop-blur-sm border-border/50 shadow-card">
               <CardContent className="p-8">
                 <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">
                   Solicite Contato
@@ -282,7 +282,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
-              <Card className="text-center bg-white border-border/50 hover:border-primary/30 hover:shadow-card transition-all duration-300">
+              <Card className="text-center bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/30 hover:shadow-card transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center mx-auto mb-4">
                     <info.icon className="w-5 h-5 text-primary" />

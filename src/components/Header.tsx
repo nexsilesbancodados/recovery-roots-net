@@ -42,7 +42,7 @@ export const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-border/50 shadow-soft">
+      <header className="sticky top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border/50 shadow-soft">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
@@ -97,7 +97,7 @@ export const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-border"
+              className="lg:hidden bg-card/95 backdrop-blur-md border-t border-border"
             >
               <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
                 {navItems.map((item) => (
