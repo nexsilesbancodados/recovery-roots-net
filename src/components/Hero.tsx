@@ -84,8 +84,8 @@ export const Hero = () => {
                 <Award className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-primary-foreground">12 Passos</div>
-                <div className="text-sm text-primary-foreground/70">Metodologia reconhecida</div>
+                <div className="text-2xl font-bold text-primary-foreground">+18 Anos</div>
+                <div className="text-sm text-primary-foreground/70">De experiência</div>
               </div>
             </div>
             <div className="w-px h-12 bg-white/20 hidden sm:block" />
@@ -94,8 +94,8 @@ export const Hero = () => {
                 <Shield className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <div className="text-2xl font-bold text-primary-foreground">Equipe</div>
-                <div className="text-sm text-primary-foreground/70">Multidisciplinar</div>
+                <div className="text-2xl font-bold text-primary-foreground">4 Unidades</div>
+                <div className="text-sm text-primary-foreground/70">Especializadas</div>
               </div>
             </div>
             <div className="w-px h-12 bg-white/20 hidden sm:block" />
@@ -105,7 +105,7 @@ export const Hero = () => {
               </div>
               <div>
                 <div className="text-2xl font-bold text-primary-foreground">24h</div>
-                <div className="text-sm text-primary-foreground/70">Suporte contínuo</div>
+                <div className="text-sm text-primary-foreground/70">Atendimento</div>
               </div>
             </div>
           </motion.div>
