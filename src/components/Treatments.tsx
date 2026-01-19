@@ -42,7 +42,7 @@ export const Treatments = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="tratamentos" className="py-24 bg-background">
+    <section id="tratamentos" className="py-24 gradient-soft">
       <div className="container mx-auto px-4" ref={ref}>
         {/* Header */}
         <motion.div

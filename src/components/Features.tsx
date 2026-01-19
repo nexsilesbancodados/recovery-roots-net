@@ -31,7 +31,7 @@ export const Features = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="estrutura" className="py-24 gradient-soft">
+    <section id="estrutura" className="py-24 bg-background">
       <div className="container mx-auto px-4" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
