@@ -56,22 +56,25 @@ export const Partners = () => {
 
       <div className="relative">
         {/* Gradiente esquerdo */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-muted/30 to-transparent z-10" />
         {/* Gradiente direito */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-muted/30 to-transparent z-10" />
 
         <div className="flex animate-scroll-left">
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-6 flex items-center justify-center"
+              className="flex-shrink-0 mx-4 flex items-center justify-center"
             >
-              <div className="bg-white border border-border/40 rounded-xl px-8 py-5 min-w-[200px] h-[100px] flex items-center justify-center hover:border-primary/30 hover:shadow-soft transition-all duration-300">
+              <div className="bg-white border border-border/40 rounded-xl px-6 py-4 min-w-[180px] flex flex-col items-center justify-center gap-3 hover:border-primary/30 hover:shadow-md transition-all duration-300">
                 <img 
                   src={partner.logo} 
                   alt={partner.name}
-                  className="h-16 w-auto max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  className="h-14 w-auto max-w-[140px] object-contain"
                 />
+                <span className="text-xs font-medium text-foreground/80 text-center">
+                  {partner.name}
+                </span>
               </div>
             </div>
           ))}
