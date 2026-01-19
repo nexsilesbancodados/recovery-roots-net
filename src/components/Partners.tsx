@@ -1,26 +1,55 @@
 import { motion } from "framer-motion";
 
-const partners = [
+// Logos baixadas
+import bradesco from "@/assets/convenios/bradesco.svg";
+import mediservice from "@/assets/convenios/mediservice.svg";
+import saoluiz from "@/assets/convenios/saoluiz.svg";
+import saudecaixa from "@/assets/convenios/saudecaixa.svg";
+
+interface Partner {
+  name: string;
+  logo?: string;
+  color?: string;
+}
+
+const partners: Partner[] = [
+  { name: "Bradesco Saúde", logo: bradesco },
   { name: "Cabesp", color: "#2E7D32" },
   { name: "Cassi", color: "#C62828" },
-  { name: "Real Grandeza", color: "#7B1FA2" },
-  { name: "GEAP Saúde", color: "#1565C0" },
-  { name: "Dona Saúde", color: "#00897B" },
+  { name: "GEAP Saúde", color: "#0D47A1" },
   { name: "Gama Saúde", color: "#F57C00" },
-  { name: "PHS Samaritano", color: "#7B1FA2" },
-  { name: "Select Saúde", color: "#7E57C2" },
+  { name: "Mediservice", logo: mediservice },
+  { name: "São Luiz", logo: saoluiz },
+  { name: "Saúde Caixa", logo: saudecaixa },
   { name: "Porto Saúde", color: "#1565C0" },
   { name: "Saúde Itaú", color: "#FF6F00" },
-  { name: "Bradesco Saúde", color: "#C62828" },
   { name: "Blue Med", color: "#0288D1" },
-  { name: "IPREF", color: "#1976D2" },
-  { name: "Blue Med Consciente", color: "#0097A7" },
-  { name: "São Luiz", color: "#1565C0" },
   { name: "Care Plus", color: "#2E7D32" },
-  { name: "Mediservice", color: "#1565C0" },
+  { name: "Select Saúde", color: "#7E57C2" },
+  { name: "Real Grandeza", color: "#7B1FA2" },
+  { name: "PHS Samaritano", color: "#7B1FA2" },
+  { name: "Dona Saúde", color: "#00897B" },
+  { name: "IPREF", color: "#1976D2" },
   { name: "FUSEX", color: "#424242" },
-  { name: "Saúde Caixa", color: "#0D47A1" },
 ];
+
+// Componente de logo estilizada para convênios sem imagem
+const StyledLogo = ({ name, color }: { name: string; color: string }) => (
+  <div className="flex items-center gap-2">
+    <div 
+      className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+      style={{ backgroundColor: color }}
+    >
+      {name.charAt(0)}
+    </div>
+    <span 
+      className="font-bold text-base whitespace-nowrap"
+      style={{ color }}
+    >
+      {name}
+    </span>
+  </div>
+);
 
 export const Partners = () => {
   // Duplicar para efeito infinito
@@ -55,17 +84,18 @@ export const Partners = () => {
           {duplicatedPartners.map((partner, index) => (
             <div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-6 flex items-center justify-center"
+              className="flex-shrink-0 mx-4 flex items-center justify-center"
             >
-              <div
-                className="bg-white rounded-xl shadow-md px-6 py-4 min-w-[160px] h-[80px] flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
-              >
-                <span
-                  className="font-bold text-lg whitespace-nowrap"
-                  style={{ color: partner.color }}
-                >
-                  {partner.name}
-                </span>
+              <div className="bg-white rounded-xl shadow-md px-5 py-3 min-w-[180px] h-[70px] flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
+                {partner.logo ? (
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="h-10 w-auto max-w-[140px] object-contain"
+                  />
+                ) : (
+                  <StyledLogo name={partner.name} color={partner.color || "#333"} />
+                )}
               </div>
             </div>
           ))}
