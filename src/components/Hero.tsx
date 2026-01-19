@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Heart, Shield, Users } from "lucide-react";
+import { ArrowRight, Shield, Award, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-hospital.jpg";
 
 export const Hero = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center">
+    <section id="inicio" className="relative min-h-[90vh] flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -17,15 +17,22 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 pt-32 pb-20">
+      <div className="relative container mx-auto px-4 pt-24 pb-20">
         <div className="max-w-3xl">
+          {/* Institutional Badge */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="flex flex-wrap items-center gap-3 mb-8"
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6">
-              Ambiente sereno e acolhedor em Cabreúva, SP
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm text-primary-foreground text-sm font-medium border border-white/20">
+              <Shield className="w-4 h-4" />
+              Tratamento Especializado
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-sm text-primary-foreground text-sm font-medium border border-white/20">
+              <Clock className="w-4 h-4" />
+              Atendimento 24h
             </span>
           </motion.div>
 
@@ -42,10 +49,10 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl"
+            className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl leading-relaxed"
           >
-            Tratamentos excepcionais e especializados para saúde mental, alcoolismo e dependência química. 
-            Com o reconhecido Programa de 12 Passos e equipe altamente qualificada.
+            Tratamentos especializados para saúde mental, alcoolismo e dependência química 
+            com o reconhecido Programa de 12 Passos e equipe multidisciplinar.
           </motion.p>
 
           <motion.div
@@ -54,7 +61,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" variant="secondary" asChild className="group">
+            <Button size="lg" variant="secondary" asChild className="group shadow-lg">
               <a href="#contato">
                 Agende uma Avaliação
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -65,33 +72,41 @@ export const Hero = () => {
             </Button>
           </motion.div>
 
-          {/* Stats */}
+          {/* Credibility Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="grid grid-cols-3 gap-6 mt-16 max-w-lg"
+            className="flex flex-wrap items-center gap-8 mt-16"
           >
-            <div className="text-center">
-              <div className="flex justify-center mb-2">
-                <Users className="w-6 h-6 text-primary-foreground/80" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                <Award className="w-6 h-6 text-primary-foreground" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">3</div>
-              <div className="text-sm text-primary-foreground/70">Unidades especializadas</div>
+              <div>
+                <div className="text-2xl font-bold text-primary-foreground">12 Passos</div>
+                <div className="text-sm text-primary-foreground/70">Metodologia reconhecida</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-2">
-                <Heart className="w-6 h-6 text-primary-foreground/80" />
+            <div className="w-px h-12 bg-white/20 hidden sm:block" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                <Shield className="w-6 h-6 text-primary-foreground" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">12</div>
-              <div className="text-sm text-primary-foreground/70">Passos para recuperação</div>
+              <div>
+                <div className="text-2xl font-bold text-primary-foreground">Equipe</div>
+                <div className="text-sm text-primary-foreground/70">Multidisciplinar</div>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-2">
-                <Shield className="w-6 h-6 text-primary-foreground/80" />
+            <div className="w-px h-12 bg-white/20 hidden sm:block" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-lg bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                <Clock className="w-6 h-6 text-primary-foreground" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">24h</div>
-              <div className="text-sm text-primary-foreground/70">Suporte contínuo</div>
+              <div>
+                <div className="text-2xl font-bold text-primary-foreground">24h</div>
+                <div className="text-sm text-primary-foreground/70">Suporte contínuo</div>
+              </div>
             </div>
           </motion.div>
         </div>

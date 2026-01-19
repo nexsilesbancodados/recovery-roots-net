@@ -149,7 +149,16 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
+    animation: scroll-left 35s linear infinite;
+  }
+
+  /* Grayscale filter for partner logos */
+  .grayscale {
+    filter: grayscale(100%);
+  }
+
+  .grayscale-0 {
+    filter: grayscale(0%);
   }
 }
 
