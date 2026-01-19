@@ -43,10 +43,10 @@ export const Features = () => {
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
               Nossa Estrutura
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">
               Ambiente pensado para sua recuperação
             </h2>
-            <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+            <p className="text-white/80 text-lg mb-10 leading-relaxed">
               Nossa estrutura foi projetada para proporcionar conforto, segurança e 
               um ambiente propício à cura. Cada detalhe foi pensado para contribuir 
               com o processo de recuperação.
@@ -65,8 +65,8 @@ export const Features = () => {
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h3 className="font-semibold text-white mb-1">{feature.title}</h3>
+                    <p className="text-sm text-white/70">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

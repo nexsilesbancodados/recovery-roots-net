@@ -128,10 +128,10 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
               Estamos Prontos Para Ajudar
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               O primeiro passo para a <span className="text-primary">mudança</span> começa agora
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-white/80 text-lg mb-8">
               Preencha o formulário ao lado e nossa equipe entrará em contato 
               para acolher você ou seu familiar e iniciar o caminho da recuperação.
             </p>
@@ -147,8 +147,8 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
 
             {/* Trust indicators */}
             <div className="mt-10 pt-8 border-t border-white/10">
-              <p className="text-sm text-muted-foreground mb-4">Atendimento confidencial e humanizado</p>
-              <div className="flex items-center gap-6 text-sm text-foreground/80">
+              <p className="text-sm text-white/70 mb-4">Atendimento confidencial e humanizado</p>
+              <div className="flex items-center gap-6 text-sm text-white/80">
                 <div className="flex items-center gap-2">
                   <Shield className="w-4 h-4 text-primary" />
                   <span>Sigilo total</span>

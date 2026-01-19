@@ -86,10 +86,10 @@ export const Gallery = () => {
           <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
             Nossa Estrutura
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
             Conheça Nossas Instalações
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-white/80 max-w-2xl mx-auto text-lg">
             Ambientes projetados para oferecer conforto, segurança e bem-estar
             durante todo o processo de recuperação.
           </p>

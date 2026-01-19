@@ -66,10 +66,10 @@ export const Testimonials = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Depoimentos
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold text-white mb-4">
             Histórias de <span className="text-primary">Transformação</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-white/80 max-w-2xl mx-auto text-lg">
             Conheça relatos reais de pessoas que encontraram no Hospital Rumo Certo 
             o caminho para a recuperação e uma nova vida.
           </p>
@@ -128,21 +128,21 @@ export const Testimonials = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <p className="text-muted-foreground text-sm mb-6">
+          <p className="text-white/70 text-sm mb-6">
             Depoimentos reais de pacientes e familiares. Identidades preservadas por questões de privacidade.
           </p>
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-serif font-bold text-primary">+2.500</p>
-              <p className="text-sm text-muted-foreground mt-1">Pacientes atendidos</p>
+              <p className="text-sm text-white/70 mt-1">Pacientes atendidos</p>
             </div>
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-serif font-bold text-primary">18+</p>
-              <p className="text-sm text-muted-foreground mt-1">Anos de experiência</p>
+              <p className="text-sm text-white/70 mt-1">Anos de experiência</p>
             </div>
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-serif font-bold text-primary">4</p>
-              <p className="text-sm text-muted-foreground mt-1">Unidades especializadas</p>
+              <p className="text-sm text-white/70 mt-1">Unidades especializadas</p>
             </div>
           </div>
         </motion.div>
