@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroImage from "@/assets/hero-hospital.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,17 +72,12 @@ export const Hero = () => {
     >
       {/* Background Video/Image */}
       <div className="absolute inset-0">
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover animate-ken-burns"
-          poster="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1920&q=80"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-tops-seen-from-above-7-large.mp4" type="video/mp4" />
-        </video>
+        <img
+          src={heroImage}
+          alt="Hospital Rumo Certo - Fachada"
+          className="w-full h-full object-cover"
+        />
+        
         
         <div 
           ref={overlayRef}
