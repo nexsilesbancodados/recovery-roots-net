@@ -36,8 +36,8 @@ export const Partners = () => {
   const duplicatedPartners = [...partners, ...partners];
 
   return (
-    <section className="py-16 gradient-soft border-t border-border/30 overflow-hidden">
-      <div className="container mx-auto px-4 mb-10">
+    <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden">
+      <div className="container mx-auto px-4 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,41 +45,60 @@ export const Partners = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-2">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Planos de Saúde
-          </p>
-          <h2 className="text-xl md:text-2xl font-display font-semibold text-foreground">
+          </span>
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-foreground">
             Convênios Aceitos
           </h2>
+          <p className="text-muted-foreground mt-3 max-w-md mx-auto">
+            Trabalhamos com os principais planos de saúde do Brasil
+          </p>
         </motion.div>
       </div>
 
       <div className="relative">
-        {/* Gradiente esquerdo */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-muted/30 to-transparent z-10" />
-        {/* Gradiente direito */}
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-muted/30 to-transparent z-10" />
+        {/* Gradiente esquerdo mais suave */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+        {/* Gradiente direito mais suave */}
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
         <div className="flex animate-scroll-left">
           {duplicatedPartners.map((partner, index) => (
-            <div
+            <motion.div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-8 flex items-center justify-center"
+              className="flex-shrink-0 mx-10 flex items-center justify-center group"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="flex flex-col items-center justify-center gap-3 px-4 py-2">
-                <img 
-                  src={partner.logo} 
-                  alt={partner.name}
-                  className="h-24 w-auto max-w-[200px] object-contain"
-                />
-                <span className="text-sm font-medium text-foreground/70 text-center">
+              <div className="flex flex-col items-center justify-center gap-4 px-6 py-4 rounded-2xl bg-white/50 backdrop-blur-sm border border-border/20 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300">
+                <div className="p-4 rounded-xl bg-white shadow-sm">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="h-20 w-auto max-w-[160px] object-contain drop-shadow-sm"
+                  />
+                </div>
+                <span className="text-sm font-semibold text-foreground/80 text-center group-hover:text-primary transition-colors">
                   {partner.name}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Indicador de mais convênios */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="text-center mt-10"
+      >
+        <p className="text-sm text-muted-foreground">
+          E muitos outros convênios • <span className="text-primary font-medium">Consulte disponibilidade</span>
+        </p>
+      </motion.div>
     </section>
   );
 };
