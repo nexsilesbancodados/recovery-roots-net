@@ -87,14 +87,14 @@ export const Features = () => {
           </motion.div>
 
           {/* Images Grid */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="space-y-3">
+          <div className="grid grid-cols-2 gap-2 max-w-sm lg:max-w-md mx-auto lg:mx-0">
+            <div className="space-y-2">
               <motion.div 
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="aspect-[3/4] rounded-xl overflow-hidden shadow-soft"
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="aspect-[3/4] rounded-lg overflow-hidden shadow-soft"
               >
                 <motion.img
                   src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?auto=format&fit=crop&w=400&q=80"
@@ -107,11 +107,11 @@ export const Features = () => {
                 />
               </motion.div>
               <motion.div 
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="aspect-square rounded-xl overflow-hidden shadow-soft"
+                transition={{ duration: 0.5, delay: 0.08, ease: "easeOut" }}
+                className="aspect-square rounded-lg overflow-hidden shadow-soft"
               >
                 <motion.img
                   src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80"
@@ -124,13 +124,13 @@ export const Features = () => {
                 />
               </motion.div>
             </div>
-            <div className="space-y-3 pt-6">
+            <div className="space-y-2 pt-4">
               <motion.div 
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
-                className="aspect-square rounded-xl overflow-hidden shadow-soft"
+                transition={{ duration: 0.5, delay: 0.06, ease: "easeOut" }}
+                className="aspect-square rounded-lg overflow-hidden shadow-soft"
               >
                 <motion.img
                   src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80"
@@ -143,11 +143,11 @@ export const Features = () => {
                 />
               </motion.div>
               <motion.div 
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.16, ease: "easeOut" }}
-                className="aspect-[3/4] rounded-xl overflow-hidden shadow-soft"
+                transition={{ duration: 0.5, delay: 0.12, ease: "easeOut" }}
+                className="aspect-[3/4] rounded-lg overflow-hidden shadow-soft"
               >
                 <motion.img
                   src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80"

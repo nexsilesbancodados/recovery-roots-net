@@ -77,7 +77,7 @@ export const Testimonials = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-4 md:gap-6"
+          className="grid md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto"
         >
           {testimonials.map((testimonial) => (
             <motion.div
@@ -85,35 +85,35 @@ export const Testimonials = () => {
               variants={itemVariants}
               className="group relative"
             >
-              <div className="bg-white rounded-xl p-5 md:p-6 shadow-soft hover:shadow-card transition-all duration-500 border border-border/50 h-full flex flex-col">
+              <div className="bg-white rounded-lg p-4 shadow-soft hover:shadow-card transition-all duration-300 border border-border/50 h-full flex flex-col">
                 {/* Rating */}
-                <div className="flex gap-0.5 mb-3">
+                <div className="flex gap-0.5 mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-secondary text-secondary" />
+                    <Star key={i} className="w-2.5 h-2.5 fill-secondary text-secondary" />
                   ))}
                 </div>
                 
                 {/* Quote Icon */}
-                <div className="w-9 h-9 rounded-lg bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary/10 transition-colors duration-300">
-                  <Quote className="w-4 h-4 text-primary" />
+                <div className="w-7 h-7 rounded-md bg-primary/5 flex items-center justify-center mb-3 group-hover:bg-primary/10 transition-colors duration-300">
+                  <Quote className="w-3 h-3 text-primary" />
                 </div>
                 
                 {/* Content */}
-                <blockquote className="text-foreground/80 leading-relaxed mb-4 flex-grow text-sm">
+                <blockquote className="text-foreground/80 leading-relaxed mb-3 flex-grow text-xs">
                   "{testimonial.content}"
                 </blockquote>
                 
                 {/* Author */}
-                <div className="border-t border-border pt-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                      <span className="text-white font-semibold text-sm">
+                <div className="border-t border-border pt-3">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                      <span className="text-white font-semibold text-xs">
                         {testimonial.author.charAt(0)}
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground text-sm">{testimonial.author}</p>
-                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                      <p className="font-semibold text-foreground text-xs">{testimonial.author}</p>
+                      <p className="text-[10px] text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>

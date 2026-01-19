@@ -88,19 +88,18 @@ export const Infrastructure = () => {
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-2">
             {spaces.map((space, index) => (
-              <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <img 
                   src={space.image}
                   alt={space.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <p className="text-secondary text-xs uppercase tracking-wider mb-1">0{index + 1}</p>
-                  <h3 className="font-serif text-lg text-white font-medium mb-0.5">{space.title}</h3>
-                  <p className="text-white/70 text-xs">{space.subtitle}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-2">
+                  <p className="text-secondary text-[10px] uppercase tracking-wider">0{index + 1}</p>
+                  <h3 className="font-serif text-sm text-white font-medium">{space.title}</h3>
                 </div>
               </div>
             ))}
@@ -133,7 +132,7 @@ export const Infrastructure = () => {
           {spaces.map((space, index) => (
             <div 
               key={index}
-              className="space-card w-[45vw] h-[70vh] flex-shrink-0 relative mx-3 overflow-hidden"
+              className="space-card w-[35vw] h-[55vh] flex-shrink-0 relative mx-2 overflow-hidden rounded-xl"
             >
               <div className="absolute inset-0 overflow-hidden">
                 <img 
