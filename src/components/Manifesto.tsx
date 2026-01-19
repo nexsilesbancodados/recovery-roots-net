@@ -21,34 +21,30 @@ export const Manifesto = () => {
       if (linesRef.current) {
         const lines = linesRef.current.querySelectorAll('.manifesto-line');
         
-        lines.forEach((line, index) => {
+        lines.forEach((line) => {
           gsap.fromTo(line,
-            { 
-              opacity: 0, 
-              y: 50,
-            },
+            { opacity: 0, y: 30 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.8,
+              duration: 0.6,
               ease: "power3.out",
               scrollTrigger: {
                 trigger: line,
-                start: "top 80%",
-                end: "top 30%",
+                start: "top 85%",
+                end: "top 40%",
                 scrub: 1,
                 toggleActions: "play none none reverse",
               },
             }
           );
 
-          // Fade out as it scrolls up
           gsap.to(line, {
             opacity: 0.2,
             scrollTrigger: {
               trigger: line,
-              start: "top 30%",
-              end: "top 10%",
+              start: "top 40%",
+              end: "top 15%",
               scrub: 1,
             },
           });
@@ -63,18 +59,18 @@ export const Manifesto = () => {
     <section 
       ref={sectionRef}
       id="manifesto" 
-      className="min-h-[200vh] bg-background relative"
+      className="min-h-[150vh] md:min-h-[180vh] bg-background relative"
     >
-      <div className="sticky top-0 min-h-screen flex items-center justify-center py-20">
+      <div className="sticky top-0 min-h-screen flex items-center justify-center py-12 md:py-16">
         <div 
           ref={linesRef}
-          className="container mx-auto px-4 max-w-4xl"
+          className="container mx-auto px-4 max-w-3xl"
         >
-          <div className="space-y-8 md:space-y-12">
+          <div className="space-y-5 md:space-y-8">
             {manifestoLines.map((line, index) => (
               <p 
                 key={index}
-                className="manifesto-line font-serif text-3xl md:text-5xl lg:text-6xl text-foreground text-center leading-tight font-medium"
+                className="manifesto-line font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground text-center leading-tight font-medium"
                 style={{
                   color: index === 1 || index === 4 ? 'hsl(43 60% 50%)' : undefined,
                 }}

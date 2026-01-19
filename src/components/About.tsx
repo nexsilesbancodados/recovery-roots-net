@@ -9,7 +9,7 @@ const values = [
   "Equipe médica e terapêutica multidisciplinar 24 horas",
   "Mais de 18 anos transformando vidas com excelência",
   "Tratamento individualizado e humanizado",
-  "4 unidades especializadas: masculina, feminina e hospitalar",
+  "4 unidades especializadas em todo o estado",
   "Acompanhamento pós-alta para prevenção de recaídas",
 ];
 
@@ -25,20 +25,19 @@ export const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="py-24 lg:py-32 bg-gradient-to-b from-background to-muted/30">
+    <section id="sobre" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center" ref={ref}>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center" ref={ref}>
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative"
           >
             <div className="relative">
-              {/* Main Image */}
-              <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-elevated">
+              <div className="aspect-[4/5] md:aspect-[4/4] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-card">
                 <motion.img
                   src={aboutImage}
                   alt="Profissional do Hospital Rumo Certo"
@@ -46,28 +45,27 @@ export const About = () => {
                   initial={{ scale: 1.1 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  transition={{ duration: 1, ease: "easeOut" }}
                 />
               </div>
               
-              {/* Decorative Element */}
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 rounded-3xl border-4 border-secondary/30 -z-10" />
+              <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-24 md:w-32 h-24 md:h-32 rounded-2xl border-2 border-secondary/30 -z-10" />
               
               {/* Floating Card */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="absolute -bottom-10 -right-10 lg:-right-16 bg-white p-6 rounded-2xl shadow-elevated max-w-[280px] border border-border/50"
+                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                className="absolute -bottom-6 -right-4 md:-right-8 bg-white p-4 rounded-xl shadow-card max-w-[180px] md:max-w-[200px] border border-border/50"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-secondary-foreground">+18</span>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 md:w-12 h-10 md:h-12 rounded-xl bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
+                    <span className="text-lg md:text-xl font-bold text-secondary-foreground">+18</span>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-foreground">Anos</p>
-                    <p className="text-muted-foreground text-sm">Transformando vidas</p>
+                    <p className="text-lg md:text-xl font-bold text-foreground">Anos</p>
+                    <p className="text-muted-foreground text-xs">Transformando vidas</p>
                   </div>
                 </div>
               </motion.div>
@@ -76,44 +74,43 @@ export const About = () => {
 
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm uppercase tracking-wider mb-6">
-              <span className="w-2 h-2 rounded-full bg-secondary" />
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 text-secondary font-semibold text-xs uppercase tracking-wider mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
               Sobre o Hospital
             </span>
             
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
               Referência em{" "}
               <span className="text-primary">Saúde Mental</span> e{" "}
               <span className="text-secondary">Dependência Química</span>
             </h2>
             
-            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-sm md:text-base mb-4 leading-relaxed">
               Somos o <strong className="text-foreground">Hospital Rumo Certo</strong>, referência há mais de 18 anos no tratamento 
-              de dependência química, alcoolismo e transtornos mentais. Nossa missão é devolver 
-              a dignidade, a saúde e a esperança para pacientes e suas famílias.
+              de dependência química, alcoolismo e transtornos mentais.
             </p>
             
-            <p className="text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
               Contamos com infraestrutura hospitalar completa, equipe médica especializada 24 horas 
-              e metodologia terapêutica comprovada, incluindo o renomado Programa de 12 Passos.
+              e metodologia terapêutica comprovada.
             </p>
 
             {/* Values List */}
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2 mb-6">
               {values.map((value, index) => (
                 <motion.li
                   key={index}
-                  initial={{ opacity: 0, x: 20 }}
+                  initial={{ opacity: 0, x: 15 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.4 + index * 0.08 }}
-                  className="flex items-start gap-3"
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.06 }}
+                  className="flex items-start gap-2"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground/80">{value}</span>
+                  <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground/80 text-sm">{value}</span>
                 </motion.li>
               ))}
             </ul>
@@ -122,40 +119,40 @@ export const About = () => {
 
         {/* Units Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mt-24 lg:mt-32"
+          transition={{ duration: 0.6 }}
+          className="mt-12 md:mt-16"
         >
-          <div className="text-center mb-12">
-            <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8">
+            <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-2">
               Nossas Unidades
             </h3>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              4 unidades especializadas estrategicamente localizadas para melhor atender você e sua família
+            <p className="text-muted-foreground text-sm max-w-md mx-auto">
+              4 unidades especializadas para melhor atender você e sua família
             </p>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {units.map((unit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-white rounded-2xl p-6 border border-border/50 hover:border-secondary/30 hover:shadow-card transition-all duration-300"
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="group bg-white rounded-xl p-4 border border-border/50 hover:border-secondary/30 hover:shadow-soft transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-4 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
-                  <unit.icon className="w-6 h-6 text-primary" />
+                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-3 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
+                  <unit.icon className="w-4 h-4 text-primary" />
                 </div>
-                <h4 className="font-semibold text-foreground mb-1">{unit.name}</h4>
-                <div className="flex items-center gap-1 text-sm text-secondary font-medium mb-2">
+                <h4 className="font-semibold text-foreground text-sm mb-1">{unit.name}</h4>
+                <div className="flex items-center gap-1 text-xs text-secondary font-medium mb-1">
                   <MapPin className="w-3 h-3" />
                   {unit.location}
                 </div>
-                <span className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
+                <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
                   {unit.type}
                 </span>
               </motion.div>

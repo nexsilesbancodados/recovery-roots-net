@@ -43,25 +43,25 @@ export const Header = () => {
       <div 
         ref={topBarRef}
         className={`hidden md:block fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-          isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-11 opacity-100'
+          isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-9 opacity-100'
         }`}
       >
-        <div className="glass-emerald text-primary-foreground/90 text-sm h-11">
+      <div className="glass-emerald text-primary-foreground/90 text-xs h-9">
           <div className="container mx-auto px-4 h-full">
             <div className="flex items-center justify-between h-full">
-              <div className="flex items-center gap-8">
-                <div className="flex items-center gap-2">
-                  <Clock className="w-3.5 h-3.5 text-secondary" />
-                  <span className="font-light tracking-wide">Atendimento 24 horas</span>
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-1.5">
+                  <Clock className="w-3 h-3 text-secondary" />
+                  <span className="font-light">24 horas</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-secondary" />
-                  <span className="font-light tracking-wide">Cabreúva e Salto, SP</span>
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="w-3 h-3 text-secondary" />
+                  <span className="font-light">Cabreúva e Salto, SP</span>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-secondary" />
-                <a href="tel:5511955931301" className="hover:text-secondary transition-colors font-medium tracking-wide">
+              <div className="flex items-center gap-1.5">
+                <Phone className="w-3 h-3 text-secondary" />
+                <a href="tel:5511955931301" className="hover:text-secondary transition-colors font-medium">
                   (11) 95593-1301
                 </a>
               </div>
@@ -73,10 +73,10 @@ export const Header = () => {
       {/* Main Header */}
       <header 
         ref={headerRef}
-        className={`fixed left-0 right-0 z-50 transition-all duration-700 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'top-0 bg-white/95 backdrop-blur-xl shadow-soft py-3' 
-            : 'top-11 md:top-11 bg-transparent py-6'
+            ? 'top-0 bg-white/95 backdrop-blur-xl shadow-soft py-2' 
+            : 'top-9 md:top-9 bg-transparent py-3 md:py-4'
         }`}
       >
         <div className="container mx-auto px-4">
@@ -88,27 +88,27 @@ export const Header = () => {
                 alt="Hospital Rumo Certo" 
                 className={`transition-all duration-500 ${
                   isScrolled 
-                    ? 'h-12' 
-                    : 'h-14 md:h-16 brightness-0 invert'
+                    ? 'h-8 md:h-10' 
+                    : 'h-10 md:h-12 brightness-0 invert'
                 } w-auto`}
               />
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-0.5">
               {navItems.map((item, index) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`px-5 py-2.5 text-sm font-medium tracking-wide transition-all duration-300 relative group ${
+                  className={`px-3 py-2 text-xs font-medium tracking-wide transition-all duration-300 relative group ${
                     isScrolled 
                       ? 'text-foreground hover:text-primary' 
                       : 'text-white/80 hover:text-white'
                   }`}
-                  style={{ transitionDelay: `${index * 50}ms` }}
+                  style={{ transitionDelay: `${index * 30}ms` }}
                 >
                   {item.label}
-                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-300 group-hover:w-1/2 w-0 ${
+                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-[1.5px] transition-all duration-300 group-hover:w-1/2 w-0 ${
                     isScrolled ? 'bg-secondary' : 'bg-secondary'
                   }`} />
                 </a>
@@ -116,24 +116,25 @@ export const Header = () => {
             </nav>
 
             {/* CTA Buttons */}
-            <div className="hidden md:flex items-center gap-4">
-              <div className={`hidden lg:flex items-center gap-2 px-4 py-2 text-xs font-medium tracking-wider uppercase ${
+            <div className="hidden md:flex items-center gap-3">
+              <div className={`hidden lg:flex items-center gap-1.5 px-2 py-1 text-[10px] font-medium tracking-wider uppercase ${
                 isScrolled 
                   ? 'text-primary' 
                   : 'text-white/70'
               }`}>
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 <span>Online</span>
               </div>
               <Button 
-                asChild 
-                className={`rounded-none px-8 transition-all duration-500 tracking-wide font-medium ${
+                asChild
+                size="sm"
+                className={`rounded-none px-5 text-xs transition-all duration-500 tracking-wide font-medium ${
                   isScrolled 
                     ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
                     : 'bg-secondary text-secondary-foreground hover:bg-secondary/90'
                 }`}
               >
-                <a href="#contato">Agendar Consulta</a>
+                <a href="#contato">Agendar</a>
               </Button>
             </div>
 
