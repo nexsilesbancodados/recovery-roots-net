@@ -1,10 +1,16 @@
 import { motion } from "framer-motion";
 
-// Logos baixadas
-import bradesco from "@/assets/convenios/bradesco.svg";
-import mediservice from "@/assets/convenios/mediservice.svg";
-import saoluiz from "@/assets/convenios/saoluiz.svg";
-import saudecaixa from "@/assets/convenios/saudecaixa.svg";
+// Logos importadas
+import bradescoSaude from "@/assets/convenios/bradesco-saude.png";
+import cabesp from "@/assets/convenios/cabesp.png";
+import cassi from "@/assets/convenios/cassi.png";
+import mediservice from "@/assets/convenios/mediservice.png";
+import saoluiz from "@/assets/convenios/saoluiz.png";
+import portoSaude from "@/assets/convenios/porto-saude.png";
+import realGrandeza from "@/assets/convenios/real-grandeza.png";
+import phsSamaritano from "@/assets/convenios/phs-samaritano.png";
+import donaSaude from "@/assets/convenios/dona-saude.png";
+import ipref from "@/assets/convenios/ipref.png";
 
 interface Partner {
   name: string;
@@ -13,23 +19,23 @@ interface Partner {
 }
 
 const partners: Partner[] = [
-  { name: "Bradesco Saúde", logo: bradesco },
-  { name: "Cabesp", color: "#2E7D32" },
-  { name: "Cassi", color: "#C62828" },
+  { name: "Bradesco Saúde", logo: bradescoSaude },
+  { name: "Cabesp", logo: cabesp },
+  { name: "Cassi", logo: cassi },
   { name: "GEAP Saúde", color: "#0D47A1" },
   { name: "Gama Saúde", color: "#F57C00" },
   { name: "Mediservice", logo: mediservice },
   { name: "São Luiz", logo: saoluiz },
-  { name: "Saúde Caixa", logo: saudecaixa },
-  { name: "Porto Saúde", color: "#1565C0" },
+  { name: "Saúde Caixa", color: "#005CA9" },
+  { name: "Porto Saúde", logo: portoSaude },
   { name: "Saúde Itaú", color: "#FF6F00" },
   { name: "Blue Med", color: "#0288D1" },
   { name: "Care Plus", color: "#2E7D32" },
   { name: "Select Saúde", color: "#7E57C2" },
-  { name: "Real Grandeza", color: "#7B1FA2" },
-  { name: "PHS Samaritano", color: "#7B1FA2" },
-  { name: "Dona Saúde", color: "#00897B" },
-  { name: "IPREF", color: "#1976D2" },
+  { name: "Real Grandeza", logo: realGrandeza },
+  { name: "PHS Samaritano", logo: phsSamaritano },
+  { name: "Dona Saúde", logo: donaSaude },
+  { name: "IPREF", logo: ipref },
   { name: "FUSEX", color: "#424242" },
 ];
 
