@@ -5,68 +5,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Hospital Rumo Certo - Design System
-   Azul Royal + Branco (gradiente) + Paleta Palha
+   Gradiente Palha + Azul Royal (escuro)
 */
 
 @layer base {
   :root {
-    /* Base - Palha/Trigo como cor principal */
-    --background: 35 45% 92%;
-    --foreground: 30 40% 18%;
+    /* Base - Tons mais escuros com gradiente */
+    --background: 32 35% 18%;
+    --foreground: 38 45% 92%;
 
-    /* Card e superfícies - Tons Palha mais claros */
-    --card: 38 50% 95%;
-    --card-foreground: 30 40% 18%;
+    /* Card e superfícies - Tons escuros com palha */
+    --card: 30 30% 22%;
+    --card-foreground: 38 45% 92%;
 
-    --popover: 38 50% 96%;
-    --popover-foreground: 30 40% 18%;
+    --popover: 30 30% 20%;
+    --popover-foreground: 38 45% 92%;
 
-    /* Primary - Palha dourado intenso */
-    --primary: 35 55% 55%;
-    --primary-foreground: 35 60% 98%;
+    /* Primary - Palha dourado */
+    --primary: 38 55% 65%;
+    --primary-foreground: 30 40% 12%;
 
-    /* Secondary - Palha mais escuro */
-    --secondary: 32 50% 45%;
-    --secondary-foreground: 35 60% 98%;
+    /* Secondary - Azul Royal */
+    --secondary: 225 70% 45%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted - Palha suave */
-    --muted: 36 40% 88%;
-    --muted-foreground: 32 35% 35%;
+    /* Muted - Tom intermediário */
+    --muted: 30 25% 28%;
+    --muted-foreground: 38 35% 70%;
 
-    /* Accent - Palha dourado vibrante */
-    --accent: 38 55% 75%;
-    --accent-foreground: 30 45% 20%;
+    /* Accent - Palha vibrante */
+    --accent: 35 50% 50%;
+    --accent-foreground: 30 40% 12%;
 
     /* Destructive */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders e inputs - Palha */
-    --border: 35 35% 78%;
-    --input: 36 40% 85%;
-    --ring: 35 55% 50%;
+    /* Borders e inputs */
+    --border: 32 30% 35%;
+    --input: 32 28% 30%;
+    --ring: 38 55% 60%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens - Palha */
-    --gradient-hero: linear-gradient(135deg, hsl(35 55% 60% / 0.95), hsl(32 50% 45% / 0.9));
-    --gradient-soft: linear-gradient(180deg, hsl(38 50% 95%), hsl(35 45% 88%));
-    --gradient-card: linear-gradient(145deg, hsl(38 55% 96%), hsl(35 45% 90%));
-    --gradient-background: linear-gradient(180deg, hsl(38 55% 94%), hsl(35 45% 88%), hsl(32 40% 82%));
+    /* Custom tokens - Gradientes Palha + Azul Royal */
+    --gradient-hero: linear-gradient(135deg, hsl(32 40% 25%), hsl(225 60% 30%));
+    --gradient-soft: linear-gradient(180deg, hsl(32 35% 22%), hsl(30 30% 18%));
+    --gradient-card: linear-gradient(145deg, hsl(32 35% 26%), hsl(30 28% 20%));
+    --gradient-background: linear-gradient(180deg, hsl(32 40% 28%), hsl(225 50% 25%), hsl(225 60% 20%));
     
-    --shadow-soft: 0 4px 20px -4px hsl(32 40% 30% / 0.1);
-    --shadow-card: 0 8px 30px -8px hsl(32 40% 30% / 0.15);
-    --shadow-elevated: 0 20px 50px -15px hsl(32 40% 30% / 0.2);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
+    --shadow-elevated: 0 20px 50px -15px hsl(0 0% 0% / 0.5);
 
     /* Sidebar */
-    --sidebar-background: 36 45% 93%;
-    --sidebar-foreground: 30 40% 20%;
-    --sidebar-primary: 35 55% 55%;
-    --sidebar-primary-foreground: 35 60% 98%;
-    --sidebar-accent: 38 50% 88%;
-    --sidebar-accent-foreground: 30 40% 20%;
-    --sidebar-border: 35 35% 82%;
-    --sidebar-ring: 35 55% 50%;
+    --sidebar-background: 30 30% 16%;
+    --sidebar-foreground: 38 45% 90%;
+    --sidebar-primary: 38 55% 65%;
+    --sidebar-primary-foreground: 30 40% 12%;
+    --sidebar-accent: 32 35% 25%;
+    --sidebar-accent-foreground: 38 45% 90%;
+    --sidebar-border: 32 30% 30%;
+    --sidebar-ring: 38 55% 60%;
   }
 
   .dark {
@@ -117,10 +117,11 @@
   body {
     @apply text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(180deg, 
-      hsl(38 55% 94%) 0%, 
-      hsl(35 48% 90%) 40%, 
-      hsl(32 42% 85%) 100%
+    background: linear-gradient(135deg, 
+      hsl(32 40% 22%) 0%, 
+      hsl(28 35% 18%) 30%,
+      hsl(225 55% 22%) 70%, 
+      hsl(225 65% 18%) 100%
     );
     min-height: 100vh;
   }
@@ -148,15 +149,15 @@
   }
 
   .bg-palha {
-    background-color: hsl(35 48% 88%);
+    background-color: hsl(38 55% 65%);
   }
 
   .bg-palha-dark {
-    background-color: hsl(32 45% 80%);
+    background-color: hsl(35 50% 55%);
   }
 
   .text-palha {
-    color: hsl(32 40% 30%);
+    color: hsl(38 55% 75%);
   }
 
   .shadow-soft {
