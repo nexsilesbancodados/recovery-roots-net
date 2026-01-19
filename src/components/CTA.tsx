@@ -146,7 +146,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-10 pt-8 border-t border-border/50">
+            <div className="mt-10 pt-8 border-t border-white/10">
               <p className="text-sm text-muted-foreground mb-4">Atendimento confidencial e humanizado</p>
               <div className="flex items-center gap-6 text-sm text-foreground/80">
                 <div className="flex items-center gap-2">

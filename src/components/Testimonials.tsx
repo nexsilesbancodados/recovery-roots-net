@@ -101,7 +101,7 @@ export const Testimonials = () => {
                 </blockquote>
                 
                 {/* Author */}
-                <div className="border-t border-border/50 pt-6">
+                <div className="border-t border-white/10 pt-6">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                       <span className="text-white font-semibold text-lg">
