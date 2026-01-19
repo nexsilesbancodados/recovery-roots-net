@@ -96,18 +96,18 @@ export const Gallery = () => {
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-3 max-w-4xl mx-auto">
           {galleryImages.map((image, index) => (
             <motion.div
               key={image.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.06 }}
-              className="group relative overflow-hidden rounded-xl cursor-pointer shadow-soft hover:shadow-card transition-all duration-500"
+              transition={{ duration: 0.3, delay: index * 0.04 }}
+              className="group relative overflow-hidden rounded-lg cursor-pointer shadow-soft hover:shadow-card transition-all duration-300"
               onClick={() => openLightbox(index)}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-square overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.title}
@@ -117,18 +117,15 @@ export const Gallery = () => {
               </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
-                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-white font-semibold text-sm mb-0.5">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white font-semibold text-xs">
                     {image.title}
                   </h3>
-                  <p className="text-white/80 text-xs line-clamp-1">
-                    {image.description}
-                  </p>
                 </div>
-                <div className="absolute top-3 right-3">
-                  <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <ZoomIn className="w-4 h-4 text-white" />
+                <div className="absolute top-2 right-2">
+                  <div className="w-6 h-6 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <ZoomIn className="w-3 h-3 text-white" />
                   </div>
                 </div>
               </div>

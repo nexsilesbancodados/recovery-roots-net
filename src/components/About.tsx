@@ -39,8 +39,8 @@ export const About = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative">
-              <div className="aspect-[4/5] md:aspect-[4/4] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-elevated">
+            <div className="relative max-w-md mx-auto lg:mx-0">
+              <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-card">
                 <motion.img
                   src={aboutImage}
                   alt="Profissional do Hospital Rumo Certo"
@@ -55,23 +55,23 @@ export const About = () => {
               </div>
               
               {/* Decorative border */}
-              <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-full h-full rounded-3xl border-2 border-secondary/20 -z-10" />
+              <div className="absolute -bottom-2 -right-2 w-full h-full rounded-2xl border border-secondary/20 -z-10" />
               
               {/* Floating Card */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-6 -right-4 md:-right-8 glass-card p-4 rounded-2xl max-w-[180px] md:max-w-[200px]"
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                className="absolute -bottom-4 -right-2 md:-right-4 glass-card p-3 rounded-xl max-w-[150px]"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 md:w-12 h-10 md:h-12 rounded-xl bg-gradient-to-br from-secondary to-gold-light flex items-center justify-center shadow-glow-gold">
-                    <span className="text-lg md:text-xl font-bold text-secondary-foreground">+18</span>
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-secondary to-gold-light flex items-center justify-center shadow-glow-gold">
+                    <span className="text-sm font-bold text-secondary-foreground">+18</span>
                   </div>
                   <div>
-                    <p className="text-lg md:text-xl font-bold text-foreground">Anos</p>
-                    <p className="text-muted-foreground text-xs">Transformando vidas</p>
+                    <p className="text-sm font-bold text-foreground">Anos</p>
+                    <p className="text-muted-foreground text-[10px]">Transformando vidas</p>
                   </div>
                 </div>
               </motion.div>
@@ -140,25 +140,25 @@ export const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
             {units.map((unit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group glass-card rounded-2xl p-4 hover:shadow-elevated transition-all duration-500 hover:-translate-y-1"
+                transition={{ duration: 0.3, delay: index * 0.06 }}
+                className="group glass-card rounded-xl p-3 hover:shadow-card transition-all duration-300"
               >
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-3 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
-                  <unit.icon className="w-4 h-4 text-primary" />
+                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-2 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
+                  <unit.icon className="w-3.5 h-3.5 text-primary" />
                 </div>
-                <h4 className="font-semibold text-foreground text-sm mb-1">{unit.name}</h4>
-                <div className="flex items-center gap-1 text-xs text-secondary font-medium mb-1">
-                  <MapPin className="w-3 h-3" />
+                <h4 className="font-semibold text-foreground text-xs mb-0.5">{unit.name}</h4>
+                <div className="flex items-center gap-1 text-[10px] text-secondary font-medium mb-0.5">
+                  <MapPin className="w-2.5 h-2.5" />
                   {unit.location}
                 </div>
-                <span className="text-[10px] text-muted-foreground bg-muted/50 backdrop-blur-sm px-2 py-0.5 rounded-full">
+                <span className="text-[9px] text-muted-foreground bg-muted/50 backdrop-blur-sm px-1.5 py-0.5 rounded-full">
                   {unit.type}
                 </span>
               </motion.div>
