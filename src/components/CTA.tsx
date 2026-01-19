@@ -194,8 +194,10 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
     >
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 gradient-mesh opacity-20" />
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/[0.02] to-transparent" />
         <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-tr from-secondary/[0.03] to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 gradient-radial-gold opacity-20 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative">
@@ -204,7 +206,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
           {credentials.map((cred, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 px-6 py-3 bg-white border border-border/50 shadow-soft"
+              className="flex items-center gap-3 px-6 py-3 glass-card rounded-full hover:shadow-elevated transition-all duration-500"
             >
               <cred.icon className="w-5 h-5 text-secondary" />
               <span className="text-sm font-medium text-foreground tracking-wide">{cred.label}</span>
@@ -234,10 +236,11 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="rounded-none px-10 py-7 text-base font-medium tracking-wide" 
+                className="group relative overflow-hidden rounded-xl px-10 py-7 text-base font-medium tracking-wide transition-all duration-500 hover:shadow-glow-gold hover:scale-[1.02]" 
                 asChild
               >
-                <a href="tel:5511955931301">
+                <a href="tel:5511955931301" className="relative z-10">
+                  <span className="absolute inset-0 bg-gradient-shine animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
                   <Phone className="mr-3 w-5 h-5" />
                   Ligar Agora
                 </a>
@@ -245,7 +248,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="rounded-none px-10 py-7 text-base font-medium tracking-wide border-2" 
+                className="glass-card rounded-xl px-10 py-7 text-base font-medium tracking-wide border-2 hover:border-secondary/50 transition-all duration-500 hover:scale-[1.02]" 
                 asChild
               >
                 <a 
@@ -283,7 +286,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
 
           {/* Right - Contact Form */}
           <div ref={formRef}>
-            <Card className="bg-white border-border/50 shadow-card overflow-hidden">
+            <Card className="glass-card border-0 rounded-3xl shadow-elevated overflow-hidden">
               <CardContent className="p-8 lg:p-10">
                 {isSubmitted ? (
                   <div className="text-center py-12">
@@ -318,7 +321,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                           value={formData.name}
                           onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
                           required
-                          className="rounded-none border-border/50 focus:border-primary h-12"
+                          className="rounded-xl border-border/50 focus:border-primary h-12 bg-white/50"
                         />
                       </div>
 
@@ -334,7 +337,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                           value={formData.phone}
                           onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
                           required
-                          className="rounded-none border-border/50 focus:border-primary h-12"
+                          className="rounded-xl border-border/50 focus:border-primary h-12 bg-white/50"
                         />
                       </div>
 
@@ -398,7 +401,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                           value={formData.message}
                           onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
                           rows={3}
-                          className="rounded-none border-border/50 focus:border-primary resize-none"
+                          className="rounded-xl border-border/50 focus:border-primary resize-none bg-white/50"
                         />
                       </div>
 
@@ -406,10 +409,13 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
                       <Button 
                         type="submit" 
                         size="lg" 
-                        className="w-full rounded-none h-14 text-base font-medium tracking-wide"
+                        className="group relative overflow-hidden w-full rounded-xl h-14 text-base font-medium tracking-wide transition-all duration-500 hover:shadow-glow-gold hover:scale-[1.02]"
                       >
-                        <Send className="mr-2 w-5 h-5" />
-                        Enviar via WhatsApp
+                        <span className="absolute inset-0 bg-gradient-shine animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <span className="relative z-10 flex items-center justify-center">
+                          <Send className="mr-2 w-5 h-5" />
+                          Enviar via WhatsApp
+                        </span>
                       </Button>
 
                       <p className="text-xs text-muted-foreground text-center">
@@ -428,10 +434,10 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
           {contactInfo.map((info, index) => (
             <Card 
               key={index} 
-              className="text-center bg-white border-border/50 hover:border-secondary/30 hover:shadow-card transition-all duration-500 group"
+              className="text-center glass-card border-0 rounded-2xl hover:shadow-elevated transition-all duration-500 group hover:-translate-y-1"
             >
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center mx-auto mb-5 group-hover:from-primary/10 group-hover:to-secondary/10 transition-all duration-500">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/10 flex items-center justify-center mx-auto mb-5 group-hover:from-primary/10 group-hover:to-secondary/20 group-hover:shadow-glow-gold transition-all duration-500">
                   <info.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="font-medium text-foreground mb-1 tracking-wide">{info.title}</h3>

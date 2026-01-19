@@ -128,10 +128,10 @@ export const Header = () => {
               <Button 
                 asChild
                 size="sm"
-                className={`rounded-none px-5 text-xs transition-all duration-500 tracking-wide font-medium ${
+                className={`rounded-xl px-5 text-xs transition-all duration-500 tracking-wide font-medium hover:scale-105 ${
                   isScrolled 
-                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
-                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/90'
+                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-glow-emerald' 
+                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:shadow-glow-gold'
                 }`}
               >
                 <a href="#contato">Agendar</a>
@@ -158,7 +158,7 @@ export const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-white border-t border-border shadow-elevated absolute top-full left-0 right-0"
+              className="lg:hidden glass border-t border-border/50 shadow-elevated absolute top-full left-0 right-0"
             >
               <nav className="container mx-auto px-4 py-8 flex flex-col gap-1">
                 {navItems.map((item) => (
@@ -166,16 +166,16 @@ export const Header = () => {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors py-4 px-4 border-b border-border/50 last:border-0"
+                    className="text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors py-4 px-4 border-b border-border/30 last:border-0 rounded-xl"
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="flex items-center gap-2 text-sm text-muted-foreground py-4 px-4 mt-4 bg-muted/30">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground py-4 px-4 mt-4 glass-card rounded-xl">
                   <Phone className="w-4 h-4 text-secondary" />
                   <span className="font-medium">(11) 95593-1301</span>
                 </div>
-                <Button asChild className="mt-4 rounded-none">
+                <Button asChild className="mt-4 rounded-xl hover:shadow-glow-gold">
                   <a href="#contato">Agendar Consulta</a>
                 </Button>
               </nav>

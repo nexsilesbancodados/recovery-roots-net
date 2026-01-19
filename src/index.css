@@ -58,19 +58,24 @@
     --charcoal: 160 26% 14%;
     --charcoal-light: 160 20% 20%;
 
-    /* Custom gradients */
+    /* Custom gradients - Enhanced */
     --gradient-hero: linear-gradient(135deg, hsl(152 45% 12%), hsl(152 45% 18%));
     --gradient-emerald: linear-gradient(180deg, hsl(152 45% 16%), hsl(152 45% 12%));
     --gradient-beige: linear-gradient(180deg, hsl(40 33% 98%), hsl(40 33% 94%));
     --gradient-gold: linear-gradient(135deg, hsl(43 60% 50%), hsl(43 70% 60%));
     --gradient-charcoal: linear-gradient(180deg, hsl(160 26% 14%), hsl(160 26% 10%));
+    --gradient-mesh: radial-gradient(at 40% 20%, hsl(152 45% 20% / 0.15) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(43 60% 50% / 0.1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsl(152 30% 25% / 0.1) 0px, transparent 50%);
+    --gradient-radial-gold: radial-gradient(ellipse at center, hsl(43 60% 50% / 0.15), transparent 70%);
+    --gradient-shine: linear-gradient(105deg, transparent 40%, hsl(0 0% 100% / 0.3) 45%, hsl(0 0% 100% / 0.5) 50%, hsl(0 0% 100% / 0.3) 55%, transparent 60%);
     
-    /* Premium shadows */
+    /* Premium shadows - Enhanced */
     --shadow-soft: 0 4px 30px -4px hsl(160 26% 14% / 0.06);
     --shadow-card: 0 8px 40px -8px hsl(160 26% 14% / 0.1);
     --shadow-elevated: 0 25px 60px -15px hsl(160 26% 14% / 0.12);
     --shadow-glow-gold: 0 0 60px -15px hsl(43 60% 50% / 0.4);
     --shadow-glow-emerald: 0 0 60px -15px hsl(152 45% 30% / 0.3);
+    --shadow-inner-glow: inset 0 1px 0 0 hsl(0 0% 100% / 0.1);
+    --shadow-border: 0 0 0 1px hsl(0 0% 100% / 0.05);
 
     /* Sidebar */
     --sidebar-background: 40 40% 98%;
@@ -217,20 +222,41 @@
     box-shadow: var(--shadow-glow-emerald);
   }
 
-  /* Glass effects */
+  /* Glass effects - Enhanced */
   .glass {
     @apply backdrop-blur-2xl;
-    background: hsl(40 40% 98% / 0.85);
+    background: hsl(40 40% 98% / 0.8);
+    border: 1px solid hsl(0 0% 100% / 0.2);
+    box-shadow: var(--shadow-inner-glow), var(--shadow-soft);
   }
 
   .glass-dark {
     @apply backdrop-blur-2xl;
-    background: hsl(160 26% 14% / 0.9);
+    background: hsl(160 26% 14% / 0.85);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+    box-shadow: var(--shadow-inner-glow);
   }
 
   .glass-emerald {
     @apply backdrop-blur-2xl;
-    background: hsl(152 45% 16% / 0.95);
+    background: hsl(152 45% 16% / 0.9);
+    border: 1px solid hsl(152 45% 30% / 0.2);
+    box-shadow: var(--shadow-inner-glow);
+  }
+
+  .glass-card {
+    @apply backdrop-blur-xl;
+    background: hsl(0 0% 100% / 0.7);
+    border: 1px solid hsl(0 0% 100% / 0.3);
+    box-shadow: var(--shadow-card), var(--shadow-inner-glow);
+  }
+
+  .gradient-mesh {
+    background-image: var(--gradient-mesh);
+  }
+
+  .gradient-radial-gold {
+    background-image: var(--gradient-radial-gold);
   }
 
   /* Text styles */
@@ -337,6 +363,47 @@
   100% {
     transform: scale(1.1);
   }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    border-color: hsl(43 60% 50% / 0.3);
+  }
+  50% {
+    border-color: hsl(43 60% 50% / 0.6);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+  background-size: 200% 100%;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
 }
 
 @keyframes reveal-up {
