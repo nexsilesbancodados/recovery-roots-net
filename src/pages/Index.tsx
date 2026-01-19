@@ -18,6 +18,9 @@ const Index = () => {
         {/* Hero - Primeira Impressão */}
         <Hero />
 
+        {/* Convênios - Logo após o Hero */}
+        <Partners />
+
         {/* Grupo 1: Institucional - Quem Somos */}
         <About />
 
@@ -30,7 +33,6 @@ const Index = () => {
 
         {/* Grupo 4: Credibilidade - Prova Social */}
         <Testimonials />
-        <Partners />
 
         {/* Grupo 5: Conversão - Contato */}
         <CTA />
