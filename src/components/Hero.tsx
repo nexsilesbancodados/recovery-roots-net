@@ -10,7 +10,7 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Hospital Renascer Vida"
+          alt="Hospital Rumo Certo - Cabreúva, SP"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 gradient-hero" />
@@ -25,7 +25,7 @@ export const Hero = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block px-4 py-2 rounded-full bg-card/20 backdrop-blur-sm text-primary-foreground text-sm font-medium mb-6">
-              Cuidado especializado há mais de 20 anos
+              Ambiente sereno e acolhedor em Cabreúva, SP
             </span>
           </motion.div>
 
@@ -35,7 +35,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6"
           >
-            Um novo começo para quem busca recuperação
+            Reconstruindo vidas, restaurando esperanças
           </motion.h1>
 
           <motion.p
@@ -44,8 +44,8 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/90 mb-8 max-w-2xl"
           >
-            Oferecemos tratamento humanizado e especializado para dependência química 
-            e transtornos mentais, com uma equipe multidisciplinar dedicada à sua recuperação.
+            Tratamentos excepcionais e especializados para saúde mental, alcoolismo e dependência química. 
+            Com o reconhecido Programa de 12 Passos e equipe altamente qualificada.
           </motion.p>
 
           <motion.div
@@ -76,22 +76,22 @@ export const Hero = () => {
               <div className="flex justify-center mb-2">
                 <Users className="w-6 h-6 text-primary-foreground/80" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">5.000+</div>
-              <div className="text-sm text-primary-foreground/70">Vidas transformadas</div>
+              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">3</div>
+              <div className="text-sm text-primary-foreground/70">Unidades especializadas</div>
             </div>
             <div className="text-center">
               <div className="flex justify-center mb-2">
                 <Heart className="w-6 h-6 text-primary-foreground/80" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">20+</div>
-              <div className="text-sm text-primary-foreground/70">Anos de experiência</div>
+              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">12</div>
+              <div className="text-sm text-primary-foreground/70">Passos para recuperação</div>
             </div>
             <div className="text-center">
               <div className="flex justify-center mb-2">
                 <Shield className="w-6 h-6 text-primary-foreground/80" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">100%</div>
-              <div className="text-sm text-primary-foreground/70">Sigilo garantido</div>
+              <div className="text-2xl md:text-3xl font-bold text-primary-foreground">24h</div>
+              <div className="text-sm text-primary-foreground/70">Suporte contínuo</div>
             </div>
           </motion.div>
         </div>

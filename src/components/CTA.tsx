@@ -8,27 +8,27 @@ import { Card, CardContent } from "@/components/ui/card";
 const contactInfo = [
   {
     icon: Phone,
-    title: "Telefone 24h",
-    value: "0800 123 456",
-    description: "Atendimento gratuito",
+    title: "Telefone",
+    value: "(11) 95593-1301",
+    description: "Atendimento humanizado",
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    value: "(11) 99999-9999",
+    value: "(11) 95593-1301",
     description: "Resposta rápida",
   },
   {
     icon: MapPin,
     title: "Localização",
-    value: "São Paulo, SP",
-    description: "Fácil acesso",
+    value: "Cabreúva, SP",
+    description: "Ambiente sereno",
   },
   {
     icon: Clock,
-    title: "Visitas",
-    value: "Sáb e Dom",
-    description: "14h às 17h",
+    title: "Atendimento",
+    value: "24 horas",
+    description: "Suporte contínuo",
   },
 ];
 
@@ -57,7 +57,7 @@ export const CTA = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>
-                <a href="tel:0800123456">
+                <a href="tel:5511955931301">
                   <Phone className="mr-2 w-5 h-5" />
                   Ligar Agora
                 </a>
@@ -68,7 +68,7 @@ export const CTA = () => {
                 asChild 
                 className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
               >
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send?phone=5511955931301&text=Ol%C3%A1%2C+desejo+mais+informa%C3%A7%C3%B5es+sobre+interna%C3%A7%C3%B5es%21" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="mr-2 w-5 h-5" />
                   WhatsApp
                 </a>

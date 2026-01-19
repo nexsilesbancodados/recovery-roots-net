@@ -21,11 +21,11 @@ export const Header = () => {
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-serif text-xl font-bold">RV</span>
+              <span className="text-primary-foreground font-serif text-xl font-bold">RC</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-serif text-lg font-semibold text-foreground">Renascer Vida</h1>
-              <p className="text-xs text-muted-foreground">Hospital de Reabilitação</p>
+              <h1 className="font-serif text-lg font-semibold text-foreground">Rumo Certo</h1>
+              <p className="text-xs text-muted-foreground">Hospital Psiquiátrico</p>
             </div>
           </a>
 
@@ -44,9 +44,9 @@ export const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:0800123456" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:5511955931301" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
-              <span>0800 123 456</span>
+              <span>(11) 95593-1301</span>
             </a>
             <Button asChild>
               <a href="#contato">Fale Conosco</a>
