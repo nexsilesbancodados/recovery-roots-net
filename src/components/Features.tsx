@@ -74,45 +74,80 @@ export const Features = () => {
           </motion.div>
 
           {/* Images */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4"
-          >
+          <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-card">
-                <img
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="aspect-[3/4] rounded-2xl overflow-hidden shadow-card"
+              >
+                <motion.img
                   src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=400&q=80"
                   alt="Quarto do hospital"
                   className="w-full h-full object-cover"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
                 />
-              </div>
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-card">
-                <img
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-card"
+              >
+                <motion.img
                   src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&q=80"
                   alt="Área de exercícios"
                   className="w-full h-full object-cover"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
                 />
-              </div>
+              </motion.div>
             </div>
             <div className="space-y-4 pt-8">
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-card">
-                <img
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+                className="aspect-square rounded-2xl overflow-hidden shadow-card"
+              >
+                <motion.img
                   src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=400&q=80"
                   alt="Área de meditação"
                   className="w-full h-full object-cover"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
                 />
-              </div>
-              <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-card">
-                <img
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+                className="aspect-[3/4] rounded-2xl overflow-hidden shadow-card"
+              >
+                <motion.img
                   src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=400&q=80"
                   alt="Alimentação saudável"
                   className="w-full h-full object-cover"
+                  initial={{ scale: 1.1 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
                 />
-              </div>
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
