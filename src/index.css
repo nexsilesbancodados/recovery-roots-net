@@ -10,63 +10,63 @@
 
 @layer base {
   :root {
-    /* Base - Tons mais escuros com gradiente */
-    --background: 32 35% 18%;
-    --foreground: 38 45% 92%;
+    /* Base - Palha claro como fundo */
+    --background: 38 45% 88%;
+    --foreground: 30 35% 20%;
 
-    /* Card e superfícies - Tons escuros com palha */
-    --card: 30 30% 22%;
-    --card-foreground: 38 45% 92%;
+    /* Card e superfícies - Tons mais claros */
+    --card: 40 50% 95%;
+    --card-foreground: 30 35% 18%;
 
-    --popover: 30 30% 20%;
-    --popover-foreground: 38 45% 92%;
+    --popover: 40 50% 96%;
+    --popover-foreground: 30 35% 18%;
 
-    /* Primary - Palha dourado */
-    --primary: 38 55% 65%;
-    --primary-foreground: 30 40% 12%;
+    /* Primary - Palha dourado intenso */
+    --primary: 32 55% 45%;
+    --primary-foreground: 40 60% 98%;
 
     /* Secondary - Azul Royal */
-    --secondary: 225 70% 45%;
+    --secondary: 225 70% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted - Tom intermediário */
-    --muted: 30 25% 28%;
-    --muted-foreground: 38 35% 70%;
+    /* Muted - Palha suave */
+    --muted: 38 35% 82%;
+    --muted-foreground: 30 30% 40%;
 
-    /* Accent - Palha vibrante */
-    --accent: 35 50% 50%;
-    --accent-foreground: 30 40% 12%;
+    /* Accent - Palha dourado */
+    --accent: 35 45% 75%;
+    --accent-foreground: 30 40% 20%;
 
     /* Destructive */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
     /* Borders e inputs */
-    --border: 32 30% 35%;
-    --input: 32 28% 30%;
-    --ring: 38 55% 60%;
+    --border: 35 30% 75%;
+    --input: 38 35% 90%;
+    --ring: 32 55% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens - Gradientes Palha + Azul Royal */
-    --gradient-hero: linear-gradient(135deg, hsl(32 40% 25%), hsl(225 60% 30%));
-    --gradient-soft: linear-gradient(180deg, hsl(32 35% 22%), hsl(30 30% 18%));
-    --gradient-card: linear-gradient(145deg, hsl(32 35% 26%), hsl(30 28% 20%));
-    --gradient-background: linear-gradient(180deg, hsl(32 40% 28%), hsl(225 50% 25%), hsl(225 60% 20%));
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(32 50% 50% / 0.9), hsl(225 60% 45% / 0.85));
+    --gradient-soft: linear-gradient(180deg, hsl(40 50% 94%), hsl(38 45% 88%));
+    --gradient-card: linear-gradient(145deg, hsl(40 55% 97%), hsl(38 45% 92%));
+    --gradient-background: linear-gradient(180deg, hsl(40 50% 92%), hsl(38 45% 86%), hsl(35 40% 82%));
     
-    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
-    --shadow-card: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
-    --shadow-elevated: 0 20px 50px -15px hsl(0 0% 0% / 0.5);
+    --shadow-soft: 0 4px 20px -4px hsl(32 40% 30% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(32 40% 30% / 0.15);
+    --shadow-elevated: 0 20px 50px -15px hsl(32 40% 30% / 0.2);
 
     /* Sidebar */
-    --sidebar-background: 30 30% 16%;
-    --sidebar-foreground: 38 45% 90%;
-    --sidebar-primary: 38 55% 65%;
-    --sidebar-primary-foreground: 30 40% 12%;
-    --sidebar-accent: 32 35% 25%;
-    --sidebar-accent-foreground: 38 45% 90%;
-    --sidebar-border: 32 30% 30%;
-    --sidebar-ring: 38 55% 60%;
+    --sidebar-background: 40 45% 92%;
+    --sidebar-foreground: 30 35% 20%;
+    --sidebar-primary: 32 55% 45%;
+    --sidebar-primary-foreground: 40 60% 98%;
+    --sidebar-accent: 38 40% 85%;
+    --sidebar-accent-foreground: 30 35% 20%;
+    --sidebar-border: 35 30% 78%;
+    --sidebar-ring: 32 55% 45%;
   }
 
   .dark {
@@ -117,11 +117,10 @@
   body {
     @apply text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
-    background: linear-gradient(135deg, 
-      hsl(32 40% 22%) 0%, 
-      hsl(28 35% 18%) 30%,
-      hsl(225 55% 22%) 70%, 
-      hsl(225 65% 18%) 100%
+    background: linear-gradient(180deg, 
+      hsl(40 50% 90%) 0%, 
+      hsl(38 45% 86%) 50%,
+      hsl(35 40% 82%) 100%
     );
     background-attachment: fixed;
     background-size: cover;
