@@ -42,7 +42,7 @@ export const Header = () => {
       </div>
 
       {/* Main Header */}
-      <header className="sticky top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border/30 shadow-soft">
+      <header className="sticky top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md shadow-soft">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
