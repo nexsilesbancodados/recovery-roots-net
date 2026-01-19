@@ -59,10 +59,6 @@ export const Partners = () => {
       </div>
 
       <div className="relative">
-        {/* Gradiente esquerdo mais suave */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
-        {/* Gradiente direito mais suave */}
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
 
         <div className="flex animate-scroll-left">
           {duplicatedPartners.map((partner, index) => (
