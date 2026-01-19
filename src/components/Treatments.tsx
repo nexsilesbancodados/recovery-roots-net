@@ -87,27 +87,32 @@ export const Treatments = () => {
     <section 
       ref={sectionRef}
       id="tratamentos" 
-      className="relative bg-primary"
+      className="relative bg-primary overflow-hidden"
     >
-      <div className="flex flex-col lg:flex-row">
+      {/* Background decoration */}
+      <div className="absolute inset-0 gradient-mesh opacity-20 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-full gradient-radial-gold opacity-20" />
+      
+      <div className="flex flex-col lg:flex-row relative">
         {/* Left Panel - Pinned on desktop */}
         <div 
           ref={leftPanelRef}
           className="lg:w-[45%] lg:h-screen flex items-center justify-center p-6 md:p-8 lg:p-12"
         >
           <div className="max-w-md">
-            <span className="inline-block text-secondary text-xs uppercase tracking-[0.2em] mb-4 font-medium">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark text-secondary text-xs uppercase tracking-[0.2em] mb-4 font-medium border border-secondary/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
               Nossas Esferas de Atuação
             </span>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-primary-foreground font-medium leading-tight mb-4">
               Tratamentos de{" "}
-              <span className="text-secondary">Elite</span>
+              <span className="text-gradient-gold bg-clip-text text-transparent bg-gradient-to-r from-secondary via-gold-light to-secondary">Elite</span>
             </h2>
             <p className="text-primary-foreground/70 text-sm md:text-base leading-relaxed mb-5">
               Cada programa é desenhado para atender às necessidades 
               específicas de pacientes que buscam excelência em cuidado.
             </p>
-            <div className="h-px w-16 bg-secondary/50" />
+            <div className="h-px w-16 bg-gradient-to-r from-secondary to-transparent" />
           </div>
         </div>
 
@@ -119,19 +124,19 @@ export const Treatments = () => {
           {treatments.map((treatment, index) => (
             <div 
               key={index}
-              className="treatment-card group bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 p-5 md:p-6 hover:bg-primary-foreground/10 transition-all duration-500"
+              className="treatment-card group glass-dark rounded-2xl p-5 md:p-6 hover:bg-primary-foreground/10 transition-all duration-500 border border-primary-foreground/10 hover:border-secondary/30"
             >
               {/* Image */}
-              <div className="aspect-video mb-4 md:mb-5 overflow-hidden">
+              <div className="aspect-video mb-4 md:mb-5 overflow-hidden rounded-xl">
                 <img 
                   src={treatment.image}
                   alt={treatment.title}
-                  className="w-full h-full object-cover luxury-image-bw"
+                  className="w-full h-full object-cover luxury-image-bw group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 
               {/* Icon */}
-              <div className="w-10 h-10 border border-secondary/30 flex items-center justify-center mb-4 group-hover:bg-secondary/10 transition-colors duration-500">
+              <div className="w-10 h-10 rounded-xl border border-secondary/30 flex items-center justify-center mb-4 group-hover:bg-secondary/10 group-hover:border-secondary/50 transition-all duration-500">
                 <treatment.icon className="w-5 h-5 text-secondary" />
               </div>
 

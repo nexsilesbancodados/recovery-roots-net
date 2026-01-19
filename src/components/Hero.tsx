@@ -87,6 +87,12 @@ export const Hero = () => {
           ref={overlayRef}
           className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90"
         />
+
+        {/* Mesh gradient overlay */}
+        <div className="absolute inset-0 gradient-mesh opacity-60" />
+        
+        {/* Radial gold accent */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-1/2 gradient-radial-gold opacity-40" />
         
         <div 
           className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
@@ -104,7 +110,7 @@ export const Hero = () => {
             className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary-foreground font-medium leading-[1.15] mb-5 md:mb-6 overflow-hidden"
           >
             <span className="title-line block">A Arte de</span>
-            <span className="title-line block text-secondary">Recompor</span>
+            <span className="title-line block text-gradient-gold bg-clip-text text-transparent bg-gradient-to-r from-secondary via-gold-light to-secondary animate-gradient-shift">Recompor</span>
             <span className="title-line block">o Amanhã.</span>
           </h1>
 
@@ -120,17 +126,18 @@ export const Hero = () => {
           <div ref={ctaRef} className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4">
             <Button
               size="default"
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-sm px-6 py-5 md:px-8 md:py-6 rounded-none border-2 border-secondary font-medium tracking-wide transition-all duration-500 hover:shadow-glow-gold"
+              className="group relative overflow-hidden bg-secondary text-secondary-foreground hover:bg-secondary/90 text-sm px-6 py-5 md:px-8 md:py-6 rounded-xl border border-secondary/50 font-medium tracking-wide transition-all duration-500 hover:shadow-glow-gold hover:scale-[1.02]"
               asChild
             >
-              <a href="#contato">
+              <a href="#contato" className="relative z-10">
+                <span className="absolute inset-0 bg-gradient-shine animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
                 Agendar Consultoria
               </a>
             </Button>
             <Button
               size="default"
               variant="outline"
-              className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 text-sm px-6 py-5 md:px-8 md:py-6 rounded-none font-medium tracking-wide transition-all duration-500"
+              className="glass-dark border border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/40 text-sm px-6 py-5 md:px-8 md:py-6 rounded-xl font-medium tracking-wide transition-all duration-500 hover:scale-[1.02]"
               asChild
             >
               <a href="tel:5511955931301">

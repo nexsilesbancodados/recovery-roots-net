@@ -25,8 +25,11 @@ export const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="sobre" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="sobre" className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center" ref={ref}>
           {/* Image */}
           <motion.div
@@ -37,7 +40,7 @@ export const About = () => {
             className="relative"
           >
             <div className="relative">
-              <div className="aspect-[4/5] md:aspect-[4/4] lg:aspect-[4/5] rounded-2xl overflow-hidden shadow-card">
+              <div className="aspect-[4/5] md:aspect-[4/4] lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-elevated">
                 <motion.img
                   src={aboutImage}
                   alt="Profissional do Hospital Rumo Certo"
@@ -47,9 +50,12 @@ export const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 1, ease: "easeOut" }}
                 />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </div>
               
-              <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-24 md:w-32 h-24 md:h-32 rounded-2xl border-2 border-secondary/30 -z-10" />
+              {/* Decorative border */}
+              <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-full h-full rounded-3xl border-2 border-secondary/20 -z-10" />
               
               {/* Floating Card */}
               <motion.div
@@ -57,10 +63,10 @@ export const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-6 -right-4 md:-right-8 bg-white p-4 rounded-xl shadow-card max-w-[180px] md:max-w-[200px] border border-border/50"
+                className="absolute -bottom-6 -right-4 md:-right-8 glass-card p-4 rounded-2xl max-w-[180px] md:max-w-[200px]"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 md:w-12 h-10 md:h-12 rounded-xl bg-gradient-to-br from-secondary to-secondary/60 flex items-center justify-center">
+                  <div className="w-10 md:w-12 h-10 md:h-12 rounded-xl bg-gradient-to-br from-secondary to-gold-light flex items-center justify-center shadow-glow-gold">
                     <span className="text-lg md:text-xl font-bold text-secondary-foreground">+18</span>
                   </div>
                   <div>
@@ -142,9 +148,9 @@ export const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group bg-white rounded-xl p-4 border border-border/50 hover:border-secondary/30 hover:shadow-soft transition-all duration-300"
+                className="group glass-card rounded-2xl p-4 hover:shadow-elevated transition-all duration-500 hover:-translate-y-1"
               >
-                <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-3 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-3 group-hover:from-primary/20 group-hover:to-secondary/20 transition-all duration-300">
                   <unit.icon className="w-4 h-4 text-primary" />
                 </div>
                 <h4 className="font-semibold text-foreground text-sm mb-1">{unit.name}</h4>
@@ -152,7 +158,7 @@ export const About = () => {
                   <MapPin className="w-3 h-3" />
                   {unit.location}
                 </div>
-                <span className="text-[10px] text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                <span className="text-[10px] text-muted-foreground bg-muted/50 backdrop-blur-sm px-2 py-0.5 rounded-full">
                   {unit.type}
                 </span>
               </motion.div>
