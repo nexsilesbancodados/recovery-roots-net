@@ -73,7 +73,7 @@ export const Gallery = () => {
   };
 
   return (
-    <section id="galeria" className="py-20">
+    <section id="galeria" className="py-20 lg:py-28 bg-muted/20">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
@@ -83,13 +83,14 @@ export const Gallery = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Nossa Estrutura
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary font-semibold text-sm uppercase tracking-wider mb-4">
+            <span className="w-2 h-2 rounded-full bg-secondary" />
+            Galeria
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">
-            Conheça Nossas Instalações
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
+            Conheça Nossas <span className="text-primary">Instalações</span>
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Ambientes projetados para oferecer conforto, segurança e bem-estar
             durante todo o processo de recuperação.
           </p>
@@ -104,21 +105,21 @@ export const Gallery = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-lg"
+              className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-soft hover:shadow-card transition-all duration-500"
               onClick={() => openLightbox(index)}
             >
               <div className="aspect-[4/3] overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
               </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <h3 className="text-white font-semibold text-lg mb-1">
                     {image.title}
                   </h3>
@@ -144,7 +145,7 @@ export const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-primary/95 backdrop-blur-sm flex items-center justify-center"
             onClick={closeLightbox}
             onKeyDown={handleKeyDown}
             tabIndex={0}
@@ -195,9 +196,9 @@ export const Gallery = () => {
               <img
                 src={galleryImages[selectedImage].src}
                 alt={galleryImages[selectedImage].title}
-                className="max-w-full max-h-[75vh] object-contain rounded-lg"
+                className="max-w-full max-h-[75vh] object-contain rounded-2xl"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6 rounded-b-2xl">
                 <h3 className="text-white font-semibold text-xl mb-2">
                   {galleryImages[selectedImage].title}
                 </h3>
