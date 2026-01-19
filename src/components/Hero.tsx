@@ -1,146 +1,189 @@
-import { motion } from "framer-motion";
-import { ChevronDown, Phone, Shield, Clock, Award } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-hospital.jpg";
 
-const stats = [
-  { icon: Clock, label: "Atendimento", value: "24 horas" },
-  { icon: Shield, label: "Experiência", value: "+18 anos" },
-  { icon: Award, label: "Pacientes", value: "+2.500" },
-];
+gsap.registerPlugin(ScrollTrigger);
 
 export const Hero = () => {
-  return (
-    <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Hospital Rumo Certo"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-      </div>
+  const heroRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
-          transition={{ duration: 2 }}
-          className="absolute top-20 right-20 w-96 h-96 rounded-full bg-secondary blur-3xl"
+  useEffect(() => {
+    setIsLoaded(true);
+    
+    const ctx = gsap.context(() => {
+      // Hero title animation - mask reveal
+      if (titleRef.current) {
+        const titleLines = titleRef.current.querySelectorAll('.title-line');
+        gsap.set(titleLines, { y: 100, opacity: 0 });
+        
+        gsap.to(titleLines, {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power4.out",
+          stagger: 0.15,
+          delay: 0.5,
+        });
+      }
+
+      // Subtitle animation
+      if (subtitleRef.current) {
+        gsap.fromTo(subtitleRef.current,
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 1 }
+        );
+      }
+
+      // CTA buttons animation
+      if (ctaRef.current) {
+        gsap.fromTo(ctaRef.current.children,
+          { y: 40, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.1, delay: 1.3 }
+        );
+      }
+
+      // Parallax effect on scroll
+      if (overlayRef.current) {
+        gsap.to(overlayRef.current, {
+          opacity: 0.9,
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+      }
+    }, heroRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section 
+      ref={heroRef}
+      id="inicio" 
+      className="relative min-h-screen flex items-center overflow-hidden bg-primary"
+    >
+      {/* Background Video/Image with Ken Burns */}
+      <div className="absolute inset-0">
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover animate-ken-burns"
+          poster="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1920&q=80"
+        >
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-tree-tops-seen-from-above-7-large.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Dark elegant overlay */}
+        <div 
+          ref={overlayRef}
+          className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/70 to-primary/90"
         />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.08 }}
-          transition={{ duration: 2, delay: 0.5 }}
-          className="absolute bottom-20 left-20 w-64 h-64 rounded-full bg-secondary blur-3xl"
+        
+        {/* Subtle grain texture */}
+        <div 
+          className="absolute inset-0 opacity-[0.03] mix-blend-overlay"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          }}
         />
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 pt-32 pb-20">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Title with mask reveal */}
+          <h1 
+            ref={titleRef}
+            className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl text-primary-foreground font-medium leading-[1.1] mb-8 overflow-hidden"
           >
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8"
+            <span className="title-line block">A Arte de</span>
+            <span className="title-line block text-secondary">Recompor</span>
+            <span className="title-line block">o Amanhã.</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p 
+            ref={subtitleRef}
+            className="text-lg md:text-xl lg:text-2xl text-primary-foreground/80 leading-relaxed mb-12 max-w-2xl mx-auto font-light"
+          >
+            Onde a ciência de elite e a privacidade absoluta convergem 
+            para o seu restabelecimento pleno.
+          </p>
+
+          {/* CTA Buttons */}
+          <div ref={ctaRef} className="flex flex-wrap justify-center gap-6">
+            <Button
+              size="lg"
+              className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-base px-10 py-7 rounded-none border-2 border-secondary font-medium tracking-wide transition-all duration-500 hover:shadow-glow-gold"
+              asChild
             >
-              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-              <span className="text-white/90 text-sm font-medium">Referência em Saúde Mental há mais de 18 anos</span>
-            </motion.div>
+              <a href="#contato">
+                Agendar Consultoria Exclusiva
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 text-base px-10 py-7 rounded-none font-medium tracking-wide transition-all duration-500"
+              asChild
+            >
+              <a href="tel:5511955931301">
+                <Phone className="w-5 h-5 mr-3" />
+                (11) 95593-1301
+              </a>
+            </Button>
+          </div>
 
-            {/* Title */}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-bold leading-tight mb-6">
-              Sua Jornada de{" "}
-              <span className="text-secondary">Recuperação</span>{" "}
-              Começa Aqui
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-white/80 leading-relaxed mb-10 max-w-2xl">
-              Tratamento especializado e humanizado para dependência química, 
-              alcoolismo e transtornos mentais. Devolvemos vida, esperança e dignidade.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 mb-16">
-              <Button
-                size="lg"
-                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                asChild
-              >
-                <a href="#contato">
-                  Fale com um Especialista
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full backdrop-blur-sm"
-                asChild
-              >
-                <a href="tel:5511955931301">
-                  <Phone className="w-5 h-5 mr-2" />
-                  (11) 95593-1301
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="grid grid-cols-3 gap-6 md:gap-8"
+          {/* Trust badges */}
+          <div 
+            className={`mt-20 flex justify-center gap-12 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+            style={{ transitionDelay: '1.8s' }}
           >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="text-center md:text-left"
-              >
-                <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center">
-                    <stat.icon className="w-5 h-5 text-secondary" />
-                  </div>
-                  <span className="text-2xl md:text-3xl font-bold text-white">{stat.value}</span>
-                </div>
-                <p className="text-white/60 text-sm">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-serif text-secondary font-medium">+18</p>
+              <p className="text-sm text-primary-foreground/60 mt-1 tracking-wider uppercase">Anos</p>
+            </div>
+            <div className="w-px bg-primary-foreground/20" />
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-serif text-secondary font-medium">2.500+</p>
+              <p className="text-sm text-primary-foreground/60 mt-1 tracking-wider uppercase">Vidas</p>
+            </div>
+            <div className="w-px bg-primary-foreground/20" />
+            <div className="text-center">
+              <p className="text-4xl md:text-5xl font-serif text-secondary font-medium">24h</p>
+              <p className="text-sm text-primary-foreground/60 mt-1 tracking-wider uppercase">Suporte</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      {/* Scroll indicator */}
+      <div 
+        className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        style={{ transitionDelay: '2.2s' }}
       >
-        <motion.a
-          href="#sobre"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2 text-white/60 hover:text-white/80 transition-colors"
+        <a 
+          href="#manifesto"
+          className="flex flex-col items-center gap-3 text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors group"
         >
-          <span className="text-xs uppercase tracking-widest">Saiba mais</span>
-          <ChevronDown className="w-5 h-5" />
-        </motion.a>
-      </motion.div>
+          <span className="text-xs uppercase tracking-[0.3em]">Descobrir</span>
+          <ChevronDown className="w-5 h-5 animate-bounce" />
+        </a>
+      </div>
     </section>
   );
 };
