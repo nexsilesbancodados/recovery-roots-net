@@ -41,8 +41,9 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-secondary-foreground/80 mb-6 leading-relaxed text-sm">
-              Tratamentos especializados em saúde mental, 
-              alcoolismo e dependência química em Cabreúva, SP.
+              Há mais de 18 anos oferecendo tratamentos especializados 
+              em saúde mental, alcoolismo e dependência química. 
+              4 unidades em Cabreúva e Salto, SP.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social, index) => (
