@@ -15,13 +15,24 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <main>
+        {/* Hero - Primeira Impressão */}
         <Hero />
+
+        {/* Grupo 1: Institucional - Quem Somos */}
         <About />
+
+        {/* Grupo 2: Serviços - O Que Fazemos */}
         <Treatments />
+
+        {/* Grupo 3: Estrutura - Nossa Infraestrutura */}
         <Features />
         <Gallery />
+
+        {/* Grupo 4: Credibilidade - Prova Social */}
         <Testimonials />
         <Partners />
+
+        {/* Grupo 5: Conversão - Contato */}
         <CTA />
       </main>
       <Footer />

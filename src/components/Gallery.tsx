@@ -73,7 +73,7 @@ export const Gallery = () => {
   };
 
   return (
-    <section id="galeria" className="py-20 bg-muted/30">
+    <section id="galeria" className="py-20 bg-background border-t border-border/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div

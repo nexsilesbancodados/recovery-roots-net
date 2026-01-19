@@ -96,7 +96,7 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
   };
 
   return (
-    <section id="contato" className="py-24 bg-muted/30">
+    <section id="contato" className="py-24 bg-background">
       <div className="container mx-auto px-4" ref={ref}>
         {/* Credibility Badges */}
         <motion.div
