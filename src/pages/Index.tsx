@@ -7,7 +7,7 @@ import { About } from "@/components/About";
 import { Treatments } from "@/components/Treatments";
 import { RescueService } from "@/components/RescueService";
 import { Infrastructure } from "@/components/Infrastructure";
-import { Team } from "@/components/Team";
+
 import { Features } from "@/components/Features";
 import { Gallery } from "@/components/Gallery";
 import { Testimonials } from "@/components/Testimonials";
@@ -59,8 +59,6 @@ const Index = () => {
         {/* Infraestrutura - Horizontal Scroll */}
         <Infrastructure />
 
-        {/* Equipe Médica - Staggered Grid Editorial */}
-        <Team />
 
         {/* Diferenciais */}
         <Features />
