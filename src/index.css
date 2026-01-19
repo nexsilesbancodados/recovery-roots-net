@@ -4,107 +4,108 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Hospital Institucional - Design System
-   Cores que transmitem: esperança, cuidado, renovação e profissionalismo
+/* Hospital Rumo Certo - Design System
+   Azul Royal + Branco (gradiente) + Paleta Palha
 */
 
 @layer base {
   :root {
-    /* Base */
-    --background: 160 20% 98%;
-    --foreground: 200 25% 15%;
+    /* Base - Gradiente Azul Royal com Branco */
+    --background: 220 60% 98%;
+    --foreground: 220 50% 15%;
 
-    /* Card e superfícies */
-    --card: 0 0% 100%;
-    --card-foreground: 200 25% 15%;
+    /* Card e superfícies - Tons Palha */
+    --card: 40 30% 96%;
+    --card-foreground: 220 50% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 200 25% 15%;
+    --popover: 40 30% 98%;
+    --popover-foreground: 220 50% 15%;
 
-    /* Primary - Verde Esmeralda (Esperança/Renovação) */
-    --primary: 160 45% 35%;
+    /* Primary - Azul Royal */
+    --primary: 225 70% 45%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Azul Petróleo (Confiança/Serenidade) */
-    --secondary: 195 35% 25%;
+    /* Secondary - Azul Royal mais escuro */
+    --secondary: 225 60% 35%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Muted */
-    --muted: 160 15% 92%;
-    --muted-foreground: 200 15% 45%;
+    /* Muted - Palha suave */
+    --muted: 40 25% 92%;
+    --muted-foreground: 40 20% 40%;
 
-    /* Accent - Verde claro suave */
-    --accent: 160 30% 90%;
-    --accent-foreground: 160 45% 25%;
+    /* Accent - Palha dourado */
+    --accent: 40 35% 88%;
+    --accent-foreground: 40 40% 25%;
 
     /* Destructive */
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders e inputs */
-    --border: 160 20% 88%;
-    --input: 160 20% 88%;
-    --ring: 160 45% 35%;
+    /* Borders e inputs - Palha */
+    --border: 40 20% 85%;
+    --input: 40 20% 88%;
+    --ring: 225 70% 45%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(160 45% 35% / 0.95), hsl(195 35% 25% / 0.9));
-    --gradient-soft: linear-gradient(180deg, hsl(160 20% 98%), hsl(160 15% 95%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(160 20% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(225 70% 45% / 0.95), hsl(225 60% 35% / 0.9));
+    --gradient-soft: linear-gradient(180deg, hsl(220 60% 98%), hsl(40 30% 96%));
+    --gradient-card: linear-gradient(145deg, hsl(40 30% 98%), hsl(40 25% 94%));
+    --gradient-background: linear-gradient(180deg, hsl(225 70% 50% / 0.08), hsl(0 0% 100% / 0.95), hsl(40 30% 96% / 0.5));
     
-    --shadow-soft: 0 4px 20px -4px hsl(200 25% 15% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(200 25% 15% / 0.12);
-    --shadow-elevated: 0 20px 50px -15px hsl(200 25% 15% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(225 50% 25% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(225 50% 25% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(225 50% 25% / 0.15);
 
     /* Sidebar */
-    --sidebar-background: 160 20% 97%;
-    --sidebar-foreground: 200 25% 25%;
-    --sidebar-primary: 160 45% 35%;
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 220 50% 20%;
+    --sidebar-primary: 225 70% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 20% 92%;
-    --sidebar-accent-foreground: 200 25% 20%;
-    --sidebar-border: 160 15% 90%;
-    --sidebar-ring: 160 45% 35%;
+    --sidebar-accent: 40 25% 92%;
+    --sidebar-accent-foreground: 220 50% 20%;
+    --sidebar-border: 40 20% 90%;
+    --sidebar-ring: 225 70% 45%;
   }
 
   .dark {
-    --background: 200 25% 8%;
-    --foreground: 160 15% 95%;
+    --background: 225 50% 8%;
+    --foreground: 40 20% 95%;
 
-    --card: 200 25% 12%;
-    --card-foreground: 160 15% 95%;
+    --card: 225 40% 12%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 200 25% 12%;
-    --popover-foreground: 160 15% 95%;
+    --popover: 225 40% 12%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 160 40% 45%;
-    --primary-foreground: 200 25% 8%;
+    --primary: 225 65% 55%;
+    --primary-foreground: 225 50% 8%;
 
-    --secondary: 195 30% 35%;
+    --secondary: 225 50% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 200 20% 18%;
-    --muted-foreground: 160 15% 65%;
+    --muted: 225 30% 18%;
+    --muted-foreground: 40 15% 65%;
 
-    --accent: 160 25% 20%;
-    --accent-foreground: 160 30% 85%;
+    --accent: 40 30% 25%;
+    --accent-foreground: 40 25% 85%;
 
     --destructive: 0 60% 45%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 200 20% 20%;
-    --input: 200 20% 20%;
-    --ring: 160 40% 45%;
+    --border: 225 30% 20%;
+    --input: 225 30% 20%;
+    --ring: 225 65% 55%;
 
-    --sidebar-background: 200 25% 10%;
-    --sidebar-foreground: 160 15% 90%;
-    --sidebar-primary: 160 40% 45%;
-    --sidebar-primary-foreground: 200 25% 8%;
-    --sidebar-accent: 200 20% 15%;
-    --sidebar-accent-foreground: 160 15% 90%;
-    --sidebar-border: 200 20% 18%;
-    --sidebar-ring: 160 40% 45%;
+    --sidebar-background: 225 50% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 225 65% 55%;
+    --sidebar-primary-foreground: 225 50% 8%;
+    --sidebar-accent: 225 30% 15%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 225 30% 18%;
+    --sidebar-ring: 225 65% 55%;
   }
 }
 
@@ -114,8 +115,15 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(180deg, 
+      hsl(225 70% 50% / 0.06) 0%, 
+      hsl(0 0% 100%) 15%, 
+      hsl(40 30% 98%) 50%,
+      hsl(40 25% 96%) 100%
+    );
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -134,6 +142,22 @@
 
   .gradient-soft {
     background: var(--gradient-soft);
+  }
+
+  .gradient-background {
+    background: var(--gradient-background);
+  }
+
+  .bg-palha {
+    background-color: hsl(40 30% 96%);
+  }
+
+  .bg-palha-dark {
+    background-color: hsl(40 25% 92%);
+  }
+
+  .text-palha {
+    color: hsl(40 35% 35%);
   }
 
   .shadow-soft {
