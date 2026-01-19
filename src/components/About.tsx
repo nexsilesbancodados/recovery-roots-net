@@ -4,19 +4,19 @@ import { useRef } from "react";
 import { CheckCircle2, MapPin } from "lucide-react";
 import aboutImage from "@/assets/about-hospital.jpg";
 const values = [
-  "Programa de 12 Passos reconhecido internacionalmente",
-  "Equipe multidisciplinar altamente qualificada",
-  "Mais de 18 anos de experiência em recuperação",
-  "Abordagem holística e integrada de tratamento",
-  "4 unidades especializadas para diferentes públicos",
-  "Suporte contínuo para reconstrução da vida",
+  "Metodologia dos 12 Passos com reconhecimento internacional",
+  "Equipe médica e terapêutica multidisciplinar 24 horas",
+  "Mais de 18 anos transformando vidas com excelência",
+  "Tratamento individualizado e humanizado",
+  "4 unidades especializadas: masculina, feminina e hospitalar",
+  "Acompanhamento pós-alta para prevenção de recaídas",
 ];
 
 const units = [
-  { name: "Unidade Hospitalar", location: "Cabreúva, SP", type: "Principal" },
-  { name: "Unidade Masculina II", location: "Salto, SP", type: "Masculina" },
-  { name: "Unidade Masculina III", location: "Região", type: "Masculina" },
-  { name: "Unidade Feminina", location: "Cabreúva, SP", type: "Feminina" },
+  { name: "Sede Hospitalar", location: "Cabreúva, SP", type: "UTI Psiquiátrica" },
+  { name: "Unidade Masculina I", location: "Salto, SP", type: "Internação" },
+  { name: "Unidade Masculina II", location: "Cabreúva, SP", type: "Internação" },
+  { name: "Unidade Feminina", location: "Cabreúva, SP", type: "Exclusiva" },
 ];
 
 export const About = () => {
@@ -71,17 +71,17 @@ export const About = () => {
               Sobre o Hospital
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-white mt-3 mb-6">
-              Hospital Rumo Certo
+              Referência em Saúde Mental e Dependência Química
             </h2>
             <p className="text-white/80 text-lg mb-6 leading-relaxed">
-              Há mais de 18 anos dedicamo-nos a proporcionar tratamentos excepcionais e especializados 
-              para saúde mental, alcoolismo e dependência química. Com 4 unidades estrategicamente 
-              localizadas, oferecemos atendimento especializado para diferentes perfis de pacientes.
+              Somos o <strong>Hospital Rumo Certo</strong>, referência há mais de 18 anos no tratamento 
+              de dependência química, alcoolismo e transtornos mentais. Nossa missão é devolver 
+              a dignidade, a saúde e a esperança para pacientes e suas famílias.
             </p>
             <p className="text-white/70 mb-8 leading-relaxed">
-              Com uma equipe multidisciplinar altamente qualificada e um compromisso inabalável com 
-              a excelência em cuidados de saúde, oferecemos uma gama completa de serviços de tratamento 
-              personalizados, incluindo o reconhecido Programa de 12 Passos.
+              Contamos com infraestrutura hospitalar completa, equipe médica especializada 24 horas 
+              e metodologia terapêutica comprovada, incluindo o renomado Programa de 12 Passos. 
+              Cada tratamento é personalizado, respeitando as necessidades individuais de recuperação.
             </p>
 
             {/* Values List */}
