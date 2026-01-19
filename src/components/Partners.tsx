@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { GlowCard } from "@/components/ui/glow-card";
 
 // Logos importadas - apenas convênios com logo real
 import bradescoSaude from "@/assets/convenios/bradesco-saude.png";
@@ -67,12 +68,16 @@ export const Partners = () => {
           {duplicatedPartners.map((partner, index) => (
             <motion.div
               key={`${partner.name}-${index}`}
-              className="flex-shrink-0 mx-10 flex items-center justify-center group"
-              whileHover={{ scale: 1.05 }}
+              className="flex-shrink-0 mx-6 flex items-center justify-center group"
+              whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="flex flex-col items-center justify-center gap-4 px-6 py-4 rounded-2xl bg-white/50 backdrop-blur-sm border border-border/20 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-                <div className="p-5 rounded-xl bg-white shadow-sm">
+              <GlowCard 
+                glowColor="emerald" 
+                customSize 
+                className="!w-auto !h-auto flex flex-col items-center justify-center gap-4 px-8 py-6"
+              >
+                <div className="p-4 rounded-xl bg-white/80 shadow-sm">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
@@ -82,7 +87,7 @@ export const Partners = () => {
                 <span className="text-sm font-semibold text-foreground/80 text-center group-hover:text-primary transition-colors">
                   {partner.name}
                 </span>
-              </div>
+              </GlowCard>
             </motion.div>
           ))}
         </div>
