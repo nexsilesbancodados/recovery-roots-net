@@ -22,23 +22,29 @@ export const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center" ref={ref}>
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative"
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elevated">
-              <img
+              <motion.img
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                 alt="Equipe médica do Hospital Renascer Vida"
                 className="w-full h-full object-cover"
+                initial={{ scale: 1.1 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
               />
             </div>
             {/* Floating Card */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="absolute -bottom-8 -right-8 bg-card p-6 rounded-xl shadow-card max-w-[280px]"
             >
               <div className="text-4xl font-serif font-bold text-primary mb-2">95%</div>
