@@ -92,12 +92,12 @@ export const Partners = () => {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-4 flex items-center justify-center"
             >
-              <div className="bg-white rounded-xl shadow-md px-5 py-3 min-w-[180px] h-[70px] flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white rounded-xl shadow-md px-6 py-4 min-w-[220px] h-[100px] flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
                 {partner.logo ? (
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="h-10 w-auto max-w-[140px] object-contain"
+                    className="h-16 w-auto max-w-[180px] object-contain"
                   />
                 ) : (
                   <StyledLogo name={partner.name} color={partner.color || "#333"} />
