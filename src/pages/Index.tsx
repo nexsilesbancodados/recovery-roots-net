@@ -6,7 +6,7 @@ import { Features } from "@/components/Features";
 import { Partners } from "@/components/Partners";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { ChatWidget } from "@/components/ChatWidget";
 
 const Index = () => {
   return (
@@ -21,7 +21,7 @@ const Index = () => {
         <CTA />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <ChatWidget />
     </div>
   );
 };
