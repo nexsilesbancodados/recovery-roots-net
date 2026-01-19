@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo-hospital.png";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
@@ -45,14 +46,12 @@ export const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#inicio" className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-serif text-xl font-bold">RC</span>
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="font-serif text-lg font-semibold text-foreground leading-tight">Hospital Rumo Certo</h1>
-                <p className="text-xs text-muted-foreground">Saúde Mental e Dependência Química</p>
-              </div>
+            <a href="#inicio" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="Hospital Rumo Certo - Saúde Mental, Alcoolismo & Dependência Química" 
+                className="h-16 w-auto"
+              />
             </a>
 
             {/* Desktop Navigation */}
