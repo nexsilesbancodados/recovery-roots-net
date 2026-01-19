@@ -41,15 +41,15 @@ const partners: Partner[] = [
 
 // Componente de logo estilizada para convênios sem imagem
 const StyledLogo = ({ name, color }: { name: string; color: string }) => (
-  <div className="flex items-center gap-2">
+  <div className="flex items-center gap-3">
     <div 
-      className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+      className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-2xl"
       style={{ backgroundColor: color }}
     >
       {name.charAt(0)}
     </div>
     <span 
-      className="font-bold text-base whitespace-nowrap"
+      className="font-bold text-xl whitespace-nowrap"
       style={{ color }}
     >
       {name}
@@ -92,12 +92,12 @@ export const Partners = () => {
               key={`${partner.name}-${index}`}
               className="flex-shrink-0 mx-4 flex items-center justify-center"
             >
-              <div className="bg-white rounded-2xl shadow-md px-8 py-6 min-w-[280px] h-[140px] flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
+              <div className="bg-white rounded-2xl shadow-md px-10 py-8 min-w-[320px] h-[180px] flex items-center justify-center hover:shadow-lg transition-shadow duration-300">
                 {partner.logo ? (
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="h-24 w-auto max-w-[240px] object-contain"
+                    className="h-32 w-auto max-w-[280px] object-contain"
                   />
                 ) : (
                   <StyledLogo name={partner.name} color={partner.color || "#333"} />
