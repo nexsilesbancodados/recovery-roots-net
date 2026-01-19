@@ -52,13 +52,13 @@ export const RescueService = () => {
             
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
               Resgate e Remoção <br />
-              <span className="text-white/80">em Todo o Brasil</span>
+              <span className="text-primary">24 Horas em Todo o Brasil</span>
             </h2>
             
             <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8">
-              Buscamos o paciente em <strong>qualquer lugar do Brasil</strong>, a qualquer hora. 
-              Nossa equipe especializada realiza o resgate com total sigilo, segurança e 
-              humanização, facilitando o início do tratamento.
+              Oferecemos serviço de busca e remoção de pacientes em <strong>qualquer cidade do Brasil</strong>, 
+              com total discrição e segurança. Nossa equipe é treinada para conduzir o processo com 
+              humanização, respeitando a dignidade do paciente e acolhendo a família neste momento delicado.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">

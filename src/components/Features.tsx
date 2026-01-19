@@ -6,23 +6,23 @@ import { TreePine, Building2, UtensilsCrossed, Dumbbell } from "lucide-react";
 const features = [
   {
     icon: Building2,
-    title: "Quartos Privativos",
-    description: "Acomodações confortáveis e privativas para garantir tranquilidade durante o tratamento.",
+    title: "Quartos Individuais e Compartilhados",
+    description: "Acomodações seguras, limpas e confortáveis, com monitoramento 24 horas e equipe de enfermagem.",
   },
   {
     icon: TreePine,
-    title: "Área Verde",
-    description: "Amplo jardim terapêutico com espaços para meditação e atividades ao ar livre.",
+    title: "Ambiente Terapêutico",
+    description: "Áreas verdes amplas em meio à natureza, projetadas para promover paz, reflexão e bem-estar.",
   },
   {
     icon: UtensilsCrossed,
-    title: "Alimentação Balanceada",
-    description: "Refeições preparadas por nutricionistas, respeitando necessidades individuais.",
+    title: "Nutrição Especializada",
+    description: "Cardápio elaborado por nutricionistas, com dietas adaptadas às necessidades de cada paciente.",
   },
   {
     icon: Dumbbell,
-    title: "Espaço Fitness",
-    description: "Academia equipada e profissionais para atividades físicas terapêuticas.",
+    title: "Atividades Físicas",
+    description: "Programas de exercícios supervisionados que auxiliam na recuperação física e mental.",
   },
 ];
 

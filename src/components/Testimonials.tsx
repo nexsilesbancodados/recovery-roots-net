@@ -4,24 +4,24 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    content: "O Hospital Rumo Certo me devolveu a esperança. Após anos lutando contra a dependência, encontrei aqui o acolhimento e o tratamento que precisava para reconstruir minha vida.",
-    author: "M.S.",
-    role: "Paciente recuperado",
-    duration: "Tratamento em 2023",
+    content: "Cheguei ao Hospital Rumo Certo sem esperança, depois de 15 anos lutando contra o álcool. Hoje, estou há 3 anos sóbrio, reconstruí minha família e minha carreira. A equipe me tratou com dignidade quando eu mais precisava.",
+    author: "R.M.",
+    role: "Paciente em recuperação",
+    duration: "Alta em 2022",
   },
   {
     id: 2,
-    content: "Como familiar, vi meu irmão renascer. A equipe multidisciplinar e o programa de 12 passos fizeram toda a diferença. Hoje ele está sóbrio há 2 anos.",
-    author: "A.L.",
-    role: "Familiar de paciente",
-    duration: "Acompanhamento desde 2022",
+    content: "Minha filha estava perdida nas drogas. O Hospital Rumo Certo não apenas a salvou, mas nos devolveu como família. O programa de 12 passos e o suporte aos familiares foram fundamentais para nossa recuperação conjunta.",
+    author: "S.P.",
+    role: "Mãe de paciente",
+    duration: "Tratamento em 2023",
   },
   {
     id: 3,
-    content: "O tratamento para saúde mental mudou completamente minha perspectiva. A abordagem humanizada e o ambiente acolhedor foram essenciais para minha recuperação.",
-    author: "C.R.",
-    role: "Paciente recuperado",
-    duration: "Tratamento em 2024",
+    content: "Sofria de depressão grave e síndrome do pânico. O tratamento psiquiátrico no Rumo Certo, com medicação adequada e terapia, me devolveu a vontade de viver. Hoje sou uma nova pessoa.",
+    author: "L.F.",
+    role: "Paciente recuperada",
+    duration: "Alta em 2024",
   },
 ];
 

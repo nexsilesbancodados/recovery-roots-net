@@ -6,39 +6,39 @@ import { Brain, Heart, Pill, Users, Sparkles, Clock, ArrowRight } from "lucide-r
 const treatments = [
   {
     icon: Brain,
-    title: "Saúde Mental",
-    description: "Tratamento para equilíbrio e bem-estar emocional, afetando diretamente a qualidade de vida de cada indivíduo.",
-    features: ["Ansiedade e Depressão", "Transtornos de Humor", "Acompanhamento Psicológico"],
+    title: "Transtornos Mentais",
+    description: "Tratamento especializado para depressão, ansiedade, bipolaridade, esquizofrenia e outros transtornos psiquiátricos com acompanhamento médico integral.",
+    features: ["Psiquiatria 24 horas", "Psicoterapia Individual", "Medicação Controlada"],
   },
   {
     icon: Pill,
     title: "Dependência Química",
-    description: "Abordagens integradas e personalizadas, reconhecendo que a dependência é uma condição complexa e multifacetada.",
-    features: ["Desintoxicação Segura", "Tratamento Integral", "Prevenção de Recaídas"],
+    description: "Programa completo de desintoxicação e reabilitação para dependentes de drogas, com foco na recuperação física, mental e social.",
+    features: ["Desintoxicação Segura", "Terapia Cognitivo-Comportamental", "Prevenção de Recaídas"],
   },
   {
     icon: Heart,
-    title: "Dependência Feminina",
-    description: "Programas específicos para mulheres, reconhecendo os desafios únicos em sua jornada de recuperação.",
-    features: ["Ambiente Exclusivo", "Suporte Especializado", "Cuidado Humanizado"],
+    title: "Tratamento Feminino",
+    description: "Unidade exclusiva para mulheres, com abordagem sensível às particularidades femininas no processo de recuperação.",
+    features: ["Ambiente Acolhedor", "Equipe Feminina", "Suporte à Maternidade"],
   },
   {
     icon: Users,
     title: "Programa de 12 Passos",
-    description: "Metodologia reconhecida internacionalmente para apoiar cada passo da jornada de recuperação.",
-    features: ["Grupos de Apoio", "Mentoria Individual", "Comunidade Terapêutica"],
+    description: "Metodologia mundialmente reconhecida que promove a recuperação através do autoconhecimento, espiritualidade e apoio mútuo.",
+    features: ["Grupos Terapêuticos", "Apadrinhamento", "Comunidade de Apoio"],
   },
   {
     icon: Sparkles,
-    title: "Terapias Integrativas",
-    description: "Desde terapias individuais até programas de grupo, ajudando a reconstruir vidas e restaurar esperanças.",
-    features: ["Terapia Ocupacional", "Arte-terapia", "Meditação e Yoga"],
+    title: "Alcoolismo",
+    description: "Tratamento especializado para dependência alcoólica, com protocolo médico para abstinência segura e reabilitação completa.",
+    features: ["Desintoxicação Médica", "Terapia de Grupo", "Ressocialização"],
   },
   {
     icon: Clock,
-    title: "Suporte Contínuo",
-    description: "Acompanhamento integral durante todo o processo de tratamento e pós-tratamento.",
-    features: ["Atendimento 24h", "Pós-tratamento", "Suporte Familiar"],
+    title: "Acompanhamento Pós-Alta",
+    description: "Suporte contínuo após a internação para garantir a manutenção da sobriedade e reinserção social do paciente.",
+    features: ["Consultas de Retorno", "Grupos de Apoio", "Orientação Familiar"],
   },
 ];
 
@@ -66,12 +66,12 @@ export const Treatments = () => {
             Nossos Tratamentos
           </motion.span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Tratamentos especializados para{" "}
-            <span className="text-primary">cada necessidade</span>
+            Tratamentos Especializados com{" "}
+            <span className="text-primary">Resultados Comprovados</span>
           </h2>
           <p className="text-white/80 text-lg md:text-xl leading-relaxed">
-            Oferecemos uma abordagem completa e personalizada, combinando as melhores 
-            práticas médicas com cuidado humanizado para sua recuperação.
+            Cada paciente recebe um plano de tratamento individualizado, elaborado por nossa 
+            equipe multidisciplinar, combinando ciência médica e acolhimento humanizado.
           </p>
         </motion.div>
 
@@ -133,7 +133,7 @@ export const Treatments = () => {
           className="text-center mt-16"
         >
           <p className="text-white/80 mb-4">
-            Não sabe qual tratamento é ideal para você ou seu familiar?
+            Precisa de orientação? Nossa equipe está pronta para ajudar você a escolher o melhor caminho.
           </p>
           <a 
             href="https://wa.me/5511955931301?text=Olá! Gostaria de saber mais sobre os tratamentos disponíveis."

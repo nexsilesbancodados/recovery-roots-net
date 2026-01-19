@@ -126,14 +126,14 @@ ${formData.message ? `*Mensagem:* ${formData.message}` : ""}`;
             className="flex flex-col justify-center"
           >
             <p className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
-              Estamos Prontos Para Ajudar
+              Atendimento Humanizado 24 Horas
             </p>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              O primeiro passo para a <span className="text-primary">mudança</span> começa agora
+              Dê o Primeiro Passo Rumo à <span className="text-primary">Recuperação</span>
             </h2>
             <p className="text-white/80 text-lg mb-8">
-              Preencha o formulário ao lado e nossa equipe entrará em contato 
-              para acolher você ou seu familiar e iniciar o caminho da recuperação.
+              Entendemos que buscar ajuda é difícil. Por isso, nossa equipe está preparada para 
+              acolher você ou seu familiar com todo o respeito e sigilo que este momento exige.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
