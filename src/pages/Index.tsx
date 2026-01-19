@@ -10,6 +10,7 @@ import { Partners } from "@/components/Partners";
 import { CTA } from "@/components/CTA";
 import { Footer } from "@/components/Footer";
 import { ChatWidget } from "@/components/ChatWidget";
+import { ParallaxSection, ParallaxBackground } from "@/components/ParallaxSection";
 
 const Index = () => {
   return (
@@ -20,26 +21,46 @@ const Index = () => {
         <Hero />
 
         {/* Convênios - Logo após o Hero */}
-        <Partners />
+        <ParallaxSection speed={0.15} opacity>
+          <Partners />
+        </ParallaxSection>
 
         {/* Grupo 1: Institucional - Quem Somos */}
-        <About />
+        <ParallaxBackground>
+          <ParallaxSection speed={0.1}>
+            <About />
+          </ParallaxSection>
+        </ParallaxBackground>
 
         {/* Grupo 2: Serviços - O Que Fazemos */}
-        <Treatments />
+        <ParallaxSection speed={0.12} opacity>
+          <Treatments />
+        </ParallaxSection>
 
         {/* Destaque: Serviço de Resgate 24h */}
-        <RescueService />
+        <ParallaxSection speed={0.08}>
+          <RescueService />
+        </ParallaxSection>
 
         {/* Grupo 3: Estrutura - Nossa Infraestrutura */}
-        <Features />
-        <Gallery />
+        <ParallaxBackground>
+          <ParallaxSection speed={0.1}>
+            <Features />
+          </ParallaxSection>
+          <ParallaxSection speed={0.15} opacity>
+            <Gallery />
+          </ParallaxSection>
+        </ParallaxBackground>
 
         {/* Grupo 4: Credibilidade - Prova Social */}
-        <Testimonials />
+        <ParallaxSection speed={0.1} opacity>
+          <Testimonials />
+        </ParallaxSection>
 
         {/* Grupo 5: Conversão - Contato */}
-        <CTA />
+        <ParallaxSection speed={0.08}>
+          <CTA />
+        </ParallaxSection>
       </main>
       <Footer />
       <ChatWidget />
