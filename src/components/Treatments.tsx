@@ -6,34 +6,34 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const treatments = [
   {
-    icon: Pill,
-    title: "Dependência Química",
-    description: "Tratamento especializado para álcool, drogas ilícitas e medicamentos, com desintoxicação segura e acompanhamento contínuo.",
+    icon: Brain,
+    title: "Saúde Mental",
+    description: "Tratamento para equilíbrio e bem-estar emocional, afetando diretamente a qualidade de vida de cada indivíduo.",
   },
   {
-    icon: Brain,
-    title: "Transtornos Mentais",
-    description: "Cuidado para depressão, ansiedade, bipolaridade, esquizofrenia e outros transtornos psiquiátricos.",
+    icon: Pill,
+    title: "Dependência Química",
+    description: "Abordagens integradas e personalizadas, reconhecendo que a dependência é uma condição complexa e multifacetada.",
   },
   {
     icon: Heart,
-    title: "Transtornos Alimentares",
-    description: "Abordagem multidisciplinar para anorexia, bulimia e compulsão alimentar.",
+    title: "Dependência Química Feminina",
+    description: "Programas específicos para mulheres, reconhecendo os desafios únicos em sua jornada de recuperação.",
   },
   {
     icon: Users,
-    title: "Terapia Familiar",
-    description: "Suporte para famílias, ajudando a reconstruir vínculos e criar um ambiente favorável à recuperação.",
+    title: "Programa de 12 Passos",
+    description: "Metodologia reconhecida internacionalmente para apoiar cada passo da jornada de recuperação.",
   },
   {
     icon: Sparkles,
-    title: "Terapias Complementares",
-    description: "Arteterapia, musicoterapia, meditação e atividades físicas como parte do tratamento integral.",
+    title: "Terapias Personalizadas",
+    description: "Desde terapias individuais até programas de grupo, ajudando a reconstruir vidas e restaurar esperanças.",
   },
   {
     icon: Clock,
-    title: "Internação 24h",
-    description: "Monitoramento médico e de enfermagem 24 horas, garantindo segurança e suporte contínuo.",
+    title: "Suporte Contínuo",
+    description: "Acompanhamento integral durante todo o processo de tratamento e pós-tratamento.",
   },
 ];
 

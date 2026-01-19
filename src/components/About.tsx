@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const values = [
-  "Tratamento individualizado e humanizado",
-  "Equipe multidisciplinar altamente qualificada",
-  "Ambiente terapêutico acolhedor e seguro",
-  "Metodologia baseada em evidências científicas",
-  "Acompanhamento familiar durante todo o processo",
-  "Suporte pós-tratamento para prevenção de recaídas",
+  "Programa de 12 Passos reconhecido internacionalmente",
+  "Equipe de profissionais altamente qualificados",
+  "Ambiente sereno e acolhedor em Cabreúva, SP",
+  "Abordagem holística e integrada de tratamento",
+  "Unidades específicas para diferentes públicos",
+  "Suporte contínuo para reconstrução da vida",
 ];
 
 export const About = () => {
@@ -31,7 +31,7 @@ export const About = () => {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elevated">
               <motion.img
                 src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
-                alt="Equipe médica do Hospital Renascer Vida"
+                alt="Equipe médica do Hospital Rumo Certo"
                 className="w-full h-full object-cover"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}
@@ -64,18 +64,19 @@ export const About = () => {
               Sobre o Hospital
             </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
-              Cuidado especializado para sua recuperação
+              Hospital Rumo Certo
             </h2>
             <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-              O Hospital Renascer Vida é referência no tratamento de dependência química 
-              e transtornos mentais. Nossa missão é proporcionar um ambiente de cura e 
-              transformação, onde cada paciente recebe atenção personalizada e todo o 
-              suporte necessário para sua jornada de recuperação.
+              Dedicamo-nos a proporcionar tratamentos excepcionais e especializados para saúde mental, 
+              alcoolismo e dependência química. Situado em um ambiente sereno e acolhedor em Cabreúva, 
+              nosso hospital é projetado para oferecer conforto e segurança, garantindo uma recuperação 
+              eficaz em um espaço que respeita a dignidade e a individualidade de cada paciente.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Contamos com uma estrutura moderna e uma equipe composta por psiquiatras, 
-              psicólogos, terapeutas ocupacionais, nutricionistas e enfermeiros 
-              especializados, prontos para oferecer o melhor tratamento.
+              Com uma equipe de profissionais altamente qualificados e um compromisso inabalável com 
+              a excelência em cuidados de saúde, oferecemos uma gama completa de serviços de tratamento 
+              personalizados. Desde terapias individuais até programas de grupo, como o reconhecido 
+              Programa de 12 Passos.
             </p>
 
             {/* Values List */}
