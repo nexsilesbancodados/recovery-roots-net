@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
 import { Treatments } from "@/components/Treatments";
+import { RescueService } from "@/components/RescueService";
 import { Features } from "@/components/Features";
 import { Gallery } from "@/components/Gallery";
 import { Testimonials } from "@/components/Testimonials";
@@ -26,6 +27,9 @@ const Index = () => {
 
         {/* Grupo 2: Serviços - O Que Fazemos */}
         <Treatments />
+
+        {/* Destaque: Serviço de Resgate 24h */}
+        <RescueService />
 
         {/* Grupo 3: Estrutura - Nossa Infraestrutura */}
         <Features />
