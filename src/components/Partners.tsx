@@ -72,11 +72,11 @@ export const Partners = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="flex flex-col items-center justify-center gap-4 px-6 py-4 rounded-2xl bg-white/50 backdrop-blur-sm border border-border/20 shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300">
-                <div className="p-4 rounded-xl bg-white shadow-sm">
+                <div className="p-5 rounded-xl bg-white shadow-sm">
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className="h-20 w-auto max-w-[160px] object-contain drop-shadow-sm"
+                    className="h-24 w-auto max-w-[180px] object-contain drop-shadow-sm"
                   />
                 </div>
                 <span className="text-sm font-semibold text-foreground/80 text-center group-hover:text-primary transition-colors">
