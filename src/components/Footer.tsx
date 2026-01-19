@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Youtube, Phone, MapPin, Mail, Clock } from "lucide-react";
+import logo from "@/assets/logo-hospital.png";
 
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
@@ -31,14 +32,12 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-serif text-xl font-bold">RC</span>
-              </div>
-              <div>
-                <h3 className="font-serif text-xl font-semibold">Rumo Certo</h3>
-                <p className="text-sm text-secondary-foreground/70">Hospital Psiquiátrico</p>
-              </div>
+            <div className="mb-6">
+              <img 
+                src={logo} 
+                alt="Hospital Rumo Certo" 
+                className="h-20 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-secondary-foreground/80 mb-6 leading-relaxed text-sm">
               Há mais de 18 anos oferecendo tratamentos especializados 
