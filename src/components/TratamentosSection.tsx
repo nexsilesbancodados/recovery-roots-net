@@ -172,8 +172,15 @@ const TratamentosSection = () => {
     const cards = section.querySelector(".cards-container") as HTMLElement;
     if (!cards) return;
 
+    // Kill any existing ScrollTriggers first
+    ScrollTrigger.getAll().forEach(st => {
+      if (st.vars.trigger === trigger) st.kill();
+    });
+
     // Wait for layout to settle
     const timeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+      
       const totalWidth = cards.scrollWidth - window.innerWidth;
 
       const ctx = gsap.context(() => {
@@ -183,20 +190,27 @@ const TratamentosSection = () => {
           scrollTrigger: {
             trigger: trigger,
             start: "top top",
-            end: () => `+=${totalWidth * 1.2}`,
+            end: () => `+=${totalWidth}`,
             pin: true,
             pinSpacing: true,
-            scrub: 0.5,
+            scrub: 1,
             anticipatePin: 1,
             invalidateOnRefresh: true,
+            id: "tratamentos-scroll",
           }
         });
       }, section);
 
-      return () => ctx.revert();
-    }, 100);
+      // Refresh after setup
+      setTimeout(() => ScrollTrigger.refresh(), 200);
 
-    return () => clearTimeout(timeout);
+      return () => ctx.revert();
+    }, 150);
+
+    return () => {
+      clearTimeout(timeout);
+      ScrollTrigger.getById("tratamentos-scroll")?.kill();
+    };
   }, []);
 
   return (
