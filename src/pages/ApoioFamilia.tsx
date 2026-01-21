@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import { Heart, Users, Phone, BookOpen, Shield, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import familiaRecuperacao from "@/assets/familia-recuperacao.png";
 
 const orientacoes = [
   {
@@ -45,17 +46,27 @@ const ApoioFamilia = () => {
 
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-pink-500/10 via-background to-rose-500/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+      {/* Hero with Image */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={familiaRecuperacao} 
+            alt="Família celebrando recuperação"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Apoio à Família
             </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Você Não Está Sozinho Nessa Jornada
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-white/90 text-lg leading-relaxed mb-8">
               Ver alguém que amamos lutando contra a dependência é uma das experiências mais dolorosas que uma família pode enfrentar. 
               Estamos aqui para apoiar você em cada passo desse caminho.
             </p>
