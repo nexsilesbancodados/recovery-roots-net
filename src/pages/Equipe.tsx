@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import { Phone, MessageCircle, Stethoscope, Brain, Heart, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import equipeMedica from "@/assets/equipe-medica.png";
 
 const especialidades = [
   {
@@ -44,25 +45,16 @@ const Equipe = () => {
 
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-blue-500/10 via-background to-cyan-500/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Nossa Equipe
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              Profissionais Especializados
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Nossa equipe multidisciplinar é formada por profissionais altamente qualificados, 
-              dedicados a oferecer o melhor tratamento com humanidade e competência.
-            </p>
-            <Button size="lg" onClick={openWhatsApp} className="bg-primary hover:bg-primary/90">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Falar com a Equipe
-            </Button>
-          </div>
+      {/* Hero with Image */}
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={equipeMedica} 
+            alt="Equipe médica do Hospital Rumo Certo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
       </section>
 
