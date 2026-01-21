@@ -25,24 +25,23 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full" id="inicio">
-      {/* Background Images Carousel */}
-      <AnimatePresence mode="wait">
+    <section className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden" id="inicio">
+      {/* Background Images Carousel - Fixed aspect ratio to prevent layout shift */}
+      {heroImages.map((image, index) => (
         <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          key={index}
+          initial={false}
+          animate={{ opacity: index === currentIndex ? 1 : 0 }}
           transition={{ duration: 1 }}
-          className="w-full"
+          className="absolute inset-0 w-full h-full"
         >
           <img
-            src={heroImages[currentIndex].src}
-            alt={heroImages[currentIndex].alt}
-            className="w-full h-auto"
+            src={image.src}
+            alt={image.alt}
+            className="w-full h-full object-cover"
           />
         </motion.div>
-      </AnimatePresence>
+      ))}
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
