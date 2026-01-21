@@ -38,13 +38,18 @@ const Navbar = () => {
     { label: "Apoio à Família", href: "/apoio-familia" },
     { label: "UTI", href: "/uti" },
     { label: "Desintoxicação", href: "/desintoxicacao" },
+    { label: "Convênios", href: "/convenios" },
+    { label: "Resgate 24h", href: "/resgate" },
+    { label: "Equipe", href: "/equipe" },
   ];
 
   // Botões rápidos para mobile (páginas separadas)
   const quickPageLinks = [
+    { label: "Convênios", href: "/convenios" },
+    { label: "Resgate", href: "/resgate" },
     { label: "Família", href: "/apoio-familia" },
     { label: "UTI", href: "/uti" },
-    { label: "Como Funciona", href: "/como-funciona" },
+    { label: "Equipe", href: "/equipe" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
