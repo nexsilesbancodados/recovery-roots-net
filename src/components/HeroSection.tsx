@@ -1,32 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-import heroImage1 from "@/assets/hero-hospital.png";
-import heroImage2 from "@/assets/hero-resgate.png";
-import heroImage3 from "@/assets/hero-setembro-amarelo.png";
-import heroImage4 from "@/assets/hero-combate-drogas.png";
-import heroImage5 from "@/assets/hero-convenios.png";
+import heroImage from "@/assets/hero-hospital.png";
 import AgendamentoModal from "@/components/AgendamentoModal";
 
-const heroImages = [
-  { src: heroImage1, alt: "Hospital Rumo Certo - Ambiente terapêutico" },
-  { src: heroImage2, alt: "Hospital Rumo Certo - Resgate 24 horas" },
-  { src: heroImage3, alt: "Setembro Amarelo - Prevenção ao suicídio" },
-  { src: heroImage4, alt: "Combate às Drogas e Alcoolismo" },
-  { src: heroImage5, alt: "Convênios de saúde aceitos" },
-];
-
 const HeroSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
 
   const openWhatsApp = () => {
     const mensagem = encodeURIComponent(
@@ -37,21 +17,14 @@ const HeroSection = () => {
 
   return (
     <section className="relative w-full min-h-[90vh] md:min-h-screen overflow-hidden" id="inicio">
-      {/* Background Images with Ken Burns Effect */}
-      {heroImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentImageIndex ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <img
-            src={image.src}
-            alt={image.alt}
-            className="w-full h-full object-cover scale-105 animate-[kenburns_20s_ease-in-out_infinite]"
-          />
-        </div>
-      ))}
+      {/* Background Image with Ken Burns Effect */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Hospital Rumo Certo - Ambiente terapêutico"
+          className="w-full h-full object-cover scale-105 animate-[kenburns_20s_ease-in-out_infinite]"
+        />
+      </div>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
@@ -135,22 +108,6 @@ const HeroSection = () => {
               </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Indicator Dots */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-          {heroImages.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                index === currentImageIndex
-                  ? "bg-primary w-8"
-                  : "bg-white/40 hover:bg-white/60"
-              }`}
-              aria-label={`Ir para imagem ${index + 1}`}
-            />
-          ))}
         </div>
       </div>
 
