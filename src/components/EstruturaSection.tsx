@@ -184,7 +184,7 @@ const EstruturaSection = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative z-10 py-12 sm:py-16 bg-muted/30 lg:min-h-screen lg:flex lg:flex-col lg:justify-center overflow-hidden" id="estrutura">
+    <section ref={sectionRef} className="relative z-30 py-12 sm:py-16 bg-muted/30 lg:min-h-screen lg:flex lg:flex-col lg:justify-center overflow-hidden" id="estrutura">
       {/* Header */}
       <div className="container mx-auto px-4 mb-6 sm:mb-8">
         <div className="text-center lg:text-left lg:max-w-xl">
