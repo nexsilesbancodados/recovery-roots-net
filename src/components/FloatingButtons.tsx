@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, forwardRef } from "react";
 import { MessageCircle, ArrowUp, Siren } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SOSModal from "@/components/SOSModal";
 
-const FloatingButtons = () => {
+const FloatingButtons = forwardRef<HTMLDivElement>((_, ref) => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [isSOSModalOpen, setIsSOSModalOpen] = useState(false);
 
@@ -29,7 +29,7 @@ const FloatingButtons = () => {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+      <div ref={ref} className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
         {/* Botão Voltar ao Topo */}
         <AnimatePresence>
           {showScrollTop && (
@@ -77,6 +77,8 @@ const FloatingButtons = () => {
       <SOSModal open={isSOSModalOpen} onOpenChange={setIsSOSModalOpen} />
     </>
   );
-};
+});
+
+FloatingButtons.displayName = "FloatingButtons";
 
 export default FloatingButtons;
