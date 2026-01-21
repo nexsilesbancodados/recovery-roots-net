@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import convenioAtendimento from "@/assets/convenio-atendimento.png";
 
 // Importar logos dos convênios
 import bradesco from "@/assets/convenios/bradesco-saude.png";
@@ -46,25 +47,16 @@ const Convenios = () => {
 
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Convênios
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              Planos de Saúde Aceitos
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Trabalhamos com os principais convênios médicos do país para facilitar 
-              o acesso ao tratamento que você ou seu familiar precisa.
-            </p>
-            <Button size="lg" onClick={openWhatsApp} className="bg-primary hover:bg-primary/90">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Verificar Meu Convênio
-            </Button>
-          </div>
+      {/* Hero with Image */}
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={convenioAtendimento} 
+            alt="Atendimento com convênio de saúde"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
       </section>
 
