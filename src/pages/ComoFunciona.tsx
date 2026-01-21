@@ -1,6 +1,7 @@
 import PageLayout from "@/components/PageLayout";
-import { Phone, ClipboardCheck, Home, Stethoscope, Smile, Calendar, Users, Heart, MessageCircle } from "lucide-react";
+import { Phone, ClipboardCheck, Home, Stethoscope, Smile, Calendar, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import grupoApoio from "@/assets/grupo-apoio.png";
 
 const etapas = [
   {
@@ -93,17 +94,27 @@ const ComoFunciona = () => {
 
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-purple-500/10 via-background to-indigo-500/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+      {/* Hero with Image */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={grupoApoio} 
+            alt="Grupo de apoio mútuo - Recuperação e esperança"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-2xl">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Processo de Internação
             </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
               Como Funciona a Internação
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-white/90 text-lg leading-relaxed mb-8">
               Entenda cada etapa do processo de internação no Hospital Rumo Certo. 
               Do primeiro contato até a alta, trabalhamos para que você ou seu familiar 
               tenha o melhor tratamento possível.
