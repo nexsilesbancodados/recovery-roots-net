@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logoImage from "@/assets/logo-hospital.png";
@@ -34,7 +34,7 @@ const Navbar = () => {
     const element = document.getElementById(targetId);
 
     if (element) {
-      const navHeight = 120;
+      const navHeight = 100;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
         top: elementPosition - navHeight,
@@ -53,38 +53,6 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      {/* Top Bar - Only visible when not scrolled */}
-      <AnimatePresence>
-        {!isScrolled && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="bg-black/20 backdrop-blur-sm text-white py-1.5 overflow-hidden"
-          >
-            <div className="container mx-auto px-4 flex flex-wrap justify-between items-center text-xs">
-              <div className="flex items-center gap-4">
-                <a
-                  href="tel:+5511955931301"
-                  className="flex items-center gap-1 hover:text-primary transition-colors"
-                >
-                  <Phone size={12} />
-                  <span>(11) 95593-1301</span>
-                </a>
-                <span className="hidden md:flex items-center gap-1">
-                  <Clock size={12} />
-                  <span>Atendimento 24h</span>
-                </span>
-              </div>
-              <span className="hidden sm:flex items-center gap-1">
-                <MapPin size={12} />
-                <span>Cabreúva, SP</span>
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Main Navigation */}
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
