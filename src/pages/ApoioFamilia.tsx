@@ -41,7 +41,7 @@ const ApoioFamilia = () => {
     const mensagem = encodeURIComponent(
       "Olá! Sou familiar e preciso de orientação sobre como ajudar meu ente querido."
     );
-    window.open(`https://wa.me/5511955931301?text=${mensagem}`, "_blank");
+    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
   };
 
   return (

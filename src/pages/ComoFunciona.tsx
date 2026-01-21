@@ -89,7 +89,7 @@ const ComoFunciona = () => {
     const mensagem = encodeURIComponent(
       "Olá! Gostaria de entender como funciona o processo de internação."
     );
-    window.open(`https://wa.me/5511955931301?text=${mensagem}`, "_blank");
+    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
   };
 
   return (

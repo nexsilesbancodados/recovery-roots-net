@@ -2,7 +2,7 @@ import { Phone, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 const EmergencyBar = () => {
-  const phoneNumber = "5511955931301";
+  const phoneNumber = "5511988104793";
   
   const handleCall = () => {
     window.location.href = `tel:+${phoneNumber}`;
@@ -28,7 +28,7 @@ const EmergencyBar = () => {
             className="flex items-center gap-2 bg-white text-red-600 px-3 py-1 rounded-full font-bold text-xs md:text-sm hover:bg-red-50 transition-colors shadow-md"
           >
             <Phone className="w-3 h-3 md:w-4 md:h-4" />
-            <span>(11) 95593-1301</span>
+            <span>(11) 98810-4793</span>
           </button>
           
           <span className="hidden sm:inline text-xs md:text-sm font-medium bg-white/20 px-2 py-0.5 rounded-full">
