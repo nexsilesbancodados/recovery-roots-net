@@ -152,9 +152,12 @@ const EstruturaSection = () => {
       // Calculate scroll distance
       const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
 
-      // Pin the section and scroll horizontally
+      // Start from the right (negative position) and scroll to the left (0)
+      gsap.set(cardsWrapper, { x: -scrollWidth });
+      
+      // Pin the section and scroll horizontally TO THE RIGHT
       gsap.to(cardsWrapper, {
-        x: -scrollWidth,
+        x: 0,
         ease: "none",
         scrollTrigger: {
           trigger: section,
@@ -186,9 +189,9 @@ const EstruturaSection = () => {
             Ambientes pensados para o seu conforto e recuperação, com recursos que fazem a diferença no tratamento
           </p>
           <div className="hidden md:flex items-center gap-2 text-muted-foreground text-sm mt-4">
-            <span>←</span>
-            <span>Role para explorar</span>
             <span>→</span>
+            <span>Role para explorar</span>
+            <span>←</span>
           </div>
         </div>
       </div>
