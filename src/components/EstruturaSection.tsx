@@ -141,24 +141,46 @@ const EstruturaSection = () => {
 
     if (!section || !cards) return;
 
-    const totalScroll = cards.scrollWidth - cards.clientWidth;
+    // Kill any existing ScrollTriggers for this section
+    ScrollTrigger.getById("estrutura-scroll")?.kill();
 
-    const ctx = gsap.context(() => {
-      gsap.to(cards, {
-        x: totalScroll,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-        },
-      });
-    }, section);
+    // Wait for previous sections to be set up
+    const timeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+      
+      const totalScroll = cards.scrollWidth - cards.clientWidth;
 
-    return () => ctx.revert();
+      const ctx = gsap.context(() => {
+        // Reset initial position
+        gsap.set(cards, { x: -totalScroll });
+        
+        gsap.to(cards, {
+          x: 0,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${totalScroll}`,
+            pin: true,
+            pinSpacing: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            id: "estrutura-scroll",
+          },
+        });
+      }, section);
+
+      // Refresh after setup
+      setTimeout(() => ScrollTrigger.refresh(), 200);
+
+      return () => ctx.revert();
+    }, 300);
+
+    return () => {
+      clearTimeout(timeout);
+      ScrollTrigger.getById("estrutura-scroll")?.kill();
+    };
   }, []);
 
   return (
@@ -180,8 +202,7 @@ const EstruturaSection = () => {
         {/* Cards - Horizontal Scroll */}
         <div 
           ref={cardsRef}
-          className="flex gap-6"
-          style={{ transform: `translateX(-${recursos.length * 320 - window.innerWidth + 100}px)` }}
+          className="flex gap-6 pl-4"
         >
           {recursos.map((recurso) => {
             const IconComponent = recurso.icon;
