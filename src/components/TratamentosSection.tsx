@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { X, Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Import background images
 import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
@@ -11,6 +13,8 @@ import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
 import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.jpg";
 import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.jpg";
 import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Tratamento {
   id: string;
@@ -156,83 +160,203 @@ const tratamentos: Tratamento[] = [
 
 const TratamentosSection = () => {
   const [selectedTratamento, setSelectedTratamento] = useState<Tratamento | null>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLDivElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+  const cardsWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const title = titleRef.current;
+    const cardsContainer = cardsContainerRef.current;
+    const cardsWrapper = cardsWrapperRef.current;
+    
+    if (!section || !title || !cardsContainer || !cardsWrapper) return;
+
+    // Check if mobile
+    const isMobile = window.innerWidth < 768;
+    
+    if (isMobile) return; // Skip GSAP on mobile
+
+    const ctx = gsap.context(() => {
+      // Calculate scroll distance
+      const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
+
+      // Pin the section and scroll horizontally
+      gsap.to(cardsWrapper, {
+        x: -scrollWidth,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${scrollWidth}`,
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Keep title pinned on left side
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        end: () => `+=${scrollWidth}`,
+        pin: title,
+        pinSpacing: false,
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>
       <section 
+        ref={sectionRef}
         id="tratamentos" 
-        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16"
+        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:min-h-screen md:flex md:items-center overflow-hidden"
       >
-        {/* Header */}
-        <div className="container mx-auto px-4 mb-8">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Especialidades
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1 mb-3">
-            Tratamentos Oferecidos
-          </h2>
-          <p className="text-muted-foreground text-base max-w-xl">
-            Oferecemos tratamento especializado e humanizado para diversas condições.
-          </p>
-        </div>
-
-        {/* Horizontal Scroll Cards - CSS Native */}
-        <div className="overflow-x-auto scrollbar-hide pb-4">
-          <div className="flex gap-6 px-4 md:px-12 min-w-max">
-            {tratamentos.map((tratamento) => (
-              <div
-                key={tratamento.id}
-                onClick={() => setSelectedTratamento(tratamento)}
-                className={`
-                  flex-shrink-0 w-72 md:w-80 h-64 rounded-2xl p-6 cursor-pointer
-                  text-white relative overflow-hidden
-                  transform transition-all duration-300
-                  hover:scale-105 hover:shadow-2xl hover:-translate-y-2
-                  flex flex-col justify-between
-                  group
-                `}
-              >
-                {/* Background - Image or Gradient */}
-                {tratamento.bgImage ? (
-                  <>
-                    <img 
-                      src={tratamento.bgImage} 
-                      alt={tratamento.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
-                  </>
-                ) : (
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
-                )}
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
-                    {tratamento.icon}
-                  </div>
-                  <h3 className="font-display text-2xl font-bold mb-3">
-                    {tratamento.title}
-                  </h3>
-                  <p className="text-white/95 text-base leading-relaxed">
-                    {tratamento.shortDescription}
-                  </p>
-                </div>
-                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
-                  <span>Saiba mais</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
+        <div className="w-full">
+          {/* Desktop: Side-by-side layout for pinning */}
+          <div className="hidden md:flex items-start">
+            {/* Title - Pinned on left */}
+            <div ref={titleRef} className="w-1/3 px-8 py-8 flex-shrink-0">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Especialidades
+              </span>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+                Tratamentos Oferecidos
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                Oferecemos tratamento especializado e humanizado para diversas condições.
+              </p>
+              <div className="mt-6 flex items-center gap-2 text-muted-foreground text-sm">
+                <span>←</span>
+                <span>Role para explorar</span>
+                <span>→</span>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Scroll Hint */}
-        <div className="flex justify-center mt-4 text-muted-foreground">
-          <div className="flex items-center gap-2 text-sm">
-            <span>←</span>
-            <span>Arraste para ver mais</span>
-            <span>→</span>
+            {/* Cards Container - Scrolls horizontally */}
+            <div ref={cardsContainerRef} className="flex-1 overflow-hidden">
+              <div ref={cardsWrapperRef} className="flex gap-6 px-8 py-8">
+                {tratamentos.map((tratamento) => (
+                  <div
+                    key={tratamento.id}
+                    onClick={() => setSelectedTratamento(tratamento)}
+                    className={`
+                      flex-shrink-0 w-80 h-72 rounded-2xl p-6 cursor-pointer
+                      text-white relative overflow-hidden
+                      transform transition-all duration-300
+                      hover:scale-105 hover:shadow-2xl hover:-translate-y-2
+                      flex flex-col justify-between
+                      group
+                    `}
+                  >
+                    {tratamento.bgImage ? (
+                      <>
+                        <img 
+                          src={tratamento.bgImage} 
+                          alt={tratamento.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                      </>
+                    ) : (
+                      <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
+                    )}
+                    
+                    <div className="relative z-10">
+                      <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                        {tratamento.icon}
+                      </div>
+                      <h3 className="font-display text-2xl font-bold mb-3">
+                        {tratamento.title}
+                      </h3>
+                      <p className="text-white/95 text-base leading-relaxed line-clamp-2">
+                        {tratamento.shortDescription}
+                      </p>
+                    </div>
+                    <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
+                      <span>Saiba mais</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile: Original vertical scroll */}
+          <div className="md:hidden">
+            <div className="container mx-auto px-4 mb-8">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Especialidades
+              </span>
+              <h2 className="font-display text-3xl font-bold text-foreground mt-1 mb-3">
+                Tratamentos Oferecidos
+              </h2>
+              <p className="text-muted-foreground text-base max-w-xl">
+                Oferecemos tratamento especializado e humanizado para diversas condições.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto scrollbar-hide pb-4">
+              <div className="flex gap-6 px-4 min-w-max">
+                {tratamentos.map((tratamento) => (
+                  <div
+                    key={tratamento.id}
+                    onClick={() => setSelectedTratamento(tratamento)}
+                    className={`
+                      flex-shrink-0 w-72 h-64 rounded-2xl p-6 cursor-pointer
+                      text-white relative overflow-hidden
+                      transform transition-all duration-300
+                      hover:scale-105 hover:shadow-2xl
+                      flex flex-col justify-between
+                      group
+                    `}
+                  >
+                    {tratamento.bgImage ? (
+                      <>
+                        <img 
+                          src={tratamento.bgImage} 
+                          alt={tratamento.title}
+                          className="absolute inset-0 w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                      </>
+                    ) : (
+                      <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
+                    )}
+                    
+                    <div className="relative z-10">
+                      <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                        {tratamento.icon}
+                      </div>
+                      <h3 className="font-display text-xl font-bold mb-2">
+                        {tratamento.title}
+                      </h3>
+                      <p className="text-white/95 text-sm leading-relaxed line-clamp-2">
+                        {tratamento.shortDescription}
+                      </p>
+                    </div>
+                    <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
+                      <span>Saiba mais</span>
+                      <span className="group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center mt-4 text-muted-foreground">
+              <div className="flex items-center gap-2 text-sm">
+                <span>←</span>
+                <span>Arraste para ver mais</span>
+                <span>→</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

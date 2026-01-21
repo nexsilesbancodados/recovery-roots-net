@@ -1,6 +1,11 @@
+import { useEffect, useRef } from "react";
 import { Home, Utensils, TreePine, Dumbbell, Waves, Heart, Bed, Music, BookOpen, Palette, Dog, Coffee, Tv, Flower2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Recurso {
   id: number;
@@ -127,59 +132,96 @@ const recursos: Recurso[] = [
 ];
 
 const EstruturaSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
+  const cardsWrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const cardsContainer = cardsContainerRef.current;
+    const cardsWrapper = cardsWrapperRef.current;
+    
+    if (!section || !cardsContainer || !cardsWrapper) return;
+
+    // Check if mobile
+    const isMobile = window.innerWidth < 768;
+    
+    if (isMobile) return; // Skip GSAP on mobile
+
+    const ctx = gsap.context(() => {
+      // Calculate scroll distance
+      const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
+
+      // Pin the section and scroll horizontally
+      gsap.to(cardsWrapper, {
+        x: -scrollWidth,
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: () => `+=${scrollWidth}`,
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section className="relative z-10 py-16 bg-muted/30" id="estrutura">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-hospital-primary font-semibold text-sm uppercase tracking-wider">
+    <section ref={sectionRef} className="relative z-10 py-16 bg-muted/30 md:min-h-screen md:flex md:flex-col md:justify-center overflow-hidden" id="estrutura">
+      {/* Header */}
+      <div className="container mx-auto px-4 mb-8">
+        <div className="text-center md:text-left md:max-w-xl">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Infraestrutura
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mt-2">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mt-2">
             Nossa Estrutura
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-base md:text-lg">
+          <p className="text-muted-foreground mt-4 text-base md:text-lg">
             Ambientes pensados para o seu conforto e recuperação, com recursos que fazem a diferença no tratamento
           </p>
+          <div className="hidden md:flex items-center gap-2 text-muted-foreground text-sm mt-4">
+            <span>←</span>
+            <span>Role para explorar</span>
+            <span>→</span>
+          </div>
         </div>
       </div>
 
-      {/* Cards - Horizontal Scroll with CSS */}
-      <div className="overflow-x-auto scrollbar-hide pb-4">
-        <div className="flex gap-6 px-4 min-w-max">
+      {/* Desktop: Horizontal scroll with GSAP */}
+      <div ref={cardsContainerRef} className="hidden md:block overflow-hidden flex-1">
+        <div ref={cardsWrapperRef} className="flex gap-6 px-8 py-4 w-max">
           {recursos.map((recurso) => {
             const IconComponent = recurso.icon;
             return (
               <div
                 key={recurso.id}
-                className="flex-shrink-0 w-[300px] md:w-[350px]"
+                className="flex-shrink-0 w-[320px]"
               >
                 <Card
                   className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden h-full"
                 >
-                  {/* Decorative gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-hospital-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Decorative corner accent */}
-                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-hospital-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
                   
                   <CardContent className="p-6 relative z-10">
-                    {/* Icon Container */}
                     <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md group-hover:shadow-lg`}>
                       <IconComponent className={`w-7 h-7 ${recurso.color} transition-colors duration-300`} />
                     </div>
 
-                    {/* Content */}
-                    <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-hospital-primary transition-colors duration-300">
+                    <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                       {recurso.nome}
                     </h3>
                     <p className="text-base text-muted-foreground leading-relaxed">
                       {recurso.descricao}
                     </p>
                     
-                    {/* Bottom accent line */}
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-hospital-primary/0 via-hospital-primary to-hospital-primary/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   </CardContent>
                 </Card>
               </div>
@@ -188,8 +230,45 @@ const EstruturaSection = () => {
         </div>
       </div>
 
-      {/* Scroll Hint */}
-      <div className="flex justify-center mt-4 text-muted-foreground">
+      {/* Mobile: Native horizontal scroll */}
+      <div className="md:hidden overflow-x-auto scrollbar-hide pb-4">
+        <div className="flex gap-6 px-4 min-w-max">
+          {recursos.map((recurso) => {
+            const IconComponent = recurso.icon;
+            return (
+              <div
+                key={recurso.id}
+                className="flex-shrink-0 w-[300px]"
+              >
+                <Card
+                  className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden h-full"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
+                  
+                  <CardContent className="p-6 relative z-10">
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md group-hover:shadow-lg`}>
+                      <IconComponent className={`w-7 h-7 ${recurso.color} transition-colors duration-300`} />
+                    </div>
+
+                    <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                      {recurso.nome}
+                    </h3>
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {recurso.descricao}
+                    </p>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Mobile: Scroll Hint */}
+      <div className="md:hidden flex justify-center mt-4 text-muted-foreground">
         <div className="flex items-center gap-2 text-sm">
           <span>←</span>
           <span>Arraste para ver mais</span>
