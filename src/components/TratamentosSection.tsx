@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useState } from "react";
 import { X, Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
@@ -13,8 +11,6 @@ import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
 import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.jpg";
 import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.jpg";
 import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Tratamento {
   id: string;
@@ -159,86 +155,31 @@ const tratamentos: Tratamento[] = [
 ];
 
 const TratamentosSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
   const [selectedTratamento, setSelectedTratamento] = useState<Tratamento | null>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const trigger = triggerRef.current;
-
-    if (!section || !trigger) return;
-
-    const cards = section.querySelector(".cards-container") as HTMLElement;
-    if (!cards) return;
-
-    // Kill any existing ScrollTriggers first
-    ScrollTrigger.getAll().forEach(st => {
-      if (st.vars.trigger === trigger) st.kill();
-    });
-
-    // Wait for layout to settle
-    const timeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-      
-      const totalWidth = cards.scrollWidth - window.innerWidth;
-
-      const ctx = gsap.context(() => {
-        gsap.to(cards, {
-          x: -totalWidth,
-          ease: "none",
-          scrollTrigger: {
-            trigger: trigger,
-            start: "top top",
-            end: () => `+=${totalWidth}`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 1,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            id: "tratamentos-scroll",
-          }
-        });
-      }, section);
-
-      // Refresh after setup
-      setTimeout(() => ScrollTrigger.refresh(), 200);
-
-      return () => ctx.revert();
-    }, 150);
-
-    return () => {
-      clearTimeout(timeout);
-      ScrollTrigger.getById("tratamentos-scroll")?.kill();
-    };
-  }, []);
 
   return (
     <>
       <section 
-        ref={sectionRef} 
         id="tratamentos" 
-        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 z-20"
+        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16"
       >
-        <div ref={triggerRef} className="min-h-screen overflow-hidden pb-16">
-          {/* Header */}
-          <div className="pt-12 pb-8 px-4">
-            <div className="container mx-auto">
-              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-                Especialidades
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1 mb-3">
-                Tratamentos Oferecidos
-              </h2>
-              <p className="text-muted-foreground text-base max-w-xl">
-                Oferecemos tratamento especializado e humanizado para diversas condições.
-              </p>
-            </div>
-          </div>
+        {/* Header */}
+        <div className="container mx-auto px-4 mb-8">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            Especialidades
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-1 mb-3">
+            Tratamentos Oferecidos
+          </h2>
+          <p className="text-muted-foreground text-base max-w-xl">
+            Oferecemos tratamento especializado e humanizado para diversas condições.
+          </p>
+        </div>
 
-          {/* Horizontal Scroll Cards */}
-          <div className="cards-container flex gap-6 pl-4 md:pl-12 pr-32 items-center min-h-[60vh]">
-{tratamentos.map((tratamento) => (
+        {/* Horizontal Scroll Cards - CSS Native */}
+        <div className="overflow-x-auto scrollbar-hide pb-4">
+          <div className="flex gap-6 px-4 md:px-12 min-w-max">
+            {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
@@ -284,14 +225,14 @@ const TratamentosSection = () => {
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Scroll Hint */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-muted-foreground animate-pulse">
-            <span className="text-xs mb-1">Role para explorar</span>
-            <div className="flex gap-1">
-              <span>←</span>
-              <span>→</span>
-            </div>
+        {/* Scroll Hint */}
+        <div className="flex justify-center mt-4 text-muted-foreground">
+          <div className="flex items-center gap-2 text-sm">
+            <span>←</span>
+            <span>Arraste para ver mais</span>
+            <span>→</span>
           </div>
         </div>
       </section>
