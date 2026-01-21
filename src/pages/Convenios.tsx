@@ -48,16 +48,12 @@ const Convenios = () => {
   return (
     <PageLayout>
       {/* Hero with Image */}
-      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={convenioAtendimento} 
-            alt="Atendimento com convênio de saúde"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-        </div>
+      <section className="relative w-full">
+        <img 
+          src={convenioAtendimento} 
+          alt="Atendimento com convênio de saúde"
+          className="w-full h-auto"
+        />
       </section>
 
       {/* Logos dos Convênios */}
