@@ -1,188 +1,191 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { gsap } from "gsap";
+import { useState, useEffect } from "react";
 import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-hospital.png";
+import heroImage1 from "@/assets/hero-hospital.png";
+import heroImage2 from "@/assets/hero-resgate.png";
+import heroImage3 from "@/assets/hero-setembro-amarelo.png";
+import heroImage4 from "@/assets/hero-combate-drogas.png";
+import heroImage5 from "@/assets/hero-convenios.png";
+import logoImage from "@/assets/logo-hospital.png";
+import AgendamentoModal from "@/components/AgendamentoModal";
 
-const navItems = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Tratamentos", href: "#tratamentos" },
-  { label: "Estrutura", href: "#estrutura" },
-  { label: "Equipe", href: "#equipe" },
-  { label: "Contato", href: "#contato" },
+const heroImages = [
+  { src: heroImage1, alt: "Hospital Rumo Certo - Ambiente terapêutico com piscina e natureza" },
+  { src: heroImage2, alt: "Hospital Rumo Certo - Resgate 24 horas" },
+  { src: heroImage3, alt: "Setembro Amarelo - Prevenção ao suicídio é todo dia" },
+  { src: heroImage4, alt: "Combate às Drogas e Alcoolismo - Todo dia é dia de combate" },
+  { src: heroImage5, alt: "Trabalhamos com os melhores convênios de saúde" },
 ];
 
-export const Header = () => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const headerRef = useRef<HTMLElement>(null);
-  const topBarRef = useRef<HTMLDivElement>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    // Animate header on load
-    gsap.fromTo(
-      headerRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out", delay: 0.2 }
-    );
-  }, []);
+  const navLinks = [
+    { label: "Início", href: "#inicio" },
+    { label: "Sobre Nós", href: "#sobre" },
+    { label: "Tratamentos", href: "#tratamentos" },
+    { label: "Estrutura", href: "#estrutura" },
+    { label: "Equipe", href: "#equipe" },
+    { label: "Contato", href: "#contato" },
+  ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+    
+    if (element) {
+      const navHeight = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: "smooth",
+      });
+    }
+    
+    setIsMenuOpen(false);
+  };
 
   return (
-    <>
-      {/* Top Bar - Info */}
-      <div 
-        ref={topBarRef}
-        className={`hidden md:block fixed top-0 left-0 right-0 z-[60] transition-all duration-500 ${
-          isScrolled ? 'h-0 opacity-0 overflow-hidden' : 'h-9 opacity-100'
-        }`}
-      >
-      <div className="glass-emerald text-primary-foreground/90 text-xs h-9">
-          <div className="container mx-auto px-4 h-full">
-            <div className="flex items-center justify-between h-full">
-              <div className="flex items-center gap-6">
-                <div className="flex items-center gap-1.5">
-                  <Clock className="w-3 h-3 text-secondary" />
-                  <span className="font-light">24 horas</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <MapPin className="w-3 h-3 text-secondary" />
-                  <span className="font-light">Cabreúva e Salto, SP</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Phone className="w-3 h-3 text-secondary" />
-                <a href="tel:5511955931301" className="hover:text-secondary transition-colors font-medium">
-                  (11) 95593-1301
-                </a>
-              </div>
+    <header className="relative" id="inicio">
+      {/* Combined Top Bar + Navigation */}
+      <nav className="absolute top-0 left-0 right-0 z-50">
+        {/* Top Bar - Compact */}
+        <div className="bg-primary text-primary-foreground py-1">
+          <div className="container mx-auto px-4 flex flex-wrap justify-between items-center text-xs">
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1">
+                <Phone size={12} />
+                <span>(11) 98810-4793</span>
+              </span>
+              <span className="hidden md:flex items-center gap-1">
+                <Clock size={12} />
+                <span>Atendimento 24h</span>
+              </span>
             </div>
+            <span className="hidden sm:flex items-center gap-1">
+              <MapPin size={12} />
+              <span>Cabreúva, SP</span>
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Main Header */}
-      <header 
-        ref={headerRef}
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'top-0 bg-white/95 backdrop-blur-xl shadow-soft py-2' 
-            : 'top-9 md:top-9 bg-transparent py-3 md:py-4'
-        }`}
-      >
-        <div className="container mx-auto px-4">
+        {/* Main Navigation */}
+        <div className="container mx-auto px-4 py-1">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <a href="#inicio" className="flex items-center relative z-10">
+            <a href="#inicio" onClick={(e) => handleNavClick(e, "#inicio")} className="flex items-center">
               <img 
-                src={logo} 
+                src={logoImage} 
                 alt="Hospital Rumo Certo" 
-                className={`transition-all duration-500 ${
-                  isScrolled 
-                    ? 'h-8 md:h-10' 
-                    : 'h-10 md:h-12 brightness-0 invert'
-                } w-auto`}
+                className="h-12 md:h-14 w-auto"
               />
             </a>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-0.5">
-              {navItems.map((item, index) => (
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
                 <a
-                  key={item.href}
-                  href={item.href}
-                  className={`px-3 py-2 text-xs font-medium tracking-wide transition-all duration-300 relative group ${
-                    isScrolled 
-                      ? 'text-foreground hover:text-primary' 
-                      : 'text-white/80 hover:text-white'
-                  }`}
-                  style={{ transitionDelay: `${index * 30}ms` }}
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm"
                 >
-                  {item.label}
-                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-[1.5px] transition-all duration-300 group-hover:w-1/2 w-0 ${
-                    isScrolled ? 'bg-secondary' : 'bg-secondary'
-                  }`} />
+                  {link.label}
                 </a>
               ))}
-            </nav>
-
-            {/* CTA Buttons */}
-            <div className="hidden md:flex items-center gap-3">
-              <div className={`hidden lg:flex items-center gap-1.5 px-2 py-1 text-[10px] font-medium tracking-wider uppercase ${
-                isScrolled 
-                  ? 'text-primary' 
-                  : 'text-white/70'
-              }`}>
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                <span>Online</span>
-              </div>
               <Button 
-                asChild
-                size="sm"
-                className={`rounded-xl px-5 text-xs transition-all duration-500 tracking-wide font-medium hover:scale-105 ${
-                  isScrolled 
-                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground hover:shadow-glow-emerald' 
-                    : 'bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:shadow-glow-gold'
-                }`}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                onClick={() => setIsModalOpen(true)}
               >
-                <a href="#contato">Agendar</a>
+                Agende sua Visita
               </Button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-3 transition-colors ${
-                isScrolled ? 'text-foreground hover:bg-muted' : 'text-white hover:bg-white/10'
-              }`}
-              aria-label="Menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="lg:hidden relative">
+              <button
+                className="p-2 text-foreground"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+
+              {/* Mobile Navigation - Dropdown on right side */}
+              {isMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-56 bg-background/95 backdrop-blur-sm rounded-lg shadow-xl border border-border animate-fade-in">
+                  <div className="flex flex-col p-4 gap-3">
+                    {navLinks.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        onClick={(e) => handleNavClick(e, link.href)}
+                        className="text-foreground hover:text-primary transition-colors font-medium text-sm py-1"
+                      >
+                        {link.label}
+                      </a>
+                    ))}
+                    <Button 
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-2"
+                      onClick={() => {
+                        setIsModalOpen(true);
+                        setIsMenuOpen(false);
+                      }}
+                    >
+                      Agende sua Visita
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden glass border-t border-border/50 shadow-elevated absolute top-full left-0 right-0"
-            >
-              <nav className="container mx-auto px-4 py-8 flex flex-col gap-1">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="text-base font-medium text-foreground hover:text-primary hover:bg-primary/5 transition-colors py-4 px-4 border-b border-border/30 last:border-0 rounded-xl"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-                <div className="flex items-center gap-2 text-sm text-muted-foreground py-4 px-4 mt-4 glass-card rounded-xl">
-                  <Phone className="w-4 h-4 text-secondary" />
-                  <span className="font-medium">(11) 95593-1301</span>
-                </div>
-                <Button asChild className="mt-4 rounded-xl hover:shadow-glow-gold">
-                  <a href="#contato">Agendar Consulta</a>
-                </Button>
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
-    </>
+      {/* Hero Section with Image Carousel */}
+      <div className="relative w-full overflow-hidden">
+        {heroImages.map((image, index) => (
+          <img
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            className={`w-full h-auto transition-opacity duration-1000 ${
+              index === currentImageIndex ? "opacity-100 relative" : "opacity-0 absolute inset-0"
+            }`}
+          />
+        ))}
+        
+        {/* Indicator Dots */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentImageIndex 
+                  ? "bg-primary scale-110" 
+                  : "bg-white/60 hover:bg-white/80"
+              }`}
+              aria-label={`Ir para imagem ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Modal de Agendamento */}
+      <AgendamentoModal open={isModalOpen} onOpenChange={setIsModalOpen} />
+    </header>
   );
 };
+
+export default Header;

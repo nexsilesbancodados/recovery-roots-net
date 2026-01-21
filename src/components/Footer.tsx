@@ -1,223 +1,118 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Facebook, Instagram, Linkedin, Youtube, Phone, MapPin, Mail, Heart, ArrowUp } from "lucide-react";
-import logo from "@/assets/logo-hospital.png";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
+import logoImage from "@/assets/logo-hospital.png";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
-];
-
-const quickLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Tratamentos", href: "#tratamentos" },
-  { label: "Estrutura", href: "#estrutura" },
-  { label: "Equipe", href: "#equipe" },
-  { label: "Contato", href: "#contato" },
-];
-
-const treatments = [
-  { label: "Saúde Mental Premium", href: "#tratamentos" },
-  { label: "Dependência Química", href: "#tratamentos" },
-  { label: "Alcoolismo", href: "#tratamentos" },
-  { label: "Burnout Executivo", href: "#tratamentos" },
-];
-
-export const Footer = () => {
-  const footerRef = useRef<HTMLElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const currentYear = new Date().getFullYear();
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Footer reveal effect
-      gsap.fromTo(
-        footerRef.current,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 95%",
-          },
-        }
-      );
-
-      // Content stagger animation
-      if (contentRef.current) {
-        gsap.fromTo(
-          contentRef.current.children,
-          { y: 40, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 90%",
-            },
-          }
-        );
-      }
-    }, footerRef);
-
-    return () => ctx.revert();
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
+const Footer = () => {
   return (
-    <footer ref={footerRef} className="bg-primary text-primary-foreground relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 gradient-mesh opacity-10 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 gradient-radial-gold opacity-10" />
-      
-      {/* Background texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* Scroll to top button */}
-      <button
-        onClick={scrollToTop}
-        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-secondary to-gold-light text-secondary-foreground flex items-center justify-center hover:shadow-glow-gold transition-all duration-500 rounded-xl hover:scale-110"
-        aria-label="Voltar ao topo"
-      >
-        <ArrowUp className="w-4 h-4" />
-      </button>
-
-      {/* Main Footer */}
-      <div className="container mx-auto px-4 py-8 md:py-12 relative">
-        <div ref={contentRef} className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
-          {/* Brand */}
-          <div className="col-span-2 lg:col-span-1">
-            <div className="mb-4">
-              <img 
-                src={logo} 
-                alt="Hospital Rumo Certo" 
-                className="h-10 md:h-12 w-auto brightness-0 invert"
-              />
-            </div>
-            <p className="text-primary-foreground/60 mb-4 leading-relaxed text-xs md:text-sm max-w-xs">
-              Há mais de 18 anos transformando vidas com excelência e cuidado humanizado.
+    <footer className="bg-foreground text-background" id="contato">
+      <div className="container mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Logo e Descrição */}
+          <div className="space-y-4">
+            <img 
+              src={logoImage} 
+              alt="Hospital Rumo Certo" 
+              className="h-12 w-auto brightness-0 invert"
+            />
+            <p className="text-background/80 text-base leading-relaxed">
+              Cuidando da sua saúde mental com excelência e acolhimento. 
+              Tratamentos especializados para dependência química e transtornos psiquiátricos.
             </p>
-            <div className="flex gap-2">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-9 h-9 rounded-xl glass-dark flex items-center justify-center hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 hover:scale-110"
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
+            {/* Redes Sociais */}
+            <div className="flex items-center gap-2 pt-2">
+              <a 
+                href="https://www.facebook.com/hospitalrumocerto" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.instagram.com/hospitalrumocerto/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/hospitalrumocerto" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-serif text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide">
-              Navegação
-            </h4>
-            <ul className="space-y-1.5 md:space-y-2">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-primary-foreground/60 hover:text-secondary transition-colors duration-300 text-xs md:text-sm tracking-wide"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Contato */}
+          <div className="space-y-4">
+            <h4 className="font-display font-bold text-xl">Contato</h4>
+            <div className="space-y-3 text-base">
+              <a href="tel:+5511988104793" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <span>(11) 98810-4793</span>
+              </a>
+              <a href="mailto:adm@rumocerto.com.br" className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors">
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <span>adm@rumocerto.com.br</span>
+              </a>
+              <div className="flex items-start gap-3 text-background/80">
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span>Via Des. Luiz Carlos de Araújo, 2015<br />Nova Pinhal, Cabreúva - SP, 13315-000</span>
+              </div>
+            </div>
           </div>
 
-          {/* Treatments */}
-          <div>
-            <h4 className="font-serif text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide">
-              Tratamentos
-            </h4>
-            <ul className="space-y-1.5 md:space-y-2">
-              {treatments.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-primary-foreground/60 hover:text-secondary transition-colors duration-300 text-xs md:text-sm tracking-wide"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Horário de Funcionamento */}
+          <div className="space-y-4">
+            <h4 className="font-display font-bold text-xl">Horário de Funcionamento</h4>
+            <div className="space-y-3 text-base text-background/80">
+              <div className="flex items-center gap-3">
+                <Clock className="w-5 h-5 text-primary flex-shrink-0" />
+                <span className="font-semibold text-background">Atendimento 24 horas</span>
+              </div>
+              <div className="pl-8 space-y-1">
+                <p><strong>Visitas:</strong></p>
+                <p>Segunda a Sexta: 9h às 17h</p>
+                <p>Sábados: 9h às 12h</p>
+                <p>Domingos e Feriados: 10h às 12h</p>
+              </div>
+              <div className="pl-8">
+                <p><strong>Emergências:</strong> 24 horas</p>
+              </div>
+            </div>
           </div>
 
-          {/* Contact */}
-          <div className="col-span-2 lg:col-span-1">
-            <h4 className="font-serif text-sm md:text-base mb-3 md:mb-4 font-medium tracking-wide">
-              Contato
-            </h4>
-            <ul className="space-y-2 text-primary-foreground/60 text-xs md:text-sm">
-              <li className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
-                <a href="tel:5511955931301" className="hover:text-secondary transition-colors tracking-wide">
-                  (11) 95593-1301
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-secondary flex-shrink-0" />
-                <span className="tracking-wide text-xs">contato@hospitalrumocerto.com.br</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-secondary flex-shrink-0 mt-0.5" />
-                <span className="tracking-wide">Cabreúva e Salto, SP</span>
-              </li>
-            </ul>
-
-            <div className="mt-4 p-3 rounded-xl glass-dark">
-              <p className="text-secondary text-xs font-medium uppercase tracking-[0.1em] mb-0.5">
-                Atendimento 24h
-              </p>
-              <p className="text-primary-foreground/50 text-[10px] md:text-xs tracking-wide">
-                Plantão para admissões e emergências
-              </p>
+          {/* Mapa */}
+          <div className="space-y-4">
+            <h4 className="font-display font-bold text-xl">Localização</h4>
+            <div className="rounded-lg overflow-hidden h-40">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.0!2d-46.8!3d-23.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDI0JzAwLjAiUyA0NsKwNDgnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização do Hospital Rumo Certo"
+              />
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4">
-            <p className="text-xs text-primary-foreground/40 flex items-center gap-1 tracking-wide">
-              © {currentYear} Hospital Rumo Certo. Feito com{" "}
-              <Heart className="w-2.5 h-2.5 text-secondary fill-secondary animate-pulse" />{" "}
-              para transformar vidas.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-xs text-primary-foreground/40">
-              <a href="#" className="hover:text-secondary transition-colors tracking-wide">
-                Política de Privacidade
-              </a>
-              <a href="#" className="hover:text-secondary transition-colors tracking-wide">
-                Termos de Uso
-              </a>
+        {/* Divider */}
+        <div className="border-t border-background/10 mt-8 pt-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-background/60">
+            <p>© {new Date().getFullYear()} Hospital Rumo Certo. Todos os direitos reservados.</p>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a>
+              <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
             </div>
           </div>
         </div>
@@ -225,3 +120,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;
