@@ -171,16 +171,16 @@ const TratamentosSection = () => {
     
     if (!section || !cardsContainer || !cardsWrapper) return;
 
-    // Check if mobile
-    const isMobile = window.innerWidth < 768;
+    // Check screen size - disable GSAP pinning on tablets and mobile
+    const isSmallScreen = window.innerWidth < 1024;
     
-    if (isMobile) return; // Skip GSAP on mobile
+    if (isSmallScreen) return; // Skip GSAP on mobile/tablet
 
     const ctx = gsap.context(() => {
       // Calculate scroll distance
       const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
 
-      // Pin the section and scroll horizontally
+      // Pin the section and scroll horizontally TO THE LEFT
       gsap.to(cardsWrapper, {
         x: -scrollWidth,
         ease: "none",
@@ -196,7 +196,16 @@ const TratamentosSection = () => {
       });
     }, section);
 
-    return () => ctx.revert();
+    // Handle resize
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
@@ -204,20 +213,20 @@ const TratamentosSection = () => {
       <section 
         ref={sectionRef}
         id="tratamentos" 
-        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 md:py-20 overflow-hidden"
+        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-12 sm:py-16 md:py-20 overflow-hidden"
       >
         {/* Header - Always on top */}
-        <div className="container mx-auto px-4 mb-8 md:mb-12">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+        <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
+          <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Especialidades
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Tratamentos Oferecidos
           </h2>
-          <p className="text-muted-foreground text-base md:text-lg max-w-xl">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl">
             Oferecemos tratamento especializado e humanizado para diversas condições.
           </p>
-          <div className="hidden md:flex items-center gap-2 text-muted-foreground text-sm mt-4">
+          <div className="hidden lg:flex items-center gap-2 text-muted-foreground text-sm mt-4">
             <span>←</span>
             <span>Role para explorar</span>
             <span>→</span>
@@ -225,7 +234,7 @@ const TratamentosSection = () => {
         </div>
 
         {/* Desktop: Horizontal scroll with GSAP */}
-        <div ref={cardsContainerRef} className="hidden md:block overflow-hidden">
+        <div ref={cardsContainerRef} className="hidden lg:block overflow-hidden">
           <div ref={cardsWrapperRef} className="flex gap-6 px-8">
             {tratamentos.map((tratamento) => (
               <div
@@ -273,18 +282,18 @@ const TratamentosSection = () => {
           </div>
         </div>
 
-        {/* Mobile: Native horizontal scroll */}
-        <div className="md:hidden overflow-x-auto scrollbar-hide pb-4">
-          <div className="flex gap-6 px-4 min-w-max">
+        {/* Tablet: Horizontal scroll with touch */}
+        <div className="hidden sm:block lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
+          <div className="flex gap-4 min-w-max px-4">
             {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
                 className={`
-                  flex-shrink-0 w-72 h-64 rounded-2xl p-6 cursor-pointer
+                  flex-shrink-0 w-72 h-64 rounded-2xl p-5 cursor-pointer
                   text-white relative overflow-hidden
                   transform transition-all duration-300
-                  hover:scale-105 hover:shadow-2xl
+                  active:scale-95
                   flex flex-col justify-between
                   group
                 `}
@@ -296,14 +305,14 @@ const TratamentosSection = () => {
                       alt={tratamento.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                    <div className="absolute inset-0 bg-black/50" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
                 
                 <div className="relative z-10">
-                  <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                  <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
                     {tratamento.icon}
                   </div>
                   <h3 className="font-display text-xl font-bold mb-2">
@@ -313,21 +322,70 @@ const TratamentosSection = () => {
                     {tratamento.shortDescription}
                   </p>
                 </div>
-                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
+                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium">
                   <span>Saiba mais</span>
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                  <span>→</span>
                 </div>
               </div>
             ))}
           </div>
+          <div className="flex justify-center mt-3 text-muted-foreground">
+            <div className="flex items-center gap-2 text-xs">
+              <span>←</span>
+              <span>Arraste para ver mais</span>
+              <span>→</span>
+            </div>
+          </div>
         </div>
 
-        {/* Mobile: Scroll Hint */}
-        <div className="md:hidden flex justify-center mt-4 text-muted-foreground">
-          <div className="flex items-center gap-2 text-sm">
-            <span>←</span>
-            <span>Arraste para ver mais</span>
-            <span>→</span>
+        {/* Mobile: Vertical grid */}
+        <div className="sm:hidden px-4">
+          <div className="grid grid-cols-1 gap-4">
+            {tratamentos.map((tratamento) => (
+              <div
+                key={tratamento.id}
+                onClick={() => setSelectedTratamento(tratamento)}
+                className={`
+                  w-full h-48 rounded-2xl p-5 cursor-pointer
+                  text-white relative overflow-hidden
+                  transform transition-all duration-300
+                  active:scale-[0.98]
+                  flex flex-col justify-between
+                  group
+                `}
+              >
+                {tratamento.bgImage ? (
+                  <>
+                    <img 
+                      src={tratamento.bgImage} 
+                      alt={tratamento.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/55" />
+                  </>
+                ) : (
+                  <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
+                )}
+                
+                <div className="relative z-10 flex items-start gap-4">
+                  <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                    {tratamento.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-lg font-bold mb-1">
+                      {tratamento.title}
+                    </h3>
+                    <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
+                      {tratamento.shortDescription}
+                    </p>
+                  </div>
+                </div>
+                <div className="relative z-10 flex items-center justify-end gap-2 text-white/80 text-sm font-medium">
+                  <span>Saiba mais</span>
+                  <span>→</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
