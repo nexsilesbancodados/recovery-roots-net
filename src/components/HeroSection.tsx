@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Calendar, Shield, Clock, Award } from "lucide-react";
+import { Phone, Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 import heroImage1 from "@/assets/hero-hospital.png";
 import heroImage2 from "@/assets/hero-resgate.png";
@@ -15,12 +15,6 @@ const heroImages = [
   { src: heroImage3, alt: "Setembro Amarelo - Prevenção ao suicídio" },
   { src: heroImage4, alt: "Combate às Drogas e Alcoolismo" },
   { src: heroImage5, alt: "Convênios de saúde aceitos" },
-];
-
-const badges = [
-  { icon: Shield, text: "Sigilo Absoluto" },
-  { icon: Clock, text: "Atendimento 24h" },
-  { icon: Award, text: "20+ Anos de Experiência" },
 ];
 
 const HeroSection = () => {
@@ -66,23 +60,6 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 pt-32 md:pt-40 pb-16 min-h-[90vh] md:min-h-screen flex flex-col justify-center">
         <div className="max-w-3xl">
-          {/* Badges */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-wrap gap-2 mb-6"
-          >
-            {badges.map((badge, index) => (
-              <div 
-                key={index}
-                className="flex items-center gap-1.5 bg-white/10 backdrop-blur-sm border border-white/20 px-3 py-1.5 rounded-full"
-              >
-                <badge.icon className="w-3.5 h-3.5 text-primary" />
-                <span className="text-white text-xs font-medium">{badge.text}</span>
-              </div>
-            ))}
-          </motion.div>
 
           {/* Headline */}
           <motion.h1 
