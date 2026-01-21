@@ -266,7 +266,7 @@ const TratamentosSection = () => {
                   <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
                     {tratamento.icon}
                   </div>
-                  <h3 className="font-display text-2xl font-bold mb-3">
+                  <h3 className="font-display text-2xl font-bold mb-3 text-destructive">
                     {tratamento.title}
                   </h3>
                   <p className="text-white/95 text-base leading-relaxed line-clamp-2">
@@ -315,7 +315,7 @@ const TratamentosSection = () => {
                   <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
                     {tratamento.icon}
                   </div>
-                  <h3 className="font-display text-xl font-bold mb-2">
+                  <h3 className="font-display text-xl font-bold mb-2 text-destructive">
                     {tratamento.title}
                   </h3>
                   <p className="text-white/95 text-sm leading-relaxed line-clamp-2">
@@ -372,7 +372,7 @@ const TratamentosSection = () => {
                     {tratamento.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-display text-lg font-bold mb-1">
+                    <h3 className="font-display text-lg font-bold mb-1 text-destructive">
                       {tratamento.title}
                     </h3>
                     <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
