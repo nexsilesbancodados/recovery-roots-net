@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, forwardRef } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -10,9 +10,9 @@ interface PageLayoutProps {
   children: ReactNode;
 }
 
-const PageLayout = ({ children }: PageLayoutProps) => {
+const PageLayout = forwardRef<HTMLDivElement, PageLayoutProps>(({ children }, ref) => {
   return (
-    <div className="min-h-screen bg-background">
+    <div ref={ref} className="min-h-screen bg-background">
       <EmergencyBar />
       
       {/* Simple Header for Internal Pages */}
@@ -36,6 +36,8 @@ const PageLayout = ({ children }: PageLayoutProps) => {
       <FloatingButtons />
     </div>
   );
-};
+});
+
+PageLayout.displayName = "PageLayout";
 
 export default PageLayout;
