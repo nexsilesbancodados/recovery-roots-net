@@ -1,11 +1,6 @@
-import { useRef, useEffect } from "react";
 import { Home, Utensils, TreePine, Dumbbell, Waves, Heart, Bed, Music, BookOpen, Palette, Dog, Coffee, Tv, Flower2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Recurso {
   id: number;
@@ -132,59 +127,9 @@ const recursos: Recurso[] = [
 ];
 
 const EstruturaSection = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const cards = cardsRef.current;
-
-    if (!section || !cards) return;
-
-    // Kill any existing ScrollTriggers for this section
-    ScrollTrigger.getById("estrutura-scroll")?.kill();
-
-    // Wait for previous sections to be set up
-    const timeout = setTimeout(() => {
-      ScrollTrigger.refresh();
-      
-      const totalScroll = cards.scrollWidth - cards.clientWidth;
-
-      const ctx = gsap.context(() => {
-        // Reset initial position
-        gsap.set(cards, { x: -totalScroll });
-        
-        gsap.to(cards, {
-          x: 0,
-          ease: "none",
-          scrollTrigger: {
-            trigger: section,
-            start: "top top",
-            end: () => `+=${totalScroll}`,
-            pin: true,
-            pinSpacing: true,
-            scrub: 1,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            id: "estrutura-scroll",
-          },
-        });
-      }, section);
-
-      // Refresh after setup
-      setTimeout(() => ScrollTrigger.refresh(), 200);
-
-      return () => ctx.revert();
-    }, 300);
-
-    return () => {
-      clearTimeout(timeout);
-      ScrollTrigger.getById("estrutura-scroll")?.kill();
-    };
-  }, []);
 
   return (
-    <section ref={sectionRef} className="relative z-10 pt-24 pb-12 bg-muted/30 overflow-hidden" id="estrutura">
+    <section className="relative z-10 py-16 bg-muted/30" id="estrutura">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -198,12 +143,11 @@ const EstruturaSection = () => {
             Ambientes pensados para o seu conforto e recuperação, com recursos que fazem a diferença no tratamento
           </p>
         </div>
+      </div>
 
-        {/* Cards - Horizontal Scroll */}
-        <div 
-          ref={cardsRef}
-          className="flex gap-6 pl-4"
-        >
+      {/* Cards - Horizontal Scroll with CSS */}
+      <div className="overflow-x-auto scrollbar-hide pb-4">
+        <div className="flex gap-6 px-4 min-w-max">
           {recursos.map((recurso) => {
             const IconComponent = recurso.icon;
             return (
@@ -244,7 +188,16 @@ const EstruturaSection = () => {
         </div>
       </div>
 
-      {/* Galeria de Fotos - Outside pinned area */}
+      {/* Scroll Hint */}
+      <div className="flex justify-center mt-4 text-muted-foreground">
+        <div className="flex items-center gap-2 text-sm">
+          <span>←</span>
+          <span>Arraste para ver mais</span>
+          <span>→</span>
+        </div>
+      </div>
+
+      {/* Galeria de Fotos */}
       <div className="container mx-auto px-4 mt-12">
         <GaleriaEstrutura />
       </div>
