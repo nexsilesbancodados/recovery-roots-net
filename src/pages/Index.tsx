@@ -1,4 +1,6 @@
-import Header from "@/components/Header";
+import EmergencyBar from "@/components/EmergencyBar";
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
 import ConveniosCarousel from "@/components/ConveniosCarousel";
 import TratamentosSection from "@/components/TratamentosSection";
 import EstruturaSection from "@/components/EstruturaSection";
@@ -11,7 +13,9 @@ import FloatingButtons from "@/components/FloatingButtons";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <EmergencyBar />
+      <Navbar />
+      <HeroSection />
       <div id="sobre">
         <ConveniosCarousel />
       </div>
