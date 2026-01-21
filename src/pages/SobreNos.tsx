@@ -1,7 +1,7 @@
 import PageLayout from "@/components/PageLayout";
 import { Award, Users, Heart, Target, Shield, Clock, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import sobreNosLogo from "@/assets/sobre-nos-logo.jpg";
 const valores = [
   {
     icon: Heart,
@@ -66,18 +66,30 @@ const SobreNos = () => {
       {/* Hero */}
       <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-orange-500/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Nossa História
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              Sobre o Hospital Rumo Certo
-            </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Há mais de 20 anos, o Hospital Rumo Certo dedica-se à recuperação de vidas 
-              afetadas pela dependência química e transtornos mentais. 
-              Nossa missão é oferecer tratamento humanizado, com excelência técnica e acolhimento genuíno.
-            </p>
+          <div className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            {/* Imagem */}
+            <div className="flex justify-center">
+              <img
+                src={sobreNosLogo}
+                alt="Hospital Rumo Certo - Logo Institucional"
+                className="w-64 md:w-80 h-auto object-contain"
+              />
+            </div>
+            
+            {/* Texto */}
+            <div className="text-center md:text-left">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Nossa História
+              </span>
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+                Sobre o Hospital Rumo Certo
+              </h1>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Há mais de 20 anos, o Hospital Rumo Certo dedica-se à recuperação de vidas 
+                afetadas pela dependência química e transtornos mentais. 
+                Nossa missão é oferecer tratamento humanizado, com excelência técnica e acolhimento genuíno.
+              </p>
+            </div>
           </div>
         </div>
       </section>
