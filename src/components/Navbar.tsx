@@ -36,7 +36,7 @@ const Navbar = () => {
     { label: "Sobre Nós", href: "/sobre-nos" },
     { label: "Como Funciona", href: "/como-funciona" },
     { label: "Apoio à Família", href: "/apoio-familia" },
-    { label: "UTI", href: "/uti" },
+    { label: "UPTI", href: "/uti" },
     { label: "Desintoxicação", href: "/desintoxicacao" },
     { label: "Convênios", href: "/convenios" },
     { label: "Resgate 24h", href: "/resgate" },
@@ -48,7 +48,7 @@ const Navbar = () => {
     { label: "Convênios", href: "/convenios" },
     { label: "Resgate", href: "/resgate" },
     { label: "Família", href: "/apoio-familia" },
-    { label: "UTI", href: "/uti" },
+    { label: "UPTI", href: "/uti" },
     { label: "Equipe", href: "/equipe" },
   ];
 

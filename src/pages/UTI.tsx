@@ -49,7 +49,7 @@ const indicacoes = [
 const UTI = () => {
   const openWhatsApp = () => {
     const mensagem = encodeURIComponent(
-      "Olá! Preciso de informações sobre a UTI Psiquiátrica e internação de emergência."
+      "Olá! Preciso de informações sobre a UPTI e internação de emergência."
     );
     window.open(`https://wa.me/5511955931301?text=${mensagem}`, "_blank");
   };
@@ -64,10 +64,10 @@ const UTI = () => {
               Cuidados Intensivos
             </span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
-              UTI Psiquiátrica
+              UPTI - Unidade Psiquiátrica de Tratamento Intensivo
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Unidade de Terapia Intensiva especializada em saúde mental, 
+              Unidade Psiquiátrica de Tratamento Intensivo especializada em saúde mental, 
               oferecendo cuidados de alta complexidade para quadros psiquiátricos agudos 
               que exigem monitoramento contínuo e intervenção especializada.
             </p>
@@ -115,7 +115,7 @@ const UTI = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-foreground text-center mb-8">
-              Quando a UTI é Indicada?
+              Quando a UPTI é Indicada?
             </h2>
             
             <div className="bg-card rounded-2xl p-8 border border-border/50">
