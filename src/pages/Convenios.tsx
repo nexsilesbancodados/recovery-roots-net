@@ -42,7 +42,7 @@ const Convenios = () => {
     const mensagem = encodeURIComponent(
       "Olá! Gostaria de saber se meu convênio é aceito para internação."
     );
-    window.open(`https://wa.me/5511955931301?text=${mensagem}`, "_blank");
+    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
   };
 
   return (

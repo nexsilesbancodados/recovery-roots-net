@@ -52,7 +52,7 @@ const UTI = () => {
     const mensagem = encodeURIComponent(
       "Olá! Preciso de informações sobre a UPTI e internação de emergência."
     );
-    window.open(`https://wa.me/5511955931301?text=${mensagem}`, "_blank");
+    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
   };
 
   return (

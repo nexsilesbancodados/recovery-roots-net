@@ -58,7 +58,7 @@ const SobreNos = () => {
     const mensagem = encodeURIComponent(
       "Olá! Gostaria de saber mais sobre o Hospital Rumo Certo."
     );
-    window.open(`https://wa.me/5511955931301?text=${mensagem}`, "_blank");
+    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
   };
 
   return (

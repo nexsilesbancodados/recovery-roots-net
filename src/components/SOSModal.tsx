@@ -14,7 +14,7 @@ interface SOSModalProps {
 }
 
 const SOSModal = ({ open, onOpenChange }: SOSModalProps) => {
-  const phoneNumber = "5511955931301";
+  const phoneNumber = "5511988104793";
 
   const handleCall = () => {
     window.location.href = `tel:+${phoneNumber}`;
