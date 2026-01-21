@@ -47,7 +47,7 @@ const ApoioFamilia = () => {
   return (
     <PageLayout>
       {/* Hero with Image */}
-      <section className="relative py-16 md:py-24 overflow-hidden">
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -55,26 +55,7 @@ const ApoioFamilia = () => {
             alt="Família celebrando recuperação"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-2xl">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Apoio à Família
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
-              Você Não Está Sozinho Nessa Jornada
-            </h1>
-            <p className="text-white/90 text-lg leading-relaxed mb-8">
-              Ver alguém que amamos lutando contra a dependência é uma das experiências mais dolorosas que uma família pode enfrentar. 
-              Estamos aqui para apoiar você em cada passo desse caminho.
-            </p>
-            <Button size="lg" onClick={openWhatsApp} className="bg-primary hover:bg-primary/90">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Falar com um Especialista
-            </Button>
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </div>
       </section>
 
