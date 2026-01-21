@@ -1,27 +1,28 @@
 import PageLayout from "@/components/PageLayout";
 import { Activity, HeartPulse, Stethoscope, Clock, Shield, Users, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import uptiQuarto from "@/assets/upti-quarto.png";
 
 const recursos = [
   {
     icon: HeartPulse,
-    titulo: "Monitoramento 24 Horas",
-    descricao: "Acompanhamento contínuo de sinais vitais com equipamentos de última geração e equipe de enfermagem especializada.",
-  },
-  {
-    icon: Stethoscope,
-    titulo: "Equipe Médica Especializada",
-    descricao: "Psiquiatras, clínicos gerais e enfermeiros com experiência em cuidados intensivos psiquiátricos.",
-  },
-  {
-    icon: Activity,
-    titulo: "Estabilização de Crises",
-    descricao: "Manejo seguro de quadros agudos, surtos psicóticos, ideação suicida e abstinência grave.",
+    titulo: "Atenção 24 Horas",
+    descricao: "Equipe multidisciplinar composta por psiquiatras, enfermeiros, psicólogos e outros profissionais oferece cuidados constantes.",
   },
   {
     icon: Shield,
-    titulo: "Ambiente Protegido",
-    descricao: "Instalações projetadas para segurança do paciente, com supervisão constante e protocolos rigorosos.",
+    titulo: "Ambiente Seguro",
+    descricao: "Estrutura adaptada para garantir a segurança dos pacientes, com medidas para prevenir automutilações e situações de risco.",
+  },
+  {
+    icon: Activity,
+    titulo: "Tratamento Intensivo",
+    descricao: "Intervenções farmacológicas, psicoterapia, contenção emocional e suporte para estabilizar o quadro clínico.",
+  },
+  {
+    icon: Stethoscope,
+    titulo: "Gestão de Crises",
+    descricao: "Estabilização de crises psicóticas, episódios maníacos ou depressivos graves, e pacientes com risco imediato.",
   },
   {
     icon: Clock,
@@ -40,10 +41,10 @@ const indicacoes = [
   "Abstinência de benzodiazepínicos ou opioides",
   "Surtos psicóticos agudos",
   "Ideação suicida com risco iminente",
+  "Episódios maníacos ou depressivos graves",
   "Quadros de agitação psicomotora intensa",
-  "Comorbidades clínicas que exigem monitoramento",
+  "Pacientes com risco imediato para si ou para os outros",
   "Intoxicação aguda grave",
-  "Recusa alimentar com risco nutricional",
 ];
 
 const UTI = () => {
@@ -56,25 +57,38 @@ const UTI = () => {
 
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-blue-500/10 via-background to-cyan-500/10">
+      {/* Hero with Image */}
+      <section className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={uptiQuarto} 
+            alt="UPTI - Unidade Psiquiátrica de Tratamento Intensivo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        </div>
+      </section>
+
+      {/* Sobre a UPTI */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Cuidados Intensivos
             </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
+            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
               UPTI - Unidade Psiquiátrica de Tratamento Intensivo
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Unidade Psiquiátrica de Tratamento Intensivo especializada em saúde mental, 
-              oferecendo cuidados de alta complexidade para quadros psiquiátricos agudos 
-              que exigem monitoramento contínuo e intervenção especializada.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-4">
+              A UPTI é voltada para o atendimento de pacientes que apresentam transtornos mentais graves, 
+              muitas vezes em situações de crise aguda, que requerem monitoramento contínuo e cuidados intensivos.
             </p>
-            <Button size="lg" onClick={openWhatsApp} className="bg-primary hover:bg-primary/90">
-              <Phone className="w-5 h-5 mr-2" />
-              Emergência 24h
-            </Button>
+            <p className="text-muted-foreground leading-relaxed">
+              Esse tipo de unidade oferece um nível de cuidado especializado que vai além da internação 
+              psiquiátrica convencional, garantindo que o paciente em estado crítico receba o suporte 
+              necessário para sua recuperação ou estabilização.
+            </p>
           </div>
         </div>
       </section>
