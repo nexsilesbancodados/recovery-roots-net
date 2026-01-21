@@ -204,9 +204,9 @@ const TratamentosSection = () => {
       <section 
         ref={sectionRef} 
         id="tratamentos" 
-        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5"
+        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 z-20"
       >
-        <div ref={triggerRef} className="min-h-screen overflow-hidden">
+        <div ref={triggerRef} className="min-h-screen overflow-hidden pb-16">
           {/* Header */}
           <div className="pt-12 pb-8 px-4">
             <div className="container mx-auto">
