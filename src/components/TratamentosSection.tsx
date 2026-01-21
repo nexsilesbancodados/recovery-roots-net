@@ -213,7 +213,7 @@ const TratamentosSection = () => {
       <section 
         ref={sectionRef}
         id="tratamentos" 
-        className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-12 sm:py-16 md:py-20 overflow-hidden"
+        className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-12 sm:py-16 md:py-20 overflow-hidden"
       >
         {/* Header - Always on top */}
         <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
