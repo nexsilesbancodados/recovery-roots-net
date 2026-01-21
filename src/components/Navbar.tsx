@@ -23,9 +23,17 @@ const Navbar = () => {
     { label: "Início", href: "#inicio" },
     { label: "Sobre Nós", href: "#sobre" },
     { label: "Tratamentos", href: "#tratamentos" },
+    { label: "Como Funciona", href: "#como-funciona" },
     { label: "Estrutura", href: "#estrutura" },
-    { label: "Equipe", href: "#equipe" },
+    { label: "Diferenciais", href: "#diferenciais" },
+    { label: "FAQ", href: "#faq" },
     { label: "Contato", href: "#contato" },
+  ];
+
+  const quickLinks = [
+    { label: "Como Funciona", href: "#como-funciona" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Diferenciais", href: "#diferenciais" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -93,8 +101,25 @@ const Navbar = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden relative">
+          {/* Mobile - Quick Links + Menu */}
+          <div className="lg:hidden flex items-center gap-2 relative">
+            {/* Quick Links Buttons */}
+            {quickLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`hidden sm:block text-xs font-medium px-2 py-1 rounded-full transition-colors ${
+                  isScrolled 
+                    ? "bg-primary/10 text-primary hover:bg-primary/20" 
+                    : "bg-white/20 text-white hover:bg-white/30"
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+            
+            {/* Menu Button */}
             <button
               className={`p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
