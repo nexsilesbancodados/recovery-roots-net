@@ -13,8 +13,29 @@ import ComoFunciona from "./pages/ComoFunciona";
 import Convenios from "./pages/Convenios";
 import Resgate from "./pages/Resgate";
 import Equipe from "./pages/Equipe";
+import { usePageTracking } from "./hooks/usePageTracking";
 
 const queryClient = new QueryClient();
+
+const AppRoutes = () => {
+  usePageTracking();
+  
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      <Route path="/apoio-familia" element={<ApoioFamilia />} />
+      <Route path="/uti" element={<UTI />} />
+      <Route path="/desintoxicacao" element={<Desintoxicacao />} />
+      <Route path="/sobre-nos" element={<SobreNos />} />
+      <Route path="/como-funciona" element={<ComoFunciona />} />
+      <Route path="/convenios" element={<Convenios />} />
+      <Route path="/resgate" element={<Resgate />} />
+      <Route path="/equipe" element={<Equipe />} />
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -22,19 +43,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/apoio-familia" element={<ApoioFamilia />} />
-          <Route path="/uti" element={<UTI />} />
-          <Route path="/desintoxicacao" element={<Desintoxicacao />} />
-          <Route path="/sobre-nos" element={<SobreNos />} />
-          <Route path="/como-funciona" element={<ComoFunciona />} />
-          <Route path="/convenios" element={<Convenios />} />
-          <Route path="/resgate" element={<Resgate />} />
-          <Route path="/equipe" element={<Equipe />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
