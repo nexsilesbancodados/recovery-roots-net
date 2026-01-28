@@ -58,12 +58,11 @@ const diferenciais = [
   },
 ];
 
+import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
+
 const Desintoxicacao = () => {
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Preciso de informações sobre o processo de desintoxicação."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsAppUtil("Olá! Preciso de informações sobre o processo de desintoxicação.");
   };
 
   return (
@@ -83,7 +82,7 @@ const Desintoxicacao = () => {
               Realizamos esse processo com segurança, supervisão médica constante 
               e todo o suporte necessário para minimizar o desconforto.
             </p>
-            <Button size="lg" onClick={openWhatsApp} className="bg-primary hover:bg-primary/90">
+            <Button size="lg" onClick={handleWhatsApp} className="bg-primary hover:bg-primary/90">
               <MessageCircle className="w-5 h-5 mr-2" />
               Falar com Especialista
             </Button>
@@ -161,11 +160,11 @@ const Desintoxicacao = () => {
             Entre em contato e nossa equipe vai orientar você sobre todo o processo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={openWhatsApp}>
+            <Button size="lg" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Ligar Agora
             </Button>
-            <Button size="lg" variant="outline" onClick={openWhatsApp}>
+            <Button size="lg" variant="outline" onClick={handleWhatsApp}>
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>

@@ -8,6 +8,7 @@ import heroImage4 from "@/assets/hero-combate-drogas.png";
 import heroImage5 from "@/assets/hero-convenios.png";
 import logoImage from "@/assets/logo-hospital.png";
 import AgendamentoModal from "@/components/AgendamentoModal";
+import { PHONE_DISPLAY } from "@/lib/contact";
 
 const heroImages = [
   { src: heroImage1, alt: "Hospital Rumo Certo - Ambiente terapêutico com piscina e natureza" },
@@ -65,9 +66,17 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1">
                 <Phone size={12} />
-                <span>(11) 98810-4793</span>
+                <span>{PHONE_DISPLAY.main}</span>
               </span>
               <span className="hidden md:flex items-center gap-1">
+                <Phone size={12} />
+                <span>{PHONE_DISPLAY.secondary}</span>
+              </span>
+              <span className="hidden lg:flex items-center gap-1">
+                <Phone size={12} />
+                <span>{PHONE_DISPLAY.tertiary}</span>
+              </span>
+              <span className="hidden xl:flex items-center gap-1">
                 <Clock size={12} />
                 <span>Atendimento 24h</span>
               </span>

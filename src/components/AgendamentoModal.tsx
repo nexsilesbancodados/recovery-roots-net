@@ -13,7 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Calendar, Clock, User, Phone, Mail, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
+import { openWhatsApp } from "@/lib/contact";
 interface AgendamentoModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
@@ -59,18 +59,16 @@ const AgendamentoModal = ({ open, onOpenChange }: AgendamentoModalProps) => {
     setErrors({});
     
     // Criar mensagem para WhatsApp
-    const mensagemWhatsApp = encodeURIComponent(
+    const mensagemWhatsApp = 
       `Olá! Gostaria de agendar uma visita.\n\n` +
       `*Nome:* ${formData.nome}\n` +
       `*Telefone:* ${formData.telefone}\n` +
       `*E-mail:* ${formData.email}\n` +
       `*Data:* ${formData.data}\n` +
       `*Horário:* ${formData.horario}\n` +
-      `${formData.mensagem ? `*Observações:* ${formData.mensagem}` : ""}`
-    );
+      `${formData.mensagem ? `*Observações:* ${formData.mensagem}` : ""}`;
     
-    window.open(`https://wa.me/5511988104793?text=${mensagemWhatsApp}`, "_blank");
-    
+    openWhatsApp(mensagemWhatsApp);
     toast({
       title: "Redirecionando para o WhatsApp",
       description: "Complete o agendamento pelo WhatsApp.",

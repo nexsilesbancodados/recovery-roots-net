@@ -35,12 +35,11 @@ const diferenciais = [
   "Protocolos baseados em evidências científicas",
 ];
 
+import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
+
 const Equipe = () => {
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Gostaria de saber mais sobre a equipe médica do hospital."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsAppUtil("Olá! Gostaria de saber mais sobre a equipe médica do hospital.");
   };
 
   return (
@@ -119,11 +118,11 @@ const Equipe = () => {
             conversar com nossa equipe sobre o tratamento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={openWhatsApp}>
+            <Button size="lg" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Agendar Visita
             </Button>
-            <Button size="lg" variant="outline" onClick={openWhatsApp}>
+            <Button size="lg" variant="outline" onClick={handleWhatsApp}>
               <MessageCircle className="w-5 h-5 mr-2" />
               Tirar Dúvidas
             </Button>

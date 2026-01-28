@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { PRIMARY_PHONE, openWhatsApp, makeCall, PHONE_NUMBERS, PHONE_DISPLAY } from "@/lib/contact";
 
 interface SOSModalProps {
   open: boolean;
@@ -14,21 +15,12 @@ interface SOSModalProps {
 }
 
 const SOSModal = ({ open, onOpenChange }: SOSModalProps) => {
-  const phoneNumber = "5511988104793";
-
-  const handleCall = () => {
-    window.location.href = `tel:+${phoneNumber}`;
-  };
-
   const handleWhatsApp = (type: "emergencia" | "consulta") => {
     const mensagem =
       type === "emergencia"
         ? "EMERGÊNCIA: Preciso de ajuda urgente para internação."
         : "Olá! Gostaria de informações sobre consulta e tratamento.";
-    window.open(
-      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensagem)}`,
-      "_blank"
-    );
+    openWhatsApp(mensagem);
     onOpenChange(false);
   };
 
@@ -49,15 +41,37 @@ const SOSModal = ({ open, onOpenChange }: SOSModalProps) => {
         </DialogHeader>
 
         <div className="flex flex-col gap-3 mt-4">
-          {/* Ligar agora */}
+          {/* Ligar agora - Número principal */}
           <Button
             size="lg"
-            onClick={handleCall}
+            onClick={() => makeCall(PRIMARY_PHONE)}
             className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-lg"
           >
             <Phone className="w-5 h-5 mr-2" />
-            Ligar Agora
+            Ligar {PHONE_DISPLAY.main}
           </Button>
+
+          {/* Outros números */}
+          <div className="grid grid-cols-2 gap-2">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => makeCall(PHONE_NUMBERS.secondary)}
+              className="text-xs"
+            >
+              <Phone className="w-3 h-3 mr-1" />
+              {PHONE_DISPLAY.secondary}
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => makeCall(PHONE_NUMBERS.tertiary)}
+              className="text-xs"
+            >
+              <Phone className="w-3 h-3 mr-1" />
+              {PHONE_DISPLAY.tertiary}
+            </Button>
+          </div>
 
           {/* WhatsApp Emergência */}
           <Button

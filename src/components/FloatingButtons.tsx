@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { MessageCircle, ArrowUp, Siren } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SOSModal from "@/components/SOSModal";
+import { openWhatsApp } from "@/lib/contact";
 
 const FloatingButtons = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -20,11 +21,8 @@ const FloatingButtons = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Gostaria de mais informações sobre o Hospital Rumo Certo."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsApp("Olá! Gostaria de mais informações sobre o Hospital Rumo Certo.");
   };
 
   return (
@@ -65,7 +63,7 @@ const FloatingButtons = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5 }}
-          onClick={openWhatsApp}
+          onClick={handleWhatsApp}
           className="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
           aria-label="Contato via WhatsApp"
         >
