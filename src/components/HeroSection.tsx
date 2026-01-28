@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import heroHospital from "@/assets/hero-hospital.png";
 import heroConvenios from "@/assets/hero-convenios-banner.png";
 import heroCombate from "@/assets/hero-combate-drogas-banner.png";
 import heroSetembro from "@/assets/hero-setembro-amarelo-banner.png";
 import heroResgate from "@/assets/hero-resgate-banner.png";
 
 const heroImages = [
-  { src: heroHospital, alt: "Hospital Rumo Certo - Ambiente terapêutico" },
   { src: heroConvenios, alt: "Trabalhamos com os melhores convênios" },
   { src: heroCombate, alt: "Combate às drogas e alcoolismo" },
   { src: heroSetembro, alt: "Setembro Amarelo - Prevenção ao suicídio" },
