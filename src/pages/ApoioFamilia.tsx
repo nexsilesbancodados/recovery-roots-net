@@ -36,12 +36,11 @@ const orientacoes = [
   },
 ];
 
+import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
+
 const ApoioFamilia = () => {
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Sou familiar e preciso de orientação sobre como ajudar meu ente querido."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsAppUtil("Olá! Sou familiar e preciso de orientação sobre como ajudar meu ente querido.");
   };
 
   return (
@@ -97,11 +96,11 @@ const ApoioFamilia = () => {
             tipos de tratamento e como proceder em situações de emergência.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={openWhatsApp}>
+            <Button size="lg" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Ligar Agora
             </Button>
-            <Button size="lg" variant="outline" onClick={openWhatsApp}>
+            <Button size="lg" variant="outline" onClick={handleWhatsApp}>
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>

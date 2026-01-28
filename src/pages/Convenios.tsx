@@ -37,12 +37,11 @@ const beneficios = [
   "Suporte para reembolso quando necessário",
 ];
 
+import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
+
 const Convenios = () => {
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Gostaria de saber se meu convênio é aceito para internação."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsAppUtil("Olá! Gostaria de saber se meu convênio é aceito para internação.");
   };
 
   return (
@@ -116,11 +115,11 @@ const Convenios = () => {
             e orientar sobre o processo de autorização.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={openWhatsApp}>
+            <Button size="lg" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Ligar Agora
             </Button>
-            <Button size="lg" variant="outline" onClick={openWhatsApp}>
+            <Button size="lg" variant="outline" onClick={handleWhatsApp}>
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>

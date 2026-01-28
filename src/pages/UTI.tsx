@@ -47,12 +47,11 @@ const indicacoes = [
   "Intoxicação aguda grave",
 ];
 
+import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
+
 const UTI = () => {
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Preciso de informações sobre a UPTI e internação de emergência."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsAppUtil("Olá! Preciso de informações sobre a UPTI e internação de emergência.");
   };
 
   return (
@@ -153,11 +152,11 @@ const UTI = () => {
             Em casos de risco de vida, entre em contato imediatamente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700" onClick={openWhatsApp}>
+            <Button size="lg" className="bg-red-600 hover:bg-red-700" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Ligar Agora - Emergência
             </Button>
-            <Button size="lg" variant="outline" onClick={openWhatsApp}>
+            <Button size="lg" variant="outline" onClick={handleWhatsApp}>
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp
             </Button>

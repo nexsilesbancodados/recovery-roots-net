@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
 import logoImage from "@/assets/logo-hospital.png";
+import { PHONE_NUMBERS, PHONE_DISPLAY } from "@/lib/contact";
 
 const Footer = () => {
   return (
@@ -51,9 +52,17 @@ const Footer = () => {
           <div className="space-y-2">
             <h4 className="font-display font-bold text-base">Contato</h4>
             <div className="space-y-2 text-sm">
-              <a href="tel:+5511988104793" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+              <a href={`tel:+${PHONE_NUMBERS.main}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                <span>(11) 98810-4793</span>
+                <span>{PHONE_DISPLAY.main}</span>
+              </a>
+              <a href={`tel:+${PHONE_NUMBERS.secondary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <span>{PHONE_DISPLAY.secondary}</span>
+              </a>
+              <a href={`tel:+${PHONE_NUMBERS.tertiary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <span>{PHONE_DISPLAY.tertiary}</span>
               </a>
               <a href="mailto:adm@rumocerto.com.br" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />

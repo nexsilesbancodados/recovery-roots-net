@@ -54,16 +54,15 @@ const etapasResgate = [
   },
 ];
 
+import { openWhatsApp as openWhatsAppUtil, makeCall, PRIMARY_PHONE, PHONE_DISPLAY } from "@/lib/contact";
+
 const Resgate = () => {
-  const openWhatsApp = () => {
-    const mensagem = encodeURIComponent(
-      "Olá! Preciso de ajuda com resgate/remoção de paciente."
-    );
-    window.open(`https://wa.me/5511988104793?text=${mensagem}`, "_blank");
+  const handleWhatsApp = () => {
+    openWhatsAppUtil("Olá! Preciso de ajuda com resgate/remoção de paciente.");
   };
 
   const ligarAgora = () => {
-    window.location.href = "tel:+5511988104793";
+    makeCall(PRIMARY_PHONE);
   };
 
   return (
@@ -150,9 +149,9 @@ const Resgate = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" onClick={ligarAgora} className="bg-white text-red-600 hover:bg-white/90">
               <Phone className="w-5 h-5 mr-2" />
-              (11) 98810-4793
+              {PHONE_DISPLAY.main}
             </Button>
-            <Button size="lg" variant="outline" onClick={openWhatsApp} className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" onClick={handleWhatsApp} className="border-white text-white hover:bg-white/10">
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp 24h
             </Button>
