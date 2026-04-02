@@ -155,30 +155,6 @@ const Navbar = () => {
                         </a>
                       )
                     )}
-
-                    <div className="border-t border-border/50 my-3" />
-                    <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold mb-2">Saiba Mais</p>
-                    {moreLinks.map((link) =>
-                      link.href.startsWith("/") ? (
-                        <Link
-                          key={link.label}
-                          to={link.href}
-                          onClick={() => setIsMenuOpen(false)}
-                          className="block py-2.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                      ) : (
-                        <a
-                          key={link.label}
-                          href={link.href}
-                          onClick={(e) => handleNavClick(e, link.href)}
-                          className="block py-2.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
-                        >
-                          {link.label}
-                        </a>
-                      )
-                    )}
                   </div>
                 </motion.div>
               )}
