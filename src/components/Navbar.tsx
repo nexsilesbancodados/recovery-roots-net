@@ -9,7 +9,7 @@ import AgendamentoModal from "@/components/AgendamentoModal";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
