@@ -83,7 +83,7 @@ const tratamentos: Tratamento[] = [
       "Práticas de mindfulness, meditação e técnicas de regulação emocional",
       "Orientação familiar para criar rede de apoio sólida na recuperação"
     ],
-    color: "from-violet-500 to-purple-600",
+    color: "from-accent to-primary",
     bgImage: bgDepressao
   },
   {
