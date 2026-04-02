@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
+    <section id="inicio" className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col" style={{ background: 'linear-gradient(135deg, hsl(220 30% 96%) 0%, hsl(210 40% 94%) 30%, hsl(45 30% 95%) 60%, hsl(220 25% 97%) 100%)' }}>
 
       <div className="container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
