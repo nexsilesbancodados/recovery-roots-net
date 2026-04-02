@@ -29,7 +29,7 @@ const EmergencyBar = () => {
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
