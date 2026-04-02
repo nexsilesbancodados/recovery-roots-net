@@ -15,7 +15,6 @@ interface Tratamento {
   id: string;
   title: string;
   shortDescription: string;
-  shortDescription: string;
   fullDescription: string;
   howWeHelp: string[];
   color: string;
