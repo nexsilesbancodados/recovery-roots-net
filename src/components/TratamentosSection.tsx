@@ -166,18 +166,18 @@ const TratamentosSection = () => {
           </p>
         </div>
 
-        {/* Desktop & Tablet: Grid layout */}
-        <div className="hidden sm:block container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Responsive grid */}
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
                 className={`
-                  w-full h-60 rounded-2xl p-5 cursor-pointer
+                  w-full h-36 sm:h-52 lg:h-60 rounded-xl sm:rounded-2xl p-3 sm:p-5 cursor-pointer
                   text-white relative overflow-hidden
                   transform transition-all duration-300
-                  hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1
+                  active:scale-[0.98] hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1
                   flex flex-col justify-between
                   group
                 `}
@@ -189,68 +189,31 @@ const TratamentosSection = () => {
                       alt={tratamento.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-colors" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10 sm:from-black/80 sm:via-black/40 sm:to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-colors" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
                 
                 <div className="relative z-10">
-                  <div className="bg-white/25 w-11 h-11 rounded-xl flex items-center justify-center mb-auto backdrop-blur-sm">
-                    <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
+                  <div className="bg-white/25 w-9 h-9 sm:w-11 sm:h-11 rounded-xl flex items-center justify-center mb-auto backdrop-blur-sm">
+                    <img src={logoIcon} alt="" className="w-5 h-5 sm:w-7 sm:h-7 object-contain" />
                   </div>
                 </div>
+
                 <div className="relative z-10 mt-auto">
-                  <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
+                  <h3 className="font-display text-sm sm:text-base lg:text-lg font-extrabold mb-1 text-white drop-shadow-lg leading-tight">
                     {tratamento.title}
                   </h3>
-                  <p className="text-white/85 text-xs leading-relaxed line-clamp-2">
+                  <p className="hidden sm:block text-white/85 text-xs leading-relaxed line-clamp-2">
                     {tratamento.shortDescription}
                   </p>
+                  <span className="sm:hidden text-white/75 text-[10px] font-medium">Saiba mais →</span>
                 </div>
-                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
+
+                <div className="hidden sm:flex relative z-10 items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
                   <span>Saiba mais</span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile: 2-column compact grid */}
-        <div className="sm:hidden px-4">
-          <div className="grid grid-cols-2 gap-3">
-            {tratamentos.map((tratamento) => (
-              <div
-                key={tratamento.id}
-                onClick={() => setSelectedTratamento(tratamento)}
-                className={`
-                  w-full h-36 rounded-xl p-3 cursor-pointer
-                  text-white relative overflow-hidden
-                  transform transition-all duration-300
-                  active:scale-[0.97]
-                  flex flex-col justify-end
-                  group
-                `}
-              >
-                {tratamento.bgImage ? (
-                  <>
-                    <img 
-                      src={tratamento.bgImage} 
-                      alt={tratamento.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
-                  </>
-                ) : (
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
-                )}
-                
-                <div className="relative z-10">
-                  <h3 className="font-display text-sm font-extrabold mb-0.5 text-white drop-shadow-lg leading-tight">
-                    {tratamento.title}
-                  </h3>
-                  <span className="text-white/70 text-[10px] font-medium">Saiba mais →</span>
                 </div>
               </div>
             ))}
