@@ -92,7 +92,7 @@ const EstruturaSection = () => {
               >
                 <CardContent className="p-4 relative z-10 flex items-center gap-4">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center flex-shrink-0 shadow-md`}>
-                    <IconComponent className={`w-6 h-6 ${recurso.color}`} />
+                    <IconComponent className={`w-6 h-6 ${recurso.color}`} fill="currentColor" strokeWidth={1} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="text-sm font-display font-bold text-foreground mb-1">
