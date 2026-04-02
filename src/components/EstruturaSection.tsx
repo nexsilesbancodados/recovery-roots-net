@@ -139,9 +139,9 @@ const EstruturaSection = () => {
       </div>
 
       {/* Mobile: Vertical grid with images */}
-      <div className="sm:hidden px-4">
+      <div className="sm:hidden px-4 space-y-4">
         <div className="grid grid-cols-2 gap-3">
-          {recursos.slice(0, 8).map((recurso) => (
+          {recursos.slice(0, 4).map((recurso) => (
             <div key={recurso.id} className="group relative h-40 rounded-xl overflow-hidden shadow-md">
               <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
@@ -152,8 +152,8 @@ const EstruturaSection = () => {
             </div>
           ))}
         </div>
-        {/* Mobile CTA */}
-        <div className="mt-4 rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-5 text-center shadow-lg">
+
+        <div className="rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-5 text-center shadow-lg">
           <h3 className="font-display text-lg font-extrabold text-secondary mb-1">Conheça nossa estrutura</h3>
           <p className="text-secondary/80 text-xs mb-3">Agende uma visita e veja de perto.</p>
           <Button
@@ -163,6 +163,54 @@ const EstruturaSection = () => {
             Agendar Visita <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {recursos.slice(4, 8).map((recurso) => (
+            <div key={recurso.id} className="group relative h-40 rounded-xl overflow-hidden shadow-md">
+              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
+                <h3 className="text-xs font-display font-bold text-white mb-0.5 drop-shadow-lg">{recurso.nome}</h3>
+                <p className="text-[10px] text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-2xl bg-gradient-to-r from-secondary to-secondary/80 p-5 text-center shadow-lg">
+          <h3 className="font-display text-lg font-extrabold text-primary mb-1">Atendimento 24h — Ligue agora</h3>
+          <p className="text-primary/70 text-xs mb-3">Equipe médica disponível dia e noite para qualquer necessidade.</p>
+          <Button
+            onClick={() => openWhatsApp("Olá! Preciso de atendimento.")}
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-5 py-3 font-bold text-sm shadow-md"
+          >
+            <Phone className="w-4 h-4 mr-2" /> Falar Agora
+          </Button>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3">
+          {recursos.slice(8, 12).map((recurso) => (
+            <div key={recurso.id} className="group relative h-40 rounded-xl overflow-hidden shadow-md">
+              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
+                <h3 className="text-xs font-display font-bold text-white mb-0.5 drop-shadow-lg">{recurso.nome}</h3>
+                <p className="text-[10px] text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {recursos.slice(12, 13).map((recurso) => (
+          <div key={recurso.id} className="group relative h-44 rounded-xl overflow-hidden shadow-md">
+            <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+            <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
+              <h3 className="text-xs font-display font-bold text-white mb-0.5 drop-shadow-lg">{recurso.nome}</h3>
+              <p className="text-[10px] text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Galeria de Fotos */}
