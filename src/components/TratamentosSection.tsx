@@ -57,7 +57,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "dependencia-feminina",
     title: "Dependência Química Feminina",
-    icon: <Heart className="w-8 h-8" />,
+    icon: <Heart className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Ambiente exclusivo que acolhe as particularidades da mulher em recuperação",
     fullDescription: "Mulheres enfrentam desafios únicos na jornada de recuperação da dependência química. Questões como maternidade, relacionamentos abusivos, traumas de violência e a pressão social exigem uma abordagem especializada e sensível. O Hospital Rumo Certo oferece um programa exclusivo feminino, com ambiente protegido e equipe preparada para acolher essas especificidades. Trabalhamos o empoderamento, a autoestima e a reconstrução da identidade feminina, oferecendo suporte integral para mães em recuperação.",
     howWeHelp: [
