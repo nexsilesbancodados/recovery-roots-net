@@ -85,9 +85,9 @@ const EstruturaSection = () => {
 
         {/* Banner 1 */}
         <div className="my-5 rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-          <div className="text-primary-foreground text-center md:text-left">
-            <h3 className="font-display text-xl md:text-2xl font-extrabold">Conheça nossa estrutura pessoalmente</h3>
-            <p className="text-primary-foreground/80 text-sm mt-1">Agende uma visita e veja de perto todo o conforto que oferecemos.</p>
+          <div className="text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold text-secondary">Conheça nossa estrutura pessoalmente</h3>
+            <p className="text-secondary/80 text-sm mt-1">Agende uma visita e veja de perto todo o conforto que oferecemos.</p>
           </div>
           <Button
             onClick={() => openWhatsApp("Olá! Gostaria de agendar uma visita para conhecer a estrutura.")}
@@ -106,9 +106,9 @@ const EstruturaSection = () => {
 
         {/* Banner 2 */}
         <div className="my-5 rounded-2xl bg-gradient-to-r from-secondary to-secondary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-          <div className="text-secondary-foreground text-center md:text-left">
-            <h3 className="font-display text-xl md:text-2xl font-extrabold">Atendimento 24h — Ligue agora</h3>
-            <p className="text-secondary-foreground/70 text-sm mt-1">Equipe médica disponível dia e noite para qualquer necessidade.</p>
+          <div className="text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold text-primary">Atendimento 24h — Ligue agora</h3>
+            <p className="text-primary/70 text-sm mt-1">Equipe médica disponível dia e noite para qualquer necessidade.</p>
           </div>
           <Button
             onClick={() => openWhatsApp("Olá! Preciso de atendimento.")}
@@ -127,9 +127,9 @@ const EstruturaSection = () => {
 
         {/* Banner 3 */}
         <div className="my-5 rounded-2xl bg-gradient-to-r from-accent to-primary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-          <div className="text-white text-center md:text-left">
-            <h3 className="font-display text-xl md:text-2xl font-extrabold">Sua recuperação começa aqui</h3>
-            <p className="text-white/80 text-sm mt-1">Um ambiente completo pensado para cada etapa do seu tratamento.</p>
+          <div className="text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold text-secondary">Sua recuperação começa aqui</h3>
+            <p className="text-secondary/80 text-sm mt-1">Um ambiente completo pensado para cada etapa do seu tratamento.</p>
           </div>
           <Button
             onClick={() => openWhatsApp("Olá! Quero saber mais sobre a estrutura do hospital.")}
