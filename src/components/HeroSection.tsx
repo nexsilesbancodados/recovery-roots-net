@@ -13,7 +13,7 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[85vh] flex flex-col">
+    <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
       {/* Decorative elements */}
       <div className="absolute top-20 right-[35%] w-72 h-72 rounded-full bg-accent/8 blur-3xl" />
       <div className="absolute bottom-20 left-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
@@ -21,14 +21,14 @@ const HeroSection = () => {
       <div className="absolute top-52 right-[28%] w-5 h-5 rounded-full bg-accent/40 hidden lg:block" />
       <div className="absolute bottom-40 left-[15%] w-3 h-3 rounded-full bg-primary/30 hidden lg:block" />
 
-      <div className="container mx-auto px-4 pt-16 lg:pt-24 flex-1 flex items-center">
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-16 items-end w-full">
+      <div className="container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="space-y-8 pb-12 lg:pb-24"
+            className="space-y-6 md:space-y-8 pb-8 lg:pb-24"
           >
             <div className="space-y-4">
               <motion.span
@@ -39,7 +39,7 @@ const HeroSection = () => {
               >
                 Hospital Rumo Certo
               </motion.span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.1]">
+              <h1 className="font-display text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.1]">
                 Tratamentos Premium{" "}
                 <br className="hidden sm:block" />
                 para uma{" "}
