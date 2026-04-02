@@ -50,33 +50,24 @@ const ConveniosCarousel = () => {
   );
 
   return (
-    <section id="convenios" className="py-8 md:py-12 bg-muted">
+    <section id="convenios" className="py-5 md:py-6 bg-muted/50">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-6">
-          <span className="text-primary font-medium text-sm uppercase tracking-wider">
-            Parceiros
-          </span>
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mt-1 mb-2">
-            Convênios Aceitos
-          </h2>
-          <p className="text-muted-foreground text-sm max-w-2xl mx-auto">
-            Trabalhamos com os principais convênios do Brasil para garantir o melhor atendimento.
-          </p>
-        </div>
+        <p className="text-center text-muted-foreground text-xs uppercase tracking-wider font-medium mb-4">
+          Convênios aceitos
+        </p>
 
-        {/* Carousel - Continuous Scroll */}
+        {/* Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-8 items-center">
+          <div className="flex gap-6 items-center">
             {convenios.map((convenio, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6 flex items-center justify-center h-16"
+                className="flex-shrink-0 basis-1/4 sm:basis-1/5 md:basis-1/6 lg:basis-[12%] flex items-center justify-center h-10"
               >
                 <img
                   src={convenio.logo}
                   alt={convenio.name}
-                  className="max-h-12 max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="max-h-8 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
                 />
               </div>
             ))}
