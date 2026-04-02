@@ -4,7 +4,7 @@ import { PHONE_NUMBERS, PHONE_DISPLAY } from "@/lib/contact";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background" id="contato">
+    <footer className="bg-primary text-primary-foreground" id="contato">
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Logo e Descrição */}
@@ -14,7 +14,7 @@ const Footer = () => {
               alt="Hospital Rumo Certo" 
               className="h-10 w-auto brightness-0 invert"
             />
-            <p className="text-background/70 text-sm leading-relaxed">
+            <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Cuidando da sua saúde mental com excelência. Tratamentos especializados para dependência química.
             </p>
             <div className="flex items-center gap-2">
@@ -52,23 +52,23 @@ const Footer = () => {
           <div className="space-y-2">
             <h4 className="font-display font-bold text-base">Contato</h4>
             <div className="space-y-2 text-sm">
-              <a href={`tel:+${PHONE_NUMBERS.main}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+              <a href={`tel:+${PHONE_NUMBERS.main}`} className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.main}</span>
               </a>
-              <a href={`tel:+${PHONE_NUMBERS.secondary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+              <a href={`tel:+${PHONE_NUMBERS.secondary}`} className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.secondary}</span>
               </a>
-              <a href={`tel:+${PHONE_NUMBERS.tertiary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+              <a href={`tel:+${PHONE_NUMBERS.tertiary}`} className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary transition-colors">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.tertiary}</span>
               </a>
-              <a href="mailto:adm@rumocerto.com.br" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
+              <a href="mailto:adm@rumocerto.com.br" className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>adm@rumocerto.com.br</span>
               </a>
-              <div className="flex items-start gap-2 text-background/70">
+              <div className="flex items-start gap-2 text-primary-foreground/70">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" strokeWidth={1} />
                 <span className="text-xs">Via Des. Luiz Carlos de Araújo, 2015, Cabreúva - SP</span>
               </div>
@@ -78,10 +78,10 @@ const Footer = () => {
           {/* Horário de Funcionamento */}
           <div className="space-y-2">
             <h4 className="font-display font-bold text-base">Funcionamento</h4>
-            <div className="space-y-1.5 text-sm text-background/70">
+            <div className="space-y-1.5 text-sm text-primary-foreground/70">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
-                <span className="font-semibold text-background text-xs">24 horas</span>
+                <span className="font-semibold text-primary-foreground text-xs">24 horas</span>
               </div>
               <div className="pl-6 space-y-0.5 text-xs">
                 <p>Visitas: Seg-Sex 9h-17h</p>
@@ -110,7 +110,7 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-background/10 mt-4 pt-4">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-background/50">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-primary-foreground/50">
             <p>© {new Date().getFullYear()} Hospital Rumo Certo. Todos os direitos reservados.</p>
             <div className="flex gap-3">
               <a href="#" className="hover:text-primary transition-colors">Privacidade</a>

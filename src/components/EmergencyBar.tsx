@@ -7,7 +7,7 @@ const EmergencyBar = () => {
     <motion.div 
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-destructive via-destructive/90 to-secondary text-destructive-foreground py-2 shadow-lg"
+      className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary/90 to-secondary text-primary-foreground py-2 shadow-lg"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap">
@@ -20,7 +20,7 @@ const EmergencyBar = () => {
           
           <button
             onClick={() => makeCall(PHONE_NUMBERS.main)}
-            className="flex items-center gap-2 bg-background text-destructive px-3 py-1 rounded-full font-bold text-xs md:text-sm hover:bg-muted transition-colors shadow-md"
+            className="flex items-center gap-2 bg-secondary text-secondary-foreground px-3 py-1 rounded-full font-bold text-xs md:text-sm hover:bg-secondary/90 transition-colors shadow-md"
           >
             <Phone className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" strokeWidth={1} />
             <span>{PHONE_DISPLAY.main}</span>

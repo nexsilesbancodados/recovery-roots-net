@@ -18,85 +18,85 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    --foreground: 250 45% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
+    --card-foreground: 250 45% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover-foreground: 250 45% 20%;
 
-    --primary: 152 45% 35%;
+    --primary: 250 48% 30%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 35% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 42 60% 55%;
+    --secondary-foreground: 250 48% 15%;
 
-    --muted: 150 10% 96%;
-    --muted-foreground: 0 0% 25%;
+    --muted: 250 10% 96%;
+    --muted-foreground: 250 15% 40%;
 
-    --accent: 195 60% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 42 65% 50%;
+    --accent-foreground: 250 48% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 150 15% 88%;
-    --input: 150 15% 88%;
-    --ring: 152 45% 35%;
+    --border: 250 15% 90%;
+    --input: 250 15% 90%;
+    --ring: 250 48% 30%;
 
     --radius: 0.75rem;
 
     /* Custom Hospital Colors */
-    --hospital-green: 152 45% 35%;
-    --hospital-green-light: 152 40% 45%;
-    --hospital-terracotta: 15 55% 50%;
-    --hospital-sky: 195 80% 55%;
-    --hospital-cream: 40 30% 96%;
-    --hospital-dark: 150 20% 15%;
+    --hospital-purple: 250 48% 30%;
+    --hospital-purple-light: 250 40% 45%;
+    --hospital-gold: 42 60% 55%;
+    --hospital-gold-light: 42 50% 70%;
+    --hospital-navy: 250 45% 20%;
+    --hospital-cream: 42 30% 97%;
 
     /* Gradients */
-    --gradient-header: linear-gradient(135deg, hsl(152 45% 35%) 0%, hsl(152 40% 28%) 100%);
-    --gradient-overlay: linear-gradient(180deg, hsla(150, 20%, 10%, 0.7) 0%, hsla(150, 20%, 10%, 0.3) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(250 48% 30%) 0%, hsl(250 48% 22%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(250, 45%, 15%, 0.7) 0%, hsla(250, 45%, 15%, 0.3) 100%);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 250 48% 30%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 250 48% 30%;
   }
 
   .dark {
-    --background: 150 20% 8%;
+    --background: 250 30% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 150 20% 10%;
+    --card: 250 30% 10%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 150 20% 10%;
+    --popover: 250 30% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 152 45% 45%;
+    --primary: 250 48% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 30 35% 45%;
+    --secondary: 42 60% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 150 15% 18%;
-    --muted-foreground: 150 10% 75%;
+    --muted: 250 15% 18%;
+    --muted-foreground: 250 10% 75%;
 
-    --accent: 195 60% 50%;
+    --accent: 42 65% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 150 15% 20%;
-    --input: 150 15% 20%;
-    --ring: 152 45% 45%;
+    --border: 250 15% 20%;
+    --input: 250 15% 20%;
+    --ring: 250 48% 45%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
