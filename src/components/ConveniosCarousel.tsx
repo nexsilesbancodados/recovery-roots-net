@@ -50,7 +50,7 @@ const ConveniosCarousel = () => {
   );
 
   return (
-    <section id="convenios" className="py-5 md:py-6 bg-muted/50">
+    <section id="convenios" className="py-8 md:py-10 bg-muted/50">
       <div className="container mx-auto px-4">
         <p className="text-center text-muted-foreground text-xs uppercase tracking-wider font-medium mb-4">
           Convênios aceitos
