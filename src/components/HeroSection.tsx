@@ -24,11 +24,11 @@ const HeroSection = () => {
               >
                 Hospital Rumo Certo
               </motion.span>
-              <h1 className="font-display text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.1]">
-                Tratamentos Premium{" "}
-                <br className="hidden sm:block" />
-                para uma{" "}
-                <span className="text-primary relative">
+              <h1 className="font-display text-[2.2rem] sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.05] sm:leading-[1.1]">
+                Tratamentos Premium
+                <br />
+                para uma {" "}
+                <span className="text-primary relative inline-block mt-1">
                   Vida Saudável
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                     <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" opacity="0.3" />
