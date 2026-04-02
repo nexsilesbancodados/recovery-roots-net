@@ -1,4 +1,4 @@
-import { Users, Bed, Award, Ambulance, Search } from "lucide-react";
+import { Users, BedDouble, Award, Ambulance } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroDoctor from "@/assets/hero-doctor.png";
 import { openWhatsApp } from "@/lib/contact";
