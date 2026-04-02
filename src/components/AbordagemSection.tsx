@@ -109,7 +109,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[8%] -left-4 md:-left-8 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[160px]"
+                className="absolute top-[10%] left-8 md:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[160px]"
               >
                 💬 Estamos aqui para ajudar!
               </motion.div>
@@ -117,7 +117,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute top-[35%] -right-2 md:-right-6 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-xs md:text-sm font-medium max-w-[150px]"
+                className="absolute top-[30%] right-2 md:right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-xs md:text-sm font-medium max-w-[150px]"
               >
                 🤝 Atendimento 24h
               </motion.div>
@@ -125,7 +125,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute bottom-[25%] -left-6 md:-left-10 bg-card border border-border text-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[170px]"
+                className="absolute bottom-[30%] left-4 md:left-0 bg-card border border-border text-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[170px]"
               >
                 ❤️ Tratamento humanizado
               </motion.div>
