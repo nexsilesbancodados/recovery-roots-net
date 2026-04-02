@@ -45,7 +45,7 @@ const SOSModal = ({ open, onOpenChange }: SOSModalProps) => {
           <Button
             size="lg"
             onClick={() => makeCall(PRIMARY_PHONE)}
-            className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-lg"
+            className="w-full bg-destructive hover:bg-destructive/90 text-destructive-foreground py-6 text-lg"
           >
             <Phone className="w-5 h-5 mr-2" />
             Ligar {PHONE_DISPLAY.main}
