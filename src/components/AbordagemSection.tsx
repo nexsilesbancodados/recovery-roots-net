@@ -42,7 +42,7 @@ const AbordagemSection = () => {
   return (
     <section id="abordagem" className="py-8 md:py-14 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center mb-8 md:mb-10">
           {/* Conteúdo à Esquerda */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
