@@ -71,15 +71,17 @@ const HeroSection = () => {
             <div className="absolute bottom-0 right-[5%] w-[85%] h-[80%] bg-gradient-to-t from-accent/12 via-accent/8 to-transparent rounded-t-[50%] z-0" />
             <div className="absolute bottom-0 right-[10%] w-[75%] h-[70%] bg-gradient-to-t from-primary/5 to-transparent rounded-t-[50%] z-0" />
             
-            <img
-              src={heroDoctor}
-              alt="Médica especialista do Hospital Rumo Certo"
-              className="relative z-10 w-[300px] sm:w-[360px] lg:w-[420px] xl:w-[460px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
-              width={768}
-              height={1024}
-            />
-            {/* Fade/smoke effect to hide bottom edge */}
-            <div className="absolute bottom-0 left-[-20%] right-[-20%] h-52 z-20 bg-gradient-to-t from-background from-30% via-background/95 via-50% to-transparent" />
+            <div className="relative z-10 overflow-hidden">
+              <img
+                src={heroDoctor}
+                alt="Médica especialista do Hospital Rumo Certo"
+                className="w-[300px] sm:w-[360px] lg:w-[420px] xl:w-[460px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                style={{ marginBottom: '-80px' }}
+                width={768}
+                height={1024}
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+            </div>
           </motion.div>
         </div>
       </div>
