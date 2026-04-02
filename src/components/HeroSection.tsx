@@ -55,7 +55,7 @@ const HeroSection = () => {
             <img
               src={heroEquipe}
               alt="Equipe médica do Hospital Rumo Certo"
-              className="w-full max-w-[620px] xl:max-w-[700px] object-contain drop-shadow-xl mb-[-80px]"
+              className="w-full max-w-[750px] xl:max-w-[850px] object-contain drop-shadow-xl mb-[-80px]"
               width={1024}
               height={1024}
             />
