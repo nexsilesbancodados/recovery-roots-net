@@ -34,7 +34,7 @@ const recursos: Recurso[] = [
   { id: 5, nome: "Piscinas", descricao: "Piscinas para atividades aquáticas terapêuticas e momentos de lazer e relaxamento.", image: imgPiscinas },
   { id: 6, nome: "Passeio a Cavalo", descricao: "Equoterapia e passeios a cavalo que auxiliam no tratamento e proporcionam experiências únicas.", image: imgCavalo },
   { id: 7, nome: "Quartos Privativos", descricao: "Acomodações individuais e compartilhadas com todo conforto necessário para uma estadia tranquila.", image: imgQuartos },
-  { id: 8, nome: "Musicoterapia", descricao: "Sessões de musicoterapia para expressão emocional e desenvolvimento de habilidades sociais.", image: imgMusica },
+  
   { id: 9, nome: "Biblioteca", descricao: "Espaço de leitura e estudo com acervo variado para momentos de reflexão e aprendizado.", image: imgBiblioteca },
   { id: 10, nome: "Arteterapia", descricao: "Atividades artísticas como pintura e desenho para expressão criativa e autoconhecimento.", image: imgArte },
   { id: 11, nome: "Pet Terapia", descricao: "Interação com animais para reduzir o estresse e promover bem-estar emocional.", image: imgPet },
