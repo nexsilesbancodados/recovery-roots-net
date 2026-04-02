@@ -56,7 +56,7 @@ const Equipe = () => {
       {/* Especialidades */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
             Áreas de Atuação
           </h2>
           
@@ -88,7 +88,7 @@ const Equipe = () => {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+            <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
               Nossos Diferenciais
             </h2>
             
@@ -110,7 +110,7 @@ const Equipe = () => {
       {/* CTA */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl font-bold text-primary mb-4">
             Conheça Nossa Equipe
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

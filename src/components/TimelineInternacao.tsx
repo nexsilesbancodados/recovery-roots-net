@@ -42,7 +42,7 @@ const TimelineInternacao = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Processo
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mt-2">
             Como Funciona a Internação
           </h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ const TimelineInternacao = () => {
                   </div>
                   
                   <div className="mt-6 p-4">
-                    <h3 className="font-bold text-foreground mb-2">{etapa.titulo}</h3>
+                    <h3 className="font-bold text-primary mb-2">{etapa.titulo}</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       {etapa.descricao}
                     </p>
@@ -86,7 +86,7 @@ const TimelineInternacao = () => {
                   <IconComponent className="w-5 h-5" />
                 </div>
                 <div className="flex-1 pb-4 border-b border-border last:border-0">
-                  <h3 className="font-bold text-foreground mb-1">{etapa.titulo}</h3>
+                  <h3 className="font-bold text-primary mb-1">{etapa.titulo}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {etapa.descricao}
                   </p>

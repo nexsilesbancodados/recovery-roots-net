@@ -58,7 +58,7 @@ const Convenios = () => {
       {/* Logos dos Convênios */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
             Nossos Convênios Parceiros
           </h2>
           
@@ -86,7 +86,7 @@ const Convenios = () => {
       {/* Benefícios */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
             Benefícios de Usar Seu Convênio
           </h2>
           
@@ -107,7 +107,7 @@ const Convenios = () => {
       {/* CTA */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl font-bold text-primary mb-4">
             Dúvidas Sobre Cobertura?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

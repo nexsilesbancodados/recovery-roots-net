@@ -206,7 +206,7 @@ const TratamentosSection = () => {
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Especialidades
           </span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mt-2 mb-3 sm:mb-4">
             Tratamentos Oferecidos
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl mx-auto">

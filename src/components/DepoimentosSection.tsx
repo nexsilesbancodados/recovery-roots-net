@@ -201,7 +201,7 @@ const DepoimentosSection = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Depoimentos
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mt-2">
             Histórias de Recuperação
           </h2>
           <p className="text-muted-foreground text-base max-w-2xl mx-auto mt-3">
@@ -225,7 +225,7 @@ const DepoimentosSection = () => {
                   className="w-8 h-8 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-bold text-foreground text-[11px] leading-tight">
+                  <p className="font-bold text-primary text-[11px] leading-tight">
                     {depoimento.nome}, {depoimento.idade}
                   </p>
                   <p className="text-muted-foreground text-[10px]">
@@ -263,7 +263,7 @@ const DepoimentosSection = () => {
                   className="w-10 h-10 rounded-full object-cover"
                 />
                 <div>
-                  <p className="font-bold text-foreground text-base">
+                  <p className="font-bold text-primary text-base">
                     {depoimento.nome}, {depoimento.idade} anos
                   </p>
                   <p className="text-muted-foreground text-sm">
