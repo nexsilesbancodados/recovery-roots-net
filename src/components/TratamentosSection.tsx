@@ -41,7 +41,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "dependencia-quimica",
     title: "Dependência Química",
-    icon: <Brain className="w-8 h-8" />,
+    icon: <Brain className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Recuperação integral com foco na reinserção social e qualidade de vida",
     fullDescription: "A dependência química é uma condição complexa que envolve fatores biológicos, psicológicos e sociais. No Hospital Rumo Certo, oferecemos um programa de tratamento completo que vai além da desintoxicação. Nossa abordagem terapêutica trabalha as causas profundas da dependência, ajudando o paciente a desenvolver novas habilidades de enfrentamento, reconstruir relacionamentos e redescobrir propósito de vida. O ambiente acolhedor e seguro favorece a recuperação genuína e duradoura.",
     howWeHelp: [
