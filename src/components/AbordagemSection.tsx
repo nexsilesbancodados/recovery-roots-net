@@ -16,29 +16,25 @@ const abordagens = [
     icon: <User className="w-5 h-5" strokeWidth={2} />,
     title: "Terapia Individual",
     description: "Abordagem personalizada com TCC e Psicoterapia Psicodinâmica.",
-    iconColor: "text-sky-600",
-    iconBg: "bg-sky-100",
+    gradient: "from-primary/90 to-primary/70",
   },
   {
     icon: <Heart className="w-5 h-5" strokeWidth={2} />,
     title: "Programa de 12 Passos",
     description: "Base sólida para a sobriedade com etapas estruturadas.",
-    iconColor: "text-rose-600",
-    iconBg: "bg-rose-100",
+    gradient: "from-primary/80 to-secondary/80",
   },
   {
     icon: <Users className="w-5 h-5" strokeWidth={2} />,
     title: "Terapias em Grupo",
     description: "Sessões que fortalecem o senso de comunidade e pertencimento.",
-    iconColor: "text-emerald-600",
-    iconBg: "bg-emerald-100",
+    gradient: "from-secondary/85 to-secondary/65",
   },
   {
     icon: <Lightbulb className="w-5 h-5" strokeWidth={2} />,
     title: "Inovação em Tratamento",
     description: "Métodos atualizados com as mais recentes pesquisas.",
-    iconColor: "text-amber-600",
-    iconBg: "bg-amber-100",
+    gradient: "from-secondary/75 to-primary/75",
   },
 ];
 
