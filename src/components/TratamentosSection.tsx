@@ -14,7 +14,7 @@ import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
 interface Tratamento {
   id: string;
   title: string;
-  icon: React.ReactNode;
+  shortDescription: string;
   shortDescription: string;
   fullDescription: string;
   howWeHelp: string[];
