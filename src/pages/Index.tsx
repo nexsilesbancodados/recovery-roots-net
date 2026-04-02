@@ -1,7 +1,7 @@
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import NumerosImpacto from "@/components/NumerosImpacto";
+
 import ConveniosCarousel from "@/components/ConveniosCarousel";
 import TratamentosSection from "@/components/TratamentosSection";
 import EstruturaSection from "@/components/EstruturaSection";
@@ -17,7 +17,7 @@ const Index = () => {
       <EmergencyBar />
       <Navbar />
       <HeroSection />
-      <NumerosImpacto />
+      
       <div id="sobre">
         <ConveniosCarousel />
       </div>
