@@ -138,20 +138,20 @@ const Resgate = () => {
       </section>
 
       {/* CTA Emergência */}
-      <section className="py-16 bg-red-600">
+      <section className="py-16 bg-destructive">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-white mb-4">
+          <h2 className="font-display text-3xl font-bold text-destructive-foreground mb-4">
             Situação de Emergência?
           </h2>
-          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-destructive-foreground/90 mb-8 max-w-2xl mx-auto">
             Não espere. Nossa equipe está pronta para ajudar agora mesmo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={ligarAgora} className="bg-white text-red-600 hover:bg-white/90">
+            <Button size="lg" onClick={ligarAgora} className="bg-background text-destructive hover:bg-background/90">
               <Phone className="w-5 h-5 mr-2" />
               {PHONE_DISPLAY.main}
             </Button>
-            <Button size="lg" variant="outline" onClick={handleWhatsApp} className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" onClick={handleWhatsApp} className="border-destructive-foreground text-destructive-foreground hover:bg-destructive-foreground/10">
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp 24h
             </Button>

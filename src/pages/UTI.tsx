@@ -103,7 +103,7 @@ const UTI = () => {
                   key={index}
                   className="p-6 rounded-2xl bg-card border border-border/50 hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                     <IconComponent className="w-6 h-6" />
                   </div>
                   <h3 className="font-bold text-lg text-foreground mb-2">
@@ -152,7 +152,7 @@ const UTI = () => {
             Em casos de risco de vida, entre em contato imediatamente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700" onClick={handleWhatsApp}>
+            <Button size="lg" className="bg-destructive hover:bg-destructive/90" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Ligar Agora - Emergência
             </Button>

@@ -35,7 +35,7 @@ const tratamentos: Tratamento[] = [
       "Programa de orientação e terapia familiar para reconstrução de vínculos",
       "Plano de prevenção de recaídas personalizado e acompanhamento pós-alta"
     ],
-    color: "from-amber-500 to-orange-600",
+    color: "from-secondary to-secondary/80",
     bgImage: bgAlcoolismo
   },
   {
@@ -51,7 +51,7 @@ const tratamentos: Tratamento[] = [
       "Programa de espiritualidade respeitando crenças individuais como ferramenta de fortalecimento",
       "Reinserção social assistida com orientação vocacional e apoio na reconstrução de vida"
     ],
-    color: "from-blue-500 to-indigo-600",
+    color: "from-accent to-accent/80",
     bgImage: bgDependenciaQuimica
   },
   {
@@ -67,7 +67,7 @@ const tratamentos: Tratamento[] = [
       "Grupos de empoderamento feminino e reconstrução da autoestima",
       "Tratamento de transtornos associados: ansiedade, depressão e transtornos alimentares"
     ],
-    color: "from-pink-500 to-rose-600",
+    color: "from-secondary to-destructive/60",
     bgImage: bgDependenciaFeminina
   },
   {
@@ -83,7 +83,7 @@ const tratamentos: Tratamento[] = [
       "Práticas de mindfulness, meditação e técnicas de regulação emocional",
       "Orientação familiar para criar rede de apoio sólida na recuperação"
     ],
-    color: "from-violet-500 to-purple-600",
+    color: "from-accent to-primary",
     bgImage: bgDepressao
   },
   {
@@ -99,7 +99,7 @@ const tratamentos: Tratamento[] = [
       "Psicoeducação familiar: entendendo a doença, sinais de crise e como apoiar",
       "Reabilitação psicossocial visando autonomia e reinserção comunitária"
     ],
-    color: "from-teal-500 to-cyan-600",
+    color: "from-primary to-accent",
     bgImage: bgEsquizofrenia
   },
   {
@@ -115,7 +115,7 @@ const tratamentos: Tratamento[] = [
       "Psicoterapia focada em estratégias alternativas de manejo sem dependência de substâncias",
       "Educação sobre uso responsável de medicamentos e prevenção de recaídas"
     ],
-    color: "from-red-500 to-rose-600",
+    color: "from-destructive to-destructive/80",
     bgImage: bgFarmacodependencia
   },
   {
@@ -131,7 +131,7 @@ const tratamentos: Tratamento[] = [
       "Psicoterapia intensiva para tratamento de desesperança, trauma e transtornos associados",
       "Construção de plano de segurança personalizado e rede de apoio para pós-alta"
     ],
-    color: "from-emerald-500 to-green-600",
+    color: "from-primary to-primary/70",
     bgImage: bgPrevencaoSuicidio
   },
   {
@@ -147,7 +147,7 @@ const tratamentos: Tratamento[] = [
       "Práticas integrativas: yoga, meditação, acupuntura e fitoterapia complementar",
       "Programa de alta assistida com acompanhamento ambulatorial contínuo"
     ],
-    color: "from-green-500 to-emerald-600",
+    color: "from-primary/80 to-primary",
     bgImage: bgSaudeMental
   }
 ];
