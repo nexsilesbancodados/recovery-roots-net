@@ -138,7 +138,7 @@ const Resgate = () => {
       </section>
 
       {/* CTA Emergência */}
-      <section className="py-16 bg-red-600">
+      <section className="py-16 bg-destructive">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl font-bold text-white mb-4">
             Situação de Emergência?
