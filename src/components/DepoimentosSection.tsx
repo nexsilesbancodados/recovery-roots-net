@@ -210,8 +210,44 @@ const DepoimentosSection = () => {
         </div>
       </div>
 
-      {/* Carousel - Continuous Scroll */}
-      <div className="overflow-hidden" ref={emblaRef}>
+      {/* Mobile: 2-column grid */}
+      <div className="sm:hidden container mx-auto px-4">
+        <div className="grid grid-cols-2 gap-2">
+          {depoimentos.slice(0, 8).map((depoimento, index) => (
+            <div
+              key={index}
+              className="bg-background rounded-xl p-3 shadow-sm border border-border/50 relative"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <img 
+                  src={depoimento.avatar} 
+                  alt={depoimento.nome}
+                  className="w-8 h-8 rounded-full object-cover"
+                />
+                <div>
+                  <p className="font-bold text-foreground text-[11px] leading-tight">
+                    {depoimento.nome}, {depoimento.idade}
+                  </p>
+                  <p className="text-muted-foreground text-[10px]">
+                    {depoimento.tratamento}
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-0.5 mb-1">
+                {Array.from({ length: depoimento.estrelas }).map((_, i) => (
+                  <Star key={i} className="w-2.5 h-2.5 fill-amber-500 text-amber-500" />
+                ))}
+              </div>
+              <p className="text-foreground text-[11px] leading-snug italic line-clamp-3">
+                "{depoimento.texto}"
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: Carousel */}
+      <div className="hidden sm:block overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4">
           {depoimentos.map((depoimento, index) => (
             <div
@@ -220,7 +256,6 @@ const DepoimentosSection = () => {
             >
               <Quote className="absolute top-3 right-3 w-5 h-5 text-primary/30" fill="currentColor" strokeWidth={0} />
               
-              {/* Avatar e Info */}
               <div className="flex items-center gap-3 mb-3">
                 <img 
                   src={depoimento.avatar} 
@@ -237,14 +272,12 @@ const DepoimentosSection = () => {
                 </div>
               </div>
 
-              {/* Estrelas */}
               <div className="flex gap-0.5 mb-2">
                 {Array.from({ length: depoimento.estrelas }).map((_, i) => (
                   <Star key={i} className="w-3 h-3 fill-amber-500 text-amber-500" />
                 ))}
               </div>
 
-              {/* Texto */}
               <p className="text-foreground text-sm leading-relaxed italic line-clamp-3">
                 "{depoimento.texto}"
               </p>
