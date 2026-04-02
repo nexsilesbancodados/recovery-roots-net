@@ -50,21 +50,18 @@ const EstruturaSection = () => {
       <div className="hidden sm:block container mx-auto px-4">
         {/* Row 1 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(0, 4).map((recurso) => {
-            const IconComponent = recurso.icon;
-            return (
-              <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <CardContent className="p-4 relative z-10">
-                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
-                    <IconComponent className={`w-5 h-5 ${recurso.color}`} strokeWidth={2} />
-                  </div>
-                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {recursos.slice(0, 4).map((recurso) => (
+            <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <CardContent className="p-4 relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm">
+                  <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
+                </div>
+                <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Banner 1 */}
@@ -83,21 +80,18 @@ const EstruturaSection = () => {
 
         {/* Row 2 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(4, 8).map((recurso) => {
-            const IconComponent = recurso.icon;
-            return (
-              <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <CardContent className="p-4 relative z-10">
-                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
-                    <IconComponent className={`w-5 h-5 ${recurso.color}`} strokeWidth={2} />
-                  </div>
-                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {recursos.slice(4, 8).map((recurso) => (
+            <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <CardContent className="p-4 relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm">
+                  <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
+                </div>
+                <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Banner 2 */}
@@ -116,21 +110,18 @@ const EstruturaSection = () => {
 
         {/* Row 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(8, 14).map((recurso) => {
-            const IconComponent = recurso.icon;
-            return (
-              <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <CardContent className="p-4 relative z-10">
-                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
-                    <IconComponent className={`w-5 h-5 ${recurso.color}`} strokeWidth={2} />
-                  </div>
-                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {recursos.slice(8, 14).map((recurso) => (
+            <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <CardContent className="p-4 relative z-10">
+                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm">
+                  <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
+                </div>
+                <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
+                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
 
@@ -138,29 +129,26 @@ const EstruturaSection = () => {
       {/* Mobile: Vertical grid */}
       <div className="sm:hidden px-4">
         <div className="grid grid-cols-1 gap-3">
-          {recursos.slice(0, 6).map((recurso) => {
-            const IconComponent = recurso.icon;
-            return (
-              <Card
-                key={recurso.id}
-                className="group relative border-0 shadow-md bg-gradient-to-br from-card to-card/80 overflow-hidden"
-              >
-                <CardContent className="p-4 relative z-10 flex items-center gap-4">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center flex-shrink-0 shadow-md`}>
-                    <IconComponent className={`w-6 h-6 ${recurso.color}`} fill="currentColor" strokeWidth={1} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-display font-bold text-foreground mb-1">
-                      {recurso.nome}
-                    </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                      {recurso.descricao}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {recursos.slice(0, 6).map((recurso) => (
+            <Card
+              key={recurso.id}
+              className="group relative border-0 shadow-md bg-gradient-to-br from-card to-card/80 overflow-hidden"
+            >
+              <CardContent className="p-4 relative z-10 flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center flex-shrink-0 shadow-md">
+                  <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-sm font-display font-bold text-foreground mb-1">
+                    {recurso.nome}
+                  </h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                    {recurso.descricao}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
         <p className="text-center text-xs text-muted-foreground mt-4">
           E muito mais recursos para sua recuperação
