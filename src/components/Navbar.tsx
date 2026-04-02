@@ -75,7 +75,7 @@ const Navbar = () => {
               src={logoImage}
               alt="Hospital Rumo Certo"
               className={`transition-all duration-300 ${
-                isScrolled ? "h-9 md:h-10" : "h-10 md:h-12"
+                isScrolled ? "h-12 md:h-14" : "h-14 md:h-16"
               } w-auto`}
             />
           </Link>
