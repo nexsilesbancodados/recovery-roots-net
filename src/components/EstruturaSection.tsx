@@ -9,7 +9,7 @@ import imgEsportes from "@/assets/estrutura/esportes.jpg";
 import imgPiscinas from "@/assets/estrutura/piscinas.jpg";
 import imgCavalo from "@/assets/estrutura/passeio-cavalo.jpg";
 import imgQuartos from "@/assets/estrutura/quartos-privativos.jpg";
-import imgMusica from "@/assets/estrutura/musicoterapia.jpg";
+
 import imgBiblioteca from "@/assets/estrutura/biblioteca.jpg";
 import imgArte from "@/assets/estrutura/arteterapia.jpg";
 import imgPet from "@/assets/estrutura/pet-terapia.jpg";
