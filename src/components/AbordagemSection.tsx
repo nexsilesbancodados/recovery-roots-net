@@ -142,11 +142,11 @@ const AbordagemSection = () => {
           {abordagens.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20, rotate: index % 2 === 0 ? -3 : 3 }}
-              whileInView={{ opacity: 1, y: 0, rotate: index % 2 === 0 ? -2 : 2 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.12 * index }}
-              whileHover={{ y: -6, scale: 1.04, rotate: 0 }}
+              whileHover={{ y: -6, scale: 1.02 }}
               className="group relative p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden"
             >
               <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
