@@ -17,7 +17,7 @@ const FloatingButtons = () => {
         className="w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform"
         aria-label="Contato via WhatsApp"
       >
-        <MessageCircle className="w-7 h-7" />
+        <MessageCircle className="w-7 h-7" fill="currentColor" strokeWidth={1} />
       </motion.button>
     </div>
   );

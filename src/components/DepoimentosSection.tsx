@@ -240,7 +240,7 @@ const DepoimentosSection = () => {
               {/* Estrelas */}
               <div className="flex gap-0.5 mb-2">
                 {Array.from({ length: depoimento.estrelas }).map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-primary text-primary" />
+                  <Star key={i} className="w-3 h-3 fill-amber-500 text-amber-500" />
                 ))}
               </div>
 
