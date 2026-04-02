@@ -39,7 +39,7 @@ const HeroSection = () => {
               >
                 Hospital Rumo Certo
               </motion.span>
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.1]">
+              <h1 className="font-display text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.1]">
                 Tratamentos Premium{" "}
                 <br className="hidden sm:block" />
                 para uma{" "}
