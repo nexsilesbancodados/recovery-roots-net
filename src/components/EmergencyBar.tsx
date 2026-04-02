@@ -20,7 +20,7 @@ const EmergencyBar = () => {
           
           <button
             onClick={() => makeCall(PHONE_NUMBERS.main)}
-            className="flex items-center gap-2 bg-white text-red-600 px-3 py-1 rounded-full font-bold text-xs md:text-sm hover:bg-red-50 transition-colors shadow-md"
+            className="flex items-center gap-2 bg-background text-destructive px-3 py-1 rounded-full font-bold text-xs md:text-sm hover:bg-muted transition-colors shadow-md"
           >
             <Phone className="w-3 h-3 md:w-4 md:h-4" />
             <span>{PHONE_DISPLAY.main}</span>

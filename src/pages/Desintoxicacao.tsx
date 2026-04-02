@@ -133,7 +133,7 @@ const Desintoxicacao = () => {
                   key={index}
                   className="p-6 rounded-2xl bg-card border border-border/50 hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-green-500/10 text-green-600 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
                     <IconComponent className="w-6 h-6" />
                   </div>
                   <h3 className="font-bold text-lg text-foreground mb-2">

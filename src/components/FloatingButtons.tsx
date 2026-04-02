@@ -54,7 +54,7 @@ const FloatingButtons = () => {
           aria-label="SOS - Emergência 24h"
         >
           {/* Pulse effect */}
-          <span className="absolute inset-0 rounded-full bg-red-400 animate-ping opacity-30" />
+          <span className="absolute inset-0 rounded-full bg-destructive/70 animate-ping opacity-30" />
           <Siren className="w-6 h-6 relative z-10 group-hover:animate-pulse" />
         </motion.button>
 

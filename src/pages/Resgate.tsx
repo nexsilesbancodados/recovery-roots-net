@@ -151,7 +151,7 @@ const Resgate = () => {
               <Phone className="w-5 h-5 mr-2" />
               {PHONE_DISPLAY.main}
             </Button>
-            <Button size="lg" variant="outline" onClick={handleWhatsApp} className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" onClick={handleWhatsApp} className="border-destructive-foreground text-destructive-foreground hover:bg-destructive-foreground/10">
               <MessageCircle className="w-5 h-5 mr-2" />
               WhatsApp 24h
             </Button>

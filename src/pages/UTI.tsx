@@ -152,7 +152,7 @@ const UTI = () => {
             Em casos de risco de vida, entre em contato imediatamente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-red-600 hover:bg-red-700" onClick={handleWhatsApp}>
+            <Button size="lg" className="bg-destructive hover:bg-destructive/90" onClick={handleWhatsApp}>
               <Phone className="w-5 h-5 mr-2" />
               Ligar Agora - Emergência
             </Button>

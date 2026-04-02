@@ -78,7 +78,7 @@ const SOSModal = ({ open, onOpenChange }: SOSModalProps) => {
             size="lg"
             variant="outline"
             onClick={() => handleWhatsApp("emergencia")}
-            className="w-full border-red-300 text-red-600 hover:bg-red-50 py-6 text-base"
+            className="w-full border-destructive/30 text-destructive hover:bg-destructive/5 py-6 text-base"
           >
             <MessageCircle className="w-5 h-5 mr-2" />
             WhatsApp - Emergência
