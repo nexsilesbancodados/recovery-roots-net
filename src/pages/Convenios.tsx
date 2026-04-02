@@ -58,7 +58,7 @@ const Convenios = () => {
       <Navbar />
 
       {/* Hero - full image like main page */}
-      <div className="relative w-full overflow-hidden pt-24 md:pt-28">
+      <div className="relative w-full overflow-hidden pt-28 md:pt-32">
         <img
           src={convenioAtendimento}
           alt="Atendimento com convênio de saúde"

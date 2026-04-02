@@ -46,7 +46,7 @@ const Equipe = () => {
       <EmergencyBar />
       <Navbar />
 
-      <div className="relative w-full overflow-hidden pt-24 md:pt-28">
+      <div className="relative w-full overflow-hidden pt-28 md:pt-32">
         <img src={equipeMedica} alt="Equipe médica do Hospital Rumo Certo" className="w-full h-auto" />
       </div>
 
