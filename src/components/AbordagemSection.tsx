@@ -105,11 +105,11 @@ const AbordagemSection = () => {
               />
               <div className="absolute bottom-0 left-[-30%] right-[-30%] h-72 bg-gradient-to-t from-background from-20% via-background/98 via-40% to-transparent pointer-events-none" />
 
-              {/* Balões de conversa flutuantes */}
+              {/* Balões de conversa flutuantes - hidden on mobile */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[10%] left-8 md:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[160px]"
+                className="hidden md:block absolute top-[10%] left-4 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-sm font-medium max-w-[160px]"
               >
                 💬 Estamos aqui para ajudar!
               </motion.div>
@@ -117,7 +117,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute top-[30%] right-2 md:right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-xs md:text-sm font-medium max-w-[150px]"
+                className="hidden md:block absolute top-[30%] right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-sm font-medium max-w-[150px]"
               >
                 🤝 Atendimento 24h
               </motion.div>
@@ -125,7 +125,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="absolute bottom-[30%] left-4 md:left-0 bg-card border border-border text-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[170px]"
+                className="hidden md:block absolute bottom-[30%] left-0 bg-card border border-border text-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-sm font-medium max-w-[170px]"
               >
                 ❤️ Tratamento humanizado
               </motion.div>
