@@ -197,7 +197,7 @@ const TratamentosSection = () => {
                       alt={tratamento.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-colors" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
