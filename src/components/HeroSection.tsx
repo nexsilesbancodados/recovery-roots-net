@@ -1,15 +1,6 @@
-import { Users, BedDouble, Award, Ambulance } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import heroEquipe from "@/assets/hero-equipe.png";
 import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
-
-const stats = [
-  { icon: Users, value: "3000+", label: "Pacientes Atendidos", color: "text-emerald-700", bg: "bg-emerald-100" },
-  { icon: BedDouble, value: "200", label: "Leitos Disponíveis", color: "text-blue-700", bg: "bg-blue-100" },
-  { icon: Award, value: "500+", label: "Prêmios e Certificações", color: "text-amber-700", bg: "bg-amber-100" },
-  { icon: Ambulance, value: "24h", label: "Resgate e Ambulância", color: "text-rose-700", bg: "bg-rose-100" },
-];
 
 const HeroSection = () => {
   return (
@@ -72,38 +63,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Stats Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
-        className="bg-card/80 backdrop-blur-md border-t border-border/30 shadow-[0_-4px_30px_rgba(0,0,0,0.05)]"
-      >
-        <div className="container mx-auto px-4 py-7">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-4 group"
-                >
-                  <div className={`w-12 h-12 rounded-xl ${stat.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300`}>
-                    <IconComponent className={`w-[22px] h-[22px] ${stat.color}`} strokeWidth={2} />
-                  </div>
-                  <div>
-                    <p className="text-2xl font-bold text-foreground tracking-tight">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground font-medium">{stat.label}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </motion.div>
     </section>
   );
 };
