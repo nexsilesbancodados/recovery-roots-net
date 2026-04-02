@@ -80,7 +80,7 @@ const CountUp = ({ end, suffix }: { end: number; suffix: string }) => {
 
 const NumerosImpacto = () => {
   return (
-    <section className="py-6 bg-card border-y border-border/40">
+    <section className="py-10 md:py-12 bg-card border-y border-border/40">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           {numeros.map((numero, index) => {

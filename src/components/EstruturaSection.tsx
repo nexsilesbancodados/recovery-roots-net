@@ -56,7 +56,7 @@ const ImageCard = ({ recurso }: { recurso: Recurso }) => (
 
 const EstruturaSection = () => {
   return (
-    <section className="relative z-30 py-12 sm:py-16 bg-muted/30 overflow-hidden" id="estrutura">
+    <section className="relative z-30 py-16 sm:py-24 bg-muted/30 overflow-hidden" id="estrutura">
       {/* Header */}
       <div className="container mx-auto px-4 mb-6 sm:mb-8">
         <div className="text-center lg:text-left lg:max-w-xl">
