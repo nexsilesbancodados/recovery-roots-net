@@ -1,6 +1,7 @@
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import NumerosImpacto from "@/components/NumerosImpacto";
 
 import ConveniosCarousel from "@/components/ConveniosCarousel";
 import TratamentosSection from "@/components/TratamentosSection";
