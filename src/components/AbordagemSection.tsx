@@ -109,7 +109,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[8%] -left-4 md:-left-8 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[160px]"
+                className="absolute top-[10%] left-8 md:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[160px]"
               >
                 💬 Estamos aqui para ajudar!
               </motion.div>
