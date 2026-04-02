@@ -57,20 +57,6 @@ const HeroSection = () => {
               humanizado em saúde mental, dependência química e alcoolismo.
             </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Button
-                onClick={() => openWhatsApp("Olá! Gostaria de conhecer o hospital.")}
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-7 text-base rounded-2xl shadow-[0_8px_30px_-6px_hsl(var(--primary)/0.4)] hover:shadow-[0_12px_40px_-6px_hsl(var(--primary)/0.5)] hover:-translate-y-0.5 transition-all duration-300"
-              >
-                Conheça Nosso Hospital
-              </Button>
-            </motion.div>
 
           </motion.div>
 
