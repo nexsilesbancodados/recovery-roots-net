@@ -53,7 +53,7 @@ const AbordagemSection = () => {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Nossa Abordagem
             </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-2 mb-5 leading-tight">
+            <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-2 mb-4 leading-tight">
               Atendimento Personalizado e Individual
             </h2>
             <p className="text-muted-foreground text-base md:text-lg mb-6 leading-relaxed">
