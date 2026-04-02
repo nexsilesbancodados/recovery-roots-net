@@ -177,46 +177,6 @@ const EstruturaSection = () => {
         </div>
       </div>
 
-      {/* Tablet: Horizontal scroll with touch */}
-      <div className="hidden sm:block lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
-        <div className="flex gap-4 min-w-max px-4">
-          {recursos.map((recurso) => {
-            const IconComponent = recurso.icon;
-            return (
-              <div
-                key={recurso.id}
-                className="flex-shrink-0 w-[280px]"
-              >
-                <Card
-                  className="group relative border-0 shadow-lg transition-all duration-300 bg-gradient-to-br from-card to-card/80 overflow-hidden h-full"
-                >
-                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full" />
-                  
-                  <CardContent className="p-5 relative z-10">
-                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 shadow-md`}>
-                      <IconComponent className={`w-6 h-6 ${recurso.color}`} />
-                    </div>
-
-                    <h3 className="text-base font-display font-bold text-foreground mb-2">
-                      {recurso.nome}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                      {recurso.descricao}
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            );
-          })}
-        </div>
-        <div className="flex justify-center mt-3 text-muted-foreground">
-          <div className="flex items-center gap-2 text-xs">
-            <span>←</span>
-            <span>Arraste para ver mais</span>
-            <span>→</span>
-          </div>
-        </div>
-      </div>
 
       {/* Mobile: Vertical grid */}
       <div className="sm:hidden px-4">
