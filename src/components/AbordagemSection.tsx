@@ -90,7 +90,7 @@ const AbordagemSection = () => {
             </Button>
           </motion.div>
 
-          {/* Imagem à Direita */}
+          {/* Imagem à Direita com balões flutuantes */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -108,6 +108,31 @@ const AbordagemSection = () => {
                 className="w-full max-w-sm h-auto object-contain drop-shadow-lg"
               />
               <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+
+              {/* Balões de conversa flutuantes */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-[8%] -left-4 md:-left-8 bg-primary text-primary-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[160px]"
+              >
+                💬 Estamos aqui para ajudar!
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="absolute top-[35%] -right-2 md:-right-6 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-xs md:text-sm font-medium max-w-[150px]"
+              >
+                🤝 Atendimento 24h
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+                className="absolute bottom-[25%] -left-6 md:-left-10 bg-card border border-border text-foreground px-4 py-2 rounded-2xl rounded-bl-sm shadow-lg text-xs md:text-sm font-medium max-w-[170px]"
+              >
+                ❤️ Tratamento humanizado
+              </motion.div>
             </div>
           </motion.div>
         </div>
