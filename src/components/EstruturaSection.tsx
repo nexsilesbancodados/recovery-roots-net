@@ -54,17 +54,20 @@ const EstruturaSection = () => {
       <div className="hidden sm:block container mx-auto px-4">
         {/* Row 1 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(0, 4).map((recurso) => (
-            <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <CardContent className="p-4 relative z-10">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm">
-                  <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
-                </div>
-                <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
-              </CardContent>
-            </Card>
+          {[
+            { ...recursos[0], image: imgInstalacoes },
+            { ...recursos[1], image: imgAlimentacao },
+            { ...recursos[2], image: imgAreaVerde },
+            { ...recursos[3], image: imgEsportes },
+          ].map((recurso) => (
+            <div key={recurso.id} className="group relative h-52 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1">
+              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10 group-hover:from-black/65 transition-colors" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 relative z-10">
+                <h3 className="text-sm font-display font-bold text-white mb-1 drop-shadow-lg">{recurso.nome}</h3>
+                <p className="text-xs text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+              </div>
+            </div>
           ))}
         </div>
 
