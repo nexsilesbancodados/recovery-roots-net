@@ -4,7 +4,7 @@ import { PHONE_NUMBERS, PHONE_DISPLAY } from "@/lib/contact";
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background" id="contato">
+    <footer className="bg-primary text-primary-foreground" id="contato">
       <div className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Logo e Descrição */}
