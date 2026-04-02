@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
+    <section id="inicio" className="relative overflow-hidden flex flex-col">
       {/* Very light gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(215,30%,97%)] via-[hsl(215,20%,95%)] to-[hsl(42,20%,96%)]" />
       
@@ -18,7 +18,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="relative container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
+      <div className="relative container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-end">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
           {/* Left Content */}
           <motion.div
@@ -60,12 +60,13 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end items-end self-end"
+            className="relative flex justify-center lg:justify-end items-end self-end mb-0"
           >
             <img
               src={heroEquipe}
               alt="Equipe médica do Hospital Rumo Certo"
-              className="w-full max-w-[700px] xl:max-w-[800px] object-contain drop-shadow-xl"
+              className="w-full max-w-[700px] xl:max-w-[800px] object-contain drop-shadow-xl block"
+              style={{ marginBottom: '-4px' }}
               width={1024}
               height={1024}
             />
