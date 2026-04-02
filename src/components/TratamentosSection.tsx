@@ -67,7 +67,7 @@ const tratamentos: Tratamento[] = [
       "Grupos de empoderamento feminino e reconstrução da autoestima",
       "Tratamento de transtornos associados: ansiedade, depressão e transtornos alimentares"
     ],
-    color: "from-pink-500 to-rose-600",
+    color: "from-secondary to-destructive/60",
     bgImage: bgDependenciaFeminina
   },
   {
