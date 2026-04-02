@@ -1,5 +1,5 @@
-import { Heart, Users, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import logoIcon from "@/assets/logo-hospital.png";
 import institutoAbaImg from "@/assets/projetos/instituto-aba.png";
 import jiuJitsuImg from "@/assets/projetos/jiu-jitsu.png";
 import combateDrogasImg from "@/assets/projetos/combate-drogas.png";
@@ -9,19 +9,16 @@ const projetos = [
     title: "Instituto São Joaquim - ABA",
     description: "Apoio a crianças com autismo através de terapia ABA (Análise do Comportamento Aplicada), fonoaudiologia e desenvolvimento da comunicação.",
     image: institutoAbaImg,
-    icon: Heart,
   },
   {
     title: "Campeonatos de Jiu-Jitsu",
     description: "Patrocínio e organização de campeonatos de Jiu-Jitsu para jovens, promovendo disciplina, autocontrole e inclusão social através do esporte.",
     image: jiuJitsuImg,
-    icon: Users,
   },
   {
     title: "Combate às Drogas e Álcool",
     description: "Campanhas de conscientização e prevenção ao uso de drogas e álcool em escolas e comunidades, salvando vidas e transformando famílias.",
     image: combateDrogasImg,
-    icon: Shield,
   },
 ];
 
@@ -44,9 +41,7 @@ const ProjetosSociaisSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projetos.map((projeto, index) => {
-            const IconComponent = projeto.icon;
-            return (
+          {projetos.map((projeto, index) => (
               <Card 
                 key={index} 
                 className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -60,8 +55,8 @@ const ProjetosSociaisSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center gap-2 text-white">
-                      <div className="p-2 bg-primary rounded-full">
-                        <IconComponent size={18} className="text-primary-foreground" fill="currentColor" strokeWidth={1} />
+                      <div className="p-2 bg-white/25 backdrop-blur-sm rounded-full">
+                        <img src={logoIcon} alt="" className="w-5 h-5 object-contain" />
                       </div>
                       <h3 className="font-display font-bold text-xl text-secondary drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{projeto.title}</h3>
                     </div>
@@ -73,8 +68,7 @@ const ProjetosSociaisSection = () => {
                   </p>
                 </CardContent>
               </Card>
-            );
-          })}
+          ))}
         </div>
 
         {/* Call to Action */}
