@@ -252,9 +252,6 @@ const DepoimentosSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Nota de Privacidade */}
-      </p>
     </section>
   );
 };
