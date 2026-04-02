@@ -115,8 +115,8 @@ const HeroSection = () => {
                   transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
                   className="flex items-center gap-4 group"
                 >
-                  <div className={`w-13 h-13 rounded-2xl bg-gradient-to-br ${stat.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 w-[52px] h-[52px]`}>
-                    <IconComponent className={`w-6 h-6 ${stat.color}`} fill="currentColor" strokeWidth={1} />
+                  <div className={`w-12 h-12 rounded-xl ${stat.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300`}>
+                    <IconComponent className={`w-[22px] h-[22px] ${stat.color}`} strokeWidth={2} />
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-foreground tracking-tight">{stat.value}</p>
