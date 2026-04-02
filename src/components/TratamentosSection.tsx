@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
+import { Users } from "lucide-react";
+import logoIcon from "@/assets/logo-hospital.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
 import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.jpg";
@@ -13,7 +14,6 @@ import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
 interface Tratamento {
   id: string;
   title: string;
-  icon: React.ReactNode;
   shortDescription: string;
   fullDescription: string;
   howWeHelp: string[];
@@ -25,7 +25,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "alcoolismo",
     title: "Alcoolismo",
-    icon: <Shield className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Tratamento especializado para dependência alcoólica com abordagem humanizada",
     fullDescription: "O alcoolismo é uma doença crônica e progressiva que afeta não apenas o indivíduo, mas toda a sua rede familiar e social. No Hospital Rumo Certo, entendemos que cada pessoa tem uma história única e merece um tratamento personalizado. Nossa equipe multidisciplinar trabalha com protocolos baseados em evidências científicas, combinando desintoxicação segura, psicoterapia intensiva e acompanhamento médico 24 horas. Acreditamos na recuperação como um processo de transformação de vida, não apenas de abstinência.",
     howWeHelp: [
@@ -41,7 +40,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "dependencia-quimica",
     title: "Dependência Química",
-    icon: <Brain className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Recuperação integral com foco na reinserção social e qualidade de vida",
     fullDescription: "A dependência química é uma condição complexa que envolve fatores biológicos, psicológicos e sociais. No Hospital Rumo Certo, oferecemos um programa de tratamento completo que vai além da desintoxicação. Nossa abordagem terapêutica trabalha as causas profundas da dependência, ajudando o paciente a desenvolver novas habilidades de enfrentamento, reconstruir relacionamentos e redescobrir propósito de vida. O ambiente acolhedor e seguro favorece a recuperação genuína e duradoura.",
     howWeHelp: [
@@ -57,7 +55,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "dependencia-feminina",
     title: "Dependência Química Feminina",
-    icon: <Heart className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Ambiente exclusivo que acolhe as particularidades da mulher em recuperação",
     fullDescription: "Mulheres enfrentam desafios únicos na jornada de recuperação da dependência química. Questões como maternidade, relacionamentos abusivos, traumas de violência e a pressão social exigem uma abordagem especializada e sensível. O Hospital Rumo Certo oferece um programa exclusivo feminino, com ambiente protegido e equipe preparada para acolher essas especificidades. Trabalhamos o empoderamento, a autoestima e a reconstrução da identidade feminina, oferecendo suporte integral para mães em recuperação.",
     howWeHelp: [
@@ -73,7 +70,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "depressao",
     title: "Depressão",
-    icon: <Sparkles className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Tratamento multidisciplinar para recuperar a alegria de viver",
     fullDescription: "A depressão é muito mais que tristeza: é uma doença que afeta o corpo, a mente e a alma, roubando energia, motivação e esperança. No Hospital Rumo Certo, oferecemos um tratamento integral que combina psiquiatria de ponta, psicoterapia intensiva e atividades terapêuticas que reconectam o paciente consigo mesmo e com a vida. Nossa equipe acolhe cada pessoa com compaixão, respeitando seu tempo e trabalhando para que ela redescubra suas forças internas e o prazer de viver.",
     howWeHelp: [
@@ -89,7 +85,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "esquizofrenia",
     title: "Esquizofrenia",
-    icon: <Brain className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Cuidado humanizado para estabilização e qualidade de vida",
     fullDescription: "A esquizofrenia é um transtorno mental grave, mas tratável. Com o acompanhamento adequado, pessoas com esquizofrenia podem ter uma vida plena e significativa. No Hospital Rumo Certo, oferecemos tratamento especializado com foco na estabilização dos sintomas, adesão ao tratamento medicamentoso e desenvolvimento de habilidades para o dia a dia. Nossa equipe trabalha em parceria com a família, oferecendo orientação e suporte para que todos compreendam a condição e participem ativamente do processo de recuperação.",
     howWeHelp: [
@@ -105,7 +100,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "farmacodependencia",
     title: "Farmacodependência",
-    icon: <AlertTriangle className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Desmame seguro e tratamento da dependência de medicamentos",
     fullDescription: "A dependência de medicamentos prescritos — como benzodiazepínicos, opioides e estimulantes — é uma realidade silenciosa que afeta milhares de pessoas. Muitas vezes iniciada com uma prescrição médica legítima, a farmacodependência desenvolve-se gradualmente e pode ser tão devastadora quanto qualquer outra dependência. O Hospital Rumo Certo oferece um programa especializado de desmame seguro, com protocolos médicos rigorosos que minimizam o desconforto da abstinência, além de tratamento das condições subjacentes que levaram ao uso.",
     howWeHelp: [
@@ -121,7 +115,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "prevencao-suicidio",
     title: "Prevenção ao Suicídio",
-    icon: <HandHeart className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Acolhimento urgente e especializado para momentos de crise",
     fullDescription: "Quando a dor emocional se torna insuportável, é essencial ter um lugar seguro para buscar ajuda. O Hospital Rumo Certo oferece acolhimento especializado para pessoas em sofrimento intenso e com ideação suicida. Nossa equipe é treinada em intervenção em crise e trabalha com compaixão e sem julgamentos. O ambiente protegido permite que o paciente encontre alívio do sofrimento enquanto desenvolve, junto à equipe, um plano de segurança e novas perspectivas de vida. A vida vale a pena ser vivida — estamos aqui para ajudar você a redescobrir isso.",
     howWeHelp: [
@@ -137,7 +130,6 @@ const tratamentos: Tratamento[] = [
   {
     id: "saude-mental",
     title: "Saúde Mental",
-    icon: <Leaf className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Programa integral para equilíbrio emocional e bem-estar",
     fullDescription: "A saúde mental é tão importante quanto a saúde física — e ambas estão profundamente conectadas. O Hospital Rumo Certo oferece um programa abrangente para pessoas que buscam recuperar ou fortalecer seu bem-estar emocional. Seja para tratar ansiedade, burnout, crises de pânico, transtorno bipolar ou simplesmente para um período de autocuidado intensivo, nossa abordagem holística integra psiquiatria, psicoterapia, práticas integrativas e atividades que reconectam corpo e mente. Aqui, você encontra espaço para se cuidar e se redescobrir.",
     howWeHelp: [
@@ -205,7 +197,7 @@ const TratamentosSection = () => {
                 
                 <div className="relative z-10 flex-1 flex flex-col justify-end">
                   <div className="bg-white/25 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
-                    {tratamento.icon}
+                    <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
                   </div>
                   <h3 className="font-display text-xl font-extrabold mb-1.5 text-white drop-shadow-lg">
                     {tratamento.title}
@@ -254,7 +246,7 @@ const TratamentosSection = () => {
                 
                 <div className="relative z-10 flex items-start gap-4">
                   <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
-                    {tratamento.icon}
+                    <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
@@ -282,7 +274,7 @@ const TratamentosSection = () => {
             <>
               <DialogHeader>
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${selectedTratamento.color} flex items-center justify-center text-white mb-4`}>
-                  {selectedTratamento.icon}
+                  <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
                 </div>
                 <DialogTitle className="font-display text-2xl">
                   {selectedTratamento.title}
