@@ -9,7 +9,7 @@ import imgEsportes from "@/assets/estrutura/esportes.jpg";
 import imgPiscinas from "@/assets/estrutura/piscinas.jpg";
 import imgCavalo from "@/assets/estrutura/passeio-cavalo.jpg";
 import imgQuartos from "@/assets/estrutura/quartos-privativos.jpg";
-import imgMusica from "@/assets/estrutura/musicoterapia.jpg";
+
 import imgBiblioteca from "@/assets/estrutura/biblioteca.jpg";
 import imgArte from "@/assets/estrutura/arteterapia.jpg";
 import imgPet from "@/assets/estrutura/pet-terapia.jpg";
@@ -34,7 +34,7 @@ const recursos: Recurso[] = [
   { id: 5, nome: "Piscinas", descricao: "Piscinas para atividades aquáticas terapêuticas e momentos de lazer e relaxamento.", image: imgPiscinas },
   { id: 6, nome: "Passeio a Cavalo", descricao: "Equoterapia e passeios a cavalo que auxiliam no tratamento e proporcionam experiências únicas.", image: imgCavalo },
   { id: 7, nome: "Quartos Privativos", descricao: "Acomodações individuais e compartilhadas com todo conforto necessário para uma estadia tranquila.", image: imgQuartos },
-  { id: 8, nome: "Musicoterapia", descricao: "Sessões de musicoterapia para expressão emocional e desenvolvimento de habilidades sociais.", image: imgMusica },
+  
   { id: 9, nome: "Biblioteca", descricao: "Espaço de leitura e estudo com acervo variado para momentos de reflexão e aprendizado.", image: imgBiblioteca },
   { id: 10, nome: "Arteterapia", descricao: "Atividades artísticas como pintura e desenho para expressão criativa e autoconhecimento.", image: imgArte },
   { id: 11, nome: "Pet Terapia", descricao: "Interação com animais para reduzir o estresse e promover bem-estar emocional.", image: imgPet },
@@ -116,17 +116,24 @@ const EstruturaSection = () => {
           </Button>
         </div>
 
-        {/* Row 3 - first 4 */}
+        {/* Row 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {recursos.slice(8, 12).map((recurso) => (
             <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
 
-        {/* Row 4 - last 2 expanded */}
-        <div className="grid sm:grid-cols-2 gap-4 mt-4">
-          {recursos.slice(12, 14).map((recurso) => (
-            <ImageCard key={recurso.id} recurso={recurso} />
+        {/* Row 4 - last card expanded */}
+        <div className="grid grid-cols-1 gap-4 mt-4">
+          {recursos.slice(12, 13).map((recurso) => (
+            <div key={recurso.id} className="group relative h-52 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer hover:scale-[1.01]">
+              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10 group-hover:from-black/65 transition-colors" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                <h3 className="text-sm font-display font-bold text-white mb-1 drop-shadow-lg">{recurso.nome}</h3>
+                <p className="text-xs text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
