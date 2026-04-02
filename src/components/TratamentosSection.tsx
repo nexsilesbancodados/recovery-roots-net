@@ -1,12 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Import background images
-import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
-import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.jpg";
 import bgDependenciaFeminina from "@/assets/tratamentos/dependencia-feminina.jpg";
 import bgDepressao from "@/assets/tratamentos/depressao.jpg";
 import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
