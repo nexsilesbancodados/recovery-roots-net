@@ -41,13 +41,13 @@ const diferenciais: Diferencial[] = [
 
 const DiferenciaisSection = () => {
   return (
-    <section id="diferenciais" className="py-12 bg-gradient-to-br from-primary/5 to-background">
+    <section id="diferenciais" className="py-12 bg-[hsl(215,10%,98%)]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Diferenciais
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
+          <h2 className="font-display text-3xl md:text-4xl font-black text-secondary mt-2">
             Por que Escolher o Rumo Certo?
           </h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">

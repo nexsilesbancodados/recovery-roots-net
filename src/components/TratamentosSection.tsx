@@ -10,6 +10,8 @@ import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
 import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.jpg";
 import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.jpg";
 import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 
 interface Tratamento {
   id: string;
@@ -144,24 +146,48 @@ const tratamentos: Tratamento[] = [
   }
 ];
 
+const marqueeTexts = [
+  "Tratamento Humanizado",
+  "•",
+  "Equipe Multidisciplinar",
+  "•",
+  "Atendimento 24h",
+  "•",
+  "Sigilo Absoluto",
+  "•",
+  "Resgate em Todo Brasil",
+  "•",
+  "Programa 12 Passos",
+  "•",
+  "Unidade Feminina Exclusiva",
+  "•",
+  "Internação por Convênio",
+  "•",
+];
+
 const TratamentosSection = () => {
   const [selectedTratamento, setSelectedTratamento] = useState<Tratamento | null>(null);
+
+  const [marqueeRef] = useEmblaCarousel(
+    { loop: true, align: "start", dragFree: true },
+    [AutoScroll({ speed: 0.8, stopOnInteraction: false, stopOnMouseEnter: false })]
+  );
 
   return (
     <>
       <section 
         id="tratamentos" 
-        className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 sm:py-20 md:py-28 overflow-hidden"
+        className="relative z-20 bg-[hsl(215,15%,98%)] py-16 sm:py-20 md:py-28 overflow-hidden"
       >
-        {/* Header */}
-        <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
+        {/* Header - centered */}
+        <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12 text-center">
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Especialidades
           </span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-secondary mt-2 mb-3 sm:mb-4">
             Tratamentos Oferecidos
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl mx-auto">
             Oferecemos tratamento especializado e humanizado para diversas condições.
           </p>
         </div>
@@ -169,44 +195,77 @@ const TratamentosSection = () => {
         {/* Desktop & Tablet: Grid layout */}
         <div className="hidden sm:block container mx-auto px-4">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {tratamentos.map((tratamento) => (
+            {tratamentos.slice(0, 4).map((tratamento) => (
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
-                className={`
-                  w-full h-60 rounded-2xl p-5 cursor-pointer
-                  text-white relative overflow-hidden
-                  transform transition-all duration-300
-                  hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1
-                  flex flex-col justify-between
-                  group
-                `}
+                className="w-full h-60 rounded-2xl p-5 cursor-pointer text-white relative overflow-hidden transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1 flex flex-col justify-between group"
               >
                 {tratamento.bgImage ? (
                   <>
-                    <img 
-                      src={tratamento.bgImage} 
-                      alt={tratamento.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    <img src={tratamento.bgImage} alt={tratamento.title} className="absolute inset-0 w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-colors" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
-                
                 <div className="relative z-10">
                   <div className="bg-white/25 w-11 h-11 rounded-xl flex items-center justify-center mb-auto backdrop-blur-sm">
                     <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
                   </div>
                 </div>
                 <div className="relative z-10 mt-auto">
-                  <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
-                    {tratamento.title}
-                  </h3>
-                  <p className="text-white/85 text-xs leading-relaxed line-clamp-2">
-                    {tratamento.shortDescription}
-                  </p>
+                  <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">{tratamento.title}</h3>
+                  <p className="text-white/85 text-xs leading-relaxed line-clamp-2">{tratamento.shortDescription}</p>
+                </div>
+                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
+                  <span>Saiba mais</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Marquee Strip */}
+        <div className="my-6 sm:my-8 bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(215,55%,25%)] py-3 overflow-hidden" ref={marqueeRef}>
+          <div className="flex gap-6 items-center">
+            {[...marqueeTexts, ...marqueeTexts].map((text, i) => (
+              <span
+                key={i}
+                className="flex-shrink-0 text-primary-foreground/90 font-display font-bold text-xs sm:text-sm uppercase tracking-wider whitespace-nowrap"
+              >
+                {text}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop & Tablet: Grid layout row 2 */}
+        <div className="hidden sm:block container mx-auto px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {tratamentos.slice(4).map((tratamento) => (
+              <div
+                key={tratamento.id}
+                onClick={() => setSelectedTratamento(tratamento)}
+                className="w-full h-60 rounded-2xl p-5 cursor-pointer text-white relative overflow-hidden transform transition-all duration-300 hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1 flex flex-col justify-between group"
+              >
+                {tratamento.bgImage ? (
+                  <>
+                    <img src={tratamento.bgImage} alt={tratamento.title} className="absolute inset-0 w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-colors" />
+                  </>
+                ) : (
+                  <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
+                )}
+                <div className="relative z-10">
+                  <div className="bg-white/25 w-11 h-11 rounded-xl flex items-center justify-center mb-auto backdrop-blur-sm">
+                    <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
+                  </div>
+                </div>
+                <div className="relative z-10 mt-auto">
+                  <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">{tratamento.title}</h3>
+                  <p className="text-white/85 text-xs leading-relaxed line-clamp-2">{tratamento.shortDescription}</p>
                 </div>
                 <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium group-hover:text-white transition-colors">
                   <span>Saiba mais</span>
@@ -224,32 +283,18 @@ const TratamentosSection = () => {
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
-                className={`
-                  w-full h-36 rounded-xl p-3 cursor-pointer
-                  text-white relative overflow-hidden
-                  transform transition-all duration-300
-                  active:scale-[0.97]
-                  flex flex-col justify-end
-                  group
-                `}
+                className="w-full h-36 rounded-xl p-3 cursor-pointer text-white relative overflow-hidden transform transition-all duration-300 active:scale-[0.97] flex flex-col justify-end group"
               >
                 {tratamento.bgImage ? (
                   <>
-                    <img 
-                      src={tratamento.bgImage} 
-                      alt={tratamento.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
+                    <img src={tratamento.bgImage} alt={tratamento.title} className="absolute inset-0 w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
-                
                 <div className="relative z-10">
-                  <h3 className="font-display text-sm font-extrabold mb-0.5 text-white drop-shadow-lg leading-tight">
-                    {tratamento.title}
-                  </h3>
+                  <h3 className="font-display text-sm font-extrabold mb-0.5 text-white drop-shadow-lg leading-tight">{tratamento.title}</h3>
                   <span className="text-white/70 text-[10px] font-medium">Saiba mais →</span>
                 </div>
               </div>

@@ -1,12 +1,24 @@
 import heroEquipe from "@/assets/hero-equipe.png";
+import logoImage from "@/assets/logo-hospital.png";
 import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
+    <section id="inicio" className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
+      {/* Very light gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(215,30%,97%)] via-[hsl(215,20%,95%)] to-[hsl(42,20%,96%)]" />
+      
+      {/* Watermark logo */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img
+          src={logoImage}
+          alt=""
+          className="w-[500px] md:w-[700px] lg:w-[900px] opacity-[0.04] object-contain"
+        />
+      </div>
 
-      <div className="container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
+      <div className="relative container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
           {/* Left Content */}
           <motion.div
@@ -24,14 +36,14 @@ const HeroSection = () => {
               >
                 Hospital Rumo Certo
               </motion.span>
-              <h1 className="font-display text-[2.2rem] sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-bold text-foreground leading-[1.05] sm:leading-[1.1]">
+              <h1 className="font-display text-[2.2rem] sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-foreground leading-[1.05] sm:leading-[1.1]">
                 Tratamentos Premium
                 <br />
                 para uma {" "}
-                <span className="text-primary relative inline-block mt-1">
+                <span className="text-secondary relative inline-block mt-1">
                   Vida Saudável
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
-                    <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--primary))" strokeWidth="3" strokeLinecap="round" opacity="0.3" />
+                    <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--secondary))" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
                   </svg>
                 </span>
               </h1>
@@ -41,11 +53,9 @@ const HeroSection = () => {
               Estruturas de ponta e equipe multidisciplinar dedicada ao tratamento 
               humanizado em saúde mental, dependência química e alcoolismo.
             </p>
-
-
           </motion.div>
 
-          {/* Right Content - Team Image */}
+          {/* Right Content - Team Image - bigger */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -55,14 +65,13 @@ const HeroSection = () => {
             <img
               src={heroEquipe}
               alt="Equipe médica do Hospital Rumo Certo"
-              className="w-full max-w-[620px] xl:max-w-[700px] object-contain drop-shadow-xl mb-[-80px]"
+              className="w-full max-w-[700px] xl:max-w-[800px] object-contain drop-shadow-xl mb-[-80px]"
               width={1024}
               height={1024}
             />
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 };
