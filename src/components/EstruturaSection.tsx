@@ -134,6 +134,7 @@ const EstruturaSection = () => {
             );
           })}
         </div>
+      </div>
 
 
       {/* Mobile: Vertical grid */}
