@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
+import { Users } from "lucide-react";
+import logoIcon from "@/assets/logo-hospital.png";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
 import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.jpg";
