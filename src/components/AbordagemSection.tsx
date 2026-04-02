@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import profissionalImg from "@/assets/doctor-abordagem.png";
 import { openWhatsApp } from "@/lib/contact";
+import imgTerapiaIndividual from "@/assets/abordagem/terapia-individual.jpg";
+import img12Passos from "@/assets/abordagem/12-passos.jpg";
+import imgTerapiaGrupo from "@/assets/abordagem/terapia-grupo.jpg";
+import imgInovacao from "@/assets/abordagem/inovacao.jpg";
 
 const destaques = [
   "Avaliação detalhada individualizada",
@@ -16,25 +20,25 @@ const abordagens = [
     icon: <User className="w-5 h-5" strokeWidth={2} />,
     title: "Terapia Individual",
     description: "Abordagem personalizada com TCC e Psicoterapia Psicodinâmica.",
-    gradient: "from-primary/90 to-primary/70",
+    image: imgTerapiaIndividual,
   },
   {
     icon: <Heart className="w-5 h-5" strokeWidth={2} />,
     title: "Programa de 12 Passos",
     description: "Base sólida para a sobriedade com etapas estruturadas.",
-    gradient: "from-primary/80 to-secondary/80",
+    image: img12Passos,
   },
   {
     icon: <Users className="w-5 h-5" strokeWidth={2} />,
     title: "Terapias em Grupo",
     description: "Sessões que fortalecem o senso de comunidade e pertencimento.",
-    gradient: "from-secondary/85 to-secondary/65",
+    image: imgTerapiaGrupo,
   },
   {
     icon: <Lightbulb className="w-5 h-5" strokeWidth={2} />,
     title: "Inovação em Tratamento",
     description: "Métodos atualizados com as mais recentes pesquisas.",
-    gradient: "from-secondary/75 to-primary/75",
+    image: imgInovacao,
   },
 ];
 
