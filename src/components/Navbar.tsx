@@ -33,10 +33,6 @@ const Navbar = () => {
     { label: "Equipe", href: "/equipe", isPage: true },
   ];
 
-  const moreLinks = [
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "Contato", href: "#contato" },
-  ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith("/")) return;
