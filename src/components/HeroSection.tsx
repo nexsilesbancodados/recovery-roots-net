@@ -1,11 +1,20 @@
 import heroEquipe from "@/assets/hero-equipe.png";
+import logoHospital from "@/assets/logo-hospital.png";
 import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col" style={{ background: 'linear-gradient(135deg, hsl(220 30% 96%) 0%, hsl(210 40% 94%) 30%, hsl(45 30% 95%) 60%, hsl(220 25% 97%) 100%)' }}>
-
+    <section id="inicio" className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col" style={{ background: 'linear-gradient(135deg, hsl(220 30% 97%) 0%, hsl(210 35% 95%) 30%, hsl(45 25% 96%) 60%, hsl(220 20% 98%) 100%)' }}>
+      
+      {/* Logo watermark background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img 
+          src={logoHospital} 
+          alt="" 
+          className="w-[60%] md:w-[40%] max-w-[500px] object-contain opacity-[0.04]"
+        />
+      </div>
       <div className="container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
           {/* Left Content */}
