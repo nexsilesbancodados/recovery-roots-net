@@ -35,7 +35,7 @@ const tratamentos: Tratamento[] = [
       "Programa de orientação e terapia familiar para reconstrução de vínculos",
       "Plano de prevenção de recaídas personalizado e acompanhamento pós-alta"
     ],
-    color: "from-amber-500 to-orange-600",
+    color: "from-secondary to-secondary/80",
     bgImage: bgAlcoolismo
   },
   {
