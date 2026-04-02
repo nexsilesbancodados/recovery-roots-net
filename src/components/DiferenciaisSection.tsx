@@ -47,7 +47,7 @@ const DiferenciaisSection = () => {
           <span className="text-primary font-semibold text-sm uppercase tracking-wider">
             Diferenciais
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mt-2">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
             Por que Escolher o Rumo Certo?
           </h2>
           <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
@@ -66,7 +66,7 @@ const DiferenciaisSection = () => {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <IconComponent className="w-6 h-6" />
                 </div>
-                <h3 className="font-display text-lg font-bold text-primary mb-2">
+                <h3 className="font-display text-lg font-bold text-foreground mb-2">
                   {item.titulo}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">

@@ -79,7 +79,7 @@ const Resgate = () => {
       {/* Diferenciais */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
             Por Que Escolher Nosso Serviço
           </h2>
           
@@ -110,7 +110,7 @@ const Resgate = () => {
       {/* Etapas do Resgate */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
             Como Funciona o Resgate
           </h2>
           

@@ -74,7 +74,7 @@ const Desintoxicacao = () => {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
               Primeira Etapa
             </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary mt-2 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
               Desintoxicação Segura
             </h1>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
@@ -93,7 +93,7 @@ const Desintoxicacao = () => {
       {/* Etapas */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
             Como Funciona o Processo
           </h2>
           
@@ -121,7 +121,7 @@ const Desintoxicacao = () => {
       {/* Diferenciais */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
             Nossos Diferenciais
           </h2>
           
@@ -152,7 +152,7 @@ const Desintoxicacao = () => {
       {/* CTA */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-primary mb-4">
+          <h2 className="font-display text-3xl font-bold text-foreground mb-4">
             Pronto para Dar o Primeiro Passo?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

@@ -80,7 +80,7 @@ const SobreNos = () => {
               <span className="text-primary font-semibold text-sm uppercase tracking-wider">
                 Nossa História
               </span>
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-primary mt-2 mb-6">
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-6">
                 Sobre o Hospital Rumo Certo
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
@@ -98,7 +98,7 @@ const SobreNos = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20">
-              <h3 className="font-display text-2xl font-bold text-primary mb-4">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
                 Nossa Missão
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -107,7 +107,7 @@ const SobreNos = () => {
               </p>
             </div>
             <div className="p-8 rounded-2xl bg-muted/50 border border-border">
-              <h3 className="font-display text-2xl font-bold text-primary mb-4">
+              <h3 className="font-display text-2xl font-bold text-foreground mb-4">
                 Nossa Visão
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -122,7 +122,7 @@ const SobreNos = () => {
       {/* Valores */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
             Nossos Valores
           </h2>
           
@@ -153,7 +153,7 @@ const SobreNos = () => {
       {/* Timeline */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
             Nossa Trajetória
           </h2>
           
@@ -165,7 +165,7 @@ const SobreNos = () => {
                 </div>
                 <div className="w-3 h-3 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div className="flex-1 pb-6 border-b border-border last:border-0">
-                  <h3 className="font-bold text-primary mb-1">{item.titulo}</h3>
+                  <h3 className="font-bold text-foreground mb-1">{item.titulo}</h3>
                   <p className="text-muted-foreground">{item.descricao}</p>
                 </div>
               </div>
@@ -177,7 +177,7 @@ const SobreNos = () => {
       {/* CTA */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-primary mb-4">
+          <h2 className="font-display text-3xl font-bold text-foreground mb-4">
             Conheça Nossa Estrutura
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

@@ -39,20 +39,20 @@ import unidade3_3 from "@/assets/estrutura/unidade-3-3.png";
 import bannerUnidades from "@/assets/estrutura/banner-unidades.png";
 
 const galeriaImagens = [
-  { src: unidadeMasculinaCabreuva, alt: "Unidade Masculina Cabreúva - Piscina e área de convivência", keyword: "Conforto" },
-  { src: unidadeFemininaCabreuva1, alt: "Unidade Feminina Cabreúva - Academia", keyword: "Saúde" },
-  { src: unidadeFemininaCabreuva2, alt: "Unidade Feminina Cabreúva - Refeitório", keyword: "Nutrição" },
-  { src: unidadeFemininaCabreuva3, alt: "Unidade Feminina Cabreúva - Área externa com fogueira", keyword: "Acolhimento" },
-  { src: unidadeFemininaCabreuva4, alt: "Unidade Feminina Cabreúva - Vista aérea", keyword: "Natureza" },
-  { src: unidadeMasculinaSalto1, alt: "Unidade Masculina Salto - Vista aérea com piscina e quadras", keyword: "Lazer" },
-  { src: unidadeMasculinaSalto2, alt: "Unidade Masculina Salto - Vista panorâmica", keyword: "Liberdade" },
-  { src: unidadeMasculinaSalto3, alt: "Unidade Masculina Salto - Quarto", keyword: "Descanso" },
-  { src: unidadeMasculinaSalto4, alt: "Unidade Masculina Salto - Quarto individual", keyword: "Privacidade" },
-  { src: unidadeMasculinaSalto5, alt: "Unidade Masculina Salto - Enfermaria", keyword: "Cuidado" },
-  { src: unidadeMasculinaSalto6, alt: "Unidade Masculina Salto - Lanchonete", keyword: "Bem-Estar" },
-  { src: unidade3_1, alt: "Unidade Masculina 3 - Vista aérea", keyword: "Amplitude" },
-  { src: unidade3_2, alt: "Unidade Masculina 3 - Instalações", keyword: "Estrutura" },
-  { src: unidade3_3, alt: "Unidade Masculina 3 - Área comum", keyword: "Convivência" },
+  { src: unidadeMasculinaCabreuva, alt: "Unidade Masculina Cabreúva - Piscina e área de convivência" },
+  { src: unidadeFemininaCabreuva1, alt: "Unidade Feminina Cabreúva - Academia" },
+  { src: unidadeFemininaCabreuva2, alt: "Unidade Feminina Cabreúva - Refeitório" },
+  { src: unidadeFemininaCabreuva3, alt: "Unidade Feminina Cabreúva - Área externa com fogueira" },
+  { src: unidadeFemininaCabreuva4, alt: "Unidade Feminina Cabreúva - Vista aérea" },
+  { src: unidadeMasculinaSalto1, alt: "Unidade Masculina Salto - Vista aérea com piscina e quadras" },
+  { src: unidadeMasculinaSalto2, alt: "Unidade Masculina Salto - Vista panorâmica" },
+  { src: unidadeMasculinaSalto3, alt: "Unidade Masculina Salto - Quarto" },
+  { src: unidadeMasculinaSalto4, alt: "Unidade Masculina Salto - Quarto individual" },
+  { src: unidadeMasculinaSalto5, alt: "Unidade Masculina Salto - Enfermaria" },
+  { src: unidadeMasculinaSalto6, alt: "Unidade Masculina Salto - Lanchonete" },
+  { src: unidade3_1, alt: "Unidade Masculina 3 - Vista aérea" },
+  { src: unidade3_2, alt: "Unidade Masculina 3 - Instalações" },
+  { src: unidade3_3, alt: "Unidade Masculina 3 - Área comum" },
 ];
 
 const GaleriaEstrutura = () => {
@@ -113,9 +113,6 @@ const GaleriaEstrutura = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                  <span className="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                    {imagem.keyword}
-                  </span>
                 </div>
               </CarouselItem>
             ))}
