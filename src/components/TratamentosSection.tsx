@@ -73,7 +73,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "depressao",
     title: "Depressão",
-    icon: <Sparkles className="w-8 h-8" />,
+    icon: <Sparkles className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Tratamento multidisciplinar para recuperar a alegria de viver",
     fullDescription: "A depressão é muito mais que tristeza: é uma doença que afeta o corpo, a mente e a alma, roubando energia, motivação e esperança. No Hospital Rumo Certo, oferecemos um tratamento integral que combina psiquiatria de ponta, psicoterapia intensiva e atividades terapêuticas que reconectam o paciente consigo mesmo e com a vida. Nossa equipe acolhe cada pessoa com compaixão, respeitando seu tempo e trabalhando para que ela redescubra suas forças internas e o prazer de viver.",
     howWeHelp: [
