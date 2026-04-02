@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import logoIcon from "@/assets/logo-hospital.png";
-import { Card, CardContent } from "@/components/ui/card";
 import institutoAbaImg from "@/assets/projetos/instituto-aba.png";
 import jiuJitsuImg from "@/assets/projetos/jiu-jitsu.png";
 import combateDrogasImg from "@/assets/projetos/combate-drogas.png";
