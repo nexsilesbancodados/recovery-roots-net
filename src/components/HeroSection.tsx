@@ -1,14 +1,14 @@
-import { Users, Bed, Award, Ambulance, Search } from "lucide-react";
+import { Users, BedDouble, Award, Ambulance } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroDoctor from "@/assets/hero-doctor.png";
 import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
 
 const stats = [
-  { icon: Users, value: "3000+", label: "Pacientes Atendidos" },
-  { icon: Bed, value: "200", label: "Leitos Disponíveis" },
-  { icon: Award, value: "500+", label: "Prêmios e Certificações" },
-  { icon: Ambulance, value: "24h", label: "Resgate e Ambulância" },
+  { icon: Users, value: "3000+", label: "Pacientes Atendidos", color: "text-emerald-600", bg: "from-emerald-500/20 to-emerald-500/5" },
+  { icon: BedDouble, value: "200", label: "Leitos Disponíveis", color: "text-sky-600", bg: "from-sky-500/20 to-sky-500/5" },
+  { icon: Award, value: "500+", label: "Prêmios e Certificações", color: "text-amber-600", bg: "from-amber-500/20 to-amber-500/5" },
+  { icon: Ambulance, value: "24h", label: "Resgate e Ambulância", color: "text-rose-600", bg: "from-rose-500/20 to-rose-500/5" },
 ];
 
 const HeroSection = () => {
@@ -115,8 +115,8 @@ const HeroSection = () => {
                   transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
                   className="flex items-center gap-4 group"
                 >
-                  <div className="w-13 h-13 rounded-2xl bg-gradient-to-br from-primary/15 to-primary/5 flex items-center justify-center flex-shrink-0 group-hover:from-primary/20 group-hover:to-primary/10 transition-all duration-300 w-[52px] h-[52px]">
-                    <IconComponent className="w-6 h-6 text-primary" />
+                  <div className={`w-13 h-13 rounded-2xl bg-gradient-to-br ${stat.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 w-[52px] h-[52px]`}>
+                    <IconComponent className={`w-6 h-6 ${stat.color}`} fill="currentColor" strokeWidth={1} />
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-foreground tracking-tight">{stat.value}</p>

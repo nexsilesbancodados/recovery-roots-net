@@ -25,7 +25,7 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-3.5 h-3.5" />
+                <Facebook className="w-3.5 h-3.5" fill="currentColor" strokeWidth={0} />
               </a>
               <a 
                 href="https://www.instagram.com/hospitalrumocerto/" 
@@ -34,7 +34,7 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-3.5 h-3.5" />
+                <Instagram className="w-3.5 h-3.5" fill="currentColor" strokeWidth={1} />
               </a>
               <a 
                 href="https://www.linkedin.com/company/hospitalrumocerto" 
@@ -43,7 +43,7 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-3.5 h-3.5" />
+                <Linkedin className="w-3.5 h-3.5" fill="currentColor" strokeWidth={0} />
               </a>
             </div>
           </div>
@@ -53,23 +53,23 @@ const Footer = () => {
             <h4 className="font-display font-bold text-base">Contato</h4>
             <div className="space-y-2 text-sm">
               <a href={`tel:+${PHONE_NUMBERS.main}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.main}</span>
               </a>
               <a href={`tel:+${PHONE_NUMBERS.secondary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.secondary}</span>
               </a>
               <a href={`tel:+${PHONE_NUMBERS.tertiary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.tertiary}</span>
               </a>
               <a href="mailto:adm@rumocerto.com.br" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>adm@rumocerto.com.br</span>
               </a>
               <div className="flex items-start gap-2 text-background/70">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" strokeWidth={1} />
                 <span className="text-xs">Via Des. Luiz Carlos de Araújo, 2015, Cabreúva - SP</span>
               </div>
             </div>
@@ -80,7 +80,7 @@ const Footer = () => {
             <h4 className="font-display font-bold text-base">Funcionamento</h4>
             <div className="space-y-1.5 text-sm text-background/70">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary flex-shrink-0" />
+                <Clock className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span className="font-semibold text-background text-xs">24 horas</span>
               </div>
               <div className="pl-6 space-y-0.5 text-xs">

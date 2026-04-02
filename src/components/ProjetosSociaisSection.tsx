@@ -61,7 +61,7 @@ const ProjetosSociaisSection = () => {
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center gap-2 text-white">
                       <div className="p-2 bg-primary rounded-full">
-                        <IconComponent size={18} className="text-primary-foreground" />
+                        <IconComponent size={18} className="text-primary-foreground" fill="currentColor" strokeWidth={1} />
                       </div>
                       <h3 className="font-serif font-bold text-xl">{projeto.title}</h3>
                     </div>
