@@ -36,7 +36,7 @@ const ComoFunciona = () => {
       <Navbar />
 
       {/* Hero com imagem */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden pt-28 md:pt-32">
         <img src={grupoApoio} alt="Grupo de apoio mútuo" className="w-full h-auto" />
       </div>
 

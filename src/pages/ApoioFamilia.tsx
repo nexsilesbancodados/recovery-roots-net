@@ -49,7 +49,7 @@ const ApoioFamilia = () => {
       <Navbar />
 
       {/* Hero */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden pt-28 md:pt-32">
         <img src={familiaRecuperacao} alt="Família celebrando recuperação" className="w-full h-auto" />
       </div>
 
