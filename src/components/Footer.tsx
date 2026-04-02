@@ -34,7 +34,7 @@ const Footer = () => {
                 className="w-8 h-8 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-3.5 h-3.5" />
+                <Instagram className="w-3.5 h-3.5" fill="currentColor" strokeWidth={1} />
               </a>
               <a 
                 href="https://www.linkedin.com/company/hospitalrumocerto" 
