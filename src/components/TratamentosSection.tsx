@@ -197,7 +197,7 @@ const TratamentosSection = () => {
                 
                 <div className="relative z-10 flex-1 flex flex-col justify-end">
                   <div className="bg-white/25 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
-                    {tratamento.icon}
+                    <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
                   </div>
                   <h3 className="font-display text-xl font-extrabold mb-1.5 text-white drop-shadow-lg">
                     {tratamento.title}
@@ -246,7 +246,7 @@ const TratamentosSection = () => {
                 
                 <div className="relative z-10 flex items-start gap-4">
                   <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
-                    {tratamento.icon}
+                    <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
@@ -274,7 +274,7 @@ const TratamentosSection = () => {
             <>
               <DialogHeader>
                 <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${selectedTratamento.color} flex items-center justify-center text-white mb-4`}>
-                  {selectedTratamento.icon}
+                  <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
                 </div>
                 <DialogTitle className="font-display text-2xl">
                   {selectedTratamento.title}
