@@ -1,4 +1,7 @@
-import PageLayout from "@/components/PageLayout";
+import EmergencyBar from "@/components/EmergencyBar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Phone, MessageCircle, Shield, FileCheck, Clock, HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -50,34 +53,18 @@ const Convenios = () => {
   };
 
   return (
-    <PageLayout>
-      {/* Hero */}
-      <section className="relative w-full h-[55vh] md:h-[65vh] overflow-hidden">
-        <img src={convenioAtendimento} alt="Atendimento com convênio de saúde" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--primary))] via-[hsl(var(--primary)/0.6)] to-transparent" />
-        <div className="absolute inset-0 flex items-end justify-center">
-          <div className="container mx-auto px-4 pb-10 md:pb-16 text-center">
-            <motion.span
-              initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-              className="inline-block text-secondary font-semibold text-xs uppercase tracking-[0.2em] mb-3"
-            >
-              Convênios & Planos de Saúde
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-primary-foreground leading-tight max-w-3xl mx-auto"
-            >
-              Internação Coberta pelo Seu Convênio
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-primary-foreground/80 mt-4 max-w-xl mx-auto text-sm md:text-base"
-            >
-              Aceitamos os principais planos de saúde do Brasil. Nossa equipe cuida de toda a burocracia para você.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-background">
+      <EmergencyBar />
+      <Navbar />
+
+      {/* Hero - full image like main page */}
+      <div className="relative w-full overflow-hidden">
+        <img
+          src={convenioAtendimento}
+          alt="Atendimento com convênio de saúde"
+          className="w-full h-auto"
+        />
+      </div>
 
       {/* Convênios Parceiros */}
       <section className="py-14 md:py-20 bg-[hsl(215,10%,98%)]">
@@ -160,7 +147,10 @@ const Convenios = () => {
           </motion.div>
         </div>
       </section>
-    </PageLayout>
+
+      <Footer />
+      <FloatingButtons />
+    </div>
   );
 };
 
