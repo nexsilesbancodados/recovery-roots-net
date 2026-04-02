@@ -138,31 +138,17 @@ const Navbar = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onClick={() => setIsMenuOpen(false)}
-                    className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+                    className="fixed inset-0 bg-black/30 z-40"
                   />
 
                   <motion.div
-                    initial={{ opacity: 0, x: 24 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 24 }}
-                    transition={{ duration: 0.2 }}
-                    className="fixed top-0 right-0 h-screen w-[88vw] max-w-[360px] bg-background z-50 shadow-2xl border-l border-border/50"
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-2 mr-4 w-56 bg-background z-50 shadow-xl rounded-2xl border border-border/50 overflow-hidden"
                   >
-                    <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-border/40">
-                      <div>
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-[0.25em] font-semibold">Navegação</p>
-                        <p className="text-base font-semibold text-foreground mt-1">Menu</p>
-                      </div>
-                      <button
-                        className="p-2 text-foreground rounded-lg hover:bg-muted transition-colors"
-                        onClick={() => setIsMenuOpen(false)}
-                        aria-label="Fechar menu"
-                      >
-                        <X size={22} />
-                      </button>
-                    </div>
-
-                    <div className="px-4 py-4 overflow-y-auto h-[calc(100vh-88px)] space-y-2">
+                    <div className="py-2">
                       {mainLinks.map((link) => {
                         const isActive = location.pathname === link.href;
                         return (
@@ -170,10 +156,10 @@ const Navbar = () => {
                             key={link.label}
                             to={link.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className={`block py-3 px-4 rounded-xl text-base font-medium transition-colors ${
+                            className={`block py-2 px-5 text-sm font-medium transition-colors ${
                               isActive
-                                ? "bg-primary text-primary-foreground"
-                                : "text-foreground hover:text-primary hover:bg-primary/5"
+                                ? "bg-primary/10 text-primary"
+                                : "text-foreground/80 hover:text-primary hover:bg-primary/5"
                             }`}
                           >
                             {link.label}
