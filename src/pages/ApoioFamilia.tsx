@@ -1,113 +1,83 @@
-import PageLayout from "@/components/PageLayout";
+import EmergencyBar from "@/components/EmergencyBar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingButtons from "@/components/FloatingButtons";
 import { Heart, Users, Phone, BookOpen, Shield, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import familiaRecuperacao from "@/assets/familia-recuperacao.png";
-
-const orientacoes = [
-  {
-    icon: Heart,
-    titulo: "Reconheça os Sinais",
-    descricao: "Mudanças de comportamento, isolamento, alterações de humor, problemas financeiros inexplicáveis, negligência com aparência e responsabilidades são sinais de alerta.",
-  },
-  {
-    icon: Users,
-    titulo: "Não Enfrente Sozinho",
-    descricao: "A dependência afeta toda a família. Busque apoio profissional e grupos de apoio para familiares como Al-Anon e Nar-Anon.",
-  },
-  {
-    icon: Shield,
-    titulo: "Estabeleça Limites Saudáveis",
-    descricao: "Amar não significa permitir comportamentos destrutivos. Limites claros protegem você e incentivam a busca por tratamento.",
-  },
-  {
-    icon: MessageCircle,
-    titulo: "Comunicação sem Julgamento",
-    descricao: "Expresse preocupação com amor, sem acusações. Use frases como 'Estou preocupado com você' em vez de 'Você está destruindo a família'.",
-  },
-  {
-    icon: BookOpen,
-    titulo: "Eduque-se sobre a Doença",
-    descricao: "A dependência é uma doença crônica do cérebro, não uma falha de caráter. Entender isso muda a forma como você lida com a situação.",
-  },
-  {
-    icon: Phone,
-    titulo: "Saiba Quando Intervir",
-    descricao: "Em situações de risco de vida ou quando a pessoa não consegue tomar decisões por si, a internação involuntária pode ser necessária.",
-  },
-];
-
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
+const orientacoes = [
+  { icon: Heart, titulo: "Reconheça os Sinais", descricao: "Mudanças de comportamento, isolamento, alterações de humor, problemas financeiros inexplicáveis são sinais de alerta." },
+  { icon: Users, titulo: "Não Enfrente Sozinho", descricao: "A dependência afeta toda a família. Busque apoio profissional e grupos como Al-Anon e Nar-Anon." },
+  { icon: Shield, titulo: "Estabeleça Limites", descricao: "Amar não significa permitir comportamentos destrutivos. Limites claros protegem você e incentivam o tratamento." },
+  { icon: MessageCircle, titulo: "Comunicação sem Julgamento", descricao: "Expresse preocupação com amor, sem acusações. Use frases como 'Estou preocupado com você'." },
+  { icon: BookOpen, titulo: "Eduque-se sobre a Doença", descricao: "A dependência é uma doença crônica do cérebro, não uma falha de caráter." },
+  { icon: Phone, titulo: "Saiba Quando Intervir", descricao: "Em situações de risco, a internação involuntária pode ser necessária e é prevista em lei." },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const } }),
+};
+
 const ApoioFamilia = () => {
-  const handleWhatsApp = () => {
-    openWhatsAppUtil("Olá! Sou familiar e preciso de orientação sobre como ajudar meu ente querido.");
-  };
+  const handleWhatsApp = () => openWhatsAppUtil("Olá! Sou familiar e preciso de orientação sobre como ajudar meu ente querido.");
 
   return (
-    <PageLayout>
-      {/* Hero with Image */}
-      <section className="relative w-full">
-        <img 
-          src={familiaRecuperacao} 
-          alt="Família celebrando recuperação"
-          className="w-full h-auto"
-        />
-      </section>
+    <div className="min-h-screen bg-background">
+      <EmergencyBar />
+      <Navbar />
+
+      <div className="relative w-full overflow-hidden">
+        <img src={familiaRecuperacao} alt="Família celebrando recuperação" className="w-full h-auto" />
+      </div>
 
       {/* Orientações */}
-      <section className="py-16">
+      <section className="py-14 md:py-20 bg-[hsl(215,10%,98%)]">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-display text-2xl md:text-3xl font-black text-secondary text-center mb-10">
             Orientações para Familiares
           </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {orientacoes.map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="p-6 rounded-2xl bg-card border border-border/50 hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-bold text-lg text-foreground mb-2">
-                    {item.titulo}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {item.descricao}
-                  </p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 max-w-5xl mx-auto">
+            {orientacoes.map((item, index) => (
+              <motion.div key={index} custom={index} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                className="bg-white border border-border/40 rounded-xl p-4 md:p-6 hover:shadow-lg transition-shadow">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3">
+                  <item.icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
-              );
-            })}
+                <h3 className="font-display font-bold text-foreground mb-1 text-sm md:text-lg">{item.titulo}</h3>
+                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">{item.descricao}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-14 md:py-20 bg-gradient-to-br from-[hsl(var(--primary))] to-[hsl(215,55%,25%)]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-black text-primary-foreground mb-3">
             Precisa de Ajuda Agora?
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Nossa equipe está disponível 24 horas para orientar famílias sobre internação, 
-            tipos de tratamento e como proceder em situações de emergência.
+          <p className="text-primary-foreground/80 mb-8 max-w-2xl mx-auto text-sm md:text-base">
+            Nossa equipe está disponível 24 horas para orientar famílias sobre internação e como proceder em emergências.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" onClick={handleWhatsApp}>
-              <Phone className="w-5 h-5 mr-2" />
-              Ligar Agora
+            <Button size="lg" onClick={handleWhatsApp} className="bg-secondary text-secondary-foreground hover:bg-secondary/90">
+              <Phone className="w-5 h-5 mr-2" /> Ligar Agora
             </Button>
-            <Button size="lg" variant="outline" onClick={handleWhatsApp}>
-              <MessageCircle className="w-5 h-5 mr-2" />
-              WhatsApp
+            <Button size="lg" variant="outline" onClick={handleWhatsApp} className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+              <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp
             </Button>
           </div>
         </div>
       </section>
-    </PageLayout>
+
+      <Footer />
+      <FloatingButtons />
+    </div>
   );
 };
 
