@@ -107,9 +107,9 @@ const Navbar = () => {
             {/* CTA Button */}
             <Button
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 text-sm shadow-[0_4px_14px_-3px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_20px_-3px_hsl(var(--primary)/0.5)] hover:-translate-y-px transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-4 text-xs whitespace-nowrap flex-shrink-0 shadow-[0_4px_14px_-3px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_20px_-3px_hsl(var(--primary)/0.5)] hover:-translate-y-px transition-all duration-300"
             >
-              Agende sua Visita
+              Agendar Visita
             </Button>
           </div>
 
