@@ -50,9 +50,9 @@ const ConveniosCarousel = () => {
   );
 
   return (
-    <section id="convenios" className="py-6 md:py-8 bg-muted/30">
+    <section id="convenios" className="py-6 md:py-8 bg-gradient-to-r from-[hsl(215,60%,20%)] via-[hsl(215,50%,35%)] to-[hsl(215,60%,20%)]">
       <div className="container mx-auto px-4">
-        <p className="text-center text-muted-foreground text-xs uppercase tracking-[0.2em] font-semibold mb-4">
+        <p className="text-center text-white/80 text-xs uppercase tracking-[0.2em] font-semibold mb-4">
           Convênios aceitos
         </p>
 
