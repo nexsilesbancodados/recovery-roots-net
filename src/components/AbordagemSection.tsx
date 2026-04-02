@@ -103,7 +103,7 @@ const AbordagemSection = () => {
                 alt="Profissional de saúde do Hospital Rumo Certo"
                 className="w-full max-w-sm h-auto object-contain drop-shadow-lg"
               />
-              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none" />
 
               {/* Balões de conversa flutuantes */}
               <motion.div
