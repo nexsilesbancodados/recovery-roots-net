@@ -65,7 +65,7 @@ const Footer = () => {
                 <span>{PHONE_DISPLAY.tertiary}</span>
               </a>
               <a href="mailto:adm@rumocerto.com.br" className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>adm@rumocerto.com.br</span>
               </a>
               <div className="flex items-start gap-2 text-background/70">
