@@ -218,7 +218,7 @@ const DepoimentosSection = () => {
               key={index}
               className="flex-shrink-0 basis-[280px] md:basis-[300px] bg-background rounded-xl p-4 shadow-sm border border-border/50 relative"
             >
-              <Quote className="absolute top-3 right-3 w-5 h-5 text-primary/20" />
+              <Quote className="absolute top-3 right-3 w-5 h-5 text-primary/30" fill="currentColor" strokeWidth={0} />
               
               {/* Avatar e Info */}
               <div className="flex items-center gap-3 mb-3">
