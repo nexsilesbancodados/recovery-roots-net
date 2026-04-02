@@ -252,11 +252,6 @@ const DepoimentosSection = () => {
           ))}
         </div>
       </div>
-
-      {/* Nota de Privacidade */}
-      <p className="text-center text-muted-foreground text-xs mt-4 px-4">
-        * Nomes e fotos alterados para preservar a identidade dos pacientes.
-      </p>
     </section>
   );
 };
