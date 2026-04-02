@@ -17,6 +17,7 @@ const Index = () => {
       <EmergencyBar />
       <Navbar />
       <HeroSection />
+      <CTABanner />
       <div id="sobre">
         <ConveniosCarousel />
       </div>
