@@ -105,7 +105,7 @@ const ComoFunciona = () => {
       {/* Etapas */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="font-display text-3xl font-bold text-primary text-center mb-12">
             Etapas do Tratamento
           </h2>
           
@@ -157,7 +157,7 @@ const ComoFunciona = () => {
       {/* Tipos de Internação */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl font-bold text-foreground text-center mb-4">
+          <h2 className="font-display text-3xl font-bold text-primary text-center mb-4">
             Tipos de Internação
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
@@ -190,7 +190,7 @@ const ComoFunciona = () => {
       {/* CTA */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl font-bold text-primary mb-4">
             Pronto para Começar?
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
