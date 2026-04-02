@@ -29,7 +29,7 @@ const SOSModal = ({ open, onOpenChange }: SOSModalProps) => {
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="text-center">
           <div className="mx-auto w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mb-4">
-            <AlertTriangle className="w-8 h-8 text-destructive" />
+            <AlertTriangle className="w-8 h-8 text-destructive" fill="currentColor" strokeWidth={1} />
           </div>
           <DialogTitle className="text-xl text-center">
             Atendimento de Emergência 24h
