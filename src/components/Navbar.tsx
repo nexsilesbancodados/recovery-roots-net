@@ -75,31 +75,39 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
-            <div className="flex items-center bg-muted/50 rounded-full px-1.5 py-1 border border-border/30">
+          <div className="hidden lg:flex items-center gap-6">
+            <nav className="flex items-center gap-1">
               {mainLinks.map((link) => {
                 const isActive = location.pathname === link.href;
                 return (
                   <Link
                     key={link.label}
                     to={link.href}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 whitespace-nowrap ${
+                    className={`relative px-3 py-2 text-[13px] font-medium tracking-wide whitespace-nowrap transition-all duration-200 ${
                       isActive
-                        ? "bg-primary text-primary-foreground shadow-sm"
-                        : "text-foreground/70 hover:text-primary hover:bg-primary/8"
+                        ? "text-primary"
+                        : "text-foreground/65 hover:text-foreground"
                     }`}
                   >
                     {link.label}
+                    {isActive && (
+                      <motion.div
+                        layoutId="nav-underline"
+                        className="absolute bottom-0 left-1 right-1 h-[2px] bg-primary rounded-full"
+                        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      />
+                    )}
                   </Link>
                 );
               })}
-            </div>
+            </nav>
 
+            <div className="w-px h-6 bg-border/50" />
 
             {/* CTA Button */}
             <Button
               onClick={() => setIsModalOpen(true)}
-              className="ml-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 shadow-[0_4px_14px_-3px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_20px_-3px_hsl(var(--primary)/0.5)] hover:-translate-y-px transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6 text-sm shadow-[0_4px_14px_-3px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_20px_-3px_hsl(var(--primary)/0.5)] hover:-translate-y-px transition-all duration-300"
             >
               Agende sua Visita
             </Button>
