@@ -1,36 +1,56 @@
 import { Phone, ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { openWhatsApp } from "@/lib/contact";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
-import logoIcon from "@/assets/logo-hospital.png";
 import imgInstalacoes from "@/assets/estrutura/instalacoes.jpg";
 import imgAlimentacao from "@/assets/estrutura/alimentacao.jpg";
 import imgAreaVerde from "@/assets/estrutura/area-verde.jpg";
 import imgEsportes from "@/assets/estrutura/esportes.jpg";
+import imgPiscinas from "@/assets/estrutura/piscinas.jpg";
+import imgCavalo from "@/assets/estrutura/passeio-cavalo.jpg";
+import imgQuartos from "@/assets/estrutura/quartos-privativos.jpg";
+import imgMusica from "@/assets/estrutura/musicoterapia.jpg";
+import imgBiblioteca from "@/assets/estrutura/biblioteca.jpg";
+import imgArte from "@/assets/estrutura/arteterapia.jpg";
+import imgPet from "@/assets/estrutura/pet-terapia.jpg";
+import imgConvivencia from "@/assets/estrutura/convivencia.jpg";
+import imgSalaTV from "@/assets/estrutura/sala-tv.jpg";
+import imgJardim from "@/assets/estrutura/jardim-terapeutico.jpg";
 
 interface Recurso {
   id: number;
   nome: string;
   descricao: string;
+  image: string;
 }
 
 const recursos: Recurso[] = [
-  { id: 1, nome: "Instalações Confortáveis", descricao: "Quartos acolhedores e espaços terapêuticos projetados para proporcionar bem-estar e tranquilidade." },
-  { id: 2, nome: "Alimentação Balanceada", descricao: "Cardápios elaborados por nutricionistas, com refeições saudáveis e saborosas para cada fase do tratamento." },
-  { id: 3, nome: "Área Verde", descricao: "Amplos espaços verdes e jardins para momentos de reflexão, meditação e conexão com a natureza." },
-  { id: 4, nome: "Atividades Esportivas", descricao: "Quadras e espaços para prática de esportes, promovendo saúde física e mental durante a recuperação." },
-  { id: 5, nome: "Piscinas", descricao: "Piscinas para atividades aquáticas terapêuticas e momentos de lazer e relaxamento." },
-  { id: 6, nome: "Passeio a Cavalo", descricao: "Equoterapia e passeios a cavalo que auxiliam no tratamento e proporcionam experiências únicas." },
-  { id: 7, nome: "Quartos Privativos", descricao: "Acomodações individuais e compartilhadas com todo conforto necessário para uma estadia tranquila." },
-  { id: 8, nome: "Musicoterapia", descricao: "Sessões de musicoterapia para expressão emocional e desenvolvimento de habilidades sociais." },
-  { id: 9, nome: "Biblioteca", descricao: "Espaço de leitura e estudo com acervo variado para momentos de reflexão e aprendizado." },
-  { id: 10, nome: "Arteterapia", descricao: "Atividades artísticas como pintura e desenho para expressão criativa e autoconhecimento." },
-  { id: 11, nome: "Pet Terapia", descricao: "Interação com animais para reduzir o estresse e promover bem-estar emocional." },
-  { id: 12, nome: "Espaço de Convivência", descricao: "Áreas comuns para socialização, jogos e momentos de descontração entre os pacientes." },
-  { id: 13, nome: "Sala de TV", descricao: "Ambiente confortável para assistir filmes e programas em grupo, promovendo integração." },
-  { id: 14, nome: "Jardim Terapêutico", descricao: "Espaço dedicado à horticultura e jardinagem como forma de terapia ocupacional." },
+  { id: 1, nome: "Instalações Confortáveis", descricao: "Quartos acolhedores e espaços terapêuticos projetados para proporcionar bem-estar e tranquilidade.", image: imgInstalacoes },
+  { id: 2, nome: "Alimentação Balanceada", descricao: "Cardápios elaborados por nutricionistas, com refeições saudáveis e saborosas para cada fase do tratamento.", image: imgAlimentacao },
+  { id: 3, nome: "Área Verde", descricao: "Amplos espaços verdes e jardins para momentos de reflexão, meditação e conexão com a natureza.", image: imgAreaVerde },
+  { id: 4, nome: "Atividades Esportivas", descricao: "Quadras e espaços para prática de esportes, promovendo saúde física e mental durante a recuperação.", image: imgEsportes },
+  { id: 5, nome: "Piscinas", descricao: "Piscinas para atividades aquáticas terapêuticas e momentos de lazer e relaxamento.", image: imgPiscinas },
+  { id: 6, nome: "Passeio a Cavalo", descricao: "Equoterapia e passeios a cavalo que auxiliam no tratamento e proporcionam experiências únicas.", image: imgCavalo },
+  { id: 7, nome: "Quartos Privativos", descricao: "Acomodações individuais e compartilhadas com todo conforto necessário para uma estadia tranquila.", image: imgQuartos },
+  { id: 8, nome: "Musicoterapia", descricao: "Sessões de musicoterapia para expressão emocional e desenvolvimento de habilidades sociais.", image: imgMusica },
+  { id: 9, nome: "Biblioteca", descricao: "Espaço de leitura e estudo com acervo variado para momentos de reflexão e aprendizado.", image: imgBiblioteca },
+  { id: 10, nome: "Arteterapia", descricao: "Atividades artísticas como pintura e desenho para expressão criativa e autoconhecimento.", image: imgArte },
+  { id: 11, nome: "Pet Terapia", descricao: "Interação com animais para reduzir o estresse e promover bem-estar emocional.", image: imgPet },
+  { id: 12, nome: "Espaço de Convivência", descricao: "Áreas comuns para socialização, jogos e momentos de descontração entre os pacientes.", image: imgConvivencia },
+  { id: 13, nome: "Sala de TV", descricao: "Ambiente confortável para assistir filmes e programas em grupo, promovendo integração.", image: imgSalaTV },
+  { id: 14, nome: "Jardim Terapêutico", descricao: "Espaço dedicado à horticultura e jardinagem como forma de terapia ocupacional.", image: imgJardim },
 ];
+
+const ImageCard = ({ recurso }: { recurso: Recurso }) => (
+  <div className="group relative h-52 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1">
+    <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10 group-hover:from-black/65 transition-colors" />
+    <div className="absolute bottom-0 left-0 right-0 p-4 relative z-10">
+      <h3 className="text-sm font-display font-bold text-white mb-1 drop-shadow-lg">{recurso.nome}</h3>
+      <p className="text-xs text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+    </div>
+  </div>
+);
 
 const EstruturaSection = () => {
   return (
@@ -54,20 +74,8 @@ const EstruturaSection = () => {
       <div className="hidden sm:block container mx-auto px-4">
         {/* Row 1 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            { ...recursos[0], image: imgInstalacoes },
-            { ...recursos[1], image: imgAlimentacao },
-            { ...recursos[2], image: imgAreaVerde },
-            { ...recursos[3], image: imgEsportes },
-          ].map((recurso) => (
-            <div key={recurso.id} className="group relative h-52 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer hover:scale-[1.02] hover:-translate-y-1">
-              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10 group-hover:from-black/65 transition-colors" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 relative z-10">
-                <h3 className="text-sm font-display font-bold text-white mb-1 drop-shadow-lg">{recurso.nome}</h3>
-                <p className="text-xs text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
-              </div>
-            </div>
+          {recursos.slice(0, 4).map((recurso) => (
+            <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
 
@@ -88,16 +96,7 @@ const EstruturaSection = () => {
         {/* Row 2 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {recursos.slice(4, 8).map((recurso) => (
-            <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <CardContent className="p-4 relative z-10">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm">
-                  <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
-                </div>
-                <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
-              </CardContent>
-            </Card>
+            <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
 
@@ -118,43 +117,23 @@ const EstruturaSection = () => {
         {/* Row 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {recursos.slice(8, 14).map((recurso) => (
-            <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <CardContent className="p-4 relative z-10">
-                <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm">
-                  <img src={logoIcon} alt="" className="w-7 h-7 object-contain" />
-                </div>
-                <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
-              </CardContent>
-            </Card>
+            <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
       </div>
 
-
-      {/* Mobile: Vertical grid */}
+      {/* Mobile: Vertical grid with images */}
       <div className="sm:hidden px-4">
-        <div className="grid grid-cols-1 gap-3">
-          {recursos.slice(0, 6).map((recurso) => (
-            <Card
-              key={recurso.id}
-              className="group relative border-0 shadow-md bg-gradient-to-br from-card to-card/80 overflow-hidden"
-            >
-              <CardContent className="p-4 relative z-10 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center flex-shrink-0 shadow-md">
-                  <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-display font-bold text-foreground mb-1">
-                    {recurso.nome}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
-                    {recurso.descricao}
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
+        <div className="grid grid-cols-2 gap-3">
+          {recursos.slice(0, 8).map((recurso) => (
+            <div key={recurso.id} className="group relative h-40 rounded-xl overflow-hidden shadow-md">
+              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10" />
+              <div className="absolute bottom-0 left-0 right-0 p-3 z-10">
+                <h3 className="text-xs font-display font-bold text-white mb-0.5 drop-shadow-lg">{recurso.nome}</h3>
+                <p className="text-[10px] text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+              </div>
+            </div>
           ))}
         </div>
         <p className="text-center text-xs text-muted-foreground mt-4">
