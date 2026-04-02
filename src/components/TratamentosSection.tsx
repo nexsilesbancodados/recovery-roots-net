@@ -197,20 +197,20 @@ const TratamentosSection = () => {
                       alt={tratamento.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-colors" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
                 
-                <div className="relative z-10">
-                  <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                <div className="relative z-10 flex-1 flex flex-col justify-end">
+                  <div className="bg-white/25 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
                     {tratamento.icon}
                   </div>
-                  <h3 className="font-display text-2xl font-bold mb-3 text-destructive">
+                  <h3 className="font-display text-xl font-extrabold mb-1.5 text-white drop-shadow-lg">
                     {tratamento.title}
                   </h3>
-                  <p className="text-white/95 text-base leading-relaxed line-clamp-2">
+                  <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
                     {tratamento.shortDescription}
                   </p>
                 </div>
@@ -246,7 +246,7 @@ const TratamentosSection = () => {
                       alt={tratamento.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/55" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
@@ -257,7 +257,7 @@ const TratamentosSection = () => {
                     {tratamento.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-display text-lg font-bold mb-1 text-destructive">
+                    <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
                       {tratamento.title}
                     </h3>
                     <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
