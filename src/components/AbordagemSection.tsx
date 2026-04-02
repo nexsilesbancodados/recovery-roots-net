@@ -5,24 +5,32 @@ import profissionalImg from "@/assets/abordagem/profissional-feminina.png";
 
 const abordagens = [
   {
-    icon: <User className="w-5 h-5" />,
+    icon: <User className="w-5 h-5" fill="currentColor" strokeWidth={1} />,
     title: "Terapia Individual",
     description: "Abordagem personalizada com TCC e Psicoterapia Psicodinâmica para tratar questões subjacentes.",
+    iconColor: "text-sky-600",
+    iconBg: "bg-sky-500/15",
   },
   {
-    icon: <Heart className="w-5 h-5" />,
+    icon: <Heart className="w-5 h-5" fill="currentColor" strokeWidth={1} />,
     title: "Programa de 12 Passos",
     description: "Base sólida para a sobriedade através de etapas estruturadas e apoio comunitário.",
+    iconColor: "text-rose-600",
+    iconBg: "bg-rose-500/15",
   },
   {
-    icon: <Users className="w-5 h-5" />,
+    icon: <Users className="w-5 h-5" fill="currentColor" strokeWidth={1} />,
     title: "Terapias em Grupo",
     description: "Sessões que fortalecem o senso de comunidade com workshops de habilidades de vida.",
+    iconColor: "text-emerald-600",
+    iconBg: "bg-emerald-500/15",
   },
   {
-    icon: <Lightbulb className="w-5 h-5" />,
+    icon: <Lightbulb className="w-5 h-5" fill="currentColor" strokeWidth={1} />,
     title: "Inovação em Tratamento",
     description: "Métodos atualizados com as mais recentes pesquisas e inovações terapêuticas.",
+    iconColor: "text-amber-600",
+    iconBg: "bg-amber-500/15",
   },
 ];
 
