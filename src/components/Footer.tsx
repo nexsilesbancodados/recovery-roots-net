@@ -69,7 +69,7 @@ const Footer = () => {
                 <span>adm@rumocerto.com.br</span>
               </a>
               <div className="flex items-start gap-2 text-background/70">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="currentColor" strokeWidth={1} />
                 <span className="text-xs">Via Des. Luiz Carlos de Araújo, 2015, Cabreúva - SP</span>
               </div>
             </div>
