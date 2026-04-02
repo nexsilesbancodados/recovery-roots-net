@@ -135,7 +135,7 @@ const AbordagemSection = () => {
               key={index}
               className="group p-4 rounded-xl bg-muted/50 hover:bg-primary/5 border border-transparent hover:border-primary/20 transition-all duration-300"
             >
-              <div className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors mb-2">
+              <div className={`w-9 h-9 rounded-lg ${item.iconBg} ${item.iconColor} flex items-center justify-center group-hover:scale-110 transition-all mb-2`}>
                 {item.icon}
               </div>
               <h3 className="font-display text-lg font-bold text-foreground mb-2">
