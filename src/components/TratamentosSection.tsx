@@ -216,59 +216,6 @@ const TratamentosSection = () => {
             ))}
           </div>
         </div>
-          <div className="flex gap-4 min-w-max px-4">
-            {tratamentos.map((tratamento) => (
-              <div
-                key={tratamento.id}
-                onClick={() => setSelectedTratamento(tratamento)}
-                className={`
-                  flex-shrink-0 w-72 h-64 rounded-2xl p-5 cursor-pointer
-                  text-white relative overflow-hidden
-                  transform transition-all duration-300
-                  active:scale-95
-                  flex flex-col justify-between
-                  group
-                `}
-              >
-                {tratamento.bgImage ? (
-                  <>
-                    <img 
-                      src={tratamento.bgImage} 
-                      alt={tratamento.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/50" />
-                  </>
-                ) : (
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
-                )}
-                
-                <div className="relative z-10">
-                  <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
-                    {tratamento.icon}
-                  </div>
-                  <h3 className="font-display text-xl font-bold mb-2 text-destructive">
-                    {tratamento.title}
-                  </h3>
-                  <p className="text-white/95 text-sm leading-relaxed line-clamp-2">
-                    {tratamento.shortDescription}
-                  </p>
-                </div>
-                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium">
-                  <span>Saiba mais</span>
-                  <span>→</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-3 text-muted-foreground">
-            <div className="flex items-center gap-2 text-xs">
-              <span>←</span>
-              <span>Arraste para ver mais</span>
-              <span>→</span>
-            </div>
-          </div>
-        </div>
 
         {/* Mobile: Vertical grid */}
         <div className="sm:hidden px-4">
