@@ -1,7 +1,7 @@
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-
+import CTABanner from "@/components/CTABanner";
 import ConveniosCarousel from "@/components/ConveniosCarousel";
 import TratamentosSection from "@/components/TratamentosSection";
 import EstruturaSection from "@/components/EstruturaSection";
