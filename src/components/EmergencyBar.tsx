@@ -4,9 +4,7 @@ import { PHONE_NUMBERS, PHONE_DISPLAY, makeCall } from "@/lib/contact";
 
 const EmergencyBar = () => {
   return (
-    <motion.div 
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+    <div 
       className="fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary/90 to-secondary text-primary-foreground py-2 shadow-lg"
     >
       <div className="container mx-auto px-4">
