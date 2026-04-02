@@ -176,16 +176,16 @@ const TratamentosSection = () => {
 
         {/* Desktop & Tablet: Grid layout */}
         <div className="hidden sm:block container mx-auto px-4">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
                 className={`
-                  flex-shrink-0 w-80 h-72 rounded-2xl p-6 cursor-pointer
+                  w-full h-60 rounded-2xl p-5 cursor-pointer
                   text-white relative overflow-hidden
                   transform transition-all duration-300
-                  hover:scale-105 hover:shadow-2xl hover:-translate-y-2
+                  hover:scale-[1.03] hover:shadow-2xl hover:-translate-y-1
                   flex flex-col justify-between
                   group
                 `}
