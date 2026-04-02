@@ -117,7 +117,7 @@ const AbordagemSection = () => {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute top-[35%] -right-2 md:-right-6 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-xs md:text-sm font-medium max-w-[150px]"
+                className="absolute top-[30%] right-2 md:right-0 bg-secondary text-secondary-foreground px-4 py-2 rounded-2xl rounded-br-sm shadow-lg text-xs md:text-sm font-medium max-w-[150px]"
               >
                 🤝 Atendimento 24h
               </motion.div>
