@@ -1,10 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Import background images
 import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
 import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.jpg";
 import bgDependenciaFeminina from "@/assets/tratamentos/dependencia-feminina.jpg";
@@ -13,8 +9,6 @@ import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
 import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.jpg";
 import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.jpg";
 import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Tratamento {
   id: string;
@@ -160,62 +154,14 @@ const tratamentos: Tratamento[] = [
 
 const TratamentosSection = () => {
   const [selectedTratamento, setSelectedTratamento] = useState<Tratamento | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const cardsWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const cardsContainer = cardsContainerRef.current;
-    const cardsWrapper = cardsWrapperRef.current;
-    
-    if (!section || !cardsContainer || !cardsWrapper) return;
-
-    // Check screen size - disable GSAP pinning on tablets and mobile
-    const isSmallScreen = window.innerWidth < 1024;
-    
-    if (isSmallScreen) return; // Skip GSAP on mobile/tablet
-
-    const ctx = gsap.context(() => {
-      // Calculate scroll distance
-      const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
-
-      // Pin the section and scroll horizontally TO THE LEFT
-      gsap.to(cardsWrapper, {
-        x: -scrollWidth,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${scrollWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, section);
-
-    // Handle resize
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      ctx.revert();
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <>
       <section 
-        ref={sectionRef}
         id="tratamentos" 
         className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-12 sm:py-16 md:py-20 overflow-hidden"
       >
-        {/* Header - Always on top */}
+        {/* Header */}
         <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Especialidades
@@ -226,16 +172,11 @@ const TratamentosSection = () => {
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl">
             Oferecemos tratamento especializado e humanizado para diversas condições.
           </p>
-          <div className="hidden lg:flex items-center gap-2 text-muted-foreground text-sm mt-4">
-            <span>←</span>
-            <span>Role para explorar</span>
-            <span>→</span>
-          </div>
         </div>
 
-        {/* Desktop: Horizontal scroll with GSAP */}
-        <div ref={cardsContainerRef} className="hidden lg:block overflow-hidden">
-          <div ref={cardsWrapperRef} className="flex gap-6 px-8">
+        {/* Desktop & Tablet: Grid layout */}
+        <div className="hidden sm:block container mx-auto px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
@@ -279,62 +220,6 @@ const TratamentosSection = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Tablet: Horizontal scroll with touch */}
-        <div className="hidden sm:block lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
-          <div className="flex gap-4 min-w-max px-4">
-            {tratamentos.map((tratamento) => (
-              <div
-                key={tratamento.id}
-                onClick={() => setSelectedTratamento(tratamento)}
-                className={`
-                  flex-shrink-0 w-72 h-64 rounded-2xl p-5 cursor-pointer
-                  text-white relative overflow-hidden
-                  transform transition-all duration-300
-                  active:scale-95
-                  flex flex-col justify-between
-                  group
-                `}
-              >
-                {tratamento.bgImage ? (
-                  <>
-                    <img 
-                      src={tratamento.bgImage} 
-                      alt={tratamento.title}
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/50" />
-                  </>
-                ) : (
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
-                )}
-                
-                <div className="relative z-10">
-                  <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
-                    {tratamento.icon}
-                  </div>
-                  <h3 className="font-display text-xl font-bold mb-2 text-destructive">
-                    {tratamento.title}
-                  </h3>
-                  <p className="text-white/95 text-sm leading-relaxed line-clamp-2">
-                    {tratamento.shortDescription}
-                  </p>
-                </div>
-                <div className="relative z-10 flex items-center gap-2 text-white/80 text-sm font-medium">
-                  <span>Saiba mais</span>
-                  <span>→</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-center mt-3 text-muted-foreground">
-            <div className="flex items-center gap-2 text-xs">
-              <span>←</span>
-              <span>Arraste para ver mais</span>
-              <span>→</span>
-            </div>
           </div>
         </div>
 
