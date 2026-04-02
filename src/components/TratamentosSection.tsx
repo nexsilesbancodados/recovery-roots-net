@@ -217,19 +217,19 @@ const TratamentosSection = () => {
           </div>
         </div>
 
-        {/* Mobile: Vertical grid */}
+        {/* Mobile: 2-column compact grid */}
         <div className="sm:hidden px-4">
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-2 gap-3">
             {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
                 onClick={() => setSelectedTratamento(tratamento)}
                 className={`
-                  w-full h-48 rounded-2xl p-5 cursor-pointer
+                  w-full h-36 rounded-xl p-3 cursor-pointer
                   text-white relative overflow-hidden
                   transform transition-all duration-300
-                  active:scale-[0.98]
-                  flex flex-col justify-between
+                  active:scale-[0.97]
+                  flex flex-col justify-end
                   group
                 `}
               >
@@ -240,28 +240,17 @@ const TratamentosSection = () => {
                       alt={tratamento.title}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
                   </>
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
                 
-                <div className="relative z-10 flex items-start gap-4">
-                  <div className="bg-white/20 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
-                    <img src={logoIcon} alt="" className="w-8 h-8 object-contain" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
-                      {tratamento.title}
-                    </h3>
-                    <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
-                      {tratamento.shortDescription}
-                    </p>
-                  </div>
-                </div>
-                <div className="relative z-10 flex items-center justify-end gap-2 text-white/80 text-sm font-medium">
-                  <span>Saiba mais</span>
-                  <span>→</span>
+                <div className="relative z-10">
+                  <h3 className="font-display text-sm font-extrabold mb-0.5 text-white drop-shadow-lg leading-tight">
+                    {tratamento.title}
+                  </h3>
+                  <span className="text-white/70 text-[10px] font-medium">Saiba mais →</span>
                 </div>
               </div>
             ))}
