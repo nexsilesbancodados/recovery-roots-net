@@ -1,7 +1,7 @@
 import { User, Users, Lightbulb, Heart, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import profissionalImg from "@/assets/abordagem/profissional-feminina.png";
+import profissionalImg from "@/assets/doctor-abordagem.png";
 import { openWhatsApp } from "@/lib/contact";
 
 const destaques = [
