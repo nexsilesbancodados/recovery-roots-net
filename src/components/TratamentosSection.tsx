@@ -51,7 +51,7 @@ const tratamentos: Tratamento[] = [
       "Programa de espiritualidade respeitando crenças individuais como ferramenta de fortalecimento",
       "Reinserção social assistida com orientação vocacional e apoio na reconstrução de vida"
     ],
-    color: "from-blue-500 to-indigo-600",
+    color: "from-accent to-accent/80",
     bgImage: bgDependenciaQuimica
   },
   {
