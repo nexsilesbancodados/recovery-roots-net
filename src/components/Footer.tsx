@@ -80,7 +80,7 @@ const Footer = () => {
             <h4 className="font-display font-bold text-base">Funcionamento</h4>
             <div className="space-y-1.5 text-sm text-background/70">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary flex-shrink-0" />
+                <Clock className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span className="font-semibold text-background text-xs">24 horas</span>
               </div>
               <div className="pl-6 space-y-0.5 text-xs">
