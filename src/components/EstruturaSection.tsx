@@ -41,8 +41,6 @@ const recursos: Recurso[] = [
   { id: 12, nome: "Espaço de Convivência", descricao: "Áreas comuns para socialização, jogos e momentos de descontração entre os pacientes.", image: imgConvivencia },
   { id: 13, nome: "Sala de TV", descricao: "Ambiente confortável para assistir filmes e programas em grupo, promovendo integração.", image: imgSalaTV },
   { id: 14, nome: "Jardim Terapêutico", descricao: "Espaço dedicado à horticultura e jardinagem como forma de terapia ocupacional.", image: imgJardim },
-  { id: 15, nome: "Meditação e Yoga", descricao: "Práticas de mindfulness, yoga e meditação guiada para equilíbrio corpo e mente.", image: imgMeditacao },
-  { id: 16, nome: "Capela e Espiritualidade", descricao: "Espaço ecumênico de oração e reflexão espiritual para fortalecimento interior.", image: imgCapela },
 ];
 
 const ImageCard = ({ recurso }: { recurso: Recurso }) => (
