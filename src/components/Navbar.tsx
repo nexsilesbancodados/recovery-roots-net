@@ -29,14 +29,14 @@ const Navbar = () => {
     { label: "Convênios", href: "/convenios", isPage: true },
     { label: "Sobre Nós", href: "/sobre-nos", isPage: true },
     { label: "Como Funciona", href: "/como-funciona", isPage: true },
+    { label: "Apoio à Família", href: "/apoio-familia", isPage: true },
+    { label: "UPTI", href: "/uti", isPage: true },
+    { label: "Desintoxicação", href: "/desintoxicacao", isPage: true },
+    { label: "Resgate 24h", href: "/resgate", isPage: true },
+    { label: "Equipe", href: "/equipe", isPage: true },
   ];
 
   const moreLinks = [
-    { label: "Apoio à Família", href: "/apoio-familia" },
-    { label: "UPTI", href: "/uti" },
-    { label: "Desintoxicação", href: "/desintoxicacao" },
-    { label: "Resgate 24h", href: "/resgate" },
-    { label: "Equipe", href: "/equipe" },
     { label: "Depoimentos", href: "#depoimentos" },
     { label: "Contato", href: "#contato" },
   ];
