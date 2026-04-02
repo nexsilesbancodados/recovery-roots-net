@@ -56,7 +56,7 @@ const AbordagemSection = () => {
             <h2 className="font-display text-2xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-2 mb-4 leading-tight">
               Atendimento Personalizado e Individual
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg mb-6 leading-relaxed">
+            <p className="text-muted-foreground text-sm md:text-lg mb-5 leading-relaxed">
               No Hospital Rumo Certo, nosso compromisso com a recuperação abrange uma ampla gama de tratamentos especializados. Oferecemos desde terapias individuais personalizadas até a participação no renomado Programa de 12 Passos.
             </p>
 
