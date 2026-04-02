@@ -120,7 +120,28 @@ const EstruturaSection = () => {
 
         {/* Row 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(8, 14).map((recurso) => (
+          {recursos.slice(8, 12).map((recurso) => (
+            <ImageCard key={recurso.id} recurso={recurso} />
+          ))}
+        </div>
+
+        {/* Banner 3 */}
+        <div className="my-5 rounded-2xl bg-gradient-to-r from-accent to-primary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+          <div className="text-accent-foreground text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold">Sua recuperação começa aqui</h3>
+            <p className="text-accent-foreground/80 text-sm mt-1">Um ambiente completo pensado para cada etapa do seu tratamento.</p>
+          </div>
+          <Button
+            onClick={() => openWhatsApp("Olá! Quero saber mais sobre a estrutura do hospital.")}
+            className="bg-white text-primary hover:bg-white/90 rounded-xl px-6 py-5 font-bold shrink-0 shadow-md"
+          >
+            Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </div>
+
+        {/* Row 4 */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {recursos.slice(12, 16).map((recurso) => (
             <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
