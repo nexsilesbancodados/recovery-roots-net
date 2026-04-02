@@ -68,7 +68,7 @@ const Desintoxicacao = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="py-16 bg-gradient-to-br from-green-500/10 via-background to-emerald-500/10">
+      <section className="py-16 bg-gradient-to-br from-primary/10 via-background to-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">
