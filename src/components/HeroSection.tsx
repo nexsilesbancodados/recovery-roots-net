@@ -61,15 +61,13 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end items-end"
           >
-            <div className="relative z-10 overflow-hidden rounded-3xl shadow-2xl">
-              <img
-                src={heroEquipe}
-                alt="Equipe médica do Hospital Rumo Certo"
-                className="w-full max-w-[500px] xl:max-w-[540px] object-cover rounded-3xl"
-                width={1024}
-                height={1024}
-              />
-            </div>
+            <img
+              src={heroEquipe}
+              alt="Equipe médica do Hospital Rumo Certo"
+              className="w-full max-w-[500px] xl:max-w-[540px] object-contain drop-shadow-xl"
+              width={1024}
+              height={1024}
+            />
           </motion.div>
         </div>
       </div>
