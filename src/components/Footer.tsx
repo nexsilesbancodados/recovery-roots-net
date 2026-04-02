@@ -53,7 +53,7 @@ const Footer = () => {
             <h4 className="font-display font-bold text-base">Contato</h4>
             <div className="space-y-2 text-sm">
               <a href={`tel:+${PHONE_NUMBERS.main}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" strokeWidth={1} />
                 <span>{PHONE_DISPLAY.main}</span>
               </a>
               <a href={`tel:+${PHONE_NUMBERS.secondary}`} className="flex items-center gap-2 text-background/70 hover:text-primary transition-colors">
