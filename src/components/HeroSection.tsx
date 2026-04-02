@@ -14,12 +14,6 @@ const stats = [
 const HeroSection = () => {
   return (
     <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
-      {/* Decorative elements */}
-      <div className="absolute top-20 right-[35%] w-72 h-72 rounded-full bg-accent/8 blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
-      <div className="absolute top-32 right-[20%] w-16 h-16 rounded-full border-[3px] border-accent/20 hidden lg:block" />
-      <div className="absolute top-52 right-[28%] w-5 h-5 rounded-full bg-accent/40 hidden lg:block" />
-      <div className="absolute bottom-40 left-[15%] w-3 h-3 rounded-full bg-primary/30 hidden lg:block" />
 
       <div className="container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
