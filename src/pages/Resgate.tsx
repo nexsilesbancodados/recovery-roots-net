@@ -143,7 +143,7 @@ const Resgate = () => {
           <h2 className="font-display text-3xl font-bold text-destructive-foreground mb-4">
             Situação de Emergência?
           </h2>
-          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-destructive-foreground/90 mb-8 max-w-2xl mx-auto">
             Não espere. Nossa equipe está pronta para ajudar agora mesmo.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
