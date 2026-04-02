@@ -89,7 +89,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "esquizofrenia",
     title: "Esquizofrenia",
-    icon: <Brain className="w-8 h-8" />,
+    icon: <Brain className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Cuidado humanizado para estabilização e qualidade de vida",
     fullDescription: "A esquizofrenia é um transtorno mental grave, mas tratável. Com o acompanhamento adequado, pessoas com esquizofrenia podem ter uma vida plena e significativa. No Hospital Rumo Certo, oferecemos tratamento especializado com foco na estabilização dos sintomas, adesão ao tratamento medicamentoso e desenvolvimento de habilidades para o dia a dia. Nossa equipe trabalha em parceria com a família, oferecendo orientação e suporte para que todos compreendam a condição e participem ativamente do processo de recuperação.",
     howWeHelp: [
