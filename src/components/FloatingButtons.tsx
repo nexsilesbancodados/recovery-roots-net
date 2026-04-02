@@ -50,7 +50,7 @@ const FloatingButtons = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3 }}
           onClick={() => setIsSOSModalOpen(true)}
-          className="w-14 h-14 rounded-full bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg flex items-center justify-center hover:scale-110 transition-transform relative overflow-hidden group"
+          className="w-14 h-14 rounded-full bg-gradient-to-br from-destructive to-destructive/80 text-destructive-foreground shadow-lg flex items-center justify-center hover:scale-110 transition-transform relative overflow-hidden group"
           aria-label="SOS - Emergência 24h"
         >
           {/* Pulse effect */}
