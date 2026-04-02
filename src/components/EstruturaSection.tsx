@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { openWhatsApp } from "@/lib/contact";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
 import logoIcon from "@/assets/logo-hospital.png";
+import imgInstalacoes from "@/assets/estrutura/instalacoes.jpg";
+import imgAlimentacao from "@/assets/estrutura/alimentacao.jpg";
+import imgAreaVerde from "@/assets/estrutura/area-verde.jpg";
+import imgEsportes from "@/assets/estrutura/esportes.jpg";
 
 interface Recurso {
   id: number;
