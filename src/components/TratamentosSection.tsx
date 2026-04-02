@@ -137,7 +137,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "saude-mental",
     title: "Saúde Mental",
-    icon: <Leaf className="w-8 h-8" />,
+    icon: <Leaf className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Programa integral para equilíbrio emocional e bem-estar",
     fullDescription: "A saúde mental é tão importante quanto a saúde física — e ambas estão profundamente conectadas. O Hospital Rumo Certo oferece um programa abrangente para pessoas que buscam recuperar ou fortalecer seu bem-estar emocional. Seja para tratar ansiedade, burnout, crises de pânico, transtorno bipolar ou simplesmente para um período de autocuidado intensivo, nossa abordagem holística integra psiquiatria, psicoterapia, práticas integrativas e atividades que reconectam corpo e mente. Aqui, você encontra espaço para se cuidar e se redescobrir.",
     howWeHelp: [
