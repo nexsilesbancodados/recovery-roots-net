@@ -21,8 +21,8 @@ const HeroSection = () => {
       <div className="absolute top-52 right-[28%] w-5 h-5 rounded-full bg-accent/40 hidden lg:block" />
       <div className="absolute bottom-40 left-[15%] w-3 h-3 rounded-full bg-primary/30 hidden lg:block" />
 
-      <div className="container mx-auto px-4 pt-16 lg:pt-24 flex-1 flex items-center">
-        <div className="grid lg:grid-cols-[1fr_1fr] gap-8 lg:gap-16 items-end w-full">
+      <div className="container mx-auto px-4 pt-14 md:pt-16 lg:pt-24 flex-1 flex items-center">
+        <div className="grid lg:grid-cols-[1fr_1fr] gap-6 lg:gap-16 items-end w-full">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
