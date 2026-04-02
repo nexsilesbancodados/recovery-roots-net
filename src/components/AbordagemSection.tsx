@@ -40,7 +40,7 @@ const abordagens = [
 
 const AbordagemSection = () => {
   return (
-    <section id="abordagem" className="py-10 md:py-14 bg-background overflow-hidden">
+    <section id="abordagem" className="py-8 md:py-14 bg-background overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-10">
           {/* Conteúdo à Esquerda */}
