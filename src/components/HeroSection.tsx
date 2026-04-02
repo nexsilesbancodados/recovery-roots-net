@@ -23,10 +23,6 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-end">
           {/* Left Content */}
           <div className="space-y-6 pb-12 lg:pb-20">
-            <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              2500+ Médicos Online
-            </div>
 
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Tratamentos Premium para uma{" "}
