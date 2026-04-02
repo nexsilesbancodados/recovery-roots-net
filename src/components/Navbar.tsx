@@ -49,7 +49,6 @@ const Navbar = () => {
       window.scrollTo({ top: elementPosition - navHeight, behavior: "smooth" });
     }
     setIsMenuOpen(false);
-    setIsMoreOpen(false);
   };
 
   return (
