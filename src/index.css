@@ -1,11 +1,11 @@
 @tailwind base;
 
-/* Hide scrollbar for horizontal scroll sections */
-.scrollbar-hide {
+/* Hide scrollbar globally */
+* {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.scrollbar-hide::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 @tailwind components;
