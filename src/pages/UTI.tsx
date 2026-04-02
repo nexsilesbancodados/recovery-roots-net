@@ -48,7 +48,7 @@ const UTI = () => {
       <EmergencyBar />
       <Navbar />
 
-      <div className="relative w-full overflow-hidden pt-20 md:pt-24">
+      <div className="relative w-full overflow-hidden pt-24 md:pt-28">
         <img src={uptiQuarto} alt="UPTI - Unidade Psiquiátrica de Tratamento Intensivo" className="w-full h-auto" />
       </div>
 

@@ -56,7 +56,7 @@ const SobreNos = () => {
       <Navbar />
 
       {/* Hero com imagem */}
-      <div className="relative w-full overflow-hidden pt-20 md:pt-24">
+      <div className="relative w-full overflow-hidden pt-24 md:pt-28">
         <img src={bannerHospital} alt="Hospital Rumo Certo - Vista aérea" className="w-full h-auto" />
       </div>
 
