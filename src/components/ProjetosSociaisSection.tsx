@@ -42,9 +42,7 @@ const ProjetosSociaisSection = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {projetos.map((projeto, index) => {
-            const IconComponent = projeto.icon;
-            return (
+          {projetos.map((projeto, index) => (
               <Card 
                 key={index} 
                 className="group overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300"
@@ -58,8 +56,8 @@ const ProjetosSociaisSection = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="flex items-center gap-2 text-white">
-                      <div className="p-2 bg-primary rounded-full">
-                        <IconComponent size={18} className="text-primary-foreground" fill="currentColor" strokeWidth={1} />
+                      <div className="p-2 bg-white/25 backdrop-blur-sm rounded-full">
+                        <img src={logoIcon} alt="" className="w-5 h-5 object-contain" />
                       </div>
                       <h3 className="font-display font-bold text-xl text-secondary drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">{projeto.title}</h3>
                     </div>
