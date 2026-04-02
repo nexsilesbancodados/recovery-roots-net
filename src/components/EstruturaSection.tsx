@@ -152,9 +152,17 @@ const EstruturaSection = () => {
             </div>
           ))}
         </div>
-        <p className="text-center text-xs text-muted-foreground mt-4">
-          E muito mais recursos para sua recuperação
-        </p>
+        {/* Mobile CTA */}
+        <div className="mt-4 rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-5 text-center shadow-lg">
+          <h3 className="font-display text-lg font-extrabold text-secondary mb-1">Conheça nossa estrutura</h3>
+          <p className="text-secondary/80 text-xs mb-3">Agende uma visita e veja de perto.</p>
+          <Button
+            onClick={() => openWhatsApp("Olá! Gostaria de agendar uma visita para conhecer a estrutura.")}
+            className="bg-white text-primary hover:bg-white/90 rounded-xl px-5 py-3 font-bold text-sm shadow-md"
+          >
+            Agendar Visita <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </div>
       </div>
 
       {/* Galeria de Fotos */}
