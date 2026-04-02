@@ -5,10 +5,10 @@ import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
 
 const stats = [
-  { icon: Users, value: "3000+", label: "Pacientes Atendidos", color: "text-emerald-600", bg: "from-emerald-500/20 to-emerald-500/5" },
-  { icon: BedDouble, value: "200", label: "Leitos Disponíveis", color: "text-sky-600", bg: "from-sky-500/20 to-sky-500/5" },
-  { icon: Award, value: "500+", label: "Prêmios e Certificações", color: "text-amber-600", bg: "from-amber-500/20 to-amber-500/5" },
-  { icon: Ambulance, value: "24h", label: "Resgate e Ambulância", color: "text-rose-600", bg: "from-rose-500/20 to-rose-500/5" },
+  { icon: Users, value: "3000+", label: "Pacientes Atendidos", color: "text-emerald-700", bg: "bg-emerald-100" },
+  { icon: BedDouble, value: "200", label: "Leitos Disponíveis", color: "text-blue-700", bg: "bg-blue-100" },
+  { icon: Award, value: "500+", label: "Prêmios e Certificações", color: "text-amber-700", bg: "bg-amber-100" },
+  { icon: Ambulance, value: "24h", label: "Resgate e Ambulância", color: "text-rose-700", bg: "bg-rose-100" },
 ];
 
 const HeroSection = () => {
@@ -115,8 +115,8 @@ const HeroSection = () => {
                   transition={{ delay: 0.9 + index * 0.1, duration: 0.5 }}
                   className="flex items-center gap-4 group"
                 >
-                  <div className={`w-13 h-13 rounded-2xl bg-gradient-to-br ${stat.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all duration-300 w-[52px] h-[52px]`}>
-                    <IconComponent className={`w-6 h-6 ${stat.color}`} fill="currentColor" strokeWidth={1} />
+                  <div className={`w-12 h-12 rounded-xl ${stat.bg} flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300`}>
+                    <IconComponent className={`w-[22px] h-[22px] ${stat.color}`} strokeWidth={2} />
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-foreground tracking-tight">{stat.value}</p>
