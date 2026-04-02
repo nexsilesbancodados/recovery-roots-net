@@ -53,14 +53,40 @@ const Convenios = () => {
 
   return (
     <PageLayout>
-      {/* Hero */}
-      <section className="relative w-full overflow-hidden">
+      {/* Hero Banner */}
+      <section className="relative w-full h-[300px] md:h-[400px] overflow-hidden">
         <img 
           src={convenioAtendimento} 
           alt="Atendimento com convênio de saúde"
-          className="w-full h-auto"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-primary/30" />
+        <div className="relative z-10 h-full flex flex-col justify-center container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-xl"
+          >
+            <span className="text-secondary font-semibold text-xs uppercase tracking-[0.2em]">
+              Convênios e Planos de Saúde
+            </span>
+            <h1 className="font-display text-3xl md:text-5xl font-bold text-white mt-3 mb-4">
+              Seu plano cobre o tratamento
+            </h1>
+            <p className="text-white/80 text-base md:text-lg max-w-md">
+              Aceitamos os principais convênios do Brasil. Nossa equipe cuida de toda a documentação para você.
+            </p>
+            <Button
+              onClick={handleWhatsApp}
+              size="lg"
+              className="mt-6 bg-secondary text-primary hover:bg-secondary/90 rounded-xl font-bold shadow-lg"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Verificar Cobertura
+            </Button>
+          </motion.div>
+        </div>
       </section>
 
       {/* Logos dos Convênios */}
