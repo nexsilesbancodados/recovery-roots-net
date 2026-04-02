@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,213 +9,229 @@ import AgendamentoModal from "@/components/AgendamentoModal";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Links de seção (scroll na página principal)
-  const sectionLinks = [
+  const mainLinks = [
     { label: "Início", href: "#inicio" },
     { label: "Tratamentos", href: "#tratamentos" },
     { label: "Estrutura", href: "#estrutura" },
+    { label: "Convênios", href: "/convenios", isPage: true },
+    { label: "Sobre Nós", href: "/sobre-nos", isPage: true },
+    { label: "Como Funciona", href: "/como-funciona", isPage: true },
+  ];
+
+  const moreLinks = [
+    { label: "Apoio à Família", href: "/apoio-familia" },
+    { label: "UPTI", href: "/uti" },
+    { label: "Desintoxicação", href: "/desintoxicacao" },
+    { label: "Resgate 24h", href: "/resgate" },
+    { label: "Equipe", href: "/equipe" },
     { label: "Depoimentos", href: "#depoimentos" },
     { label: "Contato", href: "#contato" },
   ];
 
-  // Links de páginas separadas
-  const pageLinks = [
-    { label: "Sobre Nós", href: "/sobre-nos" },
-    { label: "Como Funciona", href: "/como-funciona" },
-    { label: "Apoio à Família", href: "/apoio-familia" },
-    { label: "UPTI", href: "/uti" },
-    { label: "Desintoxicação", href: "/desintoxicacao" },
-    { label: "Convênios", href: "/convenios" },
-    { label: "Resgate 24h", href: "/resgate" },
-    { label: "Equipe", href: "/equipe" },
-  ];
-
-  // Botões rápidos para mobile (páginas separadas)
-  const quickPageLinks = [
-    { label: "Convênios", href: "/convenios" },
-    { label: "Resgate", href: "/resgate" },
-    { label: "Família", href: "/apoio-familia" },
-    { label: "UPTI", href: "/uti" },
-    { label: "Equipe", href: "/equipe" },
-  ];
-
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // Se for link de página, deixa o Link do react-router lidar
     if (href.startsWith("/")) return;
-    
     e.preventDefault();
     const targetId = href.replace("#", "");
-    
-    // Se não estiver na home, vai pra home primeiro
     if (!isHomePage) {
       window.location.href = "/" + href;
       return;
     }
-    
     const element = document.getElementById(targetId);
     if (element) {
-      const navHeight = 100;
+      const navHeight = 80;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - navHeight,
-        behavior: "smooth",
-      });
+      window.scrollTo({ top: elementPosition - navHeight, behavior: "smooth" });
     }
-
     setIsMenuOpen(false);
+    setIsMoreOpen(false);
   };
 
   return (
     <nav
-      className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-10 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
+          ? "bg-background/98 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-b border-border/30"
+          : "bg-background/80 backdrop-blur-md"
       }`}
     >
-      {/* Main Navigation */}
-      <div className="container mx-auto px-4 py-2">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 lg:h-[72px]">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center"
-          >
+          <Link to="/" className="flex items-center flex-shrink-0">
             <img
               src={logoImage}
               alt="Hospital Rumo Certo"
               className={`transition-all duration-300 ${
-                isScrolled ? "h-10 md:h-12" : "h-12 md:h-14"
+                isScrolled ? "h-9 md:h-10" : "h-10 md:h-12"
               } w-auto`}
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4">
-            {/* Section Links */}
-            {sectionLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className={`transition-colors font-medium text-sm hover:text-primary ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}
+          <div className="hidden lg:flex items-center gap-1">
+            {mainLinks.map((link) =>
+              link.isPage ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
+
+            {/* More dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsMoreOpen(!isMoreOpen)}
+                onBlur={() => setTimeout(() => setIsMoreOpen(false), 200)}
+                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
               >
-                {link.label}
-              </a>
-            ))}
-            
-            {/* Separator */}
-            <div className={`w-px h-5 ${isScrolled ? "bg-border" : "bg-white/30"}`} />
-            
-            {/* Page Links */}
-            {pageLinks.slice(0, 3).map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                className={`transition-colors font-medium text-sm hover:text-primary ${
-                  isScrolled ? "text-foreground" : "text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            
+                Mais
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isMoreOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {isMoreOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-2 w-52 bg-card/98 backdrop-blur-xl rounded-xl shadow-xl border border-border/50 overflow-hidden"
+                  >
+                    <div className="py-2">
+                      {moreLinks.map((link) =>
+                        link.href.startsWith("/") ? (
+                          <Link
+                            key={link.label}
+                            to={link.href}
+                            onClick={() => setIsMoreOpen(false)}
+                            className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
+                          >
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
+                            className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
+                          >
+                            {link.label}
+                          </a>
+                        )
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* CTA Button */}
             <Button
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
               onClick={() => setIsModalOpen(true)}
+              className="ml-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-6 shadow-[0_4px_14px_-3px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_20px_-3px_hsl(var(--primary)/0.5)] hover:-translate-y-px transition-all duration-300"
             >
               Agende sua Visita
             </Button>
           </div>
 
-          {/* Mobile - Quick Links + Menu */}
-          <div className="lg:hidden flex items-center gap-2 relative">
-            {/* Quick Page Links Buttons */}
-            {quickPageLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                className={`hidden sm:block text-xs font-medium px-2 py-1 rounded-full transition-colors ${
-                  isScrolled 
-                    ? "bg-primary/10 text-primary hover:bg-primary/20" 
-                    : "bg-white/20 text-white hover:bg-white/30"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            
-            {/* Menu Button */}
+          {/* Mobile */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Button
+              size="sm"
+              onClick={() => setIsModalOpen(true)}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-xs px-4"
+            >
+              Agendar
+            </Button>
             <button
-              className={`p-2 ${isScrolled ? "text-foreground" : "text-white"}`}
+              className="p-2 text-foreground rounded-lg hover:bg-muted transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
 
-            {/* Mobile Navigation - Dropdown */}
             <AnimatePresence>
               {isMenuOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="absolute top-full right-0 mt-2 w-64 bg-background/95 backdrop-blur-md rounded-xl shadow-xl border border-border"
+                  className="absolute top-full left-0 right-0 mt-1 mx-4 bg-card/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 overflow-hidden"
                 >
-                  <div className="flex flex-col p-4 gap-2">
-                    {/* Section Links */}
-                    <span className="text-xs text-muted-foreground uppercase font-medium mb-1">Navegação</span>
-                    {sectionLinks.map((link) => (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        onClick={(e) => handleNavClick(e, link.href)}
-                        className="text-foreground hover:text-primary transition-colors font-medium text-sm py-1"
-                      >
-                        {link.label}
-                      </a>
-                    ))}
-                    
-                    <div className="border-t border-border my-2" />
-                    
-                    {/* Page Links */}
-                    <span className="text-xs text-muted-foreground uppercase font-medium mb-1">Saiba Mais</span>
-                    {pageLinks.map((link) => (
-                      <Link
-                        key={link.label}
-                        to={link.href}
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-foreground hover:text-primary transition-colors font-medium text-sm py-1"
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                    
-                    <Button
-                      className="bg-primary hover:bg-primary/90 text-primary-foreground w-full mt-3"
-                      onClick={() => {
-                        setIsModalOpen(true);
-                        setIsMenuOpen(false);
-                      }}
-                    >
-                      Agende sua Visita
-                    </Button>
+                  <div className="p-5 space-y-1">
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold mb-2">Navegação</p>
+                    {mainLinks.map((link) =>
+                      link.isPage ? (
+                        <Link
+                          key={link.label}
+                          to={link.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="block py-2.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          onClick={(e) => handleNavClick(e, link.href)}
+                          className="block py-2.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      )
+                    )}
+
+                    <div className="border-t border-border/50 my-3" />
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold mb-2">Saiba Mais</p>
+                    {moreLinks.map((link) =>
+                      link.href.startsWith("/") ? (
+                        <Link
+                          key={link.label}
+                          to={link.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="block py-2.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          key={link.label}
+                          href={link.href}
+                          onClick={(e) => handleNavClick(e, link.href)}
+                          className="block py-2.5 px-3 text-sm font-medium text-foreground hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                        >
+                          {link.label}
+                        </a>
+                      )
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -224,7 +240,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Modal de Agendamento */}
       <AgendamentoModal open={isModalOpen} onOpenChange={setIsModalOpen} />
     </nav>
   );
