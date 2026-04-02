@@ -97,53 +97,6 @@ const Navbar = () => {
               )
             )}
 
-            {/* More dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setIsMoreOpen(!isMoreOpen)}
-                onBlur={() => setTimeout(() => setIsMoreOpen(false), 200)}
-                className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
-              >
-                Mais
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isMoreOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              <AnimatePresence>
-                {isMoreOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute top-full right-0 mt-2 w-52 bg-card/98 backdrop-blur-xl rounded-xl shadow-xl border border-border/50 overflow-hidden"
-                  >
-                    <div className="py-2">
-                      {moreLinks.map((link) =>
-                        link.href.startsWith("/") ? (
-                          <Link
-                            key={link.label}
-                            to={link.href}
-                            onClick={() => setIsMoreOpen(false)}
-                            className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
-                          >
-                            {link.label}
-                          </Link>
-                        ) : (
-                          <a
-                            key={link.label}
-                            href={link.href}
-                            onClick={(e) => handleNavClick(e, link.href)}
-                            className="block px-4 py-2.5 text-sm text-foreground/80 hover:text-primary hover:bg-primary/5 transition-colors"
-                          >
-                            {link.label}
-                          </a>
-                        )
-                      )}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
 
             {/* CTA Button */}
             <Button
