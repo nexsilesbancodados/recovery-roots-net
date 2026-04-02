@@ -23,9 +23,6 @@ const Navbar = () => {
   }, []);
 
   const mainLinks = [
-    { label: "Início", href: "#inicio" },
-    { label: "Tratamentos", href: "#tratamentos" },
-    { label: "Estrutura", href: "#estrutura" },
     { label: "Convênios", href: "/convenios", isPage: true },
     { label: "Sobre Nós", href: "/sobre-nos", isPage: true },
     { label: "Como Funciona", href: "/como-funciona", isPage: true },
