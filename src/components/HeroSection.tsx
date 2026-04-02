@@ -13,7 +13,7 @@ const stats = [
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[85vh] flex flex-col">
+    <section id="inicio" className="relative bg-gradient-to-br from-background via-accent/5 to-primary/5 overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
       {/* Decorative elements */}
       <div className="absolute top-20 right-[35%] w-72 h-72 rounded-full bg-accent/8 blur-3xl" />
       <div className="absolute bottom-20 left-0 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
