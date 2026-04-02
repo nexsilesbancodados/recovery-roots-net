@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { openWhatsApp } from "@/lib/contact";
 import {
   Carousel,
   CarouselContent,
@@ -33,6 +36,7 @@ import unidadeMasculinaSalto6 from "@/assets/estrutura/unidade-masculina-salto-6
 import unidade3_1 from "@/assets/estrutura/unidade-3-1.png";
 import unidade3_2 from "@/assets/estrutura/unidade-3-2.png";
 import unidade3_3 from "@/assets/estrutura/unidade-3-3.png";
+import bannerUnidades from "@/assets/estrutura/banner-unidades.jpg";
 
 const galeriaImagens = [
   { src: unidadeMasculinaCabreuva, alt: "Unidade Masculina Cabreúva - Piscina e área de convivência" },
@@ -56,8 +60,29 @@ const GaleriaEstrutura = () => {
 
   return (
     <>
-      <div className="mt-8">
-      <h3 className="text-2xl font-display font-bold text-foreground mb-6 text-center">
+      {/* Banner com imagem */}
+      <div className="relative rounded-2xl overflow-hidden mb-8 h-[280px] md:h-[340px] group">
+        <img src={bannerUnidades} alt="Vista aérea do Hospital Rumo Certo" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/60 to-transparent" />
+        <div className="relative z-10 h-full flex flex-col justify-center p-8 md:p-12 max-w-xl">
+          <span className="text-secondary font-semibold text-xs uppercase tracking-wider mb-2">4 Unidades em SP</span>
+          <h3 className="font-display text-2xl md:text-4xl font-extrabold text-white mb-3">
+            Mais de 18 anos transformando vidas
+          </h3>
+          <p className="text-white/80 text-sm md:text-base mb-5">
+            Unidades em Cabreúva e Salto com infraestrutura completa para sua recuperação.
+          </p>
+          <Button
+            onClick={() => openWhatsApp("Olá! Gostaria de conhecer as unidades do hospital.")}
+            className="bg-secondary text-primary hover:bg-secondary/90 rounded-xl px-6 py-5 font-bold w-fit shadow-lg"
+          >
+            Agendar Visita <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-2xl font-display font-bold text-foreground mb-6 text-center">
           Nossas Unidades
         </h3>
         
