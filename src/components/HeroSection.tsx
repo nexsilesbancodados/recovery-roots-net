@@ -59,12 +59,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end items-end"
+            className="relative flex justify-center lg:justify-end items-end self-end"
           >
             <img
               src={heroEquipe}
               alt="Equipe médica do Hospital Rumo Certo"
-              className="w-full max-w-[500px] xl:max-w-[540px] object-contain drop-shadow-xl"
+              className="w-full max-w-[620px] xl:max-w-[700px] object-contain drop-shadow-xl mb-[-80px]"
               width={1024}
               height={1024}
             />
