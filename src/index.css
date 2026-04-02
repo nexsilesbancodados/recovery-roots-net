@@ -18,45 +18,45 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 250 45% 20%;
+    --foreground: 250 48% 30%;
 
     --card: 0 0% 100%;
-    --card-foreground: 250 45% 20%;
+    --card-foreground: 250 48% 30%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 250 45% 20%;
+    --popover-foreground: 250 48% 30%;
 
-    --primary: 250 48% 30%;
+    --primary: 250 45% 20%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 42 60% 55%;
-    --secondary-foreground: 250 48% 15%;
+    --secondary-foreground: 250 45% 15%;
 
     --muted: 250 10% 96%;
     --muted-foreground: 250 15% 40%;
 
-    --accent: 42 65% 50%;
-    --accent-foreground: 250 48% 15%;
+    --accent: 250 48% 30%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 250 15% 90%;
     --input: 250 15% 90%;
-    --ring: 250 48% 30%;
+    --ring: 250 45% 20%;
 
     --radius: 0.75rem;
 
     /* Custom Hospital Colors */
-    --hospital-purple: 250 48% 30%;
-    --hospital-purple-light: 250 40% 45%;
+    --hospital-purple: 250 45% 20%;
+    --hospital-purple-light: 250 48% 30%;
     --hospital-gold: 42 60% 55%;
     --hospital-gold-light: 42 50% 70%;
     --hospital-navy: 250 45% 20%;
     --hospital-cream: 42 30% 97%;
 
     /* Gradients */
-    --gradient-header: linear-gradient(135deg, hsl(250 48% 30%) 0%, hsl(250 48% 22%) 100%);
+    --gradient-header: linear-gradient(135deg, hsl(250 45% 20%) 0%, hsl(250 45% 14%) 100%);
     --gradient-overlay: linear-gradient(180deg, hsla(250, 45%, 15%, 0.7) 0%, hsla(250, 45%, 15%, 0.3) 100%);
 
     --sidebar-background: 0 0% 98%;
