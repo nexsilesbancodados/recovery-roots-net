@@ -116,17 +116,24 @@ const EstruturaSection = () => {
           </Button>
         </div>
 
-        {/* Row 3 - first 4 */}
+        {/* Row 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {recursos.slice(8, 12).map((recurso) => (
             <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
 
-        {/* Row 4 - last 2 expanded */}
-        <div className="grid sm:grid-cols-2 gap-4 mt-4">
-          {recursos.slice(12, 14).map((recurso) => (
-            <ImageCard key={recurso.id} recurso={recurso} />
+        {/* Row 4 - last card expanded */}
+        <div className="grid grid-cols-1 gap-4 mt-4">
+          {recursos.slice(12, 13).map((recurso) => (
+            <div key={recurso.id} className="group relative h-52 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 cursor-pointer hover:scale-[1.01]">
+              <img src={recurso.image} alt={recurso.nome} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/10 group-hover:from-black/65 transition-colors" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+                <h3 className="text-sm font-display font-bold text-white mb-1 drop-shadow-lg">{recurso.nome}</h3>
+                <p className="text-xs text-white/80 leading-relaxed line-clamp-2">{recurso.descricao}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
