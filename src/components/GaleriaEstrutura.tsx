@@ -36,7 +36,7 @@ import unidadeMasculinaSalto6 from "@/assets/estrutura/unidade-masculina-salto-6
 import unidade3_1 from "@/assets/estrutura/unidade-3-1.png";
 import unidade3_2 from "@/assets/estrutura/unidade-3-2.png";
 import unidade3_3 from "@/assets/estrutura/unidade-3-3.png";
-import bannerUnidades from "@/assets/estrutura/banner-unidades.jpg";
+import bannerUnidades from "@/assets/estrutura/banner-unidades.png";
 
 const galeriaImagens = [
   { src: unidadeMasculinaCabreuva, alt: "Unidade Masculina Cabreúva - Piscina e área de convivência" },
