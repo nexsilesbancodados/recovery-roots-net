@@ -203,14 +203,14 @@ const TratamentosSection = () => {
                   <div className={`absolute inset-0 bg-gradient-to-br ${tratamento.color}`} />
                 )}
                 
-                <div className="relative z-10">
-                  <div className="bg-white/20 w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform backdrop-blur-sm">
+                <div className="relative z-10 flex-1 flex flex-col justify-end">
+                  <div className="bg-white/25 w-12 h-12 rounded-xl flex items-center justify-center mb-3 backdrop-blur-sm">
                     {tratamento.icon}
                   </div>
-                  <h3 className="font-display text-2xl font-bold mb-3 text-destructive">
+                  <h3 className="font-display text-xl font-extrabold mb-1.5 text-white drop-shadow-lg">
                     {tratamento.title}
                   </h3>
-                  <p className="text-white/95 text-base leading-relaxed line-clamp-2">
+                  <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
                     {tratamento.shortDescription}
                   </p>
                 </div>
