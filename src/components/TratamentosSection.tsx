@@ -151,7 +151,7 @@ const TratamentosSection = () => {
     <>
       <section 
         id="tratamentos" 
-        className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-12 sm:py-16 md:py-20 overflow-hidden"
+        className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 sm:py-20 md:py-28 overflow-hidden"
       >
         {/* Header */}
         <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
