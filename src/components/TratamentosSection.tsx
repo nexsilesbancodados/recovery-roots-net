@@ -25,7 +25,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "alcoolismo",
     title: "Alcoolismo",
-    icon: <Shield className="w-8 h-8" />,
+    icon: <Shield className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Tratamento especializado para dependência alcoólica com abordagem humanizada",
     fullDescription: "O alcoolismo é uma doença crônica e progressiva que afeta não apenas o indivíduo, mas toda a sua rede familiar e social. No Hospital Rumo Certo, entendemos que cada pessoa tem uma história única e merece um tratamento personalizado. Nossa equipe multidisciplinar trabalha com protocolos baseados em evidências científicas, combinando desintoxicação segura, psicoterapia intensiva e acompanhamento médico 24 horas. Acreditamos na recuperação como um processo de transformação de vida, não apenas de abstinência.",
     howWeHelp: [
