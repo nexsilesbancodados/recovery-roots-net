@@ -69,8 +69,7 @@ const ProjetosSociaisSection = () => {
                   </p>
                 </CardContent>
               </Card>
-            );
-          })}
+          ))}
         </div>
 
         {/* Call to Action */}
