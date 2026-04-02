@@ -72,23 +72,6 @@ const HeroSection = () => {
               </Button>
             </motion.div>
 
-            {/* Search Bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="relative max-w-md"
-            >
-              <div className="flex items-center bg-card border border-border/60 rounded-2xl shadow-xl px-6 py-5 gap-4 hover:shadow-2xl hover:border-primary/20 transition-all duration-300 cursor-pointer group">
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/15 transition-colors">
-                  <Search className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold text-sm text-foreground">Pesquise o Tratamento</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">Com o melhor sistema de cuidado</p>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right Content - Doctor Image */}
