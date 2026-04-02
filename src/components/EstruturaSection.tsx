@@ -85,9 +85,9 @@ const EstruturaSection = () => {
 
         {/* Banner 1 */}
         <div className="my-5 rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-          <div className="text-primary-foreground text-center md:text-left">
-            <h3 className="font-display text-xl md:text-2xl font-extrabold">Conheça nossa estrutura pessoalmente</h3>
-            <p className="text-primary-foreground/80 text-sm mt-1">Agende uma visita e veja de perto todo o conforto que oferecemos.</p>
+          <div className="text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold text-secondary">Conheça nossa estrutura pessoalmente</h3>
+            <p className="text-secondary/80 text-sm mt-1">Agende uma visita e veja de perto todo o conforto que oferecemos.</p>
           </div>
           <Button
             onClick={() => openWhatsApp("Olá! Gostaria de agendar uma visita para conhecer a estrutura.")}
