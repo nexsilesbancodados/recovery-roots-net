@@ -148,62 +148,14 @@ const tratamentos: Tratamento[] = [
 
 const TratamentosSection = () => {
   const [selectedTratamento, setSelectedTratamento] = useState<Tratamento | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const cardsWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const cardsContainer = cardsContainerRef.current;
-    const cardsWrapper = cardsWrapperRef.current;
-    
-    if (!section || !cardsContainer || !cardsWrapper) return;
-
-    // Check screen size - disable GSAP pinning on tablets and mobile
-    const isSmallScreen = window.innerWidth < 1024;
-    
-    if (isSmallScreen) return; // Skip GSAP on mobile/tablet
-
-    const ctx = gsap.context(() => {
-      // Calculate scroll distance
-      const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
-
-      // Pin the section and scroll horizontally TO THE LEFT
-      gsap.to(cardsWrapper, {
-        x: -scrollWidth,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${scrollWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, section);
-
-    // Handle resize
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      ctx.revert();
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <>
       <section 
-        ref={sectionRef}
         id="tratamentos" 
         className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-12 sm:py-16 md:py-20 overflow-hidden"
       >
-        {/* Header - Always on top */}
+        {/* Header */}
         <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Especialidades
@@ -214,16 +166,11 @@ const TratamentosSection = () => {
           <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl">
             Oferecemos tratamento especializado e humanizado para diversas condições.
           </p>
-          <div className="hidden lg:flex items-center gap-2 text-muted-foreground text-sm mt-4">
-            <span>←</span>
-            <span>Role para explorar</span>
-            <span>→</span>
-          </div>
         </div>
 
-        {/* Desktop: Horizontal scroll with GSAP */}
-        <div ref={cardsContainerRef} className="hidden lg:block overflow-hidden">
-          <div ref={cardsWrapperRef} className="flex gap-6 px-8">
+        {/* Desktop & Tablet: Grid layout */}
+        <div className="hidden sm:block container mx-auto px-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {tratamentos.map((tratamento) => (
               <div
                 key={tratamento.id}
