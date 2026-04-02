@@ -138,25 +138,32 @@ const AbordagemSection = () => {
         </div>
 
         {/* Grid de Abordagens - 4 cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {abordagens.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 * index }}
-              className="group p-5 rounded-2xl bg-card border border-border/50 hover:border-primary/20 hover:shadow-lg transition-all duration-300"
+              transition={{ duration: 0.5, delay: 0.12 * index }}
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="group relative p-6 rounded-3xl bg-card border border-border/40 shadow-md hover:shadow-2xl hover:border-primary/30 transition-all duration-400 overflow-hidden"
             >
-              <div className={`w-10 h-10 rounded-xl ${item.iconBg} ${item.iconColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
+              {/* Decorative gradient blob */}
+              <div className={`absolute -top-6 -right-6 w-24 h-24 rounded-full ${item.iconBg} opacity-40 blur-2xl group-hover:opacity-60 transition-opacity duration-500`} />
+              
+              <div className={`relative w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm`}>
                 {item.icon}
               </div>
-              <h3 className="font-display text-base font-bold text-foreground mb-1.5">
+              <h3 className="relative font-display text-lg font-bold text-foreground mb-2">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="relative text-muted-foreground text-sm leading-relaxed">
                 {item.description}
               </p>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-b-3xl" />
             </motion.div>
           ))}
         </div>
