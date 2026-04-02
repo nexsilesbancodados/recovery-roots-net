@@ -1,5 +1,7 @@
-import { Home, Utensils, TreePine, Dumbbell, Waves, Heart, Bed, Music, BookOpen, Palette, Dog, Coffee, Tv, Flower2 } from "lucide-react";
+import { Home, Utensils, TreePine, Dumbbell, Waves, Heart, Bed, Music, BookOpen, Palette, Dog, Coffee, Tv, Flower2, Phone, ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { openWhatsApp } from "@/lib/contact";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
 
 interface Recurso {
@@ -48,30 +50,85 @@ const EstruturaSection = () => {
 
       {/* Desktop & Tablet: Grid layout */}
       <div className="hidden sm:block container mx-auto px-4">
+        {/* Row 1 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.map((recurso) => {
+          {recursos.slice(0, 4).map((recurso) => {
             const IconComponent = recurso.icon;
             return (
-              <Card
-                key={recurso.id}
-                className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden"
-              >
+              <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
-                
                 <CardContent className="p-4 relative z-10">
                   <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
-                    <IconComponent className={`w-5 h-5 ${recurso.color} transition-colors duration-300`} fill="currentColor" strokeWidth={1} />
+                    <IconComponent className={`w-5 h-5 ${recurso.color}`} strokeWidth={2} />
                   </div>
+                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
 
-                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-300">
-                    {recurso.nome}
-                  </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                    {recurso.descricao}
-                  </p>
-                  
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+        {/* Banner 1 */}
+        <div className="my-5 rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+          <div className="text-primary-foreground text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold">Conheça nossa estrutura pessoalmente</h3>
+            <p className="text-primary-foreground/80 text-sm mt-1">Agende uma visita e veja de perto todo o conforto que oferecemos.</p>
+          </div>
+          <Button
+            onClick={() => openWhatsApp("Olá! Gostaria de agendar uma visita para conhecer a estrutura.")}
+            className="bg-white text-primary hover:bg-white/90 rounded-xl px-6 py-5 font-bold shrink-0 shadow-md"
+          >
+            Agendar Visita <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </div>
+
+        {/* Row 2 */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {recursos.slice(4, 8).map((recurso) => {
+            const IconComponent = recurso.icon;
+            return (
+              <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <CardContent className="p-4 relative z-10">
+                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
+                    <IconComponent className={`w-5 h-5 ${recurso.color}`} strokeWidth={2} />
+                  </div>
+                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Banner 2 */}
+        <div className="my-5 rounded-2xl bg-gradient-to-r from-foreground to-foreground/90 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+          <div className="text-background text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold">Atendimento 24h — Ligue agora</h3>
+            <p className="text-background/70 text-sm mt-1">Equipe médica disponível dia e noite para qualquer necessidade.</p>
+          </div>
+          <Button
+            onClick={() => openWhatsApp("Olá! Preciso de atendimento.")}
+            className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-xl px-6 py-5 font-bold shrink-0 shadow-md"
+          >
+            <Phone className="w-4 h-4 mr-2" /> Falar Agora
+          </Button>
+        </div>
+
+        {/* Row 3 */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {recursos.slice(8, 14).map((recurso) => {
+            const IconComponent = recurso.icon;
+            return (
+              <Card key={recurso.id} className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <CardContent className="p-4 relative z-10">
+                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
+                    <IconComponent className={`w-5 h-5 ${recurso.color}`} strokeWidth={2} />
+                  </div>
+                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">{recurso.nome}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">{recurso.descricao}</p>
                 </CardContent>
               </Card>
             );
