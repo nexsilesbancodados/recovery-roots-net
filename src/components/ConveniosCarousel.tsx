@@ -50,25 +50,32 @@ const ConveniosCarousel = () => {
   );
 
   return (
-    <section id="convenios" className="py-8 md:py-10 bg-muted/50">
+    <section id="convenios" className="py-12 md:py-16 bg-muted/30">
       <div className="container mx-auto px-4">
-        <p className="text-center text-muted-foreground text-xs uppercase tracking-wider font-medium mb-4">
-          Convênios aceitos
-        </p>
+        <div className="text-center mb-8">
+          <span className="text-primary font-semibold text-xs uppercase tracking-[0.2em]">
+            Convênios aceitos
+          </span>
+          <h2 className="font-display text-xl md:text-2xl font-bold text-foreground mt-2">
+            Trabalhamos com os principais planos de saúde
+          </h2>
+        </div>
 
         {/* Carousel */}
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 items-center">
+          <div className="flex gap-10 items-center">
             {convenios.map((convenio, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 basis-1/4 sm:basis-1/5 md:basis-1/6 lg:basis-[12%] flex items-center justify-center h-10"
+                className="flex-shrink-0 basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-[14%] flex flex-col items-center justify-center gap-2"
               >
-                <img
-                  src={convenio.logo}
-                  alt={convenio.name}
-                  className="max-h-10 max-w-full object-contain hover:scale-110 transition-transform duration-300"
-                />
+                <div className="h-16 flex items-center justify-center">
+                  <img
+                    src={convenio.logo}
+                    alt={convenio.name}
+                    className="max-h-14 max-w-full object-contain hover:scale-110 transition-transform duration-300 grayscale hover:grayscale-0"
+                  />
+                </div>
               </div>
             ))}
           </div>
