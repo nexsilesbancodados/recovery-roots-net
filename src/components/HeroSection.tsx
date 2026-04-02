@@ -1,6 +1,6 @@
 import { Users, BedDouble, Award, Ambulance } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroDoctor from "@/assets/doutora-hero.png";
+import heroEquipe from "@/assets/hero-equipe.png";
 import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
 
