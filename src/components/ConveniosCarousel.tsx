@@ -67,7 +67,7 @@ const ConveniosCarousel = () => {
                 <img
                   src={convenio.logo}
                   alt={convenio.name}
-                  className="max-h-8 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                  className="max-h-10 max-w-full object-contain hover:scale-110 transition-transform duration-300"
                 />
               </div>
             ))}
