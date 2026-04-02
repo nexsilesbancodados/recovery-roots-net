@@ -99,7 +99,7 @@ const tratamentos: Tratamento[] = [
       "Psicoeducação familiar: entendendo a doença, sinais de crise e como apoiar",
       "Reabilitação psicossocial visando autonomia e reinserção comunitária"
     ],
-    color: "from-teal-500 to-cyan-600",
+    color: "from-primary to-accent",
     bgImage: bgEsquizofrenia
   },
   {
