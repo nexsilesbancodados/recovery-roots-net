@@ -257,7 +257,7 @@ const TratamentosSection = () => {
                     {tratamento.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-display text-lg font-bold mb-1 text-destructive">
+                    <h3 className="font-display text-lg font-extrabold mb-1 text-white drop-shadow-lg">
                       {tratamento.title}
                     </h3>
                     <p className="text-white/90 text-sm leading-relaxed line-clamp-2">
