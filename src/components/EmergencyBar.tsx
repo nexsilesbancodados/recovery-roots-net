@@ -15,7 +15,7 @@ const EmergencyBar = () => {
 
   return (
     <div 
-      className={`fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary/90 to-secondary text-primary-foreground py-2 shadow-lg transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[60] bg-gradient-to-r from-primary via-primary/90 to-secondary text-primary-foreground py-1 shadow-lg transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
