@@ -78,6 +78,8 @@ const HeroSection = () => {
               width={768}
               height={1024}
             />
+            {/* Fade/smoke effect to hide bottom edge */}
+            <div className="absolute bottom-0 left-0 right-0 h-32 z-20 bg-gradient-to-t from-background via-background/80 to-transparent" />
           </motion.div>
         </div>
       </div>
