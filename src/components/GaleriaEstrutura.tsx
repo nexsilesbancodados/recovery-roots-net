@@ -113,6 +113,9 @@ const GaleriaEstrutura = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                  <span className="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-sm text-white text-[10px] sm:text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    {imagem.keyword}
+                  </span>
                 </div>
               </CarouselItem>
             ))}
