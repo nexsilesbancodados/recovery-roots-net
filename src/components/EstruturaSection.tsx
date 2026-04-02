@@ -16,6 +16,8 @@ import imgPet from "@/assets/estrutura/pet-terapia.jpg";
 import imgConvivencia from "@/assets/estrutura/convivencia.jpg";
 import imgSalaTV from "@/assets/estrutura/sala-tv.jpg";
 import imgJardim from "@/assets/estrutura/jardim-terapeutico.jpg";
+import imgMeditacao from "@/assets/estrutura/meditacao.jpg";
+import imgCapela from "@/assets/estrutura/capela.jpg";
 
 interface Recurso {
   id: number;
@@ -39,6 +41,8 @@ const recursos: Recurso[] = [
   { id: 12, nome: "Espaço de Convivência", descricao: "Áreas comuns para socialização, jogos e momentos de descontração entre os pacientes.", image: imgConvivencia },
   { id: 13, nome: "Sala de TV", descricao: "Ambiente confortável para assistir filmes e programas em grupo, promovendo integração.", image: imgSalaTV },
   { id: 14, nome: "Jardim Terapêutico", descricao: "Espaço dedicado à horticultura e jardinagem como forma de terapia ocupacional.", image: imgJardim },
+  { id: 15, nome: "Meditação e Yoga", descricao: "Práticas de mindfulness, yoga e meditação guiada para equilíbrio corpo e mente.", image: imgMeditacao },
+  { id: 16, nome: "Capela e Espiritualidade", descricao: "Espaço ecumênico de oração e reflexão espiritual para fortalecimento interior.", image: imgCapela },
 ];
 
 const ImageCard = ({ recurso }: { recurso: Recurso }) => (
@@ -116,7 +120,28 @@ const EstruturaSection = () => {
 
         {/* Row 3 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(8, 14).map((recurso) => (
+          {recursos.slice(8, 12).map((recurso) => (
+            <ImageCard key={recurso.id} recurso={recurso} />
+          ))}
+        </div>
+
+        {/* Banner 3 */}
+        <div className="my-5 rounded-2xl bg-gradient-to-r from-accent to-primary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+          <div className="text-accent-foreground text-center md:text-left">
+            <h3 className="font-display text-xl md:text-2xl font-extrabold">Sua recuperação começa aqui</h3>
+            <p className="text-accent-foreground/80 text-sm mt-1">Um ambiente completo pensado para cada etapa do seu tratamento.</p>
+          </div>
+          <Button
+            onClick={() => openWhatsApp("Olá! Quero saber mais sobre a estrutura do hospital.")}
+            className="bg-white text-primary hover:bg-white/90 rounded-xl px-6 py-5 font-bold shrink-0 shadow-md"
+          >
+            Saiba Mais <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+        </div>
+
+        {/* Row 4 */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {recursos.slice(12, 16).map((recurso) => (
             <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
