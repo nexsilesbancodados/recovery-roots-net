@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { openWhatsApp } from "@/lib/contact";
+import {
   Carousel,
   CarouselContent,
   CarouselItem,
