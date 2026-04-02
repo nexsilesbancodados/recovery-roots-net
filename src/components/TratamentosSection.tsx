@@ -147,7 +147,7 @@ const tratamentos: Tratamento[] = [
       "Práticas integrativas: yoga, meditação, acupuntura e fitoterapia complementar",
       "Programa de alta assistida com acompanhamento ambulatorial contínuo"
     ],
-    color: "from-green-500 to-emerald-600",
+    color: "from-primary/80 to-primary",
     bgImage: bgSaudeMental
   }
 ];
