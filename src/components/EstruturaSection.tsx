@@ -146,26 +146,26 @@ const EstruturaSection = () => {
 
       {/* Desktop & Tablet: Grid layout */}
       <div className="hidden sm:block container mx-auto px-4">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {recursos.map((recurso) => {
             const IconComponent = recurso.icon;
             return (
               <Card
                 key={recurso.id}
-                className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden"
+                className="group relative border-0 shadow-md hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
+                <div className="absolute -top-8 -right-8 w-16 h-16 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
                 
-                <CardContent className="p-6 relative z-10">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md group-hover:shadow-lg`}>
-                    <IconComponent className={`w-7 h-7 ${recurso.color} transition-colors duration-300`} />
+                <CardContent className="p-4 relative z-10">
+                  <div className={`w-11 h-11 rounded-xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-500 shadow-sm`}>
+                    <IconComponent className={`w-5 h-5 ${recurso.color} transition-colors duration-300`} />
                   </div>
 
-                  <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-sm font-display font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-300">
                     {recurso.nome}
                   </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-3">
                     {recurso.descricao}
                   </p>
                   
