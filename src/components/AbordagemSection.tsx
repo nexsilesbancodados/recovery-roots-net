@@ -147,17 +147,18 @@ const AbordagemSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.12 * index }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className={`group relative p-6 rounded-3xl bg-gradient-to-br ${item.gradient} shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden`}
+              className="group relative p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 transition-colors" />
               
-              <div className="relative w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm text-white flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
+              <div className="relative z-10 w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm text-white flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-sm">
                 {item.icon}
               </div>
-              <h3 className="relative font-display text-lg font-bold text-white mb-2">
+              <h3 className="relative z-10 font-display text-lg font-bold text-white mb-2">
                 {item.title}
               </h3>
-              <p className="relative text-white/85 text-sm leading-relaxed">
+              <p className="relative z-10 text-white/85 text-sm leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
