@@ -12,7 +12,7 @@ const EmergencyBar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap">
           <div className="flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 animate-pulse" />
+            <AlertCircle className="w-4 h-4 animate-pulse" fill="currentColor" strokeWidth={1} />
             <span className="text-xs md:text-sm font-medium">
               Precisa de ajuda agora?
             </span>
