@@ -16,8 +16,8 @@ import imgPet from "@/assets/estrutura/pet-terapia.jpg";
 import imgConvivencia from "@/assets/estrutura/convivencia.jpg";
 import imgSalaTV from "@/assets/estrutura/sala-tv.jpg";
 import imgJardim from "@/assets/estrutura/jardim-terapeutico.jpg";
-import imgMeditacao from "@/assets/estrutura/meditacao.jpg";
-import imgCapela from "@/assets/estrutura/capela.jpg";
+
+
 
 interface Recurso {
   id: number;
