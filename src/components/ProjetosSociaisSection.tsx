@@ -63,7 +63,7 @@ const ProjetosSociaisSection = () => {
                       <div className="p-2 bg-primary rounded-full">
                         <IconComponent size={18} className="text-primary-foreground" fill="currentColor" strokeWidth={1} />
                       </div>
-                      <h3 className="font-serif font-bold text-xl">{projeto.title}</h3>
+                      <h3 className="font-display font-bold text-xl">{projeto.title}</h3>
                     </div>
                   </div>
                 </div>
