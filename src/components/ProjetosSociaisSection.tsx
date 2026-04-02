@@ -10,19 +10,16 @@ const projetos = [
     title: "Instituto São Joaquim - ABA",
     description: "Apoio a crianças com autismo através de terapia ABA (Análise do Comportamento Aplicada), fonoaudiologia e desenvolvimento da comunicação.",
     image: institutoAbaImg,
-    icon: Heart,
   },
   {
     title: "Campeonatos de Jiu-Jitsu",
     description: "Patrocínio e organização de campeonatos de Jiu-Jitsu para jovens, promovendo disciplina, autocontrole e inclusão social através do esporte.",
     image: jiuJitsuImg,
-    icon: Users,
   },
   {
     title: "Combate às Drogas e Álcool",
     description: "Campanhas de conscientização e prevenção ao uso de drogas e álcool em escolas e comunidades, salvando vidas e transformando famílias.",
     image: combateDrogasImg,
-    icon: Shield,
   },
 ];
 
