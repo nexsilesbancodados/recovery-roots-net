@@ -5,7 +5,7 @@ import bannerImg from "@/assets/banner-hospital.jpg";
 
 const CTABanner = () => {
   return (
-    <section className="relative h-[280px] md:h-[320px] overflow-hidden">
+    <section className="relative h-[220px] sm:h-[280px] md:h-[320px] overflow-hidden">
       <img
         src={bannerImg}
         alt="Hospital Rumo Certo - Estrutura moderna"
