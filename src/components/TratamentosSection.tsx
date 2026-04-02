@@ -121,7 +121,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "prevencao-suicidio",
     title: "Prevenção ao Suicídio",
-    icon: <HandHeart className="w-8 h-8" />,
+    icon: <HandHeart className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Acolhimento urgente e especializado para momentos de crise",
     fullDescription: "Quando a dor emocional se torna insuportável, é essencial ter um lugar seguro para buscar ajuda. O Hospital Rumo Certo oferece acolhimento especializado para pessoas em sofrimento intenso e com ideação suicida. Nossa equipe é treinada em intervenção em crise e trabalha com compaixão e sem julgamentos. O ambiente protegido permite que o paciente encontre alívio do sofrimento enquanto desenvolve, junto à equipe, um plano de segurança e novas perspectivas de vida. A vida vale a pena ser vivida — estamos aqui para ajudar você a redescobrir isso.",
     howWeHelp: [
