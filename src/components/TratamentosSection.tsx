@@ -105,7 +105,7 @@ const tratamentos: Tratamento[] = [
   {
     id: "farmacodependencia",
     title: "Farmacodependência",
-    icon: <AlertTriangle className="w-8 h-8" />,
+    icon: <AlertTriangle className="w-8 h-8" fill="currentColor" strokeWidth={1} />,
     shortDescription: "Desmame seguro e tratamento da dependência de medicamentos",
     fullDescription: "A dependência de medicamentos prescritos — como benzodiazepínicos, opioides e estimulantes — é uma realidade silenciosa que afeta milhares de pessoas. Muitas vezes iniciada com uma prescrição médica legítima, a farmacodependência desenvolve-se gradualmente e pode ser tão devastadora quanto qualquer outra dependência. O Hospital Rumo Certo oferece um programa especializado de desmame seguro, com protocolos médicos rigorosos que minimizam o desconforto da abstinência, além de tratamento das condições subjacentes que levaram ao uso.",
     howWeHelp: [
