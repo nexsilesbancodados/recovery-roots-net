@@ -116,9 +116,16 @@ const EstruturaSection = () => {
           </Button>
         </div>
 
-        {/* Row 3 */}
+        {/* Row 3 - first 4 */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {recursos.slice(8, 14).map((recurso) => (
+          {recursos.slice(8, 12).map((recurso) => (
+            <ImageCard key={recurso.id} recurso={recurso} />
+          ))}
+        </div>
+
+        {/* Row 4 - last 2 expanded */}
+        <div className="grid sm:grid-cols-2 gap-4 mt-4">
+          {recursos.slice(12, 14).map((recurso) => (
             <ImageCard key={recurso.id} recurso={recurso} />
           ))}
         </div>
