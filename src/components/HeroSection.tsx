@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative overflow-hidden min-h-[70vh] md:min-h-[85vh] flex flex-col">
+    <section id="inicio" className="relative overflow-hidden flex flex-col">
       {/* Very light gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[hsl(215,30%,97%)] via-[hsl(215,20%,95%)] to-[hsl(42,20%,96%)]" />
       
