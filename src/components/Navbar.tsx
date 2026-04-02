@@ -75,27 +75,25 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {mainLinks.map((link) =>
-              link.isPage ? (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className="px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all duration-200"
-                >
-                  {link.label}
-                </a>
-              )
-            )}
+          <div className="hidden lg:flex items-center">
+            <div className="flex items-center bg-muted/50 rounded-full px-1.5 py-1 border border-border/30">
+              {mainLinks.map((link) => {
+                const isActive = location.pathname === link.href;
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all duration-200 whitespace-nowrap ${
+                      isActive
+                        ? "bg-primary text-primary-foreground shadow-sm"
+                        : "text-foreground/70 hover:text-primary hover:bg-primary/8"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
 
 
             {/* CTA Button */}
