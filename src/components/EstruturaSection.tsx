@@ -103,10 +103,10 @@ const EstruturaSection = () => {
         </div>
 
         {/* Banner 2 */}
-        <div className="my-5 rounded-2xl bg-gradient-to-r from-foreground to-foreground/90 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
-          <div className="text-background text-center md:text-left">
+        <div className="my-5 rounded-2xl bg-gradient-to-r from-secondary to-secondary/80 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-lg">
+          <div className="text-secondary-foreground text-center md:text-left">
             <h3 className="font-display text-xl md:text-2xl font-extrabold">Atendimento 24h — Ligue agora</h3>
-            <p className="text-background/70 text-sm mt-1">Equipe médica disponível dia e noite para qualquer necessidade.</p>
+            <p className="text-secondary-foreground/70 text-sm mt-1">Equipe médica disponível dia e noite para qualquer necessidade.</p>
           </div>
           <Button
             onClick={() => openWhatsApp("Olá! Preciso de atendimento.")}
