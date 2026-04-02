@@ -1,15 +1,6 @@
-import { Users, BedDouble, Award, Ambulance } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import heroEquipe from "@/assets/hero-equipe.png";
 import { openWhatsApp } from "@/lib/contact";
 import { motion } from "framer-motion";
-
-const stats = [
-  { icon: Users, value: "3000+", label: "Pacientes Atendidos", color: "text-emerald-700", bg: "bg-emerald-100" },
-  { icon: BedDouble, value: "200", label: "Leitos Disponíveis", color: "text-blue-700", bg: "bg-blue-100" },
-  { icon: Award, value: "500+", label: "Prêmios e Certificações", color: "text-amber-700", bg: "bg-amber-100" },
-  { icon: Ambulance, value: "24h", label: "Resgate e Ambulância", color: "text-rose-700", bg: "bg-rose-100" },
-];
 
 const HeroSection = () => {
   return (
