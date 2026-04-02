@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { Users, Calendar, Heart, Award } from "lucide-react";
+import { Users, BedDouble, Award, Ambulance } from "lucide-react";
 
 interface Numero {
   icon: React.ElementType;
   valor: number;
   sufixo: string;
   label: string;
-  color: string;
 }
 
 const numeros: Numero[] = [
@@ -15,28 +14,24 @@ const numeros: Numero[] = [
     valor: 3000,
     sufixo: "+",
     label: "Pacientes Atendidos",
-    color: "text-blue-500",
   },
   {
-    icon: Calendar,
-    valor: 20,
-    sufixo: "+",
-    label: "Anos de Experiência",
-    color: "text-green-500",
-  },
-  {
-    icon: Heart,
-    valor: 98,
-    sufixo: "%",
-    label: "Taxa de Satisfação",
-    color: "text-red-500",
+    icon: BedDouble,
+    valor: 200,
+    sufixo: "",
+    label: "Leitos Disponíveis",
   },
   {
     icon: Award,
-    valor: 50,
+    valor: 500,
     sufixo: "+",
-    label: "Profissionais Especializados",
-    color: "text-purple-500",
+    label: "Prêmios e Certificações",
+  },
+  {
+    icon: Ambulance,
+    valor: 24,
+    sufixo: "h",
+    label: "Resgate e Ambulância",
   },
 ];
 
@@ -54,22 +49,15 @@ const CountUp = ({ end, suffix }: { end: number; suffix: string }) => {
       },
       { threshold: 0.5 }
     );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, [hasStarted]);
 
   useEffect(() => {
     if (!hasStarted) return;
-
-    const duration = 2000;
     const steps = 60;
     const increment = end / steps;
     let current = 0;
-
     const timer = setInterval(() => {
       current += increment;
       if (current >= end) {
@@ -78,8 +66,7 @@ const CountUp = ({ end, suffix }: { end: number; suffix: string }) => {
       } else {
         setCount(Math.floor(current));
       }
-    }, duration / steps);
-
+    }, 2000 / steps);
     return () => clearInterval(timer);
   }, [hasStarted, end]);
 
@@ -93,34 +80,27 @@ const CountUp = ({ end, suffix }: { end: number; suffix: string }) => {
 
 const NumerosImpacto = () => {
   return (
-    <section id="numeros" className="py-12 bg-gradient-to-r from-primary/5 via-background to-primary/5">
+    <section className="py-6 bg-card border-y border-border/40">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-            Resultados
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
-            Números que Inspiram Confiança
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           {numeros.map((numero, index) => {
             const IconComponent = numero.icon;
             return (
               <div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-card shadow-lg border border-border/50 hover:shadow-xl transition-shadow"
+                className="flex items-center gap-3 md:gap-4 px-2 py-2"
               >
-                <div className={`w-14 h-14 mx-auto rounded-full bg-muted flex items-center justify-center mb-4`}>
-                  <IconComponent className={`w-7 h-7 ${numero.color}`} />
+                <div className="w-11 h-11 shrink-0 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <IconComponent className="w-5 h-5 text-primary" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  <CountUp end={numero.valor} suffix={numero.sufixo} />
+                <div className="min-w-0">
+                  <div className="text-xl md:text-2xl font-bold text-foreground leading-tight">
+                    <CountUp end={numero.valor} suffix={numero.sufixo} />
+                  </div>
+                  <p className="text-muted-foreground text-xs md:text-sm truncate">
+                    {numero.label}
+                  </p>
                 </div>
-                <p className="text-muted-foreground text-sm font-medium">
-                  {numero.label}
-                </p>
               </div>
             );
           })}
