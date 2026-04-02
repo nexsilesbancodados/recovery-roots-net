@@ -1,4 +1,5 @@
-import { Heart, Users, Shield } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import logoIcon from "@/assets/logo-hospital.png";
 import { Card, CardContent } from "@/components/ui/card";
 import institutoAbaImg from "@/assets/projetos/instituto-aba.png";
 import jiuJitsuImg from "@/assets/projetos/jiu-jitsu.png";
