@@ -131,7 +131,7 @@ const tratamentos: Tratamento[] = [
       "Psicoterapia intensiva para tratamento de desesperança, trauma e transtornos associados",
       "Construção de plano de segurança personalizado e rede de apoio para pós-alta"
     ],
-    color: "from-emerald-500 to-green-600",
+    color: "from-primary to-primary/70",
     bgImage: bgPrevencaoSuicidio
   },
   {
