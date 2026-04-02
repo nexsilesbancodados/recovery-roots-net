@@ -52,12 +52,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         hospital: {
-          green: "hsl(var(--hospital-green))",
-          "green-light": "hsl(var(--hospital-green-light))",
-          terracotta: "hsl(var(--hospital-terracotta))",
-          sky: "hsl(var(--hospital-sky))",
+          purple: "hsl(var(--hospital-purple))",
+          "purple-light": "hsl(var(--hospital-purple-light))",
+          gold: "hsl(var(--hospital-gold))",
+          "gold-light": "hsl(var(--hospital-gold-light))",
+          navy: "hsl(var(--hospital-navy))",
           cream: "hsl(var(--hospital-cream))",
-          dark: "hsl(var(--hospital-dark))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
