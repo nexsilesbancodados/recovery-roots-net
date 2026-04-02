@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { Heart, Brain, Shield, Users, Sparkles, AlertTriangle, Leaf, HandHeart } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import bgDependenciaFeminina from "@/assets/tratamentos/dependencia-feminina.jpg";
-import bgDepressao from "@/assets/tratamentos/depressao.jpg";
-import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
-import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.jpg";
-import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.jpg";
-import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
-
-gsap.registerPlugin(ScrollTrigger);
+import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
+import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.jpg";
 
 interface Tratamento {
   id: string;
