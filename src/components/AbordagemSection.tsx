@@ -147,7 +147,7 @@ const AbordagemSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.12 * index }}
               whileHover={{ y: -6, scale: 1.02 }}
-              className="group relative p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden"
+              className="group relative p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-400 overflow-hidden rotate-2 odd:-rotate-2 hover:rotate-0"
             >
               <img src={item.image} alt={item.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 transition-colors" />
