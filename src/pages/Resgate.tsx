@@ -53,7 +53,7 @@ const Resgate = () => {
       <EmergencyBar />
       <Navbar />
 
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden pt-20 md:pt-24">
         <img src={resgateHumanizado} alt="Equipe de resgate humanizado" className="w-full h-auto" />
       </div>
 
