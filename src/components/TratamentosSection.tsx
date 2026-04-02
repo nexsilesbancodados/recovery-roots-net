@@ -115,7 +115,7 @@ const tratamentos: Tratamento[] = [
       "Psicoterapia focada em estratégias alternativas de manejo sem dependência de substâncias",
       "Educação sobre uso responsável de medicamentos e prevenção de recaídas"
     ],
-    color: "from-red-500 to-rose-600",
+    color: "from-destructive to-destructive/80",
     bgImage: bgFarmacodependencia
   },
   {
