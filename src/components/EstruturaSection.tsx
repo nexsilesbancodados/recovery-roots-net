@@ -1,11 +1,6 @@
-import { useEffect, useRef } from "react";
 import { Home, Utensils, TreePine, Dumbbell, Waves, Heart, Bed, Music, BookOpen, Palette, Dog, Coffee, Tv, Flower2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface Recurso {
   id: number;
