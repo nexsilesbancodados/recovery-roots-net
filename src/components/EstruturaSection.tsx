@@ -127,59 +127,8 @@ const recursos: Recurso[] = [
 ];
 
 const EstruturaSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardsContainerRef = useRef<HTMLDivElement>(null);
-  const cardsWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    const cardsContainer = cardsContainerRef.current;
-    const cardsWrapper = cardsWrapperRef.current;
-    
-    if (!section || !cardsContainer || !cardsWrapper) return;
-
-    // Check screen size - disable GSAP pinning on tablets and mobile
-    const isSmallScreen = window.innerWidth < 1024;
-    
-    if (isSmallScreen) return; // Skip GSAP on mobile/tablet
-
-    const ctx = gsap.context(() => {
-      // Calculate scroll distance
-      const scrollWidth = cardsWrapper.scrollWidth - cardsContainer.offsetWidth;
-
-      // Start from the right (negative position) and scroll to the left (0)
-      gsap.set(cardsWrapper, { x: -scrollWidth });
-      
-      // Pin the section and scroll horizontally TO THE RIGHT
-      gsap.to(cardsWrapper, {
-        x: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${scrollWidth}`,
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, section);
-
-    // Handle resize
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      ctx.revert();
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="relative z-30 py-12 sm:py-16 bg-muted/30 lg:min-h-screen lg:flex lg:flex-col lg:justify-center overflow-hidden" id="estrutura">
+    <section className="relative z-30 py-12 sm:py-16 bg-muted/30 overflow-hidden" id="estrutura">
       {/* Header */}
       <div className="container mx-auto px-4 mb-6 sm:mb-8">
         <div className="text-center lg:text-left lg:max-w-xl">
@@ -192,46 +141,37 @@ const EstruturaSection = () => {
           <p className="text-muted-foreground mt-3 sm:mt-4 text-sm sm:text-base md:text-lg">
             Ambientes pensados para o seu conforto e recuperação
           </p>
-          <div className="hidden lg:flex items-center gap-2 text-muted-foreground text-sm mt-4">
-            <span>→</span>
-            <span>Role para explorar</span>
-            <span>←</span>
-          </div>
         </div>
       </div>
 
-      {/* Desktop: Horizontal scroll with GSAP */}
-      <div ref={cardsContainerRef} className="hidden lg:block overflow-hidden flex-1">
-        <div ref={cardsWrapperRef} className="flex gap-6 px-8 py-4 w-max">
+      {/* Desktop & Tablet: Grid layout */}
+      <div className="hidden sm:block container mx-auto px-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {recursos.map((recurso) => {
             const IconComponent = recurso.icon;
             return (
-              <div
+              <Card
                 key={recurso.id}
-                className="flex-shrink-0 w-[320px]"
+                className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden"
               >
-                <Card
-                  className="group relative border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-card to-card/80 overflow-hidden h-full"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
-                  
-                  <CardContent className="p-6 relative z-10">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md group-hover:shadow-lg`}>
-                      <IconComponent className={`w-7 h-7 ${recurso.color} transition-colors duration-300`} />
-                    </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/10 rounded-full group-hover:scale-150 transition-transform duration-500" />
+                
+                <CardContent className="p-6 relative z-10">
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${recurso.bgColor} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-md group-hover:shadow-lg`}>
+                    <IconComponent className={`w-7 h-7 ${recurso.color} transition-colors duration-300`} />
+                  </div>
 
-                    <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                      {recurso.nome}
-                    </h3>
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {recurso.descricao}
-                    </p>
-                    
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-                  </CardContent>
-                </Card>
-              </div>
+                  <h3 className="text-lg font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                    {recurso.nome}
+                  </h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    {recurso.descricao}
+                  </p>
+                  
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                </CardContent>
+              </Card>
             );
           })}
         </div>

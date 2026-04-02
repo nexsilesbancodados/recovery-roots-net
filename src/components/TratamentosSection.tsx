@@ -216,9 +216,6 @@ const TratamentosSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Tablet: Horizontal scroll with touch */}
-        <div className="hidden sm:block lg:hidden overflow-x-auto scrollbar-hide pb-4 -mx-4 px-4">
           <div className="flex gap-4 min-w-max px-4">
             {tratamentos.map((tratamento) => (
               <div
