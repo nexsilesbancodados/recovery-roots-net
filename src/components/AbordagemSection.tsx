@@ -97,13 +97,13 @@ const AbordagemSection = () => {
             {/* Background shape */}
             <div className="absolute bottom-0 right-[5%] w-[80%] h-[75%] bg-gradient-to-t from-primary/8 via-primary/4 to-transparent rounded-t-[40%] z-0" />
             
-            <div className="relative z-10 px-8 md:px-12">
+            <div className="relative z-10 px-8 md:px-12 pb-16 overflow-hidden">
               <img
                 src={profissionalImg}
                 alt="Profissional de saúde do Hospital Rumo Certo"
-                className="w-full max-w-sm h-auto object-contain drop-shadow-lg"
+                className="w-full max-w-sm h-auto object-contain drop-shadow-lg mb-[-60px]"
               />
-              <div className="absolute bottom-0 left-[-20%] right-[-20%] h-52 bg-gradient-to-t from-background via-background/95 to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-[-30%] right-[-30%] h-72 bg-gradient-to-t from-background from-20% via-background/98 via-40% to-transparent pointer-events-none" />
 
               {/* Balões de conversa flutuantes */}
               <motion.div
