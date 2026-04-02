@@ -202,14 +202,14 @@ const TratamentosSection = () => {
         className="relative z-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-16 sm:py-20 md:py-28 overflow-hidden"
       >
         {/* Header */}
-        <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12">
+        <div className="container mx-auto px-4 mb-6 sm:mb-8 md:mb-12 text-center">
           <span className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-wider">
             Especialidades
           </span>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Tratamentos Oferecidos
           </h2>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl">
+          <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl mx-auto">
             Oferecemos tratamento especializado e humanizado para diversas condições.
           </p>
         </div>
