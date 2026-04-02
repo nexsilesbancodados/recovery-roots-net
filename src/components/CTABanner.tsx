@@ -18,7 +18,7 @@ const CTABanner = () => {
       
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
         <div className="max-w-xl text-primary-foreground">
-          <h2 className="font-display text-2xl md:text-4xl font-extrabold leading-tight mb-3">
+          <h2 className="font-display text-2xl md:text-4xl font-extrabold leading-tight mb-3 text-secondary">
             Transforme sua vida com quem entende de recuperação
           </h2>
           <p className="text-primary-foreground/85 text-sm md:text-base mb-5 leading-relaxed">
