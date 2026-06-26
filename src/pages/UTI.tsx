@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -45,6 +46,7 @@ const UTI = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"UTI Psiquiátrica 24h "} description={" Hospital Rumo Certo|UTI psiquiátrica com equipe multidisciplinar 24h para crises graves e estabilização emergencial."} path={"/uti"} />
       <EmergencyBar />
       <Navbar />
 

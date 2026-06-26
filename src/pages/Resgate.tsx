@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -50,6 +51,7 @@ const Resgate = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Resgate Hospitalar 24h "} description={" Hospital Rumo Certo|Serviço de resgate especializado 24h em todo Brasil para internação psiquiátrica."} path={"/resgate"} />
       <EmergencyBar />
       <Navbar />
 

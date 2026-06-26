@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -52,6 +53,7 @@ const SobreNos = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Sobre Nós "} description={" Hospital Rumo Certo|Conheça a história, missão e valores do Hospital Rumo Certo em tratamento humanizado."} path={"/sobre-nos"} />
       <EmergencyBar />
       <Navbar />
 
