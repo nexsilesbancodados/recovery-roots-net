@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -54,6 +55,7 @@ const Convenios = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Convênios Aceitos | Hospital Rumo Certo"} description={"Atendemos os principais convênios do Brasil. Consulte a cobertura do seu plano de saúde."} path={"/convenios"} />
       <EmergencyBar />
       <Navbar />
 

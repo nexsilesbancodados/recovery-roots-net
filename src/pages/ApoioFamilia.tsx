@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -45,6 +46,7 @@ const ApoioFamilia = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Apoio à Família | Hospital Rumo Certo"} description={"Orientação e suporte psicológico para famílias de dependentes químicos e pacientes em tratamento."} path={"/apoio-familia"} />
       <EmergencyBar />
       <Navbar />
 
