@@ -18,24 +18,26 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 50% 23%;
+    --foreground: 215 45% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 50% 23%;
+    --card-foreground: 215 45% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 50% 23%;
+    --popover-foreground: 215 45% 20%;
 
     --primary: 215 55% 18%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 42 60% 55%;
+    /* Dourado vira detalhe decorativo (nunca botão/texto principal) */
+    --secondary: 42 55% 52%;
     --secondary-foreground: 215 55% 15%;
 
     --muted: 215 10% 96%;
-    --muted-foreground: 215 15% 40%;
+    --muted-foreground: 215 15% 38%;
 
-    --accent: 215 50% 23%;
+    /* Acento principal: verde-sálvia calmo */
+    --accent: 158 28% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -44,6 +46,11 @@
     --border: 215 15% 90%;
     --input: 215 15% 90%;
     --ring: 215 55% 18%;
+
+    /* WhatsApp — ação dominante */
+    --whatsapp: 142 70% 49%;
+    --whatsapp-foreground: 0 0% 100%;
+
 
     --radius: 0.75rem;
 

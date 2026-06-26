@@ -106,7 +106,7 @@ const Navbar = () => {
             {/* CTA primário: WhatsApp */}
             <button
               onClick={() => openWhatsApp("Olá, preciso de ajuda para um familiar. Podem me orientar?")}
-              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb955] text-white rounded-full px-4 py-2 text-xs font-bold whitespace-nowrap flex-shrink-0 shadow-md hover:-translate-y-px transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground rounded-full px-4 py-2 text-xs font-bold whitespace-nowrap flex-shrink-0 shadow-md hover:-translate-y-px transition-all duration-300"
             >
               <MessageCircle className="w-4 h-4" fill="currentColor" strokeWidth={1} />
               Falar no WhatsApp
@@ -127,11 +127,12 @@ const Navbar = () => {
             <Button
               size="sm"
               onClick={() => openWhatsApp("Olá, preciso de ajuda para um familiar. Podem me orientar?")}
-              className="bg-[#25D366] hover:bg-[#1fb955] text-white rounded-xl text-xs px-3 gap-1.5"
+              className="bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground rounded-xl text-xs px-3 gap-1.5"
             >
               <MessageCircle className="w-4 h-4" fill="currentColor" strokeWidth={1} />
               WhatsApp
             </Button>
+
             <button
               className="p-2 text-foreground rounded-lg hover:bg-muted transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
