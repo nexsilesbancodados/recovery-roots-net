@@ -60,10 +60,10 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <button
                 onClick={() => openWhatsApp("Olá, preciso de ajuda para um familiar. Podem me orientar?")}
-                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3.5 rounded-full shadow-lg hover:scale-[1.02] active:scale-100 transition-transform"
+                className="inline-flex items-center justify-center gap-2 bg-whatsapp text-whatsapp-foreground font-bold px-6 py-3.5 rounded-full shadow-lg hover:scale-[1.02] active:scale-100 transition-transform"
               >
                 <MessageCircle className="w-5 h-5" fill="currentColor" strokeWidth={1} />
-                Falar agora no WhatsApp
+                Falar no WhatsApp
               </button>
               <button
                 onClick={() => makeCall()}
@@ -73,6 +73,7 @@ const HeroSection = () => {
                 Ligar 24h
               </button>
             </div>
+
 
             {/* Selos de confiança */}
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-sm text-muted-foreground font-medium">

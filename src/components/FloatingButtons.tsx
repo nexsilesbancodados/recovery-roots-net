@@ -28,13 +28,14 @@ const FloatingButtons = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.5 }}
         onClick={handleWhatsApp}
-        className="relative flex items-center gap-2 rounded-full bg-[#25D366] text-white shadow-lg pl-4 pr-3 py-3 hover:scale-105 transition-transform"
-        aria-label="Contato via WhatsApp"
+        className="relative flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground shadow-lg pl-4 pr-3 py-3 hover:scale-105 transition-transform"
+        aria-label="Falar no WhatsApp"
       >
-        <span className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-60 animate-ping" />
-        <span className="relative text-sm font-bold hidden sm:inline">Fale conosco</span>
+        <span className="absolute inline-flex h-full w-full rounded-full bg-whatsapp opacity-60 animate-ping" />
+        <span className="relative text-sm font-bold hidden sm:inline">Falar no WhatsApp</span>
         <MessageCircle className="relative w-6 h-6" fill="currentColor" strokeWidth={1} />
       </motion.button>
+
     </div>
   );
 };
