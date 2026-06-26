@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -43,6 +44,7 @@ const Equipe = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Nossa Equipe Multidisciplinar | Hospital Rumo Certo"} description={"Psiquiatras, psicólogos, enfermeiros e terapeutas dedicados ao tratamento humanizado."} path={"/equipe"} />
       <EmergencyBar />
       <Navbar />
 

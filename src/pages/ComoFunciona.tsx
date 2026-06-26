@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -32,6 +33,7 @@ const ComoFunciona = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Como Funciona a Internação | Hospital Rumo Certo"} description={"Entenda as etapas da internação: do primeiro contato à alta, com suporte completo."} path={"/como-funciona"} />
       <EmergencyBar />
       <Navbar />
 

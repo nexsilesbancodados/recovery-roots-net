@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -14,6 +15,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO title={"Hospital Rumo Certo | Dependência Química e Saúde Mental"} description={"Hospital especializado em dependência química, alcoolismo e saúde mental. Atendimento 24h em São Paulo."} path={"/"} />
       <EmergencyBar />
       <Navbar />
       <HeroSection />
