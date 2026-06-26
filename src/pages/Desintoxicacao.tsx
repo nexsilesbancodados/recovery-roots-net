@@ -1,4 +1,3 @@
-import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -52,7 +51,6 @@ const Desintoxicacao = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Desintoxicação Médica Segura | Hospital Rumo Certo"} description={"Desintoxicação supervisionada por equipe médica 24h, com protocolo individualizado e seguro."} path={"/desintoxicacao"} />
       <EmergencyBar />
       <Navbar />
 

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { openWhatsApp } from "@/lib/contact";
-import bannerImg from "@/assets/banner-hospital.jpg";
+import bannerImg from "@/assets/banner-hospital.webp";
 
 const CTABanner = () => {
   return (

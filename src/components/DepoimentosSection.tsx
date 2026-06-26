@@ -3,26 +3,26 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 // Import avatars
-import avatar1 from "@/assets/depoimentos/avatar-1.jpg";
-import avatar2 from "@/assets/depoimentos/avatar-2.jpg";
-import avatar3 from "@/assets/depoimentos/avatar-3.jpg";
-import avatar4 from "@/assets/depoimentos/avatar-4.jpg";
-import avatar5 from "@/assets/depoimentos/avatar-5.jpg";
-import avatar6 from "@/assets/depoimentos/avatar-6.jpg";
-import avatar7 from "@/assets/depoimentos/avatar-7.jpg";
-import avatar8 from "@/assets/depoimentos/avatar-8.jpg";
-import avatar9 from "@/assets/depoimentos/avatar-9.jpg";
-import avatar10 from "@/assets/depoimentos/avatar-10.jpg";
-import avatar11 from "@/assets/depoimentos/avatar-11.jpg";
-import avatar12 from "@/assets/depoimentos/avatar-12.jpg";
-import avatar13 from "@/assets/depoimentos/avatar-13.jpg";
-import avatar14 from "@/assets/depoimentos/avatar-14.jpg";
-import avatar15 from "@/assets/depoimentos/avatar-15.jpg";
-import avatar16 from "@/assets/depoimentos/avatar-16.jpg";
-import avatar17 from "@/assets/depoimentos/avatar-17.jpg";
-import avatar18 from "@/assets/depoimentos/avatar-18.jpg";
-import avatar19 from "@/assets/depoimentos/avatar-19.jpg";
-import avatar20 from "@/assets/depoimentos/avatar-20.jpg";
+import avatar1 from "@/assets/depoimentos/avatar-1.webp";
+import avatar2 from "@/assets/depoimentos/avatar-2.webp";
+import avatar3 from "@/assets/depoimentos/avatar-3.webp";
+import avatar4 from "@/assets/depoimentos/avatar-4.webp";
+import avatar5 from "@/assets/depoimentos/avatar-5.webp";
+import avatar6 from "@/assets/depoimentos/avatar-6.webp";
+import avatar7 from "@/assets/depoimentos/avatar-7.webp";
+import avatar8 from "@/assets/depoimentos/avatar-8.webp";
+import avatar9 from "@/assets/depoimentos/avatar-9.webp";
+import avatar10 from "@/assets/depoimentos/avatar-10.webp";
+import avatar11 from "@/assets/depoimentos/avatar-11.webp";
+import avatar12 from "@/assets/depoimentos/avatar-12.webp";
+import avatar13 from "@/assets/depoimentos/avatar-13.webp";
+import avatar14 from "@/assets/depoimentos/avatar-14.webp";
+import avatar15 from "@/assets/depoimentos/avatar-15.webp";
+import avatar16 from "@/assets/depoimentos/avatar-16.webp";
+import avatar17 from "@/assets/depoimentos/avatar-17.webp";
+import avatar18 from "@/assets/depoimentos/avatar-18.webp";
+import avatar19 from "@/assets/depoimentos/avatar-19.webp";
+import avatar20 from "@/assets/depoimentos/avatar-20.webp";
 
 const depoimentos = [
   {

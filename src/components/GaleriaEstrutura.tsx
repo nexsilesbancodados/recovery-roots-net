@@ -16,27 +16,27 @@ import {
 } from "@/components/ui/dialog";
 
 // Imagens das instalações - Unidade Masculina Cabreúva
-import unidadeMasculinaCabreuva from "@/assets/estrutura/unidade-masculina-cabreuva.png";
+import unidadeMasculinaCabreuva from "@/assets/estrutura/unidade-masculina-cabreuva.webp";
 
 // Unidade Feminina Cabreúva
-import unidadeFemininaCabreuva1 from "@/assets/estrutura/unidade-feminina-cabreuva-1.png";
-import unidadeFemininaCabreuva2 from "@/assets/estrutura/unidade-feminina-cabreuva-2.png";
-import unidadeFemininaCabreuva3 from "@/assets/estrutura/unidade-feminina-cabreuva-3.png";
-import unidadeFemininaCabreuva4 from "@/assets/estrutura/unidade-feminina-cabreuva-4.png";
+import unidadeFemininaCabreuva1 from "@/assets/estrutura/unidade-feminina-cabreuva-1.webp";
+import unidadeFemininaCabreuva2 from "@/assets/estrutura/unidade-feminina-cabreuva-2.webp";
+import unidadeFemininaCabreuva3 from "@/assets/estrutura/unidade-feminina-cabreuva-3.webp";
+import unidadeFemininaCabreuva4 from "@/assets/estrutura/unidade-feminina-cabreuva-4.webp";
 
 // Unidade Masculina Salto
-import unidadeMasculinaSalto1 from "@/assets/estrutura/unidade-masculina-salto-1.png";
-import unidadeMasculinaSalto2 from "@/assets/estrutura/unidade-masculina-salto-2.png";
-import unidadeMasculinaSalto3 from "@/assets/estrutura/unidade-masculina-salto-3.png";
-import unidadeMasculinaSalto4 from "@/assets/estrutura/unidade-masculina-salto-4.png";
-import unidadeMasculinaSalto5 from "@/assets/estrutura/unidade-masculina-salto-5.png";
-import unidadeMasculinaSalto6 from "@/assets/estrutura/unidade-masculina-salto-6.png";
+import unidadeMasculinaSalto1 from "@/assets/estrutura/unidade-masculina-salto-1.webp";
+import unidadeMasculinaSalto2 from "@/assets/estrutura/unidade-masculina-salto-2.webp";
+import unidadeMasculinaSalto3 from "@/assets/estrutura/unidade-masculina-salto-3.webp";
+import unidadeMasculinaSalto4 from "@/assets/estrutura/unidade-masculina-salto-4.webp";
+import unidadeMasculinaSalto5 from "@/assets/estrutura/unidade-masculina-salto-5.webp";
+import unidadeMasculinaSalto6 from "@/assets/estrutura/unidade-masculina-salto-6.webp";
 
 // Unidade Masculina 3
-import unidade3_1 from "@/assets/estrutura/unidade-3-1.png";
-import unidade3_2 from "@/assets/estrutura/unidade-3-2.png";
-import unidade3_3 from "@/assets/estrutura/unidade-3-3.png";
-import bannerUnidades from "@/assets/estrutura/banner-unidades.png";
+import unidade3_1 from "@/assets/estrutura/unidade-3-1.webp";
+import unidade3_2 from "@/assets/estrutura/unidade-3-2.webp";
+import unidade3_3 from "@/assets/estrutura/unidade-3-3.webp";
+import bannerUnidades from "@/assets/estrutura/banner-unidades.webp";
 
 const galeriaImagens = [
   { src: unidadeMasculinaCabreuva, alt: "Unidade Masculina Cabreúva - Piscina e área de convivência" },

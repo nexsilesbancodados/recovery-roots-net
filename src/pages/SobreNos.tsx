@@ -1,4 +1,3 @@
-import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,10 +5,10 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Heart, Shield, Target, Users, Phone, MessageCircle, Award, MapPin, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import sobreNosLogo from "@/assets/sobre-nos-logo.jpg";
-import bannerHospital from "@/assets/banner-hospital.jpg";
-import areaVerde from "@/assets/estrutura/area-verde.jpg";
-import instalacoes from "@/assets/estrutura/instalacoes.jpg";
+import sobreNosLogo from "@/assets/sobre-nos-logo.webp";
+import bannerHospital from "@/assets/banner-hospital.webp";
+import areaVerde from "@/assets/estrutura/area-verde.webp";
+import instalacoes from "@/assets/estrutura/instalacoes.webp";
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
 const valores = [
@@ -53,7 +52,6 @@ const SobreNos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Sobre Nós | Hospital Rumo Certo"} description={"Conheça a história, missão e valores do Hospital Rumo Certo em tratamento humanizado."} path={"/sobre-nos"} />
       <EmergencyBar />
       <Navbar />
 

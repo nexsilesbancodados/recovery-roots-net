@@ -1,8 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import logoIcon from "@/assets/logo-hospital.png";
-import institutoAbaImg from "@/assets/projetos/instituto-aba.png";
-import jiuJitsuImg from "@/assets/projetos/jiu-jitsu.png";
-import combateDrogasImg from "@/assets/projetos/combate-drogas.png";
+import logoIcon from "@/assets/logo-hospital.webp";
+import institutoAbaImg from "@/assets/projetos/instituto-aba.webp";
+import jiuJitsuImg from "@/assets/projetos/jiu-jitsu.webp";
+import combateDrogasImg from "@/assets/projetos/combate-drogas.webp";
 
 const projetos = [
   {

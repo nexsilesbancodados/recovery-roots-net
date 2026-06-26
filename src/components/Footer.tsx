@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
-import logoImage from "@/assets/logo-hospital.png";
+import logoImage from "@/assets/logo-hospital.webp";
 import { PHONE_NUMBERS, PHONE_DISPLAY } from "@/lib/contact";
 
 const Footer = () => {

@@ -1,4 +1,3 @@
-import { SEO } from "@/components/SEO";
 import EmergencyBar from "@/components/EmergencyBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,7 +5,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Phone, ClipboardCheck, Home, Stethoscope, Smile, Calendar, MessageCircle, ArrowRight, UserCheck, Scale, Gavel } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import grupoApoio from "@/assets/grupo-apoio.png";
+import grupoApoio from "@/assets/grupo-apoio.webp";
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
 const etapas = [
@@ -33,7 +32,6 @@ const ComoFunciona = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Como Funciona a Internação | Hospital Rumo Certo"} description={"Entenda as etapas da internação: do primeiro contato à alta, com suporte completo."} path={"/como-funciona"} />
       <EmergencyBar />
       <Navbar />
 
