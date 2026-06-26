@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage1 from "@/assets/hero-hospital.png";
-import heroImage2 from "@/assets/hero-resgate.png";
-import heroImage3 from "@/assets/hero-setembro-amarelo.png";
-import heroImage4 from "@/assets/hero-combate-drogas.png";
-import heroImage5 from "@/assets/hero-convenios.png";
-import logoImage from "@/assets/logo-hospital.png";
+import heroImage1 from "@/assets/hero-hospital.webp";
+import heroImage2 from "@/assets/hero-resgate.webp";
+import heroImage3 from "@/assets/hero-setembro-amarelo.webp";
+import heroImage4 from "@/assets/hero-combate-drogas.webp";
+import heroImage5 from "@/assets/hero-convenios.webp";
+import logoImage from "@/assets/logo-hospital.webp";
 import AgendamentoModal from "@/components/AgendamentoModal";
 import { PHONE_DISPLAY } from "@/lib/contact";
 

@@ -15,13 +15,26 @@ export const PHONE_DISPLAY = {
 export const PRIMARY_PHONE = PHONE_NUMBERS.main;
 export const PRIMARY_PHONE_DISPLAY = PHONE_DISPLAY.main;
 
+// Dispara evento de conversão no GA4 e no Meta Pixel (se disponíveis)
+type W = typeof window & {
+  gtag?: (...args: unknown[]) => void;
+  fbq?: (...args: unknown[]) => void;
+};
+const trackLead = (method: "whatsapp" | "call") => {
+  const w = window as W;
+  w.gtag?.("event", "generate_lead", { method });
+  w.fbq?.("track", "Lead", { method });
+};
+
 // Função auxiliar para abrir WhatsApp
 export const openWhatsApp = (message: string, phone: string = PRIMARY_PHONE) => {
+  trackLead("whatsapp");
   const encodedMessage = encodeURIComponent(message);
   window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");
 };
 
 // Função auxiliar para fazer ligação
 export const makeCall = (phone: string = PRIMARY_PHONE) => {
+  trackLead("call");
   window.location.href = `tel:+${phone}`;
 };

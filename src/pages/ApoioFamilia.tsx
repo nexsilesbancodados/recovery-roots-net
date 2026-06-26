@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Heart, Users, Phone, BookOpen, Shield, MessageCircle, AlertTriangle, HandHeart, Brain, Eye, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import familiaRecuperacao from "@/assets/familia-recuperacao.png";
+import familiaRecuperacao from "@/assets/familia-recuperacao.webp";
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
 const orientacoes = [
@@ -46,7 +46,7 @@ const ApoioFamilia = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Apoio à Família | Hospital Rumo Certo"} description={"Orientação e suporte para famílias de dependentes químicos. Programa familiar humanizado e acolhedor."} path={"/apoio-familia"} />
+      <SEO title={"Apoio à Família | Hospital Rumo Certo"} description={"Orientação e suporte psicológico para famílias de dependentes químicos e pacientes em tratamento."} path={"/apoio-familia"} />
       <EmergencyBar />
       <Navbar />
 

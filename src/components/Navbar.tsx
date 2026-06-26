@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logoImage from "@/assets/logo-hospital.png";
+import logoImage from "@/assets/logo-hospital.webp";
 import AgendamentoModal from "@/components/AgendamentoModal";
+import { openWhatsApp } from "@/lib/contact";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,9 +54,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "top-0" : "top-10"
-      } ${
+      className={`fixed left-0 right-0 top-10 z-50 transition-all duration-500 ${
         isScrolled
           ? "bg-background/98 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.08)] border-b border-border/30"
           : "bg-background/80 backdrop-blur-md"
@@ -104,10 +103,20 @@ const Navbar = () => {
 
             <div className="w-px h-6 bg-border/50" />
 
-            {/* CTA Button */}
+            {/* CTA primário: WhatsApp */}
+            <button
+              onClick={() => openWhatsApp("Olá, preciso de ajuda para um familiar. Podem me orientar?")}
+              className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fb955] text-white rounded-full px-4 py-2 text-xs font-bold whitespace-nowrap flex-shrink-0 shadow-md hover:-translate-y-px transition-all duration-300"
+            >
+              <MessageCircle className="w-4 h-4" fill="currentColor" strokeWidth={1} />
+              Falar no WhatsApp
+            </button>
+
+            {/* CTA secundário: Agendar */}
             <Button
+              variant="outline"
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-4 text-xs whitespace-nowrap flex-shrink-0 shadow-[0_4px_14px_-3px_hsl(var(--primary)/0.4)] hover:shadow-[0_6px_20px_-3px_hsl(var(--primary)/0.5)] hover:-translate-y-px transition-all duration-300"
+              className="rounded-full px-4 text-xs whitespace-nowrap flex-shrink-0"
             >
               Agendar Visita
             </Button>
@@ -117,10 +126,11 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center gap-2">
             <Button
               size="sm"
-              onClick={() => setIsModalOpen(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl text-xs px-4"
+              onClick={() => openWhatsApp("Olá, preciso de ajuda para um familiar. Podem me orientar?")}
+              className="bg-[#25D366] hover:bg-[#1fb955] text-white rounded-xl text-xs px-3 gap-1.5"
             >
-              Agendar
+              <MessageCircle className="w-4 h-4" fill="currentColor" strokeWidth={1} />
+              WhatsApp
             </Button>
             <button
               className="p-2 text-foreground rounded-lg hover:bg-muted transition-colors"

@@ -6,18 +6,18 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Phone, MessageCircle, Shield, FileCheck, Clock, HeartHandshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import convenioAtendimento from "@/assets/convenio-atendimento.png";
+import convenioAtendimento from "@/assets/convenio-atendimento.webp";
 
-import bradesco from "@/assets/convenios/bradesco-saude.png";
-import cabesp from "@/assets/convenios/cabesp.png";
-import careplus from "@/assets/convenios/careplus.png";
-import cassi from "@/assets/convenios/cassi.png";
-import geap from "@/assets/convenios/geap.png";
-import portoSaude from "@/assets/convenios/porto-saude.png";
-import itauSaude from "@/assets/convenios/itau-saude.png";
-import saudeCaixa from "@/assets/convenios/saude-caixa.png";
-import mediservice from "@/assets/convenios/mediservice.png";
-import realGrandeza from "@/assets/convenios/real-grandeza.png";
+import bradesco from "@/assets/convenios/bradesco-saude.webp";
+import cabesp from "@/assets/convenios/cabesp.webp";
+import careplus from "@/assets/convenios/careplus.webp";
+import cassi from "@/assets/convenios/cassi.webp";
+import geap from "@/assets/convenios/geap.webp";
+import portoSaude from "@/assets/convenios/porto-saude.webp";
+import itauSaude from "@/assets/convenios/itau-saude.webp";
+import saudeCaixa from "@/assets/convenios/saude-caixa.webp";
+import mediservice from "@/assets/convenios/mediservice.webp";
+import realGrandeza from "@/assets/convenios/real-grandeza.webp";
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
 const convenios = [
@@ -55,7 +55,7 @@ const Convenios = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Convênios Aceitos | Hospital Rumo Certo"} description={"Veja a lista de convênios médicos aceitos pelo Hospital Rumo Certo para internação."} path={"/convenios"} />
+      <SEO title={"Convênios Aceitos | Hospital Rumo Certo"} description={"Atendemos os principais convênios do Brasil. Consulte a cobertura do seu plano de saúde."} path={"/convenios"} />
       <EmergencyBar />
       <Navbar />
 

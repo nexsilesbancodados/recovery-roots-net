@@ -1,12 +1,12 @@
 import { User, Users, Lightbulb, Heart, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import profissionalImg from "@/assets/doctor-abordagem.png";
+import profissionalImg from "@/assets/doctor-abordagem.webp";
 import { openWhatsApp } from "@/lib/contact";
-import imgTerapiaIndividual from "@/assets/abordagem/terapia-individual.jpg";
-import img12Passos from "@/assets/abordagem/12-passos.jpg";
-import imgTerapiaGrupo from "@/assets/abordagem/terapia-grupo.jpg";
-import imgInovacao from "@/assets/abordagem/inovacao.jpg";
+import imgTerapiaIndividual from "@/assets/abordagem/terapia-individual.webp";
+import img12Passos from "@/assets/abordagem/12-passos.webp";
+import imgTerapiaGrupo from "@/assets/abordagem/terapia-grupo.webp";
+import imgInovacao from "@/assets/abordagem/inovacao.webp";
 
 const destaques = [
   "Avaliação detalhada individualizada",

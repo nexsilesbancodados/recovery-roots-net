@@ -52,7 +52,7 @@ const Desintoxicacao = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Desintoxicação Médica Segura | Hospital Rumo Certo"} description={"Desintoxicação supervisionada por equipe médica 24h, com protocolo individualizado e seguro."} path={"/desintoxicacao"} />
+      <SEO title={"Desintoxicação Médica | Hospital Rumo Certo"} description={"Programa de desintoxicação humanizado para álcool e drogas com acompanhamento médico 24h."} path={"/desintoxicacao"} />
       <EmergencyBar />
       <Navbar />
 

@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Phone, MessageCircle, Stethoscope, Brain, Heart, Users, GraduationCap, Award, CheckCircle, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import equipeMedica from "@/assets/equipe-medica.png";
+import equipeMedica from "@/assets/equipe-medica.webp";
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
 const especialidades = [
@@ -44,7 +44,7 @@ const Equipe = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Nossa Equipe Multidisciplinar | Hospital Rumo Certo"} description={"Psiquiatras, psicólogos, enfermeiros e terapeutas dedicados ao tratamento humanizado."} path={"/equipe"} />
+      <SEO title={"Equipe Multidisciplinar | Hospital Rumo Certo"} description={"Psiquiatras, psicólogos, enfermeiros e terapeutas especializados em saúde mental e dependência."} path={"/equipe"} />
       <EmergencyBar />
       <Navbar />
 

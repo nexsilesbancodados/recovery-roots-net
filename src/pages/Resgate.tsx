@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Phone, Clock, MapPin, Shield, Ambulance, MessageCircle, Heart, CheckCircle, AlertTriangle, Siren, Lock, UserCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import resgateHumanizado from "@/assets/resgate-humanizado.png";
+import resgateHumanizado from "@/assets/resgate-humanizado.webp";
 import { openWhatsApp as openWhatsAppUtil, makeCall, PRIMARY_PHONE, PHONE_DISPLAY } from "@/lib/contact";
 
 const diferenciais = [
@@ -51,7 +51,7 @@ const Resgate = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Resgate Hospitalar 24h | Hospital Rumo Certo"} description={"Serviço de resgate especializado 24h em todo Brasil para internação psiquiátrica."} path={"/resgate"} />
+      <SEO title={"Resgate 24h em Todo o Brasil | Hospital Rumo Certo"} description={"Equipe de resgate humanizado disponível 24h em todos os estados para transporte seguro."} path={"/resgate"} />
       <EmergencyBar />
       <Navbar />
 

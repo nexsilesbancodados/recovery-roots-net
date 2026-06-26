@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Users } from "lucide-react";
-import logoIcon from "@/assets/logo-hospital.png";
+import logoIcon from "@/assets/logo-hospital.webp";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.jpg";
-import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.jpg";
-import bgDependenciaFeminina from "@/assets/tratamentos/dependencia-feminina.jpg";
-import bgDepressao from "@/assets/tratamentos/depressao.jpg";
-import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.jpg";
-import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.jpg";
-import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.jpg";
-import bgSaudeMental from "@/assets/tratamentos/saude-mental.jpg";
+import bgAlcoolismo from "@/assets/tratamentos/alcoolismo.webp";
+import bgDependenciaQuimica from "@/assets/tratamentos/dependencia-quimica.webp";
+import bgDependenciaFeminina from "@/assets/tratamentos/dependencia-feminina.webp";
+import bgDepressao from "@/assets/tratamentos/depressao.webp";
+import bgEsquizofrenia from "@/assets/tratamentos/esquizofrenia.webp";
+import bgFarmacodependencia from "@/assets/tratamentos/farmacodependencia.webp";
+import bgPrevencaoSuicidio from "@/assets/tratamentos/prevencao-suicidio.webp";
+import bgSaudeMental from "@/assets/tratamentos/saude-mental.webp";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 

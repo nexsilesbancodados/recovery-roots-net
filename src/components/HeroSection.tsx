@@ -1,6 +1,7 @@
-import heroEquipe from "@/assets/hero-equipe.png";
-import logoImage from "@/assets/logo-hospital.png";
-import { openWhatsApp } from "@/lib/contact";
+import heroEquipe from "@/assets/hero-equipe.webp";
+import logoImage from "@/assets/logo-hospital.webp";
+import { openWhatsApp, makeCall, PRIMARY_PHONE_DISPLAY } from "@/lib/contact";
+import { MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
@@ -14,6 +15,7 @@ const HeroSection = () => {
         <img
           src={logoImage}
           alt=""
+          loading="lazy"
           className="w-[500px] md:w-[700px] lg:w-[900px] opacity-[0.04] object-contain"
         />
       </div>
@@ -37,11 +39,11 @@ const HeroSection = () => {
                 Hospital Rumo Certo
               </motion.span>
               <h1 className="font-display text-[2.2rem] sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-foreground leading-[1.05] sm:leading-[1.1]">
-                Tratamentos Premium
+                Seu familiar precisa de ajuda?
                 <br />
-                para uma {" "}
+                A gente {" "}
                 <span className="text-secondary relative inline-block mt-1">
-                  Vida Saudável
+                  cuida de tudo
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none">
                     <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--secondary))" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
                   </svg>
@@ -53,6 +55,31 @@ const HeroSection = () => {
               Estruturas de ponta e equipe multidisciplinar dedicada ao tratamento 
               humanizado em saúde mental, dependência química e alcoolismo.
             </p>
+
+            {/* CTA duplo */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <button
+                onClick={() => openWhatsApp("Olá, preciso de ajuda para um familiar. Podem me orientar?")}
+                className="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold px-6 py-3.5 rounded-full shadow-lg hover:scale-[1.02] active:scale-100 transition-transform"
+              >
+                <MessageCircle className="w-5 h-5" fill="currentColor" strokeWidth={1} />
+                Falar agora no WhatsApp
+              </button>
+              <button
+                onClick={() => makeCall()}
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-6 py-3.5 rounded-full shadow-lg hover:scale-[1.02] active:scale-100 transition-transform"
+              >
+                <Phone className="w-5 h-5" fill="currentColor" strokeWidth={1} />
+                Ligar 24h
+              </button>
+            </div>
+
+            {/* Selos de confiança */}
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-sm text-muted-foreground font-medium">
+              <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-secondary" />Atendimento 24h</span>
+              <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-secondary" />Sigilo absoluto</span>
+              <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-secondary" />Equipe multidisciplinar</span>
+            </div>
           </motion.div>
 
           {/* Right Content - Team Image - bigger */}
@@ -65,6 +92,8 @@ const HeroSection = () => {
             <img
               src={heroEquipe}
               alt="Equipe médica do Hospital Rumo Certo"
+              loading="eager"
+              fetchPriority="high"
               className="w-full max-w-[700px] xl:max-w-[800px] object-contain drop-shadow-xl block"
               style={{ marginBottom: '-4px' }}
               width={1024}

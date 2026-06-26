@@ -2,22 +2,22 @@ import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
 // Import logos
-import logoDonaSaude from "@/assets/convenios/dona-saude.png";
-import logoPHS from "@/assets/convenios/phs-samaritano.png";
-import logoPortoSaude from "@/assets/convenios/porto-saude.png";
-import logoBradesco from "@/assets/convenios/bradesco-saude.png";
-import logoBlue from "@/assets/convenios/blue.png";
-import logoIPREF from "@/assets/convenios/ipref.png";
-import logoSaoLuiz from "@/assets/convenios/sao-luiz.png";
-import logoCarePlus from "@/assets/convenios/careplus.png";
-import logoMediservice from "@/assets/convenios/mediservice.png";
-import logoFusex from "@/assets/convenios/fusex.png";
-import logoSaudeCaixa from "@/assets/convenios/saude-caixa.png";
-import logoSelectSaude from "@/assets/convenios/select-saude.png";
-import logoItauSaude from "@/assets/convenios/itau-saude.png";
-import logoCassi from "@/assets/convenios/cassi.png";
-import logoRealGrandeza from "@/assets/convenios/real-grandeza.png";
-import logoCabesp from "@/assets/convenios/cabesp.png";
+import logoDonaSaude from "@/assets/convenios/dona-saude.webp";
+import logoPHS from "@/assets/convenios/phs-samaritano.webp";
+import logoPortoSaude from "@/assets/convenios/porto-saude.webp";
+import logoBradesco from "@/assets/convenios/bradesco-saude.webp";
+import logoBlue from "@/assets/convenios/blue.webp";
+import logoIPREF from "@/assets/convenios/ipref.webp";
+import logoSaoLuiz from "@/assets/convenios/sao-luiz.webp";
+import logoCarePlus from "@/assets/convenios/careplus.webp";
+import logoMediservice from "@/assets/convenios/mediservice.webp";
+import logoFusex from "@/assets/convenios/fusex.webp";
+import logoSaudeCaixa from "@/assets/convenios/saude-caixa.webp";
+import logoSelectSaude from "@/assets/convenios/select-saude.webp";
+import logoItauSaude from "@/assets/convenios/itau-saude.webp";
+import logoCassi from "@/assets/convenios/cassi.webp";
+import logoRealGrandeza from "@/assets/convenios/real-grandeza.webp";
+import logoCabesp from "@/assets/convenios/cabesp.webp";
 
 interface Convenio {
   name: string;

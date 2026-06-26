@@ -6,7 +6,7 @@ import FloatingButtons from "@/components/FloatingButtons";
 import { Activity, HeartPulse, Stethoscope, Clock, Shield, Users, Phone, MessageCircle, AlertTriangle, CheckCircle, Zap, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import uptiQuarto from "@/assets/upti-quarto.png";
+import uptiQuarto from "@/assets/upti-quarto.webp";
 import { openWhatsApp as openWhatsAppUtil } from "@/lib/contact";
 
 const recursos = [
@@ -46,7 +46,7 @@ const UTI = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"UTI Psiquiátrica 24h | Hospital Rumo Certo"} description={"UTI psiquiátrica com equipe multidisciplinar 24h para crises graves e estabilização emergencial."} path={"/uti"} />
+      <SEO title={"UPTI Psiquiátrica | Hospital Rumo Certo"} description={"Unidade de Pronto-atendimento e Tratamento Intensivo psiquiátrico com equipe 24h."} path={"/uti"} />
       <EmergencyBar />
       <Navbar />
 

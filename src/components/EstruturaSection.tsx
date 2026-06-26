@@ -2,20 +2,20 @@ import { Phone, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { openWhatsApp } from "@/lib/contact";
 import GaleriaEstrutura from "@/components/GaleriaEstrutura";
-import imgInstalacoes from "@/assets/estrutura/instalacoes.jpg";
-import imgAlimentacao from "@/assets/estrutura/alimentacao.jpg";
-import imgAreaVerde from "@/assets/estrutura/area-verde.jpg";
-import imgEsportes from "@/assets/estrutura/esportes.jpg";
-import imgPiscinas from "@/assets/estrutura/piscinas.jpg";
-import imgCavalo from "@/assets/estrutura/passeio-cavalo.jpg";
-import imgQuartos from "@/assets/estrutura/quartos-privativos.jpg";
+import imgInstalacoes from "@/assets/estrutura/instalacoes.webp";
+import imgAlimentacao from "@/assets/estrutura/alimentacao.webp";
+import imgAreaVerde from "@/assets/estrutura/area-verde.webp";
+import imgEsportes from "@/assets/estrutura/esportes.webp";
+import imgPiscinas from "@/assets/estrutura/piscinas.webp";
+import imgCavalo from "@/assets/estrutura/passeio-cavalo.webp";
+import imgQuartos from "@/assets/estrutura/quartos-privativos.webp";
 
-import imgBiblioteca from "@/assets/estrutura/biblioteca.jpg";
-import imgArte from "@/assets/estrutura/arteterapia.jpg";
-import imgPet from "@/assets/estrutura/pet-terapia.jpg";
-import imgConvivencia from "@/assets/estrutura/convivencia.jpg";
-import imgSalaTV from "@/assets/estrutura/sala-tv.jpg";
-import imgJardim from "@/assets/estrutura/jardim-terapeutico.jpg";
+import imgBiblioteca from "@/assets/estrutura/biblioteca.webp";
+import imgArte from "@/assets/estrutura/arteterapia.webp";
+import imgPet from "@/assets/estrutura/pet-terapia.webp";
+import imgConvivencia from "@/assets/estrutura/convivencia.webp";
+import imgSalaTV from "@/assets/estrutura/sala-tv.webp";
+import imgJardim from "@/assets/estrutura/jardim-terapeutico.webp";
 
 interface Recurso {
   id: number;
