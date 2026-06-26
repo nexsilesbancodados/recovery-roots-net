@@ -51,7 +51,6 @@ const Resgate = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Resgate Hospitalar 24h "} description={" Hospital Rumo Certo|Serviço de resgate especializado 24h em todo Brasil para internação psiquiátrica."} path={"/resgate"} />
       <SEO title={"Resgate Hospitalar 24h | Hospital Rumo Certo"} description={"Serviço de resgate especializado 24h em todo Brasil para internação psiquiátrica."} path={"/resgate"} />
       <EmergencyBar />
       <Navbar />

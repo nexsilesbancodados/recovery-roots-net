@@ -53,7 +53,6 @@ const SobreNos = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Sobre Nós "} description={" Hospital Rumo Certo|Conheça a história, missão e valores do Hospital Rumo Certo em tratamento humanizado."} path={"/sobre-nos"} />
       <SEO title={"Sobre Nós | Hospital Rumo Certo"} description={"Conheça a história, missão e valores do Hospital Rumo Certo em tratamento humanizado."} path={"/sobre-nos"} />
       <EmergencyBar />
       <Navbar />

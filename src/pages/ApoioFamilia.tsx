@@ -46,7 +46,6 @@ const ApoioFamilia = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title={"Apoio à Família "} description={" Hospital Rumo Certo|Orientação e suporte para famílias de dependentes químicos. Programa familiar humanizado e acolhedor."} path={"/apoio-familia"} />
       <SEO title={"Apoio à Família | Hospital Rumo Certo"} description={"Orientação e suporte para famílias de dependentes químicos. Programa familiar humanizado e acolhedor."} path={"/apoio-familia"} />
       <EmergencyBar />
       <Navbar />
