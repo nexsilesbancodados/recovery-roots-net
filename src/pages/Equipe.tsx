@@ -45,6 +45,7 @@ const Equipe = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO title={"Nossa Equipe Multidisciplinar "} description={" Hospital Rumo Certo|Psiquiatras, psicólogos, enfermeiros e terapeutas dedicados ao tratamento humanizado."} path={"/equipe"} />
+      <SEO title={"Nossa Equipe Multidisciplinar | Hospital Rumo Certo"} description={"Psiquiatras, psicólogos, enfermeiros e terapeutas dedicados ao tratamento humanizado."} path={"/equipe"} />
       <EmergencyBar />
       <Navbar />
 

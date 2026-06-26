@@ -47,6 +47,7 @@ const UTI = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO title={"UTI Psiquiátrica 24h "} description={" Hospital Rumo Certo|UTI psiquiátrica com equipe multidisciplinar 24h para crises graves e estabilização emergencial."} path={"/uti"} />
+      <SEO title={"UTI Psiquiátrica 24h | Hospital Rumo Certo"} description={"UTI psiquiátrica com equipe multidisciplinar 24h para crises graves e estabilização emergencial."} path={"/uti"} />
       <EmergencyBar />
       <Navbar />
 

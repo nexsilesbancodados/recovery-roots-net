@@ -16,6 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO title={"Hospital Rumo Certo "} description={" Dependência Química e Saúde Mental|Hospital especializado em dependência química, alcoolismo e saúde mental. Atendimento 24h em São Paulo."} path={"/"} />
+      <SEO title={"Hospital Rumo Certo | Dependência Química e Saúde Mental"} description={"Hospital especializado em dependência química, alcoolismo e saúde mental. Atendimento 24h em São Paulo."} path={"/"} />
       <EmergencyBar />
       <Navbar />
       <HeroSection />
